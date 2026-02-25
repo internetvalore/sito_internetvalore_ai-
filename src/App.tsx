@@ -31,7 +31,6 @@ import TestimonialsSlider from './components/TestimonialsSlider';
 import ErrorBoundary from './components/ErrorBoundary';
 import LandingPage from './pages/landing_page/LandingPage';
 import GoogleAdsLandingPage from './pages/landing_page/GoogleAdsLandingPage';
-import FacebookFeed from './components/FacebookFeed';
 
 function ScrollHandler() {
   const location = useLocation();
@@ -121,7 +120,6 @@ function App() {
                   <Services />
                   <Process />
                   <TestimonialsSlider />
-                  <FacebookFeed />
                   <Clients />
                   <FAQ />
                   <Contact />
