@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
+import { formatSEOText } from '../utils/seo';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -114,9 +115,8 @@ export default function Hero() {
                 <motion.span
                   className="block"
                   variants={textReveal}
-                >
-                  {t('hero.title')}
-                </motion.span>
+                  dangerouslySetInnerHTML={{ __html: formatSEOText(t('hero.title')) }}
+                />
                 <motion.span
                   className="block text-blue-600"
                   animate={gradientAnimation}
@@ -127,16 +127,14 @@ export default function Hero() {
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text"
                   }}
-                >
-                  {t('hero.highlight')}
-                </motion.span>
+                  dangerouslySetInnerHTML={{ __html: formatSEOText(t('hero.highlight')) }}
+                />
               </motion.h1>
               <motion.p
                 variants={textReveal}
                 className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
-              >
-                {t('hero.description')}
-              </motion.p>
+                dangerouslySetInnerHTML={{ __html: formatSEOText(t('hero.description')) }}
+              />
               <motion.div
                 variants={textReveal}
                 className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"

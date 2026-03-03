@@ -1,16 +1,10 @@
-import React from 'react';
-import { Users, Target, TrendingUp, Linkedin, Briefcase, Award, BarChart as ChartBar, Star, Search } from 'lucide-react';
+import { Linkedin, Briefcase, Award, BarChart as ChartBar, Star, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import MetaTags from '../components/MetaTags';
 import { metaContent } from '../seo/metaContent';
 import HeroSection from '../components/HeroSection';
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true }
-};
+import { formatSEOText } from '../utils/seo';
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -56,20 +50,20 @@ export default function About() {
 
   const methodologySteps = language === 'it' ? [
     {
-      title: 'Analisi Iniziale (Deep Search)',
-      description: 'Scandagliamo la rete con l\'Intelligenza Artificiale per scoprire i veri bisogni e le opportunità nascoste del mercato.'
+      title: '**Analisi Iniziale** (Deep Search)',
+      description: 'Scandagliamo la rete con l\'**IA generativa** per scoprire i veri bisogni e le **opportunità di mercato** nascoste.'
     },
     {
       title: 'Strategia Personalizzata',
-      description: 'Sviluppo di un piano d\'azione su misura per i tuoi obiettivi.'
+      description: 'Sviluppo di un piano d\'azione su misura per i tuoi obiettivi di business.'
     },
     {
       title: 'Implementazione',
-      description: 'Esecuzione precisa e monitoraggio costante delle performance.'
+      description: 'Esecuzione precisa e monitoraggio costante delle performance per un alto **ROI**.'
     },
     {
       title: 'Ottimizzazione Continua',
-      description: 'Analisi dei risultati e miglioramento costante delle strategie.'
+      description: 'Analisi dei risultati e miglioramento costante per garantire **risultati misurabili**.'
     }
   ] : [
     {
@@ -92,24 +86,24 @@ export default function About() {
 
   const content = language === 'it' ? {
     title: 'Chi Siamo',
-    subtitle: 'La Tua Agenzia guidata dall\'AI',
-    description: 'Utilizziamo la Deep Search per trasformare dati grezzi in opportunità di mercato dominanti',
+    subtitle: 'La Tua **Agenzia Marketing IA Milano**',
+    description: 'Utilizziamo la **Deep Search** per trasformare **dati reali** in **opportunità di mercato** dominanti',
     reputation: {
-      title: 'La Nostra Reputazione',
-      description: 'Analizziamo il mercato con l\'AI prima di iniziare a lavorare con voi. Intercettiamo le reali opportunità e decliniamo le sfide senza potenziale. Le recensioni su Google lo confermano.',
+      title: 'La Nostra **Reputazione**',
+      description: 'Analizziamo il mercato con l\'AI prima di iniziare a lavorare con voi. Intercettiamo le reali opportunità e portiamo **innovazione digitale** nel tuo business.',
       approach: {
-        title: 'L\'Approccio Deep Search',
-        description: 'Catturiamo ogni opportunità di mercato esplorando i bisogni inespressi dei clienti con l\'IA generativa, fondando le nostre strategie su dati reali.'
+        title: 'La **Metodologia** Deep Search',
+        description: 'Catturiamo ogni opportunità esplorando i bisogni inespressi dei clienti, fondando le nostre **business strategy** su evidenze concrete.'
       }
     },
     founder: {
       title: 'Il Nostro Fondatore',
-      subtitle: 'Ingegnere, Imprenditore Seriale, Appassionato di Tecnologia',
-      description: 'Esperto di marketing digitale con oltre 15 anni di esperienza nel settore',
+      subtitle: '**Ingegneria**, Imprenditoria e Passione per la Tecnologia',
+      description: 'Esperto di marketing digitale con una **leadership** ventennale nel settore',
       linkedin: 'Connettiti su LinkedIn'
     },
     methodology: {
-      title: 'La Nostra Metodologia'
+      title: 'La Nostra **Metodologia**'
     }
   } : {
     title: 'About Us',
@@ -165,8 +159,8 @@ export default function About() {
               >
                 <Star className="h-8 w-8 text-yellow-300" />
               </motion.div>
-              <h3 className="text-2xl font-bold mb-4">{content.reputation.title}</h3>
-              <p className="text-lg mb-6">{content.reputation.description}</p>
+              <h3 className="text-2xl font-bold mb-4" dangerouslySetInnerHTML={{ __html: formatSEOText(content.reputation.title) }} />
+              <p className="text-lg mb-6" dangerouslySetInnerHTML={{ __html: formatSEOText(content.reputation.description) }} />
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
@@ -181,11 +175,9 @@ export default function About() {
               <div className="bg-white/10 rounded-xl p-6">
                 <div className="flex items-center justify-center mb-4">
                   <Search className="h-6 w-6 mr-2" />
-                  <span className="text-lg font-semibold">{content.reputation.approach.title}</span>
+                  <span className="text-lg font-semibold" dangerouslySetInnerHTML={{ __html: formatSEOText(content.reputation.approach.title) }} />
                 </div>
-                <p className="text-base">
-                  {content.reputation.approach.description}
-                </p>
+                <p className="text-base" dangerouslySetInnerHTML={{ __html: formatSEOText(content.reputation.approach.description) }} />
               </div>
             </div>
           </div>
@@ -206,7 +198,7 @@ export default function About() {
             >
               <div className="px-6 py-8 sm:p-10 bg-gradient-to-r from-blue-600 to-blue-400">
                 <div className="text-center text-white">
-                  <h3 className="text-2xl font-bold">{content.founder.title}</h3>
+                  <h3 className="text-2xl font-bold" dangerouslySetInnerHTML={{ __html: formatSEOText(content.founder.title) }} />
                   <div className="mt-4">
                     <motion.div
                       initial={{ scale: 0 }}
@@ -227,12 +219,8 @@ export default function About() {
               <div className="px-6 py-8 sm:p-10">
                 <div className="space-y-4 text-center">
                   <h4 className="text-xl font-semibold text-gray-900">Andrea Falzin</h4>
-                  <p className="text-gray-600 font-medium">
-                    {content.founder.subtitle}
-                  </p>
-                  <p className="text-gray-600">
-                    {content.founder.description}
-                  </p>
+                  <p className="text-gray-600 font-medium" dangerouslySetInnerHTML={{ __html: formatSEOText(content.founder.subtitle) }} />
+                  <p className="text-gray-600" dangerouslySetInnerHTML={{ __html: formatSEOText(content.founder.description) }} />
                   <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -278,12 +266,8 @@ export default function About() {
                     {index === 1 && <Award className="h-6 w-6 text-white" />}
                     {index === 2 && <ChartBar className="h-6 w-6 text-white" />}
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-4 text-gray-500">
-                    {feature.description}
-                  </p>
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.title) }} />
+                  <p className="mt-4 text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.description) }} />
                 </div>
               </motion.div>
             ))}
@@ -298,7 +282,7 @@ export default function About() {
           className="mt-20"
         >
           <div className="bg-white rounded-2xl shadow-xl p-8 sm:p-10">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">{content.methodology.title}</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center" dangerouslySetInnerHTML={{ __html: formatSEOText(content.methodology.title) }} />
             <div className="space-y-8">
               {methodologySteps.map((step, index) => (
                 <motion.div
@@ -320,8 +304,8 @@ export default function About() {
                     </div>
                   </motion.div>
                   <div className="ml-6">
-                    <h4 className="text-xl font-semibold text-gray-900">{step.title}</h4>
-                    <p className="mt-2 text-gray-500">{step.description}</p>
+                    <h4 className="text-xl font-semibold text-gray-900" dangerouslySetInnerHTML={{ __html: formatSEOText(step.title) }} />
+                    <p className="mt-2 text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(step.description) }} />
                   </div>
                 </motion.div>
               ))}

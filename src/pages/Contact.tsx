@@ -1,21 +1,22 @@
-import React from 'react';
 import { Phone, Calendar, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import MetaTags from '../components/MetaTags';
 import { metaContent } from '../seo/metaContent';
+import { formatSEOText } from '../utils/seo';
 
 export default function ContactPage() {
   const { language } = useLanguage();
+  const meta = metaContent.contact[language];
 
   const content = language === 'it' ? {
-    title: 'Contattaci',
-    subtitle: 'Parliamo delle Tue Opportunità Nascoste',
-    description: 'Siamo qui per applicare la nostra Deep Search e intercettare fette di mercato inesplorate per il tuo progetto. Contattaci per una prima analisi basata sull\'IA e scopri cosa cercano davvero i tuoi clienti.',
+    title: 'Contatti Agenzia Marketing Milano',
+    subtitle: 'Parliamo delle Tue **Opportunità di Mercato**',
+    description: 'Siamo qui per applicare la nostra **Deep Search** e intercettare fette di mercato inesplorate per il tuo progetto. Entra in **Contatti Agenzia Marketing Milano** per una **consulenza gratuita** basata su un\'**analisi basata sull\'IA** e scopri cosa cercano davvero i tuoi clienti per ottenere un **vantaggio competitivo** reale.',
     digitalConcierge: 'Leonardo (AI Concierge)',
-    bookMeeting: 'Prenota una Consulenza Gratuita',
+    bookMeeting: 'Prenota una **Consulenza Gratuita**',
     legalAddress: 'Sede Legale',
-    operationalAddress: 'Sede Operativa'
+    operationalAddress: '**Sede Milano** (Operativa)'
   } : {
     title: 'Contact Us',
     subtitle: 'Let\'s Talk About Your Hidden Opportunities',
@@ -29,9 +30,9 @@ export default function ContactPage() {
   return (
     <>
       <MetaTags
-        title={content.title}
-        description={content.description}
-        path="/contact"
+        title={meta.title}
+        description={meta.description}
+        path={meta.path}
       />
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
@@ -42,16 +43,10 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
-                {content.title}
-              </h1>
-              <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl mt-2">
-                {content.subtitle}
-              </h2>
+              <h1 className="text-2xl font-extrabold text-gray-900 sm:text-3xl" dangerouslySetInnerHTML={{ __html: formatSEOText(content.title) }} />
+              <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl mt-2" dangerouslySetInnerHTML={{ __html: formatSEOText(content.subtitle) }} />
               <div className="mt-3">
-                <p className="text-lg text-gray-500">
-                  {content.description}
-                </p>
+                <p className="text-lg text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(content.description) }} />
               </div>
               <motion.div
                 className="mt-9 space-y-6"
@@ -86,7 +81,7 @@ export default function ContactPage() {
                     >
                       800 940 213
                     </motion.a>
-                    <p className="mt-1">{content.digitalConcierge}</p>
+                    <p className="mt-1" dangerouslySetInnerHTML={{ __html: formatSEOText(content.digitalConcierge) }} />
                   </div>
                 </motion.div>
                 <motion.div
@@ -107,7 +102,7 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:text-blue-800 font-medium flex items-center"
                     >
-                      {content.bookMeeting}
+                      <span dangerouslySetInnerHTML={{ __html: formatSEOText(content.bookMeeting) }} />
                       <svg className="ml-2 w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
                         <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
@@ -127,7 +122,7 @@ export default function ContactPage() {
                       <MapPin className="h-6 w-6 text-blue-600" />
                     </div>
                     <div className="ml-3 text-base text-gray-500">
-                      <p className="font-medium">{content.legalAddress}:</p>
+                      <p className="font-medium" dangerouslySetInnerHTML={{ __html: formatSEOText(content.legalAddress) }} />
                       <p>Via G.B. Pergolesi 16</p>
                       <p>20900 Monza</p>
                     </div>
@@ -137,7 +132,7 @@ export default function ContactPage() {
                       <MapPin className="h-6 w-6 text-blue-600" />
                     </div>
                     <div className="ml-3 text-base text-gray-500">
-                      <p className="font-medium">{content.operationalAddress}:</p>
+                      <p className="font-medium" dangerouslySetInnerHTML={{ __html: formatSEOText(content.operationalAddress) }} />
                       <p>Via Giovanni Battista Pergolesi 29</p>
                       <p>20124 Milano</p>
                     </div>

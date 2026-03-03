@@ -31,6 +31,7 @@ import TestimonialsSlider from './components/TestimonialsSlider';
 import ErrorBoundary from './components/ErrorBoundary';
 import LandingPage from './pages/landing_page/LandingPage';
 import GoogleAdsLandingPage from './pages/landing_page/GoogleAdsLandingPage';
+import AIAgentsMilano from './pages/services/AIAgentsMilano';
 
 function ScrollHandler() {
   const location = useLocation();
@@ -143,6 +144,8 @@ function App() {
               <Route path="/:lang/services/ads" element={<Ads />} />
               <Route path="/:lang/services/analytics" element={<Analytics />} />
               <Route path="/:lang/services/rispondi-subito" element={<RispondiSubito />} />
+              <Route path="/:lang/services/sviluppo-agenti-ai-milano" element={<AIAgentsMilano />} />
+              <Route path="/:lang/services/ai-agent-development-milan" element={<AIAgentsMilano />} />
 
               {/* Other routes */}
               <Route path="/:lang/instant-websites" element={<InstantWebsites />} />
