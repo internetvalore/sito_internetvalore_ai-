@@ -40,7 +40,7 @@ export default function HeroSection({ title, subtitle, description, imageSrc = "
   };
 
   return (
-    <div className="relative bg-white overflow-hidden">
+    <div className="relative bg-white">
       {/* Animated background pattern */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 animate-gradient-x"></div>
