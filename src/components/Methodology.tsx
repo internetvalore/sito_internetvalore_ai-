@@ -1,7 +1,8 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Database, Brain, Rocket } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+
+import { formatSEOText } from '../utils/seo';
 
 export default function Methodology() {
     const { t } = useLanguage();
@@ -61,10 +62,8 @@ export default function Methodology() {
                                         <div className="absolute top-0 right-0 -mr-4 -mt-4 w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">
                                             {index + 1}
                                         </div>
-                                        <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
-                                        <p className="text-gray-500 leading-relaxed text-sm lg:text-base">
-                                            {step.description}
-                                        </p>
+                                        <h3 className="text-xl font-bold text-gray-900 mb-4" dangerouslySetInnerHTML={{ __html: formatSEOText(step.title) }} />
+                                        <p className="text-gray-500 leading-relaxed text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: formatSEOText(step.description) }} />
                                     </div>
                                 </motion.div>
                             );

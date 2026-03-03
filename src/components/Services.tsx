@@ -1,14 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { Users, ShoppingBag, Target, BarChart, Rocket, Phone, MessageCircle, ArrowRight, Layout, PhoneCall } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import {
+  Users,
+  ShoppingBag,
+  Target,
+  BarChart,
+  Rocket,
+  MessageCircle,
+  Layout,
+  PhoneCall,
+  ArrowRight,
+  Phone
+} from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Link, useNavigate } from 'react-router-dom';
+import { formatSEOText } from '../utils/seo';
 
 export default function Services() {
-  const { t, language } = useLanguage();
-  const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({});
+  const { language, t } = useLanguage();
+  const [flippedCards, setFlippedCards] = useState<Record<number, boolean>>({});
   const [shuffledIndexes, setShuffledIndexes] = useState<number[]>([]);
-  const { scrollY } = useScroll();
   const navigate = useNavigate();
 
   const services = [
@@ -157,9 +168,8 @@ export default function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto"
-          >
-            {t('services.description')}
-          </motion.p>
+            dangerouslySetInnerHTML={{ __html: formatSEOText(t('services.description')) }}
+          />
         </div>
 
         <motion.div
@@ -189,9 +199,8 @@ export default function Services() {
                   onClick={() => toggleFlip(shuffledIndex, service)}
                 >
                   <div
-                    className={`relative transition-transform duration-700 transform-style-3d ${
-                      flippedCards[shuffledIndex] ? 'rotate-y-180' : ''
-                    }`}
+                    className={`relative transition-transform duration-700 transform-style-3d ${flippedCards[shuffledIndex] ? 'rotate-y-180' : ''
+                      }`}
                     style={{ transformStyle: 'preserve-3d' }}
                   >
                     {/* Front of card */}
@@ -209,9 +218,9 @@ export default function Services() {
                             <service.icon className="h-6 w-6 text-white" aria-hidden="true" />
                           </motion.span>
                         </div>
-                        <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">{service.title}</h3>
-                        <p className="mt-5 text-base text-gray-500">{service.description}</p>
-                        {!service.whatsapp && (
+                        <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight" dangerouslySetInnerHTML={{ __html: formatSEOText(service.title) }} />
+                        <p className="mt-5 text-base text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(service.description) }} />
+                        {!service.whatsapp && Array.isArray(service.features) && (
                           <ul className="mt-4 space-y-2">
                             {service.features.map((feature: string) => (
                               <motion.li
@@ -226,7 +235,7 @@ export default function Services() {
                                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                   </svg>
                                 </div>
-                                <p className="ml-3 text-sm text-gray-500">{feature}</p>
+                                <p className="ml-3 text-sm text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(feature) }} />
                               </motion.li>
                             ))}
                           </ul>
@@ -250,7 +259,7 @@ export default function Services() {
                       className="absolute inset-0 h-full w-full bg-white rounded-lg px-6 py-8 shadow-lg flex flex-col items-center justify-center rotate-y-180"
                       style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
                     >
-                      <h3 className="text-xl font-bold text-gray-900 mb-6">{service.title}</h3>
+                      <h3 className="text-xl font-bold text-gray-900 mb-6" dangerouslySetInnerHTML={{ __html: formatSEOText(service.title) }} />
                       {service.whatsapp ? (
                         <motion.button
                           onClick={handleWhatsAppClick}
@@ -274,7 +283,7 @@ export default function Services() {
                             {t('nav.call')}
                           </motion.a>
                           <Link
-                            to={service.path}
+                            to={service.path || '#'}
                             className="mt-4 inline-flex items-center text-blue-600 hover:text-blue-800"
                             onClick={(e) => e.stopPropagation()}
                           >
@@ -282,9 +291,7 @@ export default function Services() {
                           </Link>
                         </>
                       )}
-                      <p className="text-center text-gray-600 mt-4">
-                        {t('services.available247')}
-                      </p>
+                      <p className="text-center text-gray-600 mt-4" dangerouslySetInnerHTML={{ __html: formatSEOText(t('services.available247')) }} />
                     </div>
                   </div>
                 </motion.div>

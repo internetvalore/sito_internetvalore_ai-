@@ -48,6 +48,11 @@ export default function Navbar() {
       name: t('services.sections.rispondiSubito.title'),
       description: t('services.sections.rispondiSubito.description'),
       href: '/services/rispondi-subito'
+    },
+    {
+      name: t('services.sections.aiAgentsMilano.title'),
+      description: t('services.sections.aiAgentsMilano.description'),
+      href: '/services/sviluppo-agenti-ai-milano'
     }
   ];
 

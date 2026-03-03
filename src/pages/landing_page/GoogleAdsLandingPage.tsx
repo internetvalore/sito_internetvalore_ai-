@@ -3,9 +3,13 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { Phone, MessageCircle, ChevronDown, CheckCircle, HelpCircle, TrendingUp, Clock, BarChart2, DollarSign } from 'lucide-react';
 import TestimonialsSlider from '../../components/TestimonialsSlider';
+import MetaTags from '../../components/MetaTags';
+import { metaContent } from '../../seo/metaContent';
+import { formatSEOText } from '../../utils/seo';
 
 const GoogleAdsLandingPage = () => {
   const { language } = useLanguage();
+  const meta = metaContent.ads[language];
 
   const content = language === 'it' ? {
     title: 'Stanco di Campagne Pubblicitarie che Non Portano Risultati Concreti?',
@@ -246,12 +250,7 @@ const GoogleAdsLandingPage = () => {
     phoneNumber: '800 940 213'
   };
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+
 
   const openWhatsApp = () => {
     window.open(`https://wa.me/${content.whatsappNumber.replace(/\+/g, '')}`, '_blank');
@@ -263,6 +262,11 @@ const GoogleAdsLandingPage = () => {
 
   return (
     <div className="bg-white">
+      <MetaTags
+        title={meta.title}
+        description={meta.description}
+        path="/google-ads-landing"
+      />
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
@@ -278,7 +282,7 @@ const GoogleAdsLandingPage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
               >
-                {content.title}
+                <span dangerouslySetInnerHTML={{ __html: formatSEOText(content.title) }} />
               </motion.h1>
               <motion.p
                 className="text-xl mb-6"
@@ -286,7 +290,7 @@ const GoogleAdsLandingPage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
               >
-                {content.subtitle}
+                <span dangerouslySetInnerHTML={{ __html: formatSEOText(content.subtitle) }} />
               </motion.p>
               <motion.p
                 className="mb-6"
@@ -294,7 +298,7 @@ const GoogleAdsLandingPage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
               >
-                {content.description}
+                <span dangerouslySetInnerHTML={{ __html: formatSEOText(content.description) }} />
               </motion.p>
               <motion.p
                 className="text-lg font-semibold mb-8"
@@ -302,7 +306,7 @@ const GoogleAdsLandingPage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
-                {content.question}
+                <span dangerouslySetInnerHTML={{ __html: formatSEOText(content.question) }} />
               </motion.p>
               <motion.div
                 className="flex flex-col sm:flex-row gap-4"
@@ -379,7 +383,7 @@ const GoogleAdsLandingPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {content.problemTitle}
+            {formatSEOText(content.problemTitle)}
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {content.problems.map((problem, index) => (
@@ -394,7 +398,7 @@ const GoogleAdsLandingPage = () => {
                 <div className="text-blue-600 mb-4">
                   {React.cloneElement(problem.icon, { className: "h-10 w-10" })}
                 </div>
-                <p className="text-gray-700">{problem.text}</p>
+                <p className="text-gray-700" dangerouslySetInnerHTML={{ __html: formatSEOText(problem.text) }} />
               </motion.div>
             ))}
           </div>
@@ -404,9 +408,8 @@ const GoogleAdsLandingPage = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-          >
-            {content.problemNote}
-          </motion.p>
+            dangerouslySetInnerHTML={{ __html: formatSEOText(content.problemNote) }}
+          />
         </div>
       </div>
 
@@ -428,9 +431,8 @@ const GoogleAdsLandingPage = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            {content.philosophy}
-          </motion.p>
+            dangerouslySetInnerHTML={{ __html: formatSEOText(content.philosophy) }}
+          />
         </div>
       </div>
 
@@ -474,12 +476,12 @@ const GoogleAdsLandingPage = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
-                <h3 className="text-xl font-bold mb-4 text-blue-700">{service.title}</h3>
+                <h3 className="text-xl font-bold mb-4 text-blue-700" dangerouslySetInnerHTML={{ __html: formatSEOText(service.title) }} />
                 <ul className="space-y-2">
                   {service.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{item}</span>
+                      <span className="text-gray-700" dangerouslySetInnerHTML={{ __html: formatSEOText(item) }} />
                     </li>
                   ))}
                 </ul>
@@ -526,27 +528,27 @@ const GoogleAdsLandingPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <p className="text-lg font-bold text-blue-700 mb-4">{content.proposalHighlight}</p>
+            <p className="text-lg font-bold text-blue-700 mb-4" dangerouslySetInnerHTML={{ __html: formatSEOText(content.proposalHighlight) }} />
             <ul className="space-y-4 mb-6">
               {content.proposalPoints.map((point, index) => (
                 <li key={index} className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">{point}</span>
+                  <span className="text-gray-700" dangerouslySetInnerHTML={{ __html: formatSEOText(point) }} />
                 </li>
               ))}
             </ul>
-            <p className="font-bold text-gray-800 mb-2">{content.proposalWhy}</p>
-            <p className="text-gray-700 mb-6">{content.proposalWhyAnswer}</p>
-            <p className="font-bold text-gray-800 mb-2">{content.proposalMeaning}</p>
+            <p className="font-bold text-gray-800 mb-2" dangerouslySetInnerHTML={{ __html: content.proposalWhy }} />
+            <p className="text-gray-700 mb-6" dangerouslySetInnerHTML={{ __html: formatSEOText(content.proposalWhyAnswer) }} />
+            <p className="font-bold text-gray-800 mb-2" dangerouslySetInnerHTML={{ __html: content.proposalMeaning }} />
             <ul className="space-y-2 mb-6">
               {content.proposalMeaningPoints.map((point, index) => (
                 <li key={index} className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">{point}</span>
+                  <span className="text-gray-700" dangerouslySetInnerHTML={{ __html: formatSEOText(point) }} />
                 </li>
               ))}            </ul>
-            <p className="text-gray-700 mb-4">{content.proposalBest}</p>
-            <p className="text-gray-700 font-medium">{content.proposalRenewal}</p>
+            <p className="text-gray-700 mb-4" dangerouslySetInnerHTML={{ __html: formatSEOText(content.proposalBest) }} />
+            <p className="text-gray-700 font-medium" dangerouslySetInnerHTML={{ __html: formatSEOText(content.proposalRenewal) }} />
           </motion.div>
           {/* Removed the second button and its wrapping div here */}
         </div>
@@ -584,7 +586,7 @@ const GoogleAdsLandingPage = () => {
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
                 <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
-                <span>{point}</span>
+                <span dangerouslySetInnerHTML={{ __html: formatSEOText(point) }} />
               </motion.div>
             ))}
           </motion.div>
@@ -629,8 +631,8 @@ const GoogleAdsLandingPage = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
-                <h3 className="text-xl font-bold mb-2 text-gray-900">{faq.question}</h3>
-                <p className="text-gray-700">{faq.answer}</p>
+                <h3 className="text-xl font-bold mb-2 text-gray-900" dangerouslySetInnerHTML={{ __html: formatSEOText(faq.question) }} />
+                <p className="text-gray-700" dangerouslySetInnerHTML={{ __html: formatSEOText(faq.answer) }} />
               </motion.div>
             ))}
           </div>
@@ -673,9 +675,8 @@ const GoogleAdsLandingPage = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            {content.contactUs}
-          </motion.p>
+            dangerouslySetInnerHTML={{ __html: formatSEOText(content.contactUs) }}
+          />
           <motion.div
             className="flex flex-col sm:flex-row justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}

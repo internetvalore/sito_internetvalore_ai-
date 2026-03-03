@@ -1,8 +1,12 @@
 import React, { useRef } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import MetaTags from '../../components/MetaTags';
+import { metaContent } from '../../seo/metaContent';
+import { formatSEOText } from '../../utils/seo';
 
 const LandingPage = () => {
   const { language } = useLanguage();
+  const meta = metaContent.landingPageProfessionali[language];
 
   // Create refs for scrolling to sections
   const processRef = useRef<HTMLDivElement>(null);
@@ -17,15 +21,15 @@ const LandingPage = () => {
   };
 
   const content = language === 'it' ? {
-    title: 'La Tua Landing Page Professionale Basata sulla Deep Search in 5 Giorni Lavorativi',
-    description: 'Aumenta le conversioni con una landing page ottimizzata che risponde ai reali bisogni del mercato emersi tramite AI. Ci occupiamo di tutto noi, dalla creazione dei contenuti alla pubblicazione.',
+    title: 'La Tua **Landing Page Professionale** ad **Alta Conversione** in 5 Giorni',
+    description: 'Aumenta le conversioni con una **Landing Page Professionale** ottimizzata che risponde ai reali bisogni del mercato emersi tramite la **Deep Search**. Ci occupiamo di tutto noi, dal **copywriting persuasivo** alla **pubblicazione rapida** per garantirti un **vantaggio competitivo** e un alto **ROI marketing**.',
     requestQuote: 'Richiedi Preventivo',
     learnMore: 'Scopri Come Funziona',
     features: [
-      'Pronta in 5 giorni lavorativi',
-      'Hosting Incluso',
-      'Ottimizzata per le conversioni',
-      'Contenuti creati per te'
+      '**Pubblicazione rapida** in 5 giorni',
+      '**Hosting Incluso**',
+      'Ottimizzata per l\'**Alta Conversione**',
+      '**Analisi di Mercato** inclusa'
     ],
     processTitle: 'La Tua Landing Page in Soli 5 Giorni Lavorativi',
     processDescription: 'Non perdere tempo prezioso con sviluppatori che impiegano settimane. Il nostro processo ottimizzato ti garantisce una landing page professionale in tempi record.',
@@ -308,13 +312,18 @@ const LandingPage = () => {
 
   return (
     <div className="bg-gradient-to-b from-white to-blue-50 landing-page-container">
+      <MetaTags
+        title={meta.title}
+        description={meta.description}
+        path={meta.path}
+      />
       <header className="bg-gradient-to-r from-blue-600 to-blue-800 py-20 landing-page-header relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-pattern"></div>
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl font-extrabold text-white mb-6 leading-tight">{content.title}</h1>
-          <p className="mt-4 text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">{content.description}</p>
+          <h1 className="text-5xl font-extrabold text-white mb-6 leading-tight" dangerouslySetInnerHTML={{ __html: formatSEOText(content.title) }} />
+          <p className="mt-4 text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed" dangerouslySetInnerHTML={{ __html: formatSEOText(content.description) }} />
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <button
               onClick={() => scrollToSection(contactRef)}
@@ -333,7 +342,7 @@ const LandingPage = () => {
             {content.features.map((feature, index) => (
               <div key={index} className="flex items-center bg-blue-700 bg-opacity-30 px-6 py-3 rounded-full">
                 <div className="w-3 h-3 bg-blue-300 rounded-full mr-3"></div>
-                <span className="text-blue-100 font-medium">{feature}</span>
+                <span className="text-blue-100 font-medium" dangerouslySetInnerHTML={{ __html: formatSEOText(feature) }} />
               </div>
             ))}
           </div>
@@ -342,14 +351,14 @@ const LandingPage = () => {
 
       <section ref={processRef} className="py-24 landing-page-section">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">{content.processTitle}</h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">{content.processDescription}</p>
+          <h2 className="text-4xl font-bold text-gray-800 mb-6" dangerouslySetInnerHTML={{ __html: formatSEOText(content.processTitle) }} />
+          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: formatSEOText(content.processDescription) }} />
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 landing-page-process-steps">
             {content.processSteps.map((step, index) => (
               <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-blue-500">
                 <div className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">{index + 1}</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-4" dangerouslySetInnerHTML={{ __html: formatSEOText(step.title) }} />
+                <p className="text-gray-600" dangerouslySetInnerHTML={{ __html: formatSEOText(step.description) }} />
               </div>
             ))}
           </div>
@@ -372,16 +381,16 @@ const LandingPage = () => {
 
       <section className="bg-gradient-to-b from-blue-50 to-white py-24 landing-page-section landing-page-all-inclusive">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">{content.allInclusiveTitle}</h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">{content.allInclusiveDescription}</p>
+          <h2 className="text-4xl font-bold text-gray-800 mb-6" dangerouslySetInnerHTML={{ __html: formatSEOText(content.allInclusiveTitle) }} />
+          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: formatSEOText(content.allInclusiveDescription) }} />
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {content.allInclusiveItems.map((item, index) => (
               <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-b-4 border-blue-500 flex flex-col h-full">
                 <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
                   {getIconForItem(index)}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{item.title}</h3>
-                <p className="text-gray-600 flex-grow">{item.description}</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-4" dangerouslySetInnerHTML={{ __html: formatSEOText(item.title) }} />
+                <p className="text-gray-600 flex-grow" dangerouslySetInnerHTML={{ __html: formatSEOText(item.description) }} />
               </div>
             ))}
           </div>
@@ -391,8 +400,8 @@ const LandingPage = () => {
 
       <section className="py-24 landing-page-section bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">{content.simplicityTitle}</h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">{content.simplicityDescription}</p>
+          <h2 className="text-4xl font-bold text-gray-800 mb-6" dangerouslySetInnerHTML={{ __html: formatSEOText(content.simplicityTitle) }} />
+          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: formatSEOText(content.simplicityDescription) }} />
           <div className="mt-12 bg-blue-50 py-6 px-8 rounded-xl inline-block">
             <p className="text-xl text-blue-600 font-bold">{content.noTechnicalSkillsRequired}</p>
           </div>
@@ -410,7 +419,7 @@ const LandingPage = () => {
               {content.updatesIncludedItems.map((item, index) => (
                 <li key={index} className="flex items-start">
                   <div className="flex-shrink-0 w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center mr-4 mt-1">✓</div>
-                  <p className="text-gray-700 text-lg">{item}</p>
+                  <p className="text-gray-700 text-lg" dangerouslySetInnerHTML={{ __html: formatSEOText(item) }} />
                 </li>
               ))}
             </ul>
@@ -420,16 +429,16 @@ const LandingPage = () => {
 
       <section className="py-24 landing-page-section bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">{content.designedToConvertTitle}</h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">{content.designedToConvertDescription}</p>
+          <h2 className="text-4xl font-bold text-gray-800 mb-6" dangerouslySetInnerHTML={{ __html: formatSEOText(content.designedToConvertTitle) }} />
+          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: formatSEOText(content.designedToConvertDescription) }} />
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {content.conversionItems.map((item, index) => (
               <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-blue-500">
                 <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
                   {getConversionIcon(index)}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-4" dangerouslySetInnerHTML={{ __html: formatSEOText(item.title) }} />
+                <p className="text-gray-600" dangerouslySetInnerHTML={{ __html: formatSEOText(item.description) }} />
               </div>
             ))}
           </div>

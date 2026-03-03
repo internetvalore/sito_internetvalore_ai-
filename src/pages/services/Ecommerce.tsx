@@ -1,4 +1,3 @@
-import React from 'react';
 import { ShoppingBag, TrendingUp, Users, BarChart2, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -6,51 +5,52 @@ import { Link } from 'react-router-dom';
 import MetaTags from '../../components/MetaTags';
 import { metaContent } from '../../seo/metaContent';
 import HeroSection from '../../components/HeroSection';
+import { formatSEOText } from '../../utils/seo';
 
 export default function Ecommerce() {
   const { language } = useLanguage();
   const meta = metaContent.ecommerce[language];
 
   const content = language === 'it' ? {
-    title: 'Promozione E-commerce',
-    subtitle: 'Aumenta le vendite del tuo negozio online',
-    description: 'Strategie Deep Search per e-commerce che intercettano gli acquirenti pronti all\'acquisto, massimizzando conversioni e fatturato',
+    title: 'E-commerce Marketing IA',
+    subtitle: 'Massimizza le Vendite con l\'Analisi Predittiva',
+    description: 'Non limitarti a vendere, domina il tuo mercato. Attraverso l\'**E-commerce Marketing IA**, ottimizziamo ogni fase del percorso d\'acquisto, trasformando visitatori occasionali in clienti ricorrenti grazie a decisioni **data-driven** e a una solida **strategia di marketing**.',
     features: [
       {
-        title: 'Cataloghi Digitali Interattivi',
-        description: 'Presentazione coinvolgente dei prodotti con cataloghi sfogliabili e interattivi'
+        title: '**Analisi Comportamentale** Deep',
+        description: 'Utilizziamo la **Deep Search** e il **Machine Learning** per comprendere le abitudini d\'acquisto reali e prevedere le tendenze del mercato.'
       },
       {
-        title: 'Ottimizzazione Conversioni',
-        description: 'Analisi e miglioramento del percorso d\'acquisto per aumentare le vendite'
+        title: '**Ottimizzazione Conversioni** (CRO)',
+        description: 'Miglioriamo costantemente il **conversion rate** testando e affinando ogni elemento della tua **User Experience (UX)**.'
       },
       {
-        title: 'Retargeting Avanzato',
-        description: 'Strategie mirate per recuperare carrelli abbandonati e clienti potenziali'
+        title: '**Retargeting Predittivo**',
+        description: 'Recupera i carrelli abbandonati e aumenta il lifetime value con campagne di remarketing basate sulla probabilità d\'acquisto e sull\'**IA Generativa**.'
       },
       {
-        title: 'Analisi Comportamentale',
-        description: 'Studio dettagliato del comportamento degli acquirenti per ottimizzare l\'esperienza'
+        title: '**Personalizzazione** Dinamica',
+        description: 'Offri un\'esperienza di shopping unica a ogni utente, aumentando le **vendite online** e garantendo un alto **ROI**.'
       }
     ],
     process: {
-      title: 'Il Nostro Approccio',
+      title: 'Strategia E-commerce IA',
       steps: [
         {
-          title: 'Analisi E-commerce',
-          description: 'Valutazione completa del tuo negozio online'
+          title: 'Audit Data-Driven',
+          description: 'Analisi profonda dello stato attuale e identificazione dei colli di bottiglia nel **fatturato** attraverso **dati reali**.'
         },
         {
-          title: 'Strategia di Vendita',
-          description: 'Piano d\'azione personalizzato per aumentare le vendite'
+          title: 'Setup Predittivo',
+          description: 'Implementazione di tracciamenti avanzati e algoritmi di **personalizzazione** per il tuo **digital success**.'
         },
         {
-          title: 'Ottimizzazione',
-          description: 'Miglioramento continuo delle performance'
+          title: 'Execution & Scale',
+          description: 'Lancio di campagne multicanale focalizzate sulla crescita della **Customer Experience**.'
         },
         {
-          title: 'Monitoraggio',
-          description: 'Analisi dei risultati e aggiustamenti strategici'
+          title: 'Optimization Loop',
+          description: 'Cicli costanti di **A/B Testing** per una crescita esponenziale delle performance e un netto **vantaggio competitivo**.'
         }
       ]
     },
@@ -145,8 +145,8 @@ export default function Ecommerce() {
                       </div>
                     </div>
                     <div className="ml-4">
-                      <h2 className="text-lg font-medium text-gray-900">{feature.title}</h2>
-                      <p className="mt-2 text-base text-gray-500">{feature.description}</p>
+                      <h2 className="text-lg font-medium text-gray-900" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.title) }} />
+                      <p className="mt-2 text-base text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.description) }} />
                     </div>
                   </div>
                 </motion.div>
@@ -160,9 +160,8 @@ export default function Ecommerce() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-20"
           >
-            <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
-              {content.process.title}
-            </h2>
+            <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12" dangerouslySetInnerHTML={{ __html: formatSEOText(content.process.title) }} />
+
             <div className="relative">
               <div className="absolute inset-0 flex items-center" aria-hidden="true">
                 <div className="w-full border-t border-gray-300" />
@@ -181,8 +180,8 @@ export default function Ecommerce() {
                         {index + 1}
                       </div>
                       <div className="mt-4">
-                        <h3 className="text-lg font-medium text-gray-900">{step.title}</h3>
-                        <p className="mt-2 text-sm text-gray-500">{step.description}</p>
+                        <h3 className="text-lg font-medium text-gray-900" dangerouslySetInnerHTML={{ __html: formatSEOText(step.title) }} />
+                        <p className="mt-2 text-sm text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(step.description) }} />
                       </div>
                     </div>
                   </motion.div>
@@ -200,12 +199,8 @@ export default function Ecommerce() {
             <div className="bg-blue-600 rounded-lg shadow-xl overflow-hidden">
               <div className="px-6 py-12 max-w-xl mx-auto sm:px-10 sm:py-16 lg:max-w-screen-xl lg:px-8">
                 <div className="max-w-3xl mx-auto text-center">
-                  <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                    {content.cta.title}
-                  </h2>
-                  <p className="mt-4 text-lg leading-6 text-blue-100">
-                    {content.cta.description}
-                  </p>
+                  <h2 className="text-3xl font-extrabold text-white sm:text-4xl" dangerouslySetInnerHTML={{ __html: formatSEOText(content.cta.title) }} />
+                  <p className="mt-4 text-lg leading-6 text-blue-100" dangerouslySetInnerHTML={{ __html: formatSEOText(content.cta.description) }} />
                   <Link
                     to={`/${language}/contact`}
                     className="mt-8 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 transition-colors duration-300"

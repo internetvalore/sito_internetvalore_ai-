@@ -1,4 +1,3 @@
-import React from 'react';
 import { BarChart2, LineChart, PieChart, TrendingUp, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -6,51 +5,52 @@ import { Link } from 'react-router-dom';
 import MetaTags from '../../components/MetaTags';
 import { metaContent } from '../../seo/metaContent';
 import HeroSection from '../../components/HeroSection';
+import { formatSEOText } from '../../utils/seo';
 
 export default function Analytics() {
   const { language } = useLanguage();
   const meta = metaContent.analytics[language];
 
   const content = language === 'it' ? {
-    title: 'Analisi e Reporting',
-    subtitle: 'Dati che guidano il successo',
-    description: 'Trasformiamo i dati della Deep Search in insight strategici, monitorando e ottimizzando le performance in tempo reale per garantirti un vantaggio competitivo',
+    title: 'Data Analytics Aziendale',
+    subtitle: 'Trasforma i Numeri in Decisioni Strategiche',
+    description: 'I dati sono il nuovo petrolio, ma solo se sai come estrarli. Attraverso la **Data Analytics Aziendale**, utilizziamo la **Deep Search** per navigare tra **dati reali** e ottenere **insights** azionabili che guidano il tuo **decision making** e assicurano un alto **ROI**.',
     features: [
       {
-        title: 'Dashboard Personalizzate',
-        description: 'Visualizzazione chiara e intuitiva dei KPI più importanti'
+        title: '**Business Intelligence** Avanzata',
+        description: 'Creiamo un\'infrastruttura di dati solida per monitorare i tuoi **KPI** in tempo reale e prevedere le performance future.'
       },
       {
-        title: 'Monitoraggio Real-time',
-        description: 'Controllo costante delle performance in tempo reale'
+        title: '**Dashboard Interattive**',
+        description: 'Visualizza la salute della tua azienda con strumenti di analisi dinamici che rendono ogni report chiaro e immediato.'
       },
       {
-        title: 'Analisi Competitiva',
-        description: 'Confronto con i competitor e analisi di mercato'
+        title: '**Tracciamento** e Attribuzione',
+        description: 'Misuriamo ogni interazione dell\'utente per attribuire correttamente il valore a ogni canale e ottimizzare il tuo **budget pubblicitario**.'
       },
       {
-        title: 'Report Strategici',
-        description: 'Report settimanali con insights e raccomandazioni'
+        title: '**Analisi Predittiva** IA',
+        description: 'Utilizziamo algoritmi di **Machine Learning** per identificare pattern nascosti e darti un **vantaggio competitivo** duraturo nel tuo **digital success**.'
       }
     ],
     process: {
-      title: 'Il Nostro Processo',
+      title: 'Protocollo Data Driven',
       steps: [
         {
-          title: 'Setup Tracking',
-          description: 'Implementazione strumenti di analisi'
+          title: 'Data Audit',
+          description: 'Verifica dell\'integrità delle sorgenti per assicurare una raccolta di **dati reali** e puliti.'
         },
         {
-          title: 'Definizione KPI',
-          description: 'Identificazione metriche chiave'
+          title: '**Integrazione Dati**',
+          description: 'Connettiamo diverse piattaforme in un unico ecosistema di **Business Intelligence**.'
         },
         {
-          title: 'Analisi Dati',
-          description: 'Elaborazione e interpretazione'
+          title: 'Insights Delivery',
+          description: 'Generazione di report e **insights** periodici per il miglioramento costante dei processi aziendali.'
         },
         {
-          title: 'Ottimizzazione',
-          description: 'Azioni basate sui dati'
+          title: 'Actionable Results',
+          description: 'Traduzione dei dati in azioni concrete per scalare il tuo business e ottenere una chiara **strategia di marketing**.'
         }
       ]
     },
@@ -145,8 +145,8 @@ export default function Analytics() {
                       </div>
                     </div>
                     <div className="ml-4">
-                      <h2 className="text-lg font-medium text-gray-900">{feature.title}</h2>
-                      <p className="mt-2 text-base text-gray-500">{feature.description}</p>
+                      <h2 className="text-lg font-medium text-gray-900" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.title) }} />
+                      <p className="mt-2 text-base text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.description) }} />
                     </div>
                   </div>
                 </motion.div>
@@ -160,9 +160,8 @@ export default function Analytics() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-20"
           >
-            <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
-              {content.process.title}
-            </h2>
+            <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12" dangerouslySetInnerHTML={{ __html: formatSEOText(content.process.title) }} />
+
             <div className="relative">
               <div className="absolute inset-0 flex items-center" aria-hidden="true">
                 <div className="w-full border-t border-gray-300" />
@@ -181,8 +180,8 @@ export default function Analytics() {
                         {index + 1}
                       </div>
                       <div className="mt-4">
-                        <h3 className="text-lg font-medium text-gray-900">{step.title}</h3>
-                        <p className="mt-2 text-sm text-gray-500">{step.description}</p>
+                        <h3 className="text-lg font-medium text-gray-900" dangerouslySetInnerHTML={{ __html: formatSEOText(step.title) }} />
+                        <p className="mt-2 text-sm text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(step.description) }} />
                       </div>
                     </div>
                   </motion.div>
@@ -200,12 +199,8 @@ export default function Analytics() {
             <div className="bg-blue-600 rounded-lg shadow-xl overflow-hidden">
               <div className="px-6 py-12 max-w-xl mx-auto sm:px-10 sm:py-16 lg:max-w-screen-xl lg:px-8">
                 <div className="max-w-3xl mx-auto text-center">
-                  <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                    {content.cta.title}
-                  </h2>
-                  <p className="mt-4 text-lg leading-6 text-blue-100">
-                    {content.cta.description}
-                  </p>
+                  <h2 className="text-3xl font-extrabold text-white sm:text-4xl" dangerouslySetInnerHTML={{ __html: formatSEOText(content.cta.title) }} />
+                  <p className="mt-4 text-lg leading-6 text-blue-100" dangerouslySetInnerHTML={{ __html: formatSEOText(content.cta.description) }} />
                   <Link
                     to={`/${language}/contact`}
                     className="mt-8 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 transition-colors duration-300"

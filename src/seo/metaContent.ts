@@ -1,26 +1,26 @@
 export const metaContent = {
   home: {
     it: {
-      title: 'Internet Valore | Marketing Digitale e Lead Generation per il Tuo Business',
-      description: 'Massimizziamo il tuo ROI attraverso strategie di marketing digitale innovative e misurabili. Consulenza gratuita!'
+      title: 'Marketing Digitale e IA Milano | ROI Marketing | Internet Valore',
+      description: 'L\'agenzia leader in Marketing Digitale e IA a Milano. Utilizziamo la Deep Search per massimizzare il tuo ROI Marketing con strategie basate su dati reali.'
     },
     en: {
-      title: 'Internet Valore | Digital Marketing and Lead Generation for Your Business',
-      description: 'We maximize your ROI through innovative and measurable digital marketing strategies. Free consultation!'
+      title: 'Digital Marketing and AI Milan | ROI Marketing | Internet Valore',
+      description: 'The leading Digital Marketing and AI agency in Milan. We use Deep Search to maximize your ROI Marketing with strategies based on real data.'
     }
   },
   leadGeneration: {
     it: {
-      title: 'Lead Generation | Acquisisci Contatti Qualificati | Internet Valore',
-      description: 'Strategie avanzate di lead generation per acquisire contatti qualificati e aumentare le conversioni. Automazione completa e risultati misurabili.',
+      title: 'Lead Generation IA | Acquisizione Contatti Qualificati | Milano',
+      description: 'Strategie avanzate di Lead Generation IA per acquisire contatti qualificati. Satura le tue nicchie di mercato con la Deep Search e l\'ottimizzazione del conversion rate.',
       path: '/services/lead-generation',
       priceRange: '€1000 - €5000',
       serviceType: 'Lead Generation',
       serviceDescription: 'Servizi professionali di lead generation con automazione completa e integrazione WhatsApp Business.'
     },
     en: {
-      title: 'Lead Generation | Acquire Qualified Leads | Internet Valore',
-      description: 'Advanced lead generation strategies to acquire qualified contacts and increase conversions. Complete automation and measurable results.',
+      title: 'AI Lead Generation | Acquire Qualified Leads | Milan',
+      description: 'Advanced AI Lead Generation strategies to acquire qualified leads. Saturate your market niches with Deep Search and conversion rate optimization.',
       path: '/services/lead-generation',
       priceRange: '€1000 - €5000',
       serviceType: 'Lead Generation',
@@ -29,16 +29,16 @@ export const metaContent = {
   },
   ecommerce: {
     it: {
-      title: 'E-commerce | Aumenta le Vendite Online | Internet Valore',
-      description: 'Strategie di marketing digitale specifiche per e-commerce. Ottimizzazione conversioni, retargeting avanzato e analisi comportamentale.',
+      title: 'E-commerce Marketing IA | Aumenta le Vendite Online | Milano',
+      description: 'Strategie di E-commerce Marketing IA. Ottimizzazione conversioni, retargeting predittivo e analisi del comportamento d\'acquisto con la Deep Search.',
       path: '/services/ecommerce',
       priceRange: '€1500 - €7000',
       serviceType: 'E-commerce Marketing',
       serviceDescription: 'Servizi di ottimizzazione e-commerce per aumentare vendite e conversioni.'
     },
     en: {
-      title: 'E-commerce | Increase Online Sales | Internet Valore',
-      description: 'Specific digital marketing strategies for e-commerce. Conversion optimization, advanced retargeting and behavioral analysis.',
+      title: 'AI E-commerce Marketing | Increase Online Sales | Milan',
+      description: 'AI-driven E-commerce Marketing strategies. Conversion optimization, predictive retargeting, and purchase behavior analysis via Deep Search.',
       path: '/services/ecommerce',
       priceRange: '€1500 - €7000',
       serviceType: 'E-commerce Marketing',
@@ -47,34 +47,34 @@ export const metaContent = {
   },
   ads: {
     it: {
-      title: 'Gestione Ads | Campagne Google e Facebook | Internet Valore',
-      description: 'Gestione professionale di campagne pubblicitarie su Google e Facebook. Ottimizzazione ROI e targeting preciso del pubblico ideale.',
+      title: 'Gestione Campagne Ads IA | Ottimizzazione ROI Marketing | Milano',
+      description: 'Massimizza il tuo ROI Marketing con la Gestione Campagne Ads IA. Algorithmic setup e targeting granulare guidato dalla Deep Search.',
       path: '/services/ads',
       priceRange: '€800 - €4000',
-      serviceType: 'Ads Management',
-      serviceDescription: 'Gestione professionale di campagne pubblicitarie su Google Ads e Facebook Ads.'
+      serviceType: 'Advertising',
+      serviceDescription: 'Gestione professionale di campagne pubblicitarie su Google e Meta con ottimizzazione IA.'
     },
     en: {
-      title: 'Ads Management | Google and Facebook Campaigns | Internet Valore',
-      description: 'Professional management of advertising campaigns on Google and Facebook. ROI optimization and precise targeting of ideal audience.',
+      title: 'AI Ads Campaign Management | ROI Marketing Optimization | Milan',
+      description: 'Maximize your ROI Marketing with AI-driven Ads Management. Algorithmic setup and granular targeting powered by Deep Search.',
       path: '/services/ads',
       priceRange: '€800 - €4000',
-      serviceType: 'Ads Management',
-      serviceDescription: 'Professional management of advertising campaigns on Google Ads and Facebook Ads.'
+      serviceType: 'Advertising',
+      serviceDescription: 'Professional management of advertising campaigns on Google and Meta with AI optimization.'
     }
   },
   analytics: {
     it: {
-      title: 'Analytics e Reporting | Analisi Dati Professionali | Internet Valore',
-      description: 'Analisi dati professionali e reporting dettagliato per ottimizzare le tue strategie di marketing. Dashboard personalizzate e monitoraggio KPI.',
+      title: 'Data Analytics Aziendale | Insights e Strategia | Milano',
+      description: 'Servizi di Data Analytics Aziendale. Ottieni insights azionabili e un vantaggio competitivo attraverso l\'analisi di dati reali e la Deep Search.',
       path: '/services/analytics',
       priceRange: '€500 - €3000',
       serviceType: 'Analytics & Reporting',
       serviceDescription: 'Servizi professionali di analisi dati e reporting per ottimizzazione marketing.'
     },
     en: {
-      title: 'Analytics & Reporting | Professional Data Analysis | Internet Valore',
-      description: 'Professional data analysis and detailed reporting to optimize your marketing strategies. Custom dashboards and KPI monitoring.',
+      title: 'Business Data Analytics | Strategic Insights | Milan',
+      description: 'Professional Business Data Analytics services. Gain actionable insights and a competitive advantage through real data analysis and Deep Search.',
       path: '/services/analytics',
       priceRange: '€500 - €3000',
       serviceType: 'Analytics & Reporting',
@@ -83,52 +83,52 @@ export const metaContent = {
   },
   rispondiSubito: {
     it: {
-      title: 'RispondiSubito | Centralino Intelligente H24 | Internet Valore',
-      description: 'Centralino intelligente per rispondere H24, aumentare le vendite e migliorare l\'assistenza clienti. Integrazione CRM e smistamento chiamate.',
+      title: 'Centralino Virtuale IA | Risposta H24 RispondoSubito | Milano',
+      description: 'Automatizza il tuo Customer Service con il Centralino Virtuale IA. Risposta H24, smistamento chiamate intelligente e integrazione CRM.',
       path: '/services/rispondi-subito',
-      priceRange: '€300 - €1500',
-      serviceType: 'Virtual Reception',
-      serviceDescription: 'Servizio di centralino intelligente con risposta automatica H24.'
+      priceRange: '€50 - €500 / mese',
+      serviceType: 'AI Service',
+      serviceDescription: 'Servizio di centralino intelligente basato su IA.'
     },
     en: {
-      title: 'RispondiSubito | 24/7 Smart Call Center | Internet Valore',
-      description: 'Smart call center to respond 24/7, increase sales and improve customer support. CRM integration and call routing.',
+      title: 'AI Virtual Switchboard | 24/7 Response RispondoSubito | Milan',
+      description: 'Automate your Customer Service with an AI Virtual Switchboard. 24/7 response, intelligent call routing, and CRM integration.',
       path: '/services/rispondi-subito',
-      priceRange: '€300 - €1500',
-      serviceType: 'Virtual Reception',
-      serviceDescription: '24/7 smart call center service with automatic response.'
+      priceRange: '€50 - €500 / month',
+      serviceType: 'AI Service',
+      serviceDescription: 'AI-based intelligent switchboard service.'
     }
   },
   landingPageProfessionali: {
     it: {
-      title: 'Landing Page Professionali | Conversioni Garantite | Internet Valore',
-      description: 'Landing page professionali in 5 giorni lavorativi. Design ottimizzato per le conversioni, hosting incluso e contenuti personalizzati.',
-      path: '/landing-page-professionali',
-      priceRange: '€500 - €2000',
-      serviceType: 'Landing Page Design',
-      serviceDescription: 'Creazione di landing page professionali ottimizzate per le conversioni.'
+      title: 'Landing Page Professionali | Alta Conversione | Milano',
+      description: 'Costruiamo la tua Landing Page Professionale in 5 giorni. Copywriting persuasivo e design ottimizzato guidato dalla Deep Search per un alto ROI.',
+      path: '/services/landing-page-professionali',
+      priceRange: '€700 - €3000',
+      serviceType: 'Web Design',
+      serviceDescription: 'Creazione di landing page ad alta conversione per lead generation.'
     },
     en: {
-      title: 'Professional Landing Pages | Guaranteed Conversions | Internet Valore',
-      description: 'Professional landing pages in 5 business days. Conversion-optimized design, hosting included and custom content.',
-      path: '/landing-page-professionali',
-      priceRange: '€500 - €2000',
-      serviceType: 'Landing Page Design',
-      serviceDescription: 'Creation of professional landing pages optimized for conversions.'
+      title: 'Professional Landing Pages | High Conversion | Milan',
+      description: 'We build your Professional Landing Page in 5 days. Persuasive copywriting and optimized design driven by Deep Search for high ROI.',
+      path: '/services/landing-page-professionali',
+      priceRange: '€700 - €3000',
+      serviceType: 'Web Design',
+      serviceDescription: 'Creation of high-conversion landing pages for lead generation.'
     }
   },
   instantWebsites: {
     it: {
-      title: 'Siti Web Istantanei | Sito in 7 Giorni | Internet Valore',
-      description: 'Il tuo sito web professionale in 7 giorni. Design personalizzato, hosting incluso e supporto tecnico per 12 mesi.',
+      title: 'Siti Web Istantanei | Creazione Siti Web Rapidi | Milano',
+      description: 'Il tuo sito web professionale in 7 giorni. Creazione Siti Web Rapidi con design personalizzato, hosting incluso e supporto Deep Search.',
       path: '/instant-websites',
       priceRange: '€1000 - €3000',
       serviceType: 'Website Development',
       serviceDescription: 'Creazione rapida di siti web professionali con supporto continuo.'
     },
     en: {
-      title: 'Instant Websites | Website in 7 Days | Internet Valore',
-      description: 'Your professional website in 7 days. Custom design, hosting included and technical support for 12 months.',
+      title: 'Instant Websites | Rapid Website Creation | Milan',
+      description: 'Your professional website in 7 days. Rapid Website Creation with custom design, hosting included, and Deep Search support.',
       path: '/instant-websites',
       priceRange: '€1000 - €3000',
       serviceType: 'Website Development',
@@ -155,56 +155,62 @@ export const metaContent = {
   },
   specializations: {
     it: {
-      title: 'Specializzazioni | Expertise Marketing Digitale | Internet Valore',
-      description: 'Scopri le nostre specializzazioni in marketing digitale: Google Ads, Facebook Ads, SEO e Analytics.',
-      path: '/specializations',
-      priceRange: 'Varies',
-      serviceType: 'Digital Marketing',
-      serviceDescription: 'Servizi specializzati di marketing digitale per ogni esigenza.'
+      title: 'Consulenza Digital Marketing | Expertise IA | Internet Valore',
+      description: 'Scopri la nostra Consulenza Digital Marketing. Expertise in Google Ads, Facebook Ads e SEO guidata dalla Deep Search per massimizzare il ROI.',
+      path: '/specializations'
     },
     en: {
-      title: 'Specializations | Digital Marketing Expertise | Internet Valore',
-      description: 'Discover our digital marketing specializations: Google Ads, Facebook Ads, SEO and Analytics.',
-      path: '/specializations',
-      priceRange: 'Varies',
-      serviceType: 'Digital Marketing',
-      serviceDescription: 'Specialized digital marketing services for every need.'
+      title: 'Digital Marketing Consulting | AI Expertise | Internet Valore',
+      description: 'Discover our Digital Marketing Consulting. Expertise in Google Ads, Facebook Ads and SEO driven by Deep Search to maximize ROI.',
+      path: '/specializations'
     }
   },
   about: {
     it: {
-      title: 'Chi Siamo | La Nostra Storia | Internet Valore',
-      description: 'Scopri la nostra storia, i nostri valori e il nostro approccio al marketing digitale.',
+      title: 'Agenzia Marketing IA Milano | Chi Siamo | Internet Valore',
+      description: 'Scopri perché siamo l\'agenzia di Marketing IA a Milano più innovativa. Deep Search e rivoluzione digitale per il tuo business.',
       path: '/about'
     },
     en: {
-      title: 'About Us | Our Story | Internet Valore',
-      description: 'Discover our story, our values and our approach to digital marketing.',
+      title: 'AI Marketing Agency Milan | About Us | Internet Valore',
+      description: 'Discover why we are the most innovative AI Marketing agency in Milan. Deep Search and digital revolution for your business.',
       path: '/about'
     }
   },
   testimonials: {
     it: {
-      title: 'Testimonianze | Cosa Dicono i Nostri Clienti | Internet Valore',
-      description: 'Scopri le testimonianze dei nostri clienti soddisfatti e i risultati ottenuti.',
+      title: 'Recensioni Internet Valore | Casi Studio e Successi | Milano',
+      description: 'Leggi le Recensioni Internet Valore. Scopri i casi studio e la riprova sociale dei clienti che hanno aumentato il ROI con la Deep Search.',
       path: '/testimonials'
     },
     en: {
-      title: 'Testimonials | What Our Clients Say | Internet Valore',
-      description: 'Discover the testimonials of our satisfied clients and the results achieved.',
+      title: 'Internet Valore Reviews | Case Studies and Successes | Milan',
+      description: 'Read Internet Valore Reviews. Discover case studies and social proof from clients who increased ROI with Deep Search.',
       path: '/testimonials'
     }
   },
   contact: {
     it: {
-      title: 'Contattaci | Internet Valore',
-      description: 'Contattaci per una consulenza gratuita. Siamo qui per aiutarti a raggiungere i tuoi obiettivi digitali.',
+      title: 'Contatti Agenzia Marketing Milano | Consulenza Gratuita IA',
+      description: 'Entra in Contatti Agenzia Marketing Milano. Richiedi una consulenza gratuita basata sulla Deep Search per scoprire nuove opportunità di mercato.',
       path: '/contact'
     },
     en: {
-      title: 'Contact Us | Internet Valore',
-      description: 'Contact us for a free consultation. We\'re here to help you achieve your digital goals.',
+      title: 'Contact Digital Marketing Agency Milan | Free AI Consultation',
+      description: 'Get in Contact Digital Marketing Agency Milan. Request a free consultation based on Deep Search to discover new market opportunities.',
       path: '/contact'
+    }
+  },
+  aiAgentsMilano: {
+    it: {
+      title: 'Sviluppo Agenti AI Milano | Automazione Processi | Internet Valore',
+      description: 'Scegli lo Sviluppo agenti AI Milano per potenziare la tua impresa. Soluzioni di Agentic AI su misura per automazione processi e massima efficienza.',
+      path: '/services/sviluppo-agenti-ai-milano'
+    },
+    en: {
+      title: 'AI Agent Development Milan | Process Automation | Internet Valore',
+      description: 'Choose AI Agent Development Milan to empower your business. Tailored Agentic AI solutions for process automation and maximum efficiency.',
+      path: '/services/ai-agent-development-milan'
     }
   }
 };

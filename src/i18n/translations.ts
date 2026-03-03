@@ -14,11 +14,11 @@ export const translations = {
       callUs: 'Chiamaci Ora'
     },
     hero: {
-      title: 'L\'Intelligenza Artificiale Generativa\nal servizio del tuo Successo Digitale',
-      highlight: 'Intercettiamo i bisogni nascosti dei tuoi clienti grazie alla Deep Search.',
-      description: 'Non ci limitiamo a creare siti o campagne. Utilizziamo avanzati modelli di IA per esplorare la rete in profondità, comprendendo cosa cercano davvero i tuoi clienti, anche quando non lo dicono. Sulla base di questi dati, costruiamo le tue strategie di marketing.',
+      title: 'L\'eccellenza in **Marketing Digitale e IA** per il tuo Business',
+      highlight: 'Intercettiamo la vera **domanda di mercato** con la **Deep Search**.',
+      description: 'Non creiamo solo siti. Sfruttiamo l\'**IA Generativa** per scoprire gli intenti di ricerca profondi, garantendo un **ROI marketing** superiore grazie all\'**analisi predittiva** dei **dati reali**. La nostra **strategia di marketing** ti offre un **vantaggio competitivo** immediato per il tuo **digital success** attraverso una **lead generation** mirata e l\'ottimizzazione del **conversion rate**.',
       cta: {
-        primary: 'Scopri il Metodo Deep Search',
+        primary: 'Testa la Deep Search',
         secondary: 'I Nostri Servizi'
       }
     },
@@ -124,6 +124,16 @@ export const translations = {
             'Integrazione profonda con CRM',
             'Smistamento proattivo',
             'Analisi del sentiment (opzionale)'
+          ]
+        },
+        aiAgentsMilano: {
+          title: 'Sviluppo Agenti AI',
+          description: 'Sistemi di Intelligenza Artificiale agentica capaci di agire autonomamente in workflow complessi.',
+          features: [
+            'Automazione workflow complessi',
+            'Integrazione sistemi (CRM, ERP)',
+            'Operatività autonoma 24/7',
+            'Analisi dati in tempo reale'
           ]
         }
       }
@@ -252,6 +262,16 @@ export const translations = {
             'Deep CRM integration',
             'Proactive routing',
             'Sentiment analysis (optional)'
+          ]
+        },
+        aiAgentsMilano: {
+          title: 'AI Agent Development',
+          description: 'Agentic AI systems capable of acting autonomously within complex operational workflows.',
+          features: [
+            'Complex workflow automation',
+            'Systems integration (CRM, ERP)',
+            '24/7 autonomous operations',
+            'Real-time data analysis'
           ]
         }
       }
