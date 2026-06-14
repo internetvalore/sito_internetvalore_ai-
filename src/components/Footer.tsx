@@ -24,6 +24,19 @@ export default function Footer() {
   return (
     <footer className="bg-gray-50">
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center mb-4">
+          <a
+            href="https://www.google.com/partners/agency?id=6948869441"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg"
+              alt="Google Partner"
+              className="h-16"
+            />
+          </a>
+        </div>
         <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
           <div className="text-gray-500">
             P.IVA 06767350967
