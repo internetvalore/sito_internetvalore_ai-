@@ -64,6 +64,18 @@ export default function Navbar() {
                 <p className="text-sm text-gray-500 leading-tight">Non lasciarli alla concorrenza. Sito in 7gg e prospect in 14</p>
               </div>
             </Link>
+            <a
+              href="https://www.google.com/partners/agency?id=6948869441"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-4 hidden sm:block"
+            >
+              <img
+                src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg"
+                alt="Google Partner"
+                className="h-10"
+              />
+            </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
@@ -176,6 +188,18 @@ export default function Navbar() {
                     <p className="text-base font-medium text-gray-900">Internet Valore</p>
                     <p className="text-xs text-gray-500 leading-tight">Non lasciarli alla concorrenza. Sito in 7gg e prospect in 14</p>
                   </div>
+                  <a
+                    href="https://www.google.com/partners/agency?id=6948869441"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ml-3"
+                  >
+                    <img
+                      src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg"
+                      alt="Google Partner"
+                      className="h-8"
+                    />
+                  </a>
                 </div>
                 <div className="-mr-2">
                   <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
