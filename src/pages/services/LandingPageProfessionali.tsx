@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { ArrowRight } from 'lucide-react';
@@ -5,7 +6,6 @@ import { Link } from 'react-router-dom';
 import MetaTags from '../../components/MetaTags';
 import { metaContent } from '../../seo/metaContent';
 import HeroSection from '../../components/HeroSection';
-import { formatSEOText } from '../../utils/seo';
 
 export default function LandingPageProfessionali() {
   const { language } = useLanguage();
@@ -13,50 +13,50 @@ export default function LandingPageProfessionali() {
 
   const content = language === 'it' ? {
     title: 'Landing Page Professionali',
-    subtitle: 'La Tua Trasformazione per la **Lead Generation**',
-    description: 'Costruiamo **Landing Page Professionali** basate sulla **Deep Search**. Aumenta il tuo **tasso di conversione** con contenuti che risuonano esattamente con ciò che il tuo target cerca, grazie a un **targeting** chirurgico.',
+    subtitle: 'La Tua Landing Page in 5 Giorni',
+    description: 'Costruiamo Landing Page sui bisogni emersi dalla Deep Search. Aumenta le conversioni con contenuti che risuonano esattamente con ciò che il tuo target cerca. Ci occupiamo di tutto noi.',
     features: [
       {
         title: 'Pronta in 5 giorni lavorativi',
-        description: 'Ottieni la tua presenza operativa rapidamente con focus sull\'**efficacia**.'
+        description: 'Ottieni la tua landing page operativa rapidamente.'
       },
       {
-        title: '**IA Generativa** e Asset',
-        description: 'Utilizziamo l\'**IA Generativa** per creare grafiche e testi ad alto impatto emotivo.'
+        title: 'Hosting incluso',
+        description: 'Ci occupiamo noi dell\'hosting per te.'
       },
       {
-        title: '**Ottimizzata per le Conversioni**',
-        description: 'Ogni elemento è progettato con **copywriting persuasivo** per massimizzare le vendite.'
+        title: 'Ottimizzata per le conversioni',
+        description: 'Progettata per massimizzare il tasso di conversione.'
       },
       {
-        title: 'Struttura **Mobile Responsive**',
-        description: 'Garantiamo una navigazione fluida su ogni dispositivo per catturare lead ovunque.'
+        title: 'Contenuti creati per te',
+        description: 'Creiamo contenuti coinvolgenti su misura per il tuo pubblico.'
       }
     ],
     process: {
-      title: 'Protocollo Landing IA',
+      title: 'Il Nostro Metodo',
       steps: [
         {
-          title: 'Deep Search Analysis',
-          description: 'Identifichiamo le leve psicologiche del tuo pubblico per un **copywriting persuasivo**.'
+          title: 'Giorno 1: Intervista e Briefing',
+          description: 'Raccogliamo tutte le informazioni necessarie per comprendere le tue esigenze.'
         },
         {
-          title: 'Surgical Design',
-          description: 'Progettiamo la struttura con focus sulla **Call to Action (CTA)** e la **fiducia**.'
+          title: 'Giorno 2-3: Design e Sviluppo',
+          description: 'Il nostro team progetta e sviluppa la tua landing page.'
         },
         {
-          title: 'Rapid Deployment',
-          description: 'Pubblicazione e test di **velocità** per assicurare performance eccellenti.'
+          title: 'Giorno 4: Revisione e Modifiche',
+          description: 'Rivedi la landing page e fornisci feedback.'
         },
         {
-          title: 'ROI & Performance',
-          description: 'Monitoraggio iniziale per assicurare che la tua **campagna marketing** generi risultati.'
+          title: 'Giorno 5: Pubblicazione',
+          description: 'Pubblichiamo la tua landing page e ci assicuriamo che funzioni correttamente.'
         }
       ]
     },
     cta: {
-      title: 'Pronto a scalare con le tue Landing Page?',
-      description: 'Trasforma il traffico in clienti con un sistema ad alta performance.',
+      title: 'Pronto a lanciare la tua landing page?',
+      description: 'Contattaci per una consulenza gratuita',
       button: 'Inizia Ora'
     }
   } : {
@@ -137,8 +137,8 @@ export default function LandingPageProfessionali() {
               >
                 <div className="flex items-center">
                   <div className="ml-4">
-                    <h2 className="text-lg font-medium text-gray-900" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.title) }} />
-                    <p className="mt-2 text-base text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.description) }} />
+                    <h2 className="text-lg font-medium text-gray-900">{feature.title}</h2>
+                    <p className="mt-2 text-base text-gray-500">{feature.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -174,8 +174,8 @@ export default function LandingPageProfessionali() {
                         {index + 1}
                       </div>
                       <div className="mt-4">
-                        <h3 className="text-lg font-medium text-gray-900" dangerouslySetInnerHTML={{ __html: formatSEOText(step.title) }} />
-                        <p className="mt-2 text-sm text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(step.description) }} />
+                        <h3 className="text-lg font-medium text-gray-900">{step.title}</h3>
+                        <p className="mt-2 text-sm text-gray-500">{step.description}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -194,8 +194,12 @@ export default function LandingPageProfessionali() {
             <div className="bg-blue-600 rounded-lg shadow-xl overflow-hidden">
               <div className="px-6 py-12 max-w-xl mx-auto sm:px-10 sm:py-16 lg:max-w-screen-xl lg:px-8">
                 <div className="max-w-3xl mx-auto text-center">
-                  <h2 className="text-3xl font-extrabold text-white sm:text-4xl" dangerouslySetInnerHTML={{ __html: formatSEOText(content.cta.title) }} />
-                  <p className="mt-4 text-lg leading-6 text-blue-100" dangerouslySetInnerHTML={{ __html: formatSEOText(content.cta.description) }} />
+                  <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+                    {content.cta.title}
+                  </h2>
+                  <p className="mt-4 text-lg leading-6 text-blue-100">
+                    {content.cta.description}
+                  </p>
                   <Link
                     to={`/${language}/contact`}
                     className="mt-8 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 transition-colors duration-300"

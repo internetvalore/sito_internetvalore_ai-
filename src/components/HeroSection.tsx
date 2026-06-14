@@ -1,5 +1,6 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { formatSEOText } from '../utils/seo';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface HeroSectionProps {
   title: string;
@@ -9,6 +10,7 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ title, subtitle, description, imageSrc = "https://leprimescelte.com/wp-content/uploads/2025/03/velocita_con_logo.png" }: HeroSectionProps) {
+  const { language } = useLanguage();
 
   // Image animation from left with rotation
   const imageAnimation = {
@@ -28,8 +30,8 @@ export default function HeroSection({ title, subtitle, description, imageSrc = "
   // Text reveal animation with delay
   const textReveal = {
     hidden: { opacity: 0, x: 100 },
-    visible: {
-      opacity: 1,
+    visible: { 
+      opacity: 1, 
       x: 0,
       transition: {
         duration: 0.8,
@@ -40,7 +42,7 @@ export default function HeroSection({ title, subtitle, description, imageSrc = "
   };
 
   return (
-    <div className="relative bg-white">
+    <div className="relative bg-white overflow-hidden">
       {/* Animated background pattern */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 animate-gradient-x"></div>
@@ -63,22 +65,23 @@ export default function HeroSection({ title, subtitle, description, imageSrc = "
 
       <div className="max-w-7xl mx-auto">
         <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 bg-opacity-80 backdrop-blur-sm">
-          <motion.main
+          <motion.main 
             initial="hidden"
             animate="visible"
             className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28"
           >
             <div className="sm:text-center lg:text-left">
-              <motion.h1
+              <motion.h1 
                 variants={textReveal}
                 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl"
               >
-                <motion.span
+                <motion.span 
                   className="block"
                   variants={textReveal}
-                  dangerouslySetInnerHTML={{ __html: formatSEOText(title) }}
-                />
-                <motion.span
+                >
+                  {title}
+                </motion.span>
+                <motion.span 
                   className="block text-blue-600"
                   style={{
                     background: "linear-gradient(90deg, #3B82F6, #2563EB, #3B82F6)",
@@ -87,20 +90,22 @@ export default function HeroSection({ title, subtitle, description, imageSrc = "
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text"
                   }}
-                  dangerouslySetInnerHTML={{ __html: formatSEOText(subtitle) }}
-                />
+                >
+                  {subtitle}
+                </motion.span>
               </motion.h1>
-              <motion.p
+              <motion.p 
                 variants={textReveal}
                 className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
-                dangerouslySetInnerHTML={{ __html: formatSEOText(description) }}
-              />
+              >
+                {description}
+              </motion.p>
             </div>
           </motion.main>
         </div>
       </div>
 
-      <motion.div
+      <motion.div 
         initial="hidden"
         animate="visible"
         variants={imageAnimation}

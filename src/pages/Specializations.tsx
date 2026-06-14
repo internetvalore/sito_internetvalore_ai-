@@ -1,10 +1,10 @@
+import React from 'react';
 import { Target, Facebook, Search, BarChart2, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import MetaTags from '../components/MetaTags';
 import { metaContent } from '../seo/metaContent';
 import HeroSection from '../components/HeroSection';
-import { formatSEOText } from '../utils/seo';
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -22,123 +22,123 @@ export default function Specializations() {
 
   const content = language === 'it' ? {
     title: 'Specializzazioni',
-    subtitle: '**Expertise** in Marketing Digitale',
-    description: 'Soluzioni specializzate guidate dalla **Deep Search** per catturare ogni opportunità di mercato nascosta attraverso una **Consulenza Digital Marketing** d\'eccellenza.'
+    subtitle: 'Expertise in Marketing Digitale',
+    description: 'Soluzioni specializzate guidate dalla Deep Search per catturare ogni opportunità di mercato nascosta'
   } : {
     title: 'Specializations',
     subtitle: 'Digital Marketing Expertise',
-    description: 'Deep Search-driven specialized solutions to capture every hidden market opportunity through excellence in Digital Marketing Consulting.'
+    description: 'Deep Search-driven specialized solutions to capture every hidden market opportunity'
   };
 
   const googleAdsFeatures = language === 'it' ? [
     {
-      title: '**Google Ads** Enterprise',
-      description: 'Gestione avanzata per massimizzare il **ROI** attraverso un monitoraggio costante.'
+      title: 'Campagne Ottimizzate',
+      description: 'Ottimizzazione continua delle campagne per massimizzare il ROI'
     },
     {
-      title: '**Targeting Comportamentale**',
-      description: 'Raggiungimento del pubblico ideale con segmentazione precisa e analisi dei dati.'
+      title: 'Targeting Preciso',
+      description: 'Raggiungimento del pubblico ideale con targeting demografico e comportamentale'
     },
     {
-      title: '**Analisi delle Performance**',
-      description: 'Report dettagliati per una visione chiara dell\'andamento delle campagne.'
+      title: 'Analisi Dettagliata',
+      description: 'Report completi e analisi approfondite delle performance'
     }
   ] : [
     {
-      title: 'Enterprise Google Ads',
-      description: 'Advanced management to maximize ROI through constant monitoring.'
+      title: 'Optimized Campaigns',
+      description: 'Continuous campaign optimization to maximize ROI'
     },
     {
-      title: 'Behavioral Targeting',
-      description: 'Reach your ideal audience with precise segmentation and data analysis.'
+      title: 'Precise Targeting',
+      description: 'Reach your ideal audience with demographic and behavioral targeting'
     },
     {
-      title: 'Performance Analysis',
-      description: 'Detailed reports for a clear view of campaign progress.'
+      title: 'Detailed Analysis',
+      description: 'Comprehensive reports and in-depth performance analysis'
     }
   ];
 
   const facebookAdsFeatures = language === 'it' ? [
     {
-      title: '**Social Media Marketing**',
-      description: 'Strategie efficaci su Facebook e Instagram per aumentare la **brand awareness**.'
+      title: 'Audience Personalizzate',
+      description: 'Creazione di audience specifiche basate sui tuoi clienti ideali'
     },
     {
-      title: '**Audience Personalizzate**',
-      description: 'Creazione di segmenti di pubblico basati su interessi e comportamenti reali.'
+      title: 'Creatività Coinvolgente',
+      description: 'Design accattivante e messaggi persuasivi per massimizzare l\'engagement'
     },
     {
-      title: 'Creatività Ottimizzata',
-      description: 'Design e copy persuasivi per convertire gli utenti in clienti fedeli.'
+      title: 'Retargeting Avanzato',
+      description: 'Strategie di remarketing per riconvertire visitatori interessati'
     }
   ] : [
     {
-      title: 'Social Media Marketing',
-      description: 'Effective strategies on Facebook and Instagram to increase brand awareness.'
-    },
-    {
       title: 'Custom Audiences',
-      description: 'Creation of audience segments based on real interests and behaviors.'
+      description: 'Creation of specific audiences based on your ideal customers'
     },
     {
-      title: 'Optimized Creativity',
-      description: 'Persuasive design and copy to convert users into loyal customers.'
+      title: 'Engaging Creativity',
+      description: 'Captivating design and persuasive messages to maximize engagement'
+    },
+    {
+      title: 'Advanced Retargeting',
+      description: 'Remarketing strategies to reconvert interested visitors'
     }
   ];
 
   const seoFeatures = language === 'it' ? [
     {
-      title: '**Ottimizzazione Organica**',
-      description: 'Miglioramento del posizionamento sui motori di ricerca per traffico qualificato.'
+      title: 'Ottimizzazione On-Page',
+      description: 'Miglioramento di contenuti e struttura del sito per i motori di ricerca'
     },
     {
-      title: '**Link Building** Strategica',
-      description: 'Aumento dell\'autorità del dominio attraverso acquisizione di link di valore.'
+      title: 'Link Building',
+      description: 'Costruzione di backlink di qualità per aumentare l\'autorità del dominio'
     },
     {
-      title: 'Deep Search SEO',
-      description: 'Analisi profonda degli intenti di ricerca per dominare la SERP.'
+      title: 'SEO Tecnico',
+      description: 'Ottimizzazione della performance e dell\'architettura del sito'
     }
   ] : [
     {
-      title: 'Organic Optimization',
-      description: 'Improving search engine ranking for qualified traffic.'
+      title: 'On-Page Optimization',
+      description: 'Improvement of website content and structure for search engines'
     },
     {
-      title: 'Strategic Link Building',
-      description: 'Increasing domain authority through value link acquisition.'
+      title: 'Link Building',
+      description: 'Quality backlink building to increase domain authority'
     },
     {
-      title: 'Deep Search SEO',
-      description: 'Deep analysis of search intents to dominate the SERP.'
+      title: 'Technical SEO',
+      description: 'Optimization of website performance and architecture'
     }
   ];
 
   const analyticsFeatures = language === 'it' ? [
     {
-      title: '**Business Intelligence**',
-      description: 'Trasforma i dati in decisioni strategiche con dashboard personalizzate.'
+      title: 'Dashboard Personalizzate',
+      description: 'Visualizzazione chiara dei KPI più importanti per il tuo business'
     },
     {
-      title: 'Integrazione Dati',
-      description: 'Connessione di tutte le sorgenti di traffico in un unico hub di analisi.'
+      title: 'Tracciamento Avanzato',
+      description: 'Monitoraggio dettagliato del comportamento degli utenti'
     },
     {
-      title: 'Reporting Avanzato',
-      description: 'Insights azionabili basati sulla nostra **metodologia** data-driven.'
+      title: 'Report Automatizzati',
+      description: 'Generazione automatica di report periodici con insights chiave'
     }
   ] : [
     {
-      title: 'Business Intelligence',
-      description: 'Transform data into strategic decisions with custom dashboards.'
+      title: 'Custom Dashboards',
+      description: 'Clear visualization of the most important KPIs for your business'
     },
     {
-      title: 'Data Integration',
-      description: 'Connection of all traffic sources into a single analysis hub.'
+      title: 'Advanced Tracking',
+      description: 'Detailed monitoring of user behavior'
     },
     {
-      title: 'Advanced Reporting',
-      description: 'Actionable insights based on our data-driven methodology.'
+      title: 'Automated Reports',
+      description: 'Automatic generation of periodic reports with key insights'
     }
   ];
 
@@ -146,26 +146,26 @@ export default function Specializations() {
     googleAds: {
       title: 'Google Ads',
       description: language === 'it'
-        ? 'Aumenta le tue vendite con campagne search e display ad alto rendimento.'
-        : 'Increase your sales with high-performance search and display campaigns.'
+        ? 'Ottimizzazione per i motori di ricerca per aumentare la visibilità organica'
+        : 'Search engine optimization to increase organic visibility'
     },
     facebookAds: {
       title: 'Facebook Ads',
       description: language === 'it'
-        ? 'Raggiungi milioni di utenti con campagne social mirate e creative.'
-        : 'Reach millions of users with targeted and creative social campaigns.'
+        ? 'Strategie social media per raggiungere il tuo pubblico target'
+        : 'Social media strategies to reach your target audience'
     },
     seo: {
       title: 'SEO & Deep Search',
       description: language === 'it'
-        ? 'Domina i risultati di ricerca intercettando la domanda prima della concorrenza.'
-        : 'Dominate search results by intercepting demand before the competition.'
+        ? 'Analisi profonda degli intenti di ricerca per dominare le vere opportunità di mercato prima della concorrenza'
+        : 'Deep analysis of search intents to dominate true market opportunities before the competition'
     },
     analytics: {
       title: 'Analytics',
       description: language === 'it'
-        ? 'Misura ogni azione e ottimizza il tuo investimento pubblicitario.'
-        : 'Measure every action and optimize your advertising investment.'
+        ? 'Analisi approfondita dei dati per decisioni basate sui risultati'
+        : 'In-depth data analysis for results-based decisions'
     }
   };
 
@@ -220,9 +220,11 @@ export default function Specializations() {
                       >
                         <h4 className="text-lg font-medium text-gray-900 flex items-center">
                           <ArrowRight className="h-5 w-5 text-blue-600 mr-2" />
-                          <span dangerouslySetInnerHTML={{ __html: formatSEOText(feature.title) }} />
+                          {feature.title}
                         </h4>
-                        <p className="mt-2 text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.description) }} />
+                        <p className="mt-2 text-gray-500">
+                          {feature.description}
+                        </p>
                       </motion.div>
                     ))}
                   </div>
@@ -256,9 +258,11 @@ export default function Specializations() {
                       >
                         <h4 className="text-lg font-medium text-gray-900 flex items-center">
                           <ArrowRight className="h-5 w-5 text-blue-600 mr-2" />
-                          <span dangerouslySetInnerHTML={{ __html: formatSEOText(feature.title) }} />
+                          {feature.title}
                         </h4>
-                        <p className="mt-2 text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.description) }} />
+                        <p className="mt-2 text-gray-500">
+                          {feature.description}
+                        </p>
                       </motion.div>
                     ))}
                   </div>
@@ -286,7 +290,9 @@ export default function Specializations() {
                     </h3>
                   </div>
                   <div className="mt-6">
-                    <p className="text-gray-500 mb-4" dangerouslySetInnerHTML={{ __html: formatSEOText(sections.seo.description) }} />
+                    <p className="text-gray-500 mb-4">
+                      {sections.seo.description}
+                    </p>
                     <div className="space-y-4">
                       {seoFeatures.map((feature, index) => (
                         <motion.div
@@ -296,8 +302,8 @@ export default function Specializations() {
                         >
                           <ArrowRight className="h-5 w-5 text-blue-600 mr-2 mt-0.5" />
                           <div>
-                            <h4 className="font-medium text-gray-900" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.title) }} />
-                            <p className="mt-1 text-sm text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.description) }} />
+                            <h4 className="font-medium text-gray-900">{feature.title}</h4>
+                            <p className="mt-1 text-sm text-gray-500">{feature.description}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -325,7 +331,9 @@ export default function Specializations() {
                     </h3>
                   </div>
                   <div className="mt-6">
-                    <p className="text-gray-500 mb-4" dangerouslySetInnerHTML={{ __html: formatSEOText(sections.analytics.description) }} />
+                    <p className="text-gray-500 mb-4">
+                      {sections.analytics.description}
+                    </p>
                     <div className="space-y-4">
                       {analyticsFeatures.map((feature, index) => (
                         <motion.div
@@ -335,8 +343,8 @@ export default function Specializations() {
                         >
                           <ArrowRight className="h-5 w-5 text-blue-600 mr-2 mt-0.5" />
                           <div>
-                            <h4 className="font-medium text-gray-900" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.title) }} />
-                            <p className="mt-1 text-sm text-gray-500" dangerouslySetInnerHTML={{ __html: formatSEOText(feature.description) }} />
+                            <h4 className="font-medium text-gray-900">{feature.title}</h4>
+                            <p className="mt-1 text-sm text-gray-500">{feature.description}</p>
                           </div>
                         </motion.div>
                       ))}

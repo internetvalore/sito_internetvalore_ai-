@@ -1,11 +1,10 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Star } from 'lucide-react';
 import MetaTags from '../components/MetaTags';
 import { metaContent } from '../seo/metaContent';
 import HeroSection from '../components/HeroSection';
-import { formatSEOText } from '../utils/seo';
 
 const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=Internet%20Valore%20srl%20Recensioni&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDG0NDAzMLc0NzAzsTA2MQESGxgZXzHKeeaVpBYlpZYohCXm5BelKhQX5SgEpSan5hVn5udlLmIloAAAalPXI10AAAA&rldimm=14190607970648344483&tbm=lcl&hl=it&sa=X&ved=0CCEQ9fQKKABqFwoTCLDmluTPnowDFQAAAAAdAAAAABAG&biw=1920&bih=911&dpr=1#lkt=LocalPoiReviews";
 
@@ -124,13 +123,13 @@ export default function Testimonials() {
   });
 
   const content = language === 'it' ? {
-    title: 'Recensioni Internet Valore',
-    subtitle: 'La Nostra **Riprova Sociale**',
-    description: 'Scopri i **casi studio** e le **opinioni clienti** di chi ha sfruttato la **Deep Search** per intercettare e dominare il proprio mercato con **risultati reali**.',
+    title: 'Testimonianze',
+    subtitle: 'Cosa Dicono i Nostri Clienti',
+    description: 'Scopri le storie di successo di chi ha sfruttato la Deep Search per intercettare e dominare il proprio mercato',
   } : {
-    title: 'Internet Valore Reviews',
-    subtitle: 'Our Social Proof',
-    description: 'Discover the case studies and customer reviews of those who leveraged Deep Search to intercept and dominate their market with real results',
+    title: 'Testimonials',
+    subtitle: 'What Our Clients Say',
+    description: 'Discover the success stories of those who leveraged Deep Search to intercept and dominate their market',
   };
 
   const initialStack = reviews.map((_, i) => ({
@@ -145,7 +144,7 @@ export default function Testimonials() {
       <MetaTags
         title={meta.title}
         description={meta.description}
-        path={meta.path}
+        path="/testimonials"
       />
       <div className="bg-gradient-to-b from-white to-gray-50">
         <HeroSection
@@ -162,9 +161,25 @@ export default function Testimonials() {
               className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               {reviews.map((review, index) => {
-                const x = useTransform(scrollYProgress, [0, 0.5], [initialStack[index].x, 0]);
-                const y = useTransform(scrollYProgress, [0, 0.5], [initialStack[index].y, 0]);
-                const scale = useTransform(scrollYProgress, [0, 0.5], [initialStack[index].scale, 1]);
+                const progress = useTransform(
+                  scrollYProgress,
+                  [0, 0.5, 1],
+                  [
+                    initialStack[index],
+                    {
+                      x: 0,
+                      y: 0,
+                      scale: 1,
+                      zIndex: reviews.length - index
+                    },
+                    {
+                      x: 0,
+                      y: 0,
+                      scale: 1,
+                      zIndex: reviews.length - index
+                    }
+                  ]
+                );
 
                 return (
                   <motion.a
@@ -173,10 +188,10 @@ export default function Testimonials() {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      x,
-                      y,
-                      scale,
-                      zIndex: reviews.length - index
+                      x: progress.x,
+                      y: progress.y,
+                      scale: progress.scale,
+                      zIndex: progress.zIndex
                     }}
                     initial="hidden"
                     whileInView="visible"
@@ -222,7 +237,8 @@ export default function Testimonials() {
                       </div>
                       <div className="relative">
                         <div className="absolute -left-2 -top-2 text-4xl text-blue-200 opacity-50">"</div>
-                        <p className="relative text-gray-600 z-10 pl-4" dangerouslySetInnerHTML={{ __html: formatSEOText(review.body) }}>
+                        <p className="relative text-gray-600 z-10 pl-4">
+                          {review.body}
                         </p>
                         <div className="absolute -bottom-4 -right-2 text-4xl text-blue-200 opacity-50 transform rotate-180">"</div>
                       </div>
