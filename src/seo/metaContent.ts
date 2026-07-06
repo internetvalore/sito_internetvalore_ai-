@@ -29,20 +29,20 @@ export const metaContent = {
   },
   ecommerce: {
     it: {
-      title: 'E-commerce | Aumenta le Vendite Online | Internet Valore',
-      description: 'Strategie di marketing digitale specifiche per e-commerce. Ottimizzazione conversioni, retargeting avanzato e analisi comportamentale.',
+      title: 'E-commerce | Vendi di Più con il Dato Reale | Internet Valore',
+      description: 'Ottimizza il tuo e-commerce con dati reali: misura gli ordini veri, ottimizza Google Ads e Meta sul profitto vero (POAS), non sul fatturato. Consulenza gratuita.',
       path: '/services/ecommerce',
       priceRange: '€1500 - €7000',
       serviceType: 'E-commerce Marketing',
-      serviceDescription: 'Servizi di ottimizzazione e-commerce per aumentare vendite e conversioni.'
+      serviceDescription: 'Promozione e-commerce basata sul dato reale: tracciamento ordini, ottimizzazione Google Ads, Meta Ads e analisi profitto (POAS).'
     },
     en: {
-      title: 'E-commerce | Increase Online Sales | Internet Valore',
-      description: 'Specific digital marketing strategies for e-commerce. Conversion optimization, advanced retargeting and behavioral analysis.',
+      title: 'E-commerce | Sell More with Real Data | Internet Valore',
+      description: 'Optimise your e-commerce with real data: measure true orders, optimise Google Ads and Meta on real profit (POAS), not revenue. Free consultation.',
       path: '/services/ecommerce',
       priceRange: '€1500 - €7000',
       serviceType: 'E-commerce Marketing',
-      serviceDescription: 'E-commerce optimization services to increase sales and conversions.'
+      serviceDescription: 'E-commerce promotion based on real data: order tracking, Google Ads optimisation, Meta Ads and profit analysis (POAS).'
     }
   },
   ads: {
