@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const MotionLink = motion(Link);
-
 export default function Hero() {
   const { t, language } = useLanguage();
   const [isFlipped, setIsFlipped] = useState(false);
@@ -160,16 +158,14 @@ export default function Hero() {
                         { headline: "We don't optimize revenue. We optimize profit.",                       cta: 'Discover the method →' },
                       ]
                   ).map((card, i) => (
-                    <MotionLink
+                    <Link
                       key={i}
                       to={`/${language}/services/ecommerce`}
-                      whileHover={{ y: -4, boxShadow: '0 8px 24px rgba(37,99,235,0.15)' }}
-                      transition={{ duration: 0.2 }}
-                      className="group block rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm hover:border-blue-400"
+                      className="group block rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm hover:border-blue-400 hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
                     >
                       <p className="text-sm font-bold text-gray-900 leading-snug mb-2">{card.headline}</p>
                       <p className="text-xs font-semibold text-blue-600 group-hover:text-blue-700 transition-colors duration-150">{card.cta}</p>
-                    </MotionLink>
+                    </Link>
                   ))}
                 </div>
               </motion.div>
