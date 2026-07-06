@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { Link } from 'react-router-dom';
+
 import MetaTags from '../../components/MetaTags';
 import Stats from '../../components/Stats';
 import TestimonialsSlider from '../../components/TestimonialsSlider';
@@ -75,11 +75,12 @@ function getContent(language: string) {
   return {
     meta: {
       title: it
-        ? 'E-commerce | Sai quanto stai davvero vendendo? | Internet Valore'
-        : 'E-commerce | Do you know how much you\'re really selling? | Internet Valore',
+        ? 'Promozione E-commerce sul dato vero | Internet Valore'
+        : 'E-commerce Promotion on Real Data | Internet Valore',
       description: it
-        ? 'Scopri quanti ordini il tuo tracciamento non vede e dove perdi margine. Analisi gratuita del tuo e-commerce con dati reali.'
-        : 'Find out how many orders your tracking doesn\'t see and where you lose margin. Free e-commerce analysis with real data.',
+        ? 'Scopri quanti ordini il tuo tracciamento non vede e dove lasci margine. Ottimizziamo Google Ads e Meta sul profitto reale (POAS), con ogni mossa approvata da te.'
+        : 'Find out how many orders your tracking doesn\'t see and where you leave margin. We optimise Google Ads and Meta on real profit (POAS), with every move approved by you.',
+      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     },
 
     hero: {
@@ -207,44 +208,44 @@ function getContent(language: string) {
       items: it ? [
         {
           q: 'Funziona con Shopify / WooCommerce / il mio gestionale?',
-          a: 'Sì. Lavoriamo con Shopify, WooCommerce e i principali gestionali. L\'integrazione avviene nella fase iniziale: analizziamo quali dati possiamo estrarre e costruiamo il collegamento tra gli ordini reali e quelli tracciati dagli strumenti di advertising.',
+          a: 'Sì. Ci integriamo con le piattaforme e i gestionali più diffusi — Shopify, WooCommerce e i principali ERP. Nella fase iniziale stabiliamo insieme quali dati possiamo collegare e come, così sai esattamente da dove partiamo.',
         },
         {
           q: 'Dovete accedere ai miei account Google Ads, Meta e Analytics?',
-          a: 'Sì, è necessario. Lavoriamo in modalità "visualizzazione" o "amministratore" a seconda delle operazioni previste. Non compiamo mai azioni sugli account senza prima averle concordate con te.',
+          a: 'Sì. Per la diagnosi lavoriamo in sola lettura: vediamo i dati, non modifichiamo nulla. Ogni accesso in scrittura — per applicare ottimizzazioni — è separato, richiede la tua autorizzazione esplicita e rimane sempre sotto il tuo controllo.',
         },
         {
           q: 'In quanto tempo vedo i primi risultati?',
-          a: 'L\'audit iniziale e la prima diagnosi sono pronti entro le prime settimane dall\'onboarding. I risultati delle ottimizzazioni si misurano tipicamente su un orizzonte di 4-8 settimane, perché le conversioni Google e Meta arrivano in ritardo rispetto al click.',
+          a: 'La diagnosi iniziale è pronta in pochi giorni dall\'onboarding. Le prime ottimizzazioni misurabili arrivano nelle settimane successive: Google e Meta registrano le conversioni con ritardo rispetto al click, quindi i numeri si leggono bene dopo 4-8 settimane.',
         },
         {
           q: 'Applicate modifiche alle campagne senza chiedermelo?',
-          a: 'No. Ogni mossa — keyword, offerta, budget, creatività — ti viene proposta con una spiegazione e una stima dell\'effetto atteso. Applichiamo solo dopo la tua approvazione esplicita. Ogni intervento è tracciato e reversibile.',
+          a: 'No. Nessuna modifica parte senza il tuo via libera. Ti mostriamo prima cosa faremo e perché, tu approvi, poi agiamo e misuriamo l\'esito reale. Ogni intervento è tracciato e reversibile.',
         },
         {
           q: 'Come misurate il valore che portate?',
-          a: 'Con un doppio formato di report: uno operativo (metriche, anomalie, azioni intraprese) e uno di valore in euro per chi guida l\'azienda. Ogni raccomandazione riporta i numeri reali dell\'intervento.',
+          a: 'Partiamo dalla copertura del tracciamento — quanti ordini reali i tuoi strumenti vedono — e ragioniamo in profitto (POAS), non solo fatturato. Ogni report dice cosa è stato fatto, perché e se ha funzionato, con i numeri a supporto.',
         },
       ] : [
         {
           q: 'Does it work with Shopify / WooCommerce / my backend?',
-          a: 'Yes. We work with Shopify, WooCommerce and major backends. Integration happens during the initial phase: we analyse which data we can extract and build the connection between real orders and those tracked by advertising tools.',
+          a: 'Yes. We integrate with the most widely used platforms and backends — Shopify, WooCommerce and major ERPs. In the initial phase we agree together which data to connect and how, so you know exactly where we\'re starting from.',
         },
         {
           q: 'Do you need access to my Google Ads, Meta and Analytics accounts?',
-          a: 'Yes, it is required. We work in "view" or "admin" mode depending on the planned operations. We never take actions on accounts without first agreeing them with you.',
+          a: 'Yes. For the diagnosis we work in read-only mode: we see the data, we change nothing. Every write access — to apply optimisations — is separate, requires your explicit authorisation and always stays under your control.',
         },
         {
           q: 'How long before I see the first results?',
-          a: 'The initial audit and first diagnosis are ready within the first weeks of onboarding. Optimisation results are typically measured over a 4-8 week horizon, because Google and Meta conversions arrive late relative to the click.',
+          a: 'The initial diagnosis is ready within a few days of onboarding. The first measurable optimisations come in the following weeks: Google and Meta record conversions with a delay after the click, so numbers read well after 4-8 weeks.',
         },
         {
           q: 'Do you apply campaign changes without asking me?',
-          a: 'No. Every action — keyword, bid, budget, creative — is proposed to you with an explanation and an estimated expected effect. We apply only after your explicit approval. Every action is tracked and reversible.',
+          a: 'No. No change happens without your approval. We show you first what we\'ll do and why, you approve, then we act and measure the real outcome. Every action is tracked and reversible.',
         },
         {
           q: 'How do you measure the value you bring?',
-          a: 'With a dual-format report: an operational one (metrics, anomalies, actions taken) and a euro-value one for company leadership. Every recommendation is backed by real numbers from the intervention.',
+          a: 'We start from tracking coverage — how many real orders your tools actually see — and reason in profit (POAS), not just revenue. Every report states what was done, why, and whether it worked, with the numbers to back it up.',
         },
       ],
     },
@@ -267,8 +268,9 @@ export default function Ecommerce() {
   const c = getContent(language);
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
 
-  // WhatsApp link riutilizzato uguale a resto del sito
-  const WA_HREF = 'https://wa.me/393351234567';
+  // Numero WhatsApp reale (usato anche in Services.tsx e GoogleAdsLandingPage.tsx)
+  const WA_HREF = 'https://wa.me/393475012682';
+  const BOOKING_HREF = 'https://calendar.app.google/hrTJoM1BDccQw75NA';
 
   return (
     <>
@@ -276,6 +278,7 @@ export default function Ecommerce() {
         title={c.meta.title}
         description={c.meta.description}
         path="/services/ecommerce"
+        image={c.meta.image}
       />
 
       <div className="bg-gradient-to-b from-white to-gray-50">
@@ -302,13 +305,15 @@ export default function Ecommerce() {
 
               {/* CTA buttons */}
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
-                <Link
-                  to={`/${language}/contact`}
+                <a
+                  href={BOOKING_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200 shadow-md"
                 >
                   {c.hero.btnPrimary}
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </a>
                 <a
                   href="tel:800940213"
                   className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold rounded-lg text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
@@ -494,13 +499,15 @@ export default function Ecommerce() {
               </p>
 
               {/* Unica CTA primaria */}
-              <Link
-                to={`/${language}/contact`}
+              <a
+                href={BOOKING_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-lg text-blue-600 bg-white hover:bg-blue-50 transition-colors duration-200 shadow-md mb-6"
               >
                 {c.cta.btnPrimary}
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
 
               {/* Secondarie, meno evidenti */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-2">
