@@ -256,11 +256,12 @@ function getContent(language: string) {
         ? 'Non una dashboard in più. Una piattaforma che scava dove l\'occhio non arriva.'
         : 'Not just another dashboard. A platform that digs where the eye can\'t reach.',
       body: it
-        ? 'Per leggere davvero un e-commerce non basta un foglio di calcolo. Abbiamo costruito una piattaforma proprietaria che incrocia tutte le tue fonti — Google Analytics 4, Search Console, Google Ads, Meta e i contenuti del tuo sito — e trasforma milioni di righe di dati in decisioni. Quello che un team impiegherebbe giorni a controllare a mano, qui gira in secondi.'
-        : 'Reading an e-commerce properly takes more than a spreadsheet. We built a proprietary platform that cross-references all your sources — Google Analytics 4, Search Console, Google Ads, Meta and your site content — and turns millions of rows of data into decisions. What a team would spend days checking manually, here runs in seconds.',
+        ? 'Per leggere davvero un e-commerce non basta un foglio di calcolo. Abbiamo costruito una piattaforma proprietaria che incrocia tutte le tue fonti — Google Analytics 4, Search Console, Google Ads, Meta e i contenuti del tuo sito — e trasforma milioni di righe di dati in decisioni. Quello che un team impiegherebbe giorni a controllare a mano, qui gira in secondi. È l\'equivalente di oltre 20 anni di lavoro di uno sviluppatore: quello che serve per ricostruire da zero ciò che oggi lavora per il tuo e-commerce. Un foglio di calcolo o un tool generico non hanno questo dietro.'
+        : 'Reading an e-commerce properly takes more than a spreadsheet. We built a proprietary platform that cross-references all your sources — Google Analytics 4, Search Console, Google Ads, Meta and your site content — and turns millions of rows of data into decisions. What a team would spend days checking manually, here runs in seconds. That\'s the equivalent of over 20 person-years of development: what it would take to rebuild from scratch what works for your e-commerce today. A spreadsheet or a generic tool doesn\'t have this behind it.',
       tricolon: it ? 'Analizziamo. Scopriamo. Potenziamo.' : 'Analyse. Discover. Amplify.',
       tiles: [
         { value: '160.000+', label: it ? 'righe di codice proprietario' : 'lines of proprietary code' },
+        { value: '20+',      label: it ? 'anni-uomo di sviluppo (a produttività 2020)' : 'person-years of development (at 2020 productivity)' },
         { value: '230+',     label: it ? 'strumenti di analisi guidati dall\'AI' : 'AI-driven analysis tools' },
         { value: '250+',     label: it ? 'motori di calcolo in Python' : 'Python computation engines' },
         { value: '5',        label: it ? 'fonti dati incrociate: GA4 · Search Console · Google Ads · Meta · sito' : 'cross-referenced data sources: GA4 · Search Console · Google Ads · Meta · site' },
