@@ -422,7 +422,7 @@ function getContent(language: string) {
         },
         {
           q: 'In quanto tempo vedo i primi risultati?',
-          a: 'L\'audit iniziale e la prima diagnosi sono pronti entro [PLACEHOLDER: X settimane dall\'onboarding]. I risultati delle ottimizzazioni sulle campagne si misurano tipicamente su un orizzonte di 4-8 settimane, perché le conversioni Google e Meta arrivano in ritardo rispetto al click.'
+          a: 'L\'audit iniziale e la prima diagnosi sono pronti entro le prime settimane dall\'onboarding. I risultati delle ottimizzazioni sulle campagne si misurano tipicamente su un orizzonte di 4-8 settimane, perché le conversioni Google e Meta arrivano in ritardo rispetto al click.'
         },
         {
           q: 'Applicate modifiche alle campagne senza chiedermelo?',
@@ -443,7 +443,7 @@ function getContent(language: string) {
         },
         {
           q: 'How long before I see the first results?',
-          a: 'The initial audit and first diagnosis are ready within [PLACEHOLDER: X weeks from onboarding]. Campaign optimisation results are typically measured over a 4-8 week horizon, because Google and Meta conversions arrive late relative to the click.'
+          a: 'The initial audit and first diagnosis are ready within the first weeks of onboarding. Campaign optimisation results are typically measured over a 4-8 week horizon, because Google and Meta conversions arrive late relative to the click.'
         },
         {
           q: 'Do you apply campaign changes without asking me?',
