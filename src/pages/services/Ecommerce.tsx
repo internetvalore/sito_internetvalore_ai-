@@ -250,6 +250,24 @@ function getContent(language: string) {
       ],
     },
 
+    hood: {
+      eyebrow: it ? 'SOTTO IL COFANO' : 'UNDER THE HOOD',
+      h2: it
+        ? 'Non una dashboard in più. Una piattaforma che scava dove l\'occhio non arriva.'
+        : 'Not just another dashboard. A platform that digs where the eye can\'t reach.',
+      body: it
+        ? 'Per leggere davvero un e-commerce non basta un foglio di calcolo. Abbiamo costruito una piattaforma proprietaria che incrocia tutte le tue fonti — Google Analytics 4, Search Console, Google Ads, Meta e i contenuti del tuo sito — e trasforma milioni di righe di dati in decisioni. Quello che un team impiegherebbe giorni a controllare a mano, qui gira in secondi.'
+        : 'Reading an e-commerce properly takes more than a spreadsheet. We built a proprietary platform that cross-references all your sources — Google Analytics 4, Search Console, Google Ads, Meta and your site content — and turns millions of rows of data into decisions. What a team would spend days checking manually, here runs in seconds.',
+      tricolon: it ? 'Analizziamo. Scopriamo. Potenziamo.' : 'Analyse. Discover. Amplify.',
+      tiles: [
+        { value: '160.000+', label: it ? 'righe di codice proprietario' : 'lines of proprietary code' },
+        { value: '230+',     label: it ? 'strumenti di analisi guidati dall\'AI' : 'AI-driven analysis tools' },
+        { value: '250+',     label: it ? 'motori di calcolo in Python' : 'Python computation engines' },
+        { value: '5',        label: it ? 'fonti dati incrociate: GA4 · Search Console · Google Ads · Meta · sito' : 'cross-referenced data sources: GA4 · Search Console · Google Ads · Meta · site' },
+        { value: 'milioni',  label: it ? 'di righe di dati per cliente, analizzate in secondi' : 'of data rows per client, analysed in seconds' },
+      ],
+    },
+
     cta: {
       h2: it ? 'Scopri quanto stai davvero vendendo. Gratis.' : 'Find out how much you\'re really selling. Free.',
       body: it
@@ -422,11 +440,51 @@ export default function Ecommerce() {
           </Section>
         </div>
 
-        {/* ══ 4. PROVA (Stats + Testimonial + Google Partner) ════════════════ */}
+        {/* ══ 4. SOTTO IL COFANO ══════════════════════════════════════════════ */}
+        <div className="bg-gray-900 py-20">
+          <Section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Header */}
+            <div className="text-center mb-14">
+              <p className="text-xs font-bold tracking-widest text-blue-400 uppercase mb-4">
+                {c.hood.eyebrow}
+              </p>
+              <h2 className="text-3xl font-extrabold text-white sm:text-4xl max-w-3xl mx-auto leading-tight mb-6">
+                {c.hood.h2}
+              </h2>
+              <p className="text-gray-400 text-base leading-relaxed max-w-2xl mx-auto mb-8">
+                {c.hood.body}
+              </p>
+              <p className="text-lg font-bold text-blue-400 tracking-wide">
+                {c.hood.tricolon}
+              </p>
+            </div>
+
+            {/* Tile grid */}
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+              {c.hood.tiles.map((tile, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: i * 0.07 }}
+                  className="bg-gray-800 rounded-xl p-5 text-center border border-gray-700 hover:border-blue-500 transition-colors duration-200"
+                >
+                  <p className="text-2xl sm:text-3xl font-extrabold text-white mb-2 leading-none">
+                    {tile.value}
+                  </p>
+                  <p className="text-xs text-gray-400 leading-snug">{tile.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </Section>
+        </div>
+
+        {/* ══ 5. PROVA (Stats + Testimonial + Google Partner) ════════════════ */}
         <Stats />
         <TestimonialsSlider />
 
-        {/* ══ 5. PERCHÉ FIDARTI ═══════════════════════════════════════════════ */}
+        {/* ══ 6. PERCHÉ FIDARTI ═══════════════════════════════════════════════ */}
         <Section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center mb-12">
             <p className="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">
