@@ -459,8 +459,7 @@ function getContent(language: string) {
     cta: {
       title: it ? 'Pronto a far crescere il tuo e-commerce sul dato vero?' : 'Ready to grow your e-commerce on real data?',
       btnConsulenza: it ? 'Prenota una Consulenza Gratuita' : 'Book a Free Consultation',
-      btnWhatsapp: it ? 'Parla con Leonardo su WhatsApp' : 'Talk to Leonardo on WhatsApp',
-      callLabel: it ? 'oppure chiama il numero verde' : 'or call our free number',
+      callLabel: it ? 'Chiama Ora' : 'Call Now',
     }
   };
 }
@@ -507,12 +506,10 @@ export default function Ecommerce() {
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
           <a
-            href="https://wa.me/393351234567"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:800940213"
             className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200"
           >
-            {c.cta.btnWhatsapp}
+            {c.cta.callLabel} 800 940 213
           </a>
         </Section>
 
@@ -733,20 +730,12 @@ export default function Ecommerce() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                   <a
-                    href="https://wa.me/393351234567"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="tel:800940213"
                     className="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-blue-700 transition-colors duration-200"
                   >
-                    {c.cta.btnWhatsapp}
+                    {c.cta.callLabel} 800 940 213
                   </a>
                 </div>
-                <p className="mt-6 text-blue-200 text-sm">
-                  {c.cta.callLabel}{' '}
-                  <a href="tel:800940213" className="font-semibold text-white hover:underline">
-                    800 940 213
-                  </a>
-                </p>
               </div>
             </motion.div>
           </Section>
