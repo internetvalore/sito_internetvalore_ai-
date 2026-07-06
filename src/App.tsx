@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
 import { useLanguage } from './contexts/LanguageContext';
 import MetaTags from './components/MetaTags';
 import { metaContent } from './seo/metaContent';
@@ -50,27 +49,6 @@ function ScrollHandler() {
   return null;
 }
 
-const pageVariants = {
-  initial: {
-    opacity: 0,
-    y: 20
-  },
-  in: {
-    opacity: 1,
-    y: 0
-  },
-  exit: {
-    opacity: 0,
-    y: -20
-  }
-};
-
-const pageTransition = {
-  type: "tween",
-  ease: "anticipate",
-  duration: 0.5
-};
-
 function App() {
   const location = useLocation();
   const { language } = useLanguage();
@@ -102,63 +80,45 @@ function App() {
       <Navbar />
       <ScrollHandler />
       <div className="flex-grow pt-16">
-        <AnimatePresence mode="wait">
-          <ErrorBoundary>
-            <Routes location={location} key={location.pathname}>
-              {/* Base routes with language prefix */}
-              <Route path="/:lang" element={
-                <motion.div
-                  initial="initial"
-                  animate="in"
-                  exit="exit"
-                  variants={pageVariants}
-                  transition={pageTransition}
-                >
-                  <Hero />
-                  <Methodology />
-                  <Stats />
-                  <Services />
-                  <Process />
-                  <TestimonialsSlider />
-                  <Clients />
-                  <FAQ />
-                  <Contact />
-                </motion.div>
-              } />
+        <ErrorBoundary>
+          <Routes location={location}>
+            {/* Base routes with language prefix */}
+            <Route path="/:lang" element={
+              <>
+                <Hero />
+                <Methodology />
+                <Stats />
+                <Services />
+                <Process />
+                <TestimonialsSlider />
+                <Clients />
+                <FAQ />
+                <Contact />
+              </>
+            } />
 
-              {/* Service routes */}
-              <Route path="/:lang/services" element={
-                <motion.div
-                  initial="initial"
-                  animate="in"
-                  exit="exit"
-                  variants={pageVariants}
-                  transition={pageTransition}
-                >
-                  <Services />
-                </motion.div>
-              } />
-              <Route path="/:lang/services/lead-generation" element={<LeadGeneration />} />
-              <Route path="/:lang/services/ecommerce" element={<Ecommerce />} />
-              <Route path="/:lang/services/ads" element={<Ads />} />
-              <Route path="/:lang/services/analytics" element={<Analytics />} />
-              <Route path="/:lang/services/rispondi-subito" element={<RispondiSubito />} />
+            {/* Service routes */}
+            <Route path="/:lang/services" element={<Services />} />
+            <Route path="/:lang/services/lead-generation" element={<LeadGeneration />} />
+            <Route path="/:lang/services/ecommerce" element={<Ecommerce />} />
+            <Route path="/:lang/services/ads" element={<Ads />} />
+            <Route path="/:lang/services/analytics" element={<Analytics />} />
+            <Route path="/:lang/services/rispondi-subito" element={<RispondiSubito />} />
 
-              {/* Other routes */}
-              <Route path="/:lang/instant-websites" element={<InstantWebsites />} />
-              <Route path="/:lang/specializations" element={<Specializations />} />
-              <Route path="/:lang/about" element={<About />} />
-              <Route path="/:lang/contact" element={<ContactPage />} />
-              <Route path="/:lang/landing-page-professionali" element={<LandingPageProfessionali />} />
-              <Route path="/:lang/testimonials" element={<Testimonials />} />
-              <Route path="/:lang/landing" element={<LandingPage />} />
-              <Route path="/:lang/google-ads" element={<GoogleAdsLandingPage />} />
+            {/* Other routes */}
+            <Route path="/:lang/instant-websites" element={<InstantWebsites />} />
+            <Route path="/:lang/specializations" element={<Specializations />} />
+            <Route path="/:lang/about" element={<About />} />
+            <Route path="/:lang/contact" element={<ContactPage />} />
+            <Route path="/:lang/landing-page-professionali" element={<LandingPageProfessionali />} />
+            <Route path="/:lang/testimonials" element={<Testimonials />} />
+            <Route path="/:lang/landing" element={<LandingPage />} />
+            <Route path="/:lang/google-ads" element={<GoogleAdsLandingPage />} />
 
-              {/* Catch all redirect */}
-              <Route path="*" element={<Navigate to={`/${language}/`} replace />} />
-            </Routes>
-          </ErrorBoundary>
-        </AnimatePresence>
+            {/* Catch all redirect */}
+            <Route path="*" element={<Navigate to={`/${language}/`} replace />} />
+          </Routes>
+        </ErrorBoundary>
       </div>
       <NavigationGuide />
       <Footer />
