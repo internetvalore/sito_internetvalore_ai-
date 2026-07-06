@@ -29,15 +29,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   });
 
   useEffect(() => {
-    // Handle direct access to URLs without language prefix
     const pathParts = location.pathname.split('/');
     const currentLangInPath = pathParts[1];
-    
-    if (currentLangInPath !== 'it' && currentLangInPath !== 'en') {
-      const newPath = `/${language}${location.pathname}`;
-      navigate(newPath, { replace: true });
-    } else if (currentLangInPath !== language) {
-      setLanguageState(currentLangInPath as Language);
+
+    if (currentLangInPath === 'it' || currentLangInPath === 'en') {
+      if (currentLangInPath !== language) {
+        setLanguageState(currentLangInPath as Language);
+      }
     }
   }, [location.pathname]);
 
