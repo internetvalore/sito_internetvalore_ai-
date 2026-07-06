@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isFlipped, setIsFlipped] = useState(false);
 
   const scrollToContact = (e: React.MouseEvent) => {
@@ -137,6 +137,63 @@ export default function Hero() {
               >
                 {t('hero.description')}
               </motion.p>
+
+              {/* ── Platform claim cards ─────────────────────────────────── */}
+              {(() => {
+                const ecommerceHref = `/${language}/services/ecommerce`;
+                const it = language === 'it';
+                const cards = [
+                  {
+                    headline: it
+                      ? 'Il tuo e-commerce vende più di quanto vedi.'
+                      : 'Your store sells more than you see.',
+                    cta: it
+                      ? 'Scopri quanto non stai misurando →'
+                      : 'See what you\'re not measuring →',
+                  },
+                  {
+                    headline: it
+                      ? '160.000 righe di codice. 20 anni-uomo. Al servizio del tuo negozio.'
+                      : '160,000 lines of code. 20+ person-years. Working for your store.',
+                    cta: it ? 'Guarda cosa c\'è sotto →' : 'See what\'s underneath →',
+                  },
+                  {
+                    headline: it
+                      ? 'Non ottimizziamo il fatturato. Ottimizziamo il profitto.'
+                      : 'We don\'t optimize revenue. We optimize profit.',
+                    cta: it ? 'Scopri il metodo →' : 'Discover the method →',
+                  },
+                ];
+                return (
+                  <motion.div variants={textReveal} className="mt-8">
+                    <p className="text-xs font-bold tracking-widest text-blue-500 uppercase mb-4 sm:text-center lg:text-left">
+                      {it
+                        ? 'LA PIATTAFORMA CHE VEDE QUELLO CHE GLI ALTRI NON VEDONO'
+                        : 'THE PLATFORM THAT SEES WHAT OTHERS MISS'}
+                    </p>
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                      {cards.map((card, i) => (
+                        <motion.a
+                          key={i}
+                          href={ecommerceHref}
+                          whileHover={{ y: -4, boxShadow: '0 8px 24px rgba(37,99,235,0.15)' }}
+                          transition={{ duration: 0.2 }}
+                          className="group block rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm hover:border-blue-400 cursor-pointer"
+                        >
+                          <p className="text-sm font-bold text-gray-900 leading-snug mb-2">
+                            {card.headline}
+                          </p>
+                          <p className="text-xs font-semibold text-blue-600 group-hover:text-blue-700 transition-colors duration-150">
+                            {card.cta}
+                          </p>
+                        </motion.a>
+                      ))}
+                    </div>
+                  </motion.div>
+                );
+              })()}
+              {/* ─────────────────────────────────────────────────────────── */}
+
               <motion.div
                 variants={textReveal}
                 className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
