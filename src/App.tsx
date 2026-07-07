@@ -31,6 +31,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import LandingPage from './pages/landing_page/LandingPage';
 import GoogleAdsLandingPage from './pages/landing_page/GoogleAdsLandingPage';
 import AIPlatform from './pages/AIPlatform';
+import CapabilitiesSlider from './components/CapabilitiesSlider';
 
 function ScrollHandler() {
   const location = useLocation();
@@ -88,6 +89,7 @@ function App() {
               <>
                 <Hero />
                 <Methodology />
+                <CapabilitiesSlider />
                 <Stats />
                 <Services />
                 <Process />
