@@ -28,65 +28,65 @@ export default function About() {
 
   const features = language === 'it' ? [
     {
-      title: 'Esperienza Decennale',
-      description: 'Oltre 10 anni di successi nel marketing digitale con centinaia di clienti soddisfatti.'
+      title: '15+ Anni di Codice e Gestione',
+      description: 'Esperienza solida basata su 160.000 righe di codice proprietario al servizio del marketing e-commerce e lead gen.'
     },
     {
-      title: 'Approccio Innovativo',
-      description: 'Utilizziamo le più recenti tecnologie e strategie per garantire risultati ottimali.'
+      title: 'No dati → No verdetti',
+      description: 'Non prendiamo in carico progetti in perdita o senza tracciamenti reali. L\'onestà analitica è la nostra firma.'
     },
     {
-      title: 'Risultati Misurabili',
-      description: 'Monitoraggio costante e report dettagliati per dimostrare il ROI delle nostre strategie.'
+      title: 'Scomposizione Matematica',
+      description: 'Uso del modello algebrico LMDI del Δ e test di incrementalità per dimostrare il vero lift causale delle azioni.'
     }
   ] : [
     {
-      title: 'Decade of Experience',
-      description: 'Over 10 years of success in digital marketing with hundreds of satisfied clients.'
+      title: '15+ Years of Code & Management',
+      description: 'Solid experience backed by 160,000 lines of proprietary code to power e-commerce and lead gen campaigns.'
     },
     {
-      title: 'Innovative Approach',
-      description: 'We use the latest technologies and strategies to ensure optimal results.'
+      title: 'No Data → No Verdicts',
+      description: 'We do not onboard projects without sound tracking. Analytical honesty is our structural guarantee.'
     },
     {
-      title: 'Measurable Results',
-      description: 'Constant monitoring and detailed reports to demonstrate the ROI of our strategies.'
+      title: 'Algebraic Decomposition',
+      description: 'Leveraging LMDI decomposition of Δ and geo-holdout tests to isolate and prove real campaign lift.'
     }
   ];
 
   const methodologySteps = language === 'it' ? [
     {
-      title: 'Analisi Iniziale (Deep Search)',
-      description: 'Scandagliamo la rete con l\'Intelligenza Artificiale per scoprire i veri bisogni e le opportunità nascoste del mercato.'
+      title: 'Deep Search & Intent Mapping',
+      description: 'Scandagliamo il mercato e i claim dei competitor per mappare gli intenti di ricerca reali del target.'
     },
     {
-      title: 'Strategia Personalizzata',
-      description: 'Sviluppo di un piano d\'azione su misura per i tuoi obiettivi.'
+      title: 'Creative Studio & Persuasione',
+      description: 'Sviluppiamo concept visivi e testuali ancorandoli alle ferite psicologiche e ai bisogni Maslow.'
     },
     {
-      title: 'Implementazione',
-      description: 'Esecuzione precisa e monitoraggio costante delle performance.'
+      title: 'Staging & Dry-run Validation',
+      description: 'Creiamo le campagne sempre in PAUSA ed eseguiamo validazioni dry-run prima della pubblicazione.'
     },
     {
-      title: 'Ottimizzazione Continua',
-      description: 'Analisi dei risultati e miglioramento costante delle strategie.'
+      title: 'Riconciliazione CRM & POAS',
+      description: 'Riconciliamo lead CRM ed ordini Shopify contro lo spam, ottimizzando sul profitto reale netto.'
     }
   ] : [
     {
-      title: 'Initial Analysis (Deep Search)',
-      description: 'We scour the web with Artificial Intelligence to discover the true needs and hidden market opportunities.'
+      title: 'Deep Search & Intent Mapping',
+      description: 'We scour the market and crawl competitor claims to map your target\'s real search intents.'
     },
     {
-      title: 'Custom Strategy',
-      description: 'Development of a tailored action plan for your goals.'
+      title: 'Creative Studio & Persuasion',
+      description: 'We develop copy and image concepts anchored to psychological wounds and Maslow needs.'
     },
     {
-      title: 'Implementation',
-      description: 'Precise execution and constant performance monitoring.'
+      title: 'Staging & Dry-run Validation',
+      description: 'We stage all new campaigns as PAUSED and run dry-run API checks before going live.'
     },
     {
-      title: 'Continuous Optimization',
-      description: 'Results analysis and constant strategy improvement.'
+      title: 'CRM Reconciliation & POAS',
+      description: 'We cross-reference CRM leads and Shopify sales to optimize spend on real profit.'
     }
   ];
 

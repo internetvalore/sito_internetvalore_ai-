@@ -148,19 +148,19 @@ export default function Hero() {
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                   {(language === 'it'
                     ? [
-                        { headline: 'Il tuo e-commerce vende più di quanto vedi.',                          cta: 'Scopri quanto non stai misurando →' },
-                        { headline: '160.000 righe di codice. 20 anni-uomo. Al servizio del tuo negozio.', cta: "Guarda cosa c'è sotto →" },
-                        { headline: 'Non ottimizziamo il fatturato. Ottimizziamo il profitto.',             cta: 'Scopri il metodo →' },
+                        { headline: 'Riconciliazione CRM contro bot e spam.',                          cta: 'Controlla la qualità dei lead →' },
+                        { headline: '160.000 righe di codice proprietario al tuo servizio.',            cta: 'Esplora masterAnalyzer →' },
+                        { headline: 'POAS over ROAS. Ottimizziamo il profitto, non il fatturato.',      cta: "Scopri le regole d'onestà →" },
                       ]
                     : [
-                        { headline: 'Your store sells more than you see.',                                  cta: "See what you're not measuring →" },
-                        { headline: '160,000 lines of code. 20+ person-years. Working for your store.',    cta: "See what's underneath →" },
-                        { headline: "We don't optimize revenue. We optimize profit.",                       cta: 'Discover the method →' },
+                        { headline: 'CRM reconciliation against bots & spam.',                          cta: 'Check lead quality control →' },
+                        { headline: '160,000 lines of proprietary code at your service.',              cta: 'Explore masterAnalyzer →' },
+                        { headline: 'POAS over ROAS. We optimize profit, not gross revenue.',           cta: 'Discover the rules of honesty →' },
                       ]
                   ).map((card, i) => (
                     <Link
                       key={i}
-                      to={`/${language}/services/ecommerce`}
+                      to={`/${language}/la-nostra-tecnologia-ai`}
                       className="group block rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm hover:border-blue-400 hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
                     >
                       <p className="text-sm font-bold text-gray-900 leading-snug mb-2">{card.headline}</p>
@@ -176,21 +176,20 @@ export default function Hero() {
                 className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
               >
                 <div className="rounded-md shadow">
-                  <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    href="#contact"
-                    onClick={scrollToContact}
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 md:py-4 md:text-lg md:px-10 transition-all duration-300 shadow-lg hover:shadow-xl"
-                  >
-                    {t('hero.cta.primary')}
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </motion.a>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Link
+                      to={`/${language}/la-nostra-tecnologia-ai`}
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 md:py-4 md:text-lg md:px-10 transition-all duration-300 shadow-lg hover:shadow-xl animate-pulse-slow"
+                    >
+                      {t('hero.cta.primary')}
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </motion.div>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
-                      to="/services"
+                      to={`/${language}/services`}
                       className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200 md:py-4 md:text-lg md:px-10 transition-all duration-300"
                     >
                       {t('hero.cta.secondary')}

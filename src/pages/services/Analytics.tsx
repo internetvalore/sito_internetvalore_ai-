@@ -13,99 +13,99 @@ export default function Analytics() {
 
   const content = language === 'it' ? {
     title: 'Analisi e Reporting',
-    subtitle: 'Dati che guidano il successo',
-    description: 'Trasformiamo i dati della Deep Search in insight strategici, monitorando e ottimizzando le performance in tempo reale per garantirti un vantaggio competitivo',
+    subtitle: 'Dati riconciliati e scomposizione delle variazioni',
+    description: 'Forniamo un tracciamento matematico dell\'andamento delle tue campagne. Utilizziamo masterAnalyzer per scomposizioni LMDI e modelli adstock per attribuire in modo onesto ogni euro investito.',
     features: [
       {
-        title: 'Dashboard Personalizzate',
-        description: 'Visualizzazione chiara e intuitiva dei KPI più importanti'
+        title: 'Scomposizione LMDI',
+        description: 'Isolamento algebrico esatto delle cause di variazione dei KPI (Revenue, CPA, CPL).'
       },
       {
-        title: 'Monitoraggio Real-time',
-        description: 'Controllo costante delle performance in tempo reale'
+        title: 'Audit Tracciamento (Reconciler)',
+        description: 'Incrocio sistematico degli ID ordine reali di backend contro i dati GA4 per misurare la copertura.'
       },
       {
-        title: 'Analisi Competitiva',
-        description: 'Confronto con i competitor e analisi di mercato'
+        title: 'Modelli adstock MMM',
+        description: 'Analisi adstock e NNLS per valutare l\'efficienza dei canali paid su Amazon e vendite offline.'
       },
       {
-        title: 'Report Strategici',
-        description: 'Report settimanali con insights e raccomandazioni'
+        title: 'Freshness & Token Check',
+        description: 'Sanity check sui connettori e refresh token per prevenire silenziose perdite di dati storici.'
       }
     ],
     process: {
-      title: 'Il Nostro Processo',
+      title: 'Il Nostro Processo Analitico',
       steps: [
         {
-          title: 'Setup Tracking',
-          description: 'Implementazione strumenti di analisi'
+          title: 'Setup & Baseline t0',
+          description: 'Installazione adapters, connessione sorgenti e congelamento dati storici baseline.'
         },
         {
-          title: 'Definizione KPI',
-          description: 'Identificazione metriche chiave'
+          title: 'Mappa di Ragionamento',
+          description: 'Cablaggio delle euristiche nel prompt preambolo dell\'agente per guidare l\'analisi.'
         },
         {
-          title: 'Analisi Dati',
-          description: 'Elaborazione e interpretazione'
+          title: 'Riconciliazione CRM',
+          description: 'Filtro automatico di lead duplicati e contatti bot per pulire i segnali prima delle decisioni.'
         },
         {
-          title: 'Ottimizzazione',
-          description: 'Azioni basate sui dati'
+          title: 'Takeover & Action Staging',
+          description: 'Trascrizione degli scostamenti in piani operativi tipizzati approvabili in outsourcing.'
         }
       ]
     },
     cta: {
-      title: 'Pronto a prendere decisioni basate sui dati?',
-      description: 'Contattaci per una consulenza gratuita',
-      button: 'Inizia Ora'
+      title: 'Vuoi capire perché i tuoi KPI variano?',
+      description: 'Prenota un audit analitico e scopri la percentuale reale di ordini che il tuo tracciamento non vede.',
+      button: 'Esplora masterAnalyzer'
     }
   } : {
-    title: 'Analytics & Reporting',
-    subtitle: 'Data-driven success',
-    description: 'We transform Deep Search data into strategic insights, monitoring and optimizing performance in real-time to guarantee you a competitive advantage',
+    title: 'Data Analytics & Reporting',
+    subtitle: 'Reconciled data and decomposition of variances',
+    description: 'We supply mathematical tracking of your campaigns. We use masterAnalyzer for LMDI decompositions and adstock models to honestly attribute every spent euro.',
     features: [
       {
-        title: 'Custom Dashboards',
-        description: 'Clear and intuitive visualization of the most important KPIs'
+        title: 'LMDI Decomposition',
+        description: 'Algebraic analysis isolating the exact factors causing shifts in revenue, CPA, and CPL.'
       },
       {
-        title: 'Real-time Monitoring',
-        description: 'Constant performance monitoring in real-time'
+        title: 'Tracking Audit (Reconciler)',
+        description: 'Cross-references CRM and Shopify backend database events to score standard tag coverage.'
       },
       {
-        title: 'Competitive Analysis',
-        description: 'Competitor comparison and market analysis'
+        title: 'MMM Adstock models',
+        description: 'NNLS regression to attribute returns to Meta and offline channels without active pixel tracking.'
       },
       {
-        title: 'Strategic Reports',
-        description: 'Weekly reports with insights and recommendations'
+        title: 'Token & Sync Sentinel',
+        description: 'Continuous automated connection checks to avoid silent data losses due to API key expiry.'
       }
     ],
     process: {
-      title: 'Our Process',
+      title: 'Our Analytical Protocol',
       steps: [
         {
-          title: 'Tracking Setup',
-          description: 'Implementation of analytics tools'
+          title: 'Setup & Baseline t0',
+          description: 'Deploy data store adapters, sync historic datasets, and lock baseline benchmark.'
         },
         {
-          title: 'KPI Definition',
-          description: 'Identification of key metrics'
+          title: 'Reasoning Preambles',
+          description: 'Inject client capability maps and heuristics directly into agent system prompts.'
         },
         {
-          title: 'Data Analysis',
-          description: 'Processing and interpretation'
+          title: 'CRM Reconciliation',
+          description: 'Clean database duplicates and bot entries to deliver reconciled numbers.'
         },
         {
-          title: 'Optimization',
-          description: 'Data-driven actions'
+          title: 'Takeover & Action Staging',
+          description: 'Transform analytics anomalies directly into structured, staging-approved action items.'
         }
       ]
     },
     cta: {
-      title: 'Ready to make data-driven decisions?',
-      description: 'Contact us for a free consultation',
-      button: 'Start Now'
+      title: 'Want to unlock what drives your KPI shifts?',
+      description: 'Book an analytics audit and learn the real order coverage percentage of your store.',
+      button: 'Explore masterAnalyzer'
     }
   };
 

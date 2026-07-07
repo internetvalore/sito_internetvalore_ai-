@@ -5,6 +5,7 @@ import {
   Award, MessageCircle
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 import MetaTags from '../../components/MetaTags';
@@ -92,8 +93,8 @@ function getContent(language: string) {
         ? 'Quasi tutti i negozi online vedono solo una parte degli ordini che incassano — e finiscono per tagliare campagne sane su numeri bucati. Noi partiamo da qui: ti diciamo quanti ordini il tuo tracciamento non vede e dove stai lasciando margine. Poi agiamo, con te, solo sul dato vero.'
         : 'Almost every online store sees only part of the orders it earns — and ends up cutting healthy campaigns on broken numbers. We start here: we tell you how many orders your tracking doesn\'t see and where you\'re leaving margin on the table. Then we act, with you, only on real data.',
       btnPrimary: it ? 'Prenota l\'analisi gratuita del tuo e-commerce' : 'Book your free e-commerce analysis',
-      btnPhone: it ? 'Chiama Ora · 800 940 213' : 'Call Now · 800 940 213',
-      btnWa: it ? 'Parla con Leonardo su WhatsApp' : 'Talk to Leonardo on WhatsApp',
+      btnPhone: it ? 'Chiama il Numero Verde (Risponde Leonardo per appuntamenti) · 800 940 213' : 'Call our Toll-Free Number (Talk to Leonardo for booking) · 800 940 213',
+      btnWa: it ? 'Messaggia l\'agenzia su WhatsApp' : 'Message the agency on WhatsApp',
       trust: it
         ? 'Google Partner · 15+ anni di esperienza · oltre 120 realtà seguite'
         : 'Google Partner · 15+ years of experience · 120+ businesses served',
@@ -275,8 +276,8 @@ function getContent(language: string) {
         ? 'Prenota una consulenza gratuita: analizziamo il tuo e-commerce e in pochi giorni ti diciamo quanti ordini il tuo tracciamento non vede e dove stai lasciando margine sul tavolo. Poi decidi tu.'
         : 'Book a free consultation: we analyse your e-commerce and within days tell you how many orders your tracking doesn\'t see and where you\'re leaving margin on the table. Then you decide.',
       btnPrimary: it ? 'Prenota l\'analisi gratuita' : 'Book the free analysis',
-      btnPhone: it ? 'Chiama Ora · 800 940 213' : 'Call Now · 800 940 213',
-      btnWa: it ? 'Scrivi a Leonardo' : 'Message Leonardo',
+      btnPhone: it ? 'Chiama il Numero Verde (Risponde Leonardo per appuntamenti) · 800 940 213' : 'Call our Toll-Free Number (Talk to Leonardo for booking) · 800 940 213',
+      btnWa: it ? 'Messaggia l\'agenzia' : 'Message the agency',
     },
   };
 }
@@ -477,6 +478,19 @@ export default function Ecommerce() {
                   <p className="text-xs text-gray-400 leading-snug">{tile.label}</p>
                 </motion.div>
               ))}
+            </div>
+
+            {/* Link to detail platform page */}
+            <div className="mt-12 text-center">
+              <Link
+                to={`/${language}/la-nostra-tecnologia-ai`}
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-500 transition-colors duration-200 shadow-md"
+              >
+                {language === 'it' 
+                  ? 'Scopri la nostra Tecnologia AI per la gestione delle campagne' 
+                  : 'Discover our AI Technology for campaign management'}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </div>
           </Section>
         </div>

@@ -9,34 +9,34 @@ export default function Process() {
   const steps = [
     {
       icon: Search,
-      title: language === 'it' ? 'Analisi' : 'Analysis',
+      title: language === 'it' ? 'Discovery & Audit' : 'Discovery & Audit',
       description: language === 'it' 
-        ? 'Studio approfondito del tuo business e del mercato di riferimento'
-        : 'In-depth study of your business and target market',
+        ? 'Rileviamo gli intenti reali e stabiliamo la baseline storica t0 con il Dossier di Presa in Carico.'
+        : 'We map search intent and competitor claims, setting a versioned t0 benchmark.',
       color: 'from-blue-500 to-blue-600'
     },
     {
       icon: PenTool,
-      title: language === 'it' ? 'Strategia' : 'Strategy',
+      title: language === 'it' ? 'Strategia Persuasiva' : 'Persuasion Blueprint',
       description: language === 'it'
-        ? 'Sviluppo di un piano d\'azione personalizzato'
-        : 'Development of a customized action plan',
+        ? 'Ancoriamo i concept creativi alle ferite emotive del target ed ai bisogni Maslow nel Creative Studio.'
+        : 'We build visual and copy concepts anchored to Maslow needs and target wounds.',
       color: 'from-green-500 to-green-600'
     },
     {
       icon: Rocket,
-      title: language === 'it' ? 'Implementazione' : 'Implementation',
+      title: language === 'it' ? 'Staging in PAUSA' : 'Staging & Dry-run',
       description: language === 'it'
-        ? 'Messa in opera delle strategie definite'
-        : 'Implementation of defined strategies',
+        ? 'Creiamo le nuove campagne sempre in stato PAUSA, verificandole in dry-run prima di renderle attive.'
+        : 'Campaigns are created strictly as PAUSED. Changes are validated in dry-run before going live.',
       color: 'from-purple-500 to-purple-600'
     },
     {
       icon: BarChart,
-      title: language === 'it' ? 'Ottimizzazione' : 'Optimization',
+      title: language === 'it' ? 'Riconciliazione & POAS' : 'CRM & POAS Control',
       description: language === 'it'
-        ? 'Monitoraggio continuo e miglioramento delle performance'
-        : 'Continuous monitoring and performance improvement',
+        ? 'Riconciliamo i lead ed ordini reali CRM contro lo spam, ottimizzando sul profitto netto (POAS).'
+        : 'We reconcile CRM leads and Shopify sales, optimizing campaigns exclusively on real profit.',
       color: 'from-red-500 to-red-600'
     }
   ];

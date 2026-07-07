@@ -30,34 +30,34 @@ export default function InstantWebsites() {
   const steps = [
     {
       icon: CheckCircle,
-      title: language === 'it' ? 'Analisi Requisiti' : 'Requirements Analysis',
+      title: language === 'it' ? 'Deep Search & Intent Mapping' : 'Deep Search & Intent Mapping',
       description: language === 'it'
-        ? 'Applichiamo la Deep Search per comprendere i veri intenti di ricerca del tuo target'
-        : 'We apply Deep Search to understand the true search intents of your target',
+        ? 'Scandagliamo il mercato per isolare i veri intenti del target ed evitare clichè.'
+        : 'We crawl competitor claims and map exact target user search intents.',
       day: "1-2"
     },
     {
       icon: Wrench,
-      title: language === 'it' ? 'Progettazione Strategica' : 'Strategic Planning',
+      title: language === 'it' ? 'Persuasion Blueprint' : 'Persuasion Blueprint',
       description: language === 'it'
-        ? 'Definiamo copy e design basandoci sull\'analisi dei modelli che hanno già scalato il mercato'
-        : 'We define copy and design based on the analysis of models that have already scaled the market',
+        ? 'Definiamo copy e design basandoci sulle ferite emotive e bisogni Maslow nel Creative Studio.'
+        : 'We structure layouts and copy around psychological wounds and needs.',
       day: "3"
     },
     {
       icon: Rocket,
-      title: language === 'it' ? 'Sviluppo' : 'Development',
+      title: language === 'it' ? 'Sviluppo Local-First' : 'Local-First Development',
       description: language === 'it'
-        ? 'Realizziamo il sito con le ultime tecnologie'
-        : 'We build the site with the latest technologies',
+        ? 'Codice ottimizzato per caricamento istantaneo e tracciamenti pronti per il CRM.'
+        : 'High-performance code with tags ready for CRM database integration.',
       day: "4-6"
     },
     {
       icon: Sparkles,
-      title: language === 'it' ? 'Lancio' : 'Launch',
+      title: language === 'it' ? 'Validazione Avversariale & Launch' : 'Adversarial Audit & Launch',
       description: language === 'it'
-        ? 'Pubblichiamo il sito e verifichiamo tutto'
-        : 'We publish the site and verify everything',
+        ? 'Il Giudice Avversariale valida il copy ed eliminiamo finti countdown prima del lancio.'
+        : 'Our Adversarial Judge validates page copy and drops fake urgency elements before deploy.',
       day: "7"
     }
   ];

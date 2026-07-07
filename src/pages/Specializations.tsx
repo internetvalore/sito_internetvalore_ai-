@@ -32,113 +32,113 @@ export default function Specializations() {
 
   const googleAdsFeatures = language === 'it' ? [
     {
-      title: 'Campagne Ottimizzate',
-      description: 'Ottimizzazione continua delle campagne per massimizzare il ROI'
+      title: 'Quality Score Restructure',
+      description: 'Focalizzato sul recupero di Impression Share persa per Rank, allineando keyword e annunci RSA.'
     },
     {
-      title: 'Targeting Preciso',
-      description: 'Raggiungimento del pubblico ideale con targeting demografico e comportamentale'
+      title: 'Raggi X in 5 Fasi',
+      description: 'Audit automatico e profondo per stanare conflitti, sprechi ed esclusioni device.'
     },
     {
-      title: 'Analisi Dettagliata',
-      description: 'Report completi e analisi approfondite delle performance'
+      title: 'Pianificazione RSA basata su SEO',
+      description: 'Integrazione delle migliori chiavi organiche negli annunci sponsorizzati.'
     }
   ] : [
     {
-      title: 'Optimized Campaigns',
-      description: 'Continuous campaign optimization to maximize ROI'
+      title: 'Quality Score Restructure',
+      description: 'Focused on capturing Impression Share lost to Rank, aligning keywords and RSA ads.'
     },
     {
-      title: 'Precise Targeting',
-      description: 'Reach your ideal audience with demographic and behavioral targeting'
+      title: '5-Phase X-Ray Audit',
+      description: 'Automatic deep auditing to isolate keyword conflicts, budget waste, and device bids.'
     },
     {
-      title: 'Detailed Analysis',
-      description: 'Comprehensive reports and in-depth performance analysis'
+      title: 'SEO-to-RSA Campaign Bridge',
+      description: 'Injecting high-performance organic keywords directly into text ads.'
     }
   ];
 
   const facebookAdsFeatures = language === 'it' ? [
     {
-      title: 'Audience Personalizzate',
-      description: 'Creazione di audience specifiche basate sui tuoi clienti ideali'
+      title: 'Creative Loop (ABC)',
+      description: 'Classificazione degli asset in Vincenti, Stabili e Morti, per spegnere all-caps e ad-fatigue prima dello spreco.'
     },
     {
-      title: 'Creatività Coinvolgente',
-      description: 'Design accattivante e messaggi persuasivi per massimizzare l\'engagement'
+      title: 'Wound & Maslow Targeting',
+      description: 'Copy e concept basati sui bisogni reali e sulle ferite del target, non su clickbait generico.'
     },
     {
-      title: 'Retargeting Avanzato',
-      description: 'Strategie di remarketing per riconvertire visitatori interessati'
+      title: 'Meta-to-GA4 Bridge',
+      description: 'Attribuzione delle conversioni reali incrociando i click Meta con le sessioni tracciate.'
     }
   ] : [
     {
-      title: 'Custom Audiences',
-      description: 'Creation of specific audiences based on your ideal customers'
+      title: 'Creative Loop (ABC Analysis)',
+      description: 'Categorizing assets into Winners, Stable, and Dead to block ad-fatigue and bad copy early.'
     },
     {
-      title: 'Engaging Creativity',
-      description: 'Captivating design and persuasive messages to maximize engagement'
+      title: 'Wound & Maslow Concepting',
+      description: 'Copy and imagery anchored to customer needs and wounds, instead of generic hype.'
     },
     {
-      title: 'Advanced Retargeting',
-      description: 'Remarketing strategies to reconvert interested visitors'
+      title: 'Meta-to-GA4 Bridge',
+      description: 'Real attribution matching Meta click events with actual GA4 session behaviors.'
     }
   ];
 
   const seoFeatures = language === 'it' ? [
     {
-      title: 'Ottimizzazione On-Page',
-      description: 'Miglioramento di contenuti e struttura del sito per i motori di ricerca'
+      title: 'Opportunità Striking Distance',
+      description: 'Filtriamo le query in posizione 4-10 ad alta conversione per spingerle in Top 3.'
     },
     {
-      title: 'Link Building',
-      description: 'Costruzione di backlink di qualità per aumentare l\'autorità del dominio'
+      title: 'Mappa degli Intenti',
+      description: 'Discovery delle parole chiave della nicchia e scomposizione degli intenti di ricerca.'
     },
     {
-      title: 'SEO Tecnico',
-      description: 'Ottimizzazione della performance e dell\'architettura del sito'
+      title: 'Rilevatore di Cannibalizzazione',
+      description: 'Blinder della spesa Google Ads brand dove l\'organico SEO è già stabile al numero 1.'
     }
   ] : [
     {
-      title: 'On-Page Optimization',
-      description: 'Improvement of website content and structure for search engines'
+      title: 'Striking Distance Mining',
+      description: 'Filter high-intent keywords ranking in positions 4-10 to systematically push them to the top 3.'
     },
     {
-      title: 'Link Building',
-      description: 'Quality backlink building to increase domain authority'
+      title: 'Intent Mapping & Discovery',
+      description: 'Decomposes user queries to uncover untyped market search intentions before competitors.'
     },
     {
-      title: 'Technical SEO',
-      description: 'Optimization of website performance and architecture'
+      title: 'Brand Cannibalization Blocker',
+      description: 'Excluding brand keywords from Google Ads when you already own the organic #1 spot.'
     }
   ];
 
   const analyticsFeatures = language === 'it' ? [
     {
-      title: 'Dashboard Personalizzate',
-      description: 'Visualizzazione chiara dei KPI più importanti per il tuo business'
+      title: 'Scomposizione LMDI del Δ',
+      description: 'Metodo matematico per isolare la causa esatta di ogni variazione del profitto o del CPL.'
     },
     {
-      title: 'Tracciamento Avanzato',
-      description: 'Monitoraggio dettagliato del comportamento degli utenti'
+      title: 'Copertura Tracciamento (Reconciler)',
+      description: 'Incrocio transazioni Shopify o contatti CRM per calcolare la percentuale reale misurata.'
     },
     {
-      title: 'Report Automatizzati',
-      description: 'Generazione automatica di report periodici con insights chiave'
+      title: 'MMM Read-Through (Adstock)',
+      description: 'Modello statistico per stimare il ritorno delle campagne offline e marketplace senza tracciamenti.'
     }
   ] : [
     {
-      title: 'Custom Dashboards',
-      description: 'Clear visualization of the most important KPIs for your business'
+      title: 'LMDI Δ Decomposition',
+      description: 'Algebraic method to isolate the exact cause of any weekly revenue or CPL shift.'
     },
     {
-      title: 'Advanced Tracking',
-      description: 'Detailed monitoring of user behavior'
+      title: 'CRM & Shopify Reconciliation',
+      description: 'Cross-references CRM database entries against tags to report actual data coverage.'
     },
     {
-      title: 'Automated Reports',
-      description: 'Automatic generation of periodic reports with key insights'
+      title: 'MMM Read-Through (Adstock)',
+      description: 'Statistical model to estimate returns on offline, Amazon, and KDP channels without tracking.'
     }
   ];
 

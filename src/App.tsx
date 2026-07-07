@@ -30,6 +30,7 @@ import TestimonialsSlider from './components/TestimonialsSlider';
 import ErrorBoundary from './components/ErrorBoundary';
 import LandingPage from './pages/landing_page/LandingPage';
 import GoogleAdsLandingPage from './pages/landing_page/GoogleAdsLandingPage';
+import AIPlatform from './pages/AIPlatform';
 
 function ScrollHandler() {
   const location = useLocation();
@@ -114,6 +115,7 @@ function App() {
             <Route path="/:lang/testimonials" element={<Testimonials />} />
             <Route path="/:lang/landing" element={<LandingPage />} />
             <Route path="/:lang/google-ads" element={<GoogleAdsLandingPage />} />
+            <Route path="/:lang/la-nostra-tecnologia-ai" element={<AIPlatform />} />
 
             {/* Catch all redirect */}
             <Route path="*" element={<Navigate to={`/${language}/`} replace />} />

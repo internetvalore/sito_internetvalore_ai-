@@ -22,47 +22,47 @@ export default function RispondiSubito() {
     },
     features: [
       {
-        title: 'Risponditore automatico H24',
-        description: 'Disponibile 24 ore su 24, 7 giorni su 7 per non perdere mai una chiamata.'
+        title: 'Risponditore vocale intelligente H24',
+        description: 'Leonardo risponde sempre al primo squillo per qualificare contatti e prendere appuntamenti, senza operatori.'
       },
       {
-        title: 'Smistamento intelligente delle chiamate',
-        description: 'Trasferimento delle chiamate al reparto giusto, senza attese inutili.'
+        title: 'Integrazione CRM',
+        description: 'Registra e mappa le chiamate direttamente sulla scheda cliente, aggiornando lo stato in tempo reale.'
       },
       {
-        title: 'Integrazione con CRM',
-        description: 'Tutte le informazioni sui clienti a portata di mano, per un\'assistenza personalizzata.'
+        title: 'Riconciliazione eventi telefonici',
+        description: 'Collega i numeri di telefono con le sorgenti Ads per attribuire correttamente i lead offline.'
       },
       {
-        title: 'Nessun costo per operatore',
-        description: 'Risparmia sui costi del personale e aumenta l\'efficienza.'
+        title: 'Nessun costo operatore',
+        description: 'Struttura automatizzata per tagliare i tempi di attesa e i costi fissi telefonici.'
       }
     ],
     process: {
-      title: 'Come Funziona',
+      title: 'Come Integriamo Leonardo',
       steps: [
         {
-          title: 'Configurazione',
-          description: 'Definisci le regole di risposta e smistamento'
+          title: 'Prompt Engineering & KB',
+          description: 'Configuriamo le istruzioni e la knowledge base dell\'assistente Leonardo.'
         },
         {
-          title: 'Integrazione',
-          description: 'Collega il centralino al tuo CRM e agli altri strumenti aziendali'
+          title: 'Integrazione API',
+          description: 'Colleghiamo le numerazioni VoIP al CRM aziendale ed ai calendari.'
         },
         {
-          title: 'Attivazione',
-          description: 'Metti online il centralino e inizia a rispondere alle chiamate'
+          title: 'Esecuzione Staging',
+          description: 'Attiviamo il risponditore su un numero di test per verificarne il comportamento.'
         },
         {
-          title: 'Monitoraggio',
-          description: 'Controlla le statistiche e ottimizza le performance'
+          title: 'Allineamento Campagne',
+          description: 'Colleghiamo le conversioni telefoniche reali allo Smart Bidding Ads.'
         }
       ]
     },
     cta: {
-      title: 'Pronto a migliorare il tuo servizio clienti?',
-      description: 'Contattaci per una consulenza gratuita',
-      button: 'Inizia Ora'
+      title: 'Vuoi automatizzare il tuo centralino?',
+      description: 'Prenota un appuntamento per configurare una demo personalizzata di Leonardo.',
+      button: 'Contattaci Ora'
     }
   } : {
     title: 'RispondoSubito',
@@ -75,47 +75,47 @@ export default function RispondiSubito() {
     },
     features: [
       {
-        title: '24/7 automatic answering',
-        description: 'Available 24 hours a day, 7 days a week to never miss a call.'
+        title: 'Intelligent 24/7 Voice Assistant',
+        description: 'Leonardo picks up instantly to qualify leads and book calendar appointments, without human agents.'
       },
       {
-        title: 'Intelligent call routing',
-        description: 'Transfer calls to the right department, without unnecessary waiting.'
+        title: 'CRM Deep Integration',
+        description: 'Maps and logs calls directly to client profiles, updating stages in real time.'
       },
       {
-        title: 'CRM integration',
-        description: 'All customer information at your fingertips for personalized support.'
+        title: 'Offline Conversion Reconciliation',
+        description: 'Matches inbound caller numbers with Google/Meta ad click data to properly attribute offline leads.'
       },
       {
-        title: 'No operator costs',
-        description: 'Save on personnel costs and increase efficiency.'
+        title: 'Zero Operator Overhead',
+        description: 'Automated system to eliminate user hold times and cut flat-rate switchboard costs.'
       }
     ],
     process: {
-      title: 'How it Works',
+      title: 'Our Integration Protocol',
       steps: [
         {
-          title: 'Configuration',
-          description: 'Define the answering and routing rules'
+          title: 'Prompt Engineering & KB',
+          description: 'Configure Leonardo\'s custom prompts and target knowledge bases.'
         },
         {
-          title: 'Integration',
-          description: 'Connect the switchboard to your CRM and other business tools'
+          title: 'API Integration',
+          description: 'Connect switchboards to CRM databases and booking calendars.'
         },
         {
-          title: 'Activation',
-          description: 'Put the switchboard online and start answering calls'
+          title: 'Staged Testing',
+          description: 'Activate the responder on a test number to audit conversation quality.'
         },
         {
-          title: 'Monitoring',
-          description: 'Check the statistics and optimize performance'
+          title: 'Campaign Alignment',
+          description: 'Link offline phone call booking conversions directly into Smart Bidding algorithms.'
         }
       ]
     },
     cta: {
-      title: 'Ready to improve your customer service?',
-      description: 'Contact us for a free consultation',
-      button: 'Start Now'
+      title: 'Ready to automate your switchboard?',
+      description: 'Book an appointment to set up a customized demo of Leonardo for your business.',
+      button: 'Contact Us Now'
     }
   };
 

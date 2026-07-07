@@ -206,5 +206,17 @@ export const metaContent = {
       description: 'Contact us for a free consultation. We\'re here to help you achieve your digital goals.',
       path: '/contact'
     }
+  },
+  aiPlatform: {
+    it: {
+      title: 'La Nostra Tecnologia AI per la Gestione Campagne | Internet Valore',
+      description: 'Scopri la tecnologia proprietaria di Internet Valore per la gestione in outsourcing di E-commerce e Lead Gen: flussi di lavoro, Creative Studio e Giudice Avversariale.',
+      path: '/la-nostra-tecnologia-ai'
+    },
+    en: {
+      title: 'Our AI Technology for Campaign Management | Internet Valore',
+      description: 'Discover Internet Valore\'s proprietary tech suite for outsourcing E-commerce and Lead Gen campaigns: detailed workflows, Creative Studio, and Adversarial Judge.',
+      path: '/la-nostra-tecnologia-ai'
+    }
   }
 };

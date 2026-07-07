@@ -191,6 +191,40 @@ export default function LeadGeneration() {
             </div>
           </motion.div>
 
+          {/* ══ SOTTO IL COFANO ══════════════════════════════════════════════ */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mt-20 bg-gray-900 text-white rounded-2xl p-8 sm:p-12 border border-gray-800 shadow-xl overflow-hidden relative"
+          >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-xs font-bold tracking-widest text-blue-400 uppercase mb-3">
+                {language === 'it' ? 'SOTTO IL COFANO' : 'UNDER THE HOOD'}
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-white">
+                {language === 'it' 
+                  ? 'La tecnologia AI proprietaria al servizio della Lead Generation' 
+                  : 'Proprietary AI Tech powering your Lead Generation'}
+              </h2>
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-8">
+                {language === 'it'
+                  ? 'La lead generation di successo non si basa su metriche artificiali. Usiamo la nostra suite di gestione proprietaria per riconciliare i contatti del tuo CRM con GA4 e Ads, ripulendo i dati dallo spam prima di inviarli agli algoritmi. Massimizziamo la qualità dei contatti riducendo i costi di acquisizione.'
+                  : 'Successful lead generation doesn\'t rely on artificial pixel counts. We use our proprietary management suite to reconcile CRM leads with GA4 and Ads, filtering out spam before feeding data to bidding algorithms. We maximize lead quality while reducing acquisition costs.'}
+              </p>
+              <Link
+                to={`/${language}/la-nostra-tecnologia-ai`}
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-500 transition-colors duration-200 shadow-md"
+              >
+                {language === 'it' 
+                  ? 'Scopri la nostra Tecnologia AI per la gestione delle campagne' 
+                  : 'Discover our AI Technology for campaign management'}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}

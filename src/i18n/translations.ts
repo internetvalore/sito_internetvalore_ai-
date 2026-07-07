@@ -8,82 +8,83 @@ export const translations = {
       about: 'Chi Siamo',
       call: 'Chiama Ora',
       contact: 'Contattaci',
-      tagline: 'Scriviamo la sceneggiatura\ndel Film del Tuo Successo',
+      tagline: 'Gestione Campagne in Outsourcing con Dati e Codice Reali',
       instantWebsites: 'Siti Istantanei',
+      ecommercePlatform: 'La Nostra AI',
       testimonials: 'Testimonianze',
       callUs: 'Chiamaci Ora'
     },
     hero: {
-      title: 'L\'Intelligenza Artificiale Generativa\nal servizio del tuo Successo Digitale',
-      highlight: 'Intercettiamo i bisogni nascosti dei tuoi clienti grazie alla Deep Search.',
-      description: 'Non ci limitiamo a creare siti o campagne. Utilizziamo avanzati modelli di IA per esplorare la rete in profondità, comprendendo cosa cercano davvero i tuoi clienti, anche quando non lo dicono. Sulla base di questi dati, costruiamo le tue strategie di marketing.',
+      title: 'Gestione Campagne in Outsourcing con Dati e Codice Reali',
+      highlight: 'Eliminiamo gli sprechi delle agenzie tradizionali con la nostra suite AI proprietaria.',
+      description: 'Non siamo una SaaS e non ottimizziamo il fatturato lordo "a sentimento". Gestiamo le tue campagne (E-commerce o Lead Generation) integrando la nostra tecnologia (masterAnalyzer) da 160.000 righe di codice per riconciliare ordini reali ed eventi lead del tuo CRM, bloccare la cannibalizzazione del brand ed ottimizzare solo sul profitto (POAS) netto.',
       cta: {
-        primary: 'Scopri il Metodo Deep Search',
+        primary: 'Scopri la nostra Tecnologia AI',
         secondary: 'I Nostri Servizi'
       }
     },
     methodology: {
-      title: 'Il Nostro Metodo: AI & Deep Search',
-      subtitle: 'Come trasformiamo i dati in risultati tangibili',
+      title: 'Il Nostro Metodo: AI, Codice & Psicologia',
+      subtitle: 'Come gestiamo le tue campagne riducendo gli sprechi',
       steps: [
         {
-          title: 'Deep Search',
-          description: 'Scandagliamo il web con l\'IA per estrarre insight sui desideri inespressi del tuo target.'
+          title: '1. Deep Search & Intent',
+          description: 'Mappiamo gli intenti di ricerca reali e i claim dei competitor per identificare le nicchie libere e le query inutilizzate.'
         },
         {
-          title: 'Generative Blueprint',
-          description: 'L\'IA generativa trasforma i dati in una strategia di comunicazione e funnel perfetti per la tua nicchia.'
+          title: '2. Creative Studio & Ferite',
+          description: 'Generiamo concept visivi e testuali ancorandoli alle ferite psicologiche ed ai bisogni del target, filtrandoli con il Giudice Avversariale.'
         },
         {
-          title: 'Esecuzione Chirurgica',
-          description: 'Solo a questo punto creiamo Siti, Landing Page o campagne Ads, con messaggi già testati per convertire.'
+          title: '3. Riconciliazione CRM & POAS',
+          description: 'Pubblichiamo le campagne in PAUSA. Le ottimizziamo sul profitto reale (POAS) ed eventi lead riconciliati al 100% col tuo CRM, non sullo spam.'
         }
       ]
     },
     services: {
-      title: 'Servizi',
-      subtitle: 'Soluzioni Digitali Guidate dall\'IA',
-      description: 'Le nostre strategie sono basate sui dati reali raccolti dalla Deep Search per garantire il massimo ROI.',
-      available247: 'Rispondiamo 7/24 - Parla con Leonardo a qualsiasi ora',
+      title: 'Le Nostre Specializzazioni',
+      subtitle: 'Gestione Campagne in Outsourcing potenziata dall\'AI',
+      description: 'Ogni canale di acquisizione è supportato da masterAnalyzer per garantire l\'assenza di sprechi ed un controllo matematico dei risultati.',
+      available247: 'Disponibilità 24/7 - Numero Verde (Risponde Leonardo per appuntamenti)',
       sections: {
         leadGeneration: {
-          title: 'Lead Generation',
-          description: 'Contatti qualificati attraverso campagne predittive guidate dall\'IA. Colpiamo il target giusto al primo colpo.',
+          title: 'Lead Generation Riconciliata',
+          description: 'Acquisiamo contatti qualificati purificando i dati dallo spam prima di addestrare lo Smart Bidding. Meno bot, contratti più sicuri.',
           features: [
-            'Targeting basato su intelligenza artificiale',
-            'Integrazione WhatsApp Business',
-            'Assistente virtuale Leonardo 24/7',
-            'Automazione completa del processo'
+            'Riconciliazione contatti CRM',
+            'RispondoSubito conversazionale H24',
+            'Ponte Organic-to-RSA (SEO → Ads)',
+            'Concept basati su ferite e obiezioni'
           ]
         },
         ecommerce: {
-          title: 'E-commerce AI',
-          description: 'Strutturiamo l\'offerta e le promozioni analizzando il comportamento di acquisto con l\'intelligenza artificiale.',
+          title: 'E-commerce Performance (POAS)',
+          description: 'Massimizziamo il profitto reale del tuo e-commerce, tracciando gli ordini reali Shopify contro GA4 ed ottimizzando per margine.',
           features: [
-            'Analisi comportamentale avanzata',
-            'Ottimizzazione conversioni AI',
-            'Strategie di retargeting predittivo',
-            'UX ottimizzata sui dati'
+            'Ottimizzazione sul profitto (POAS)',
+            'Riconciliazione ordini Shopify vs GA4',
+            'Creative Studio per singoli prodotti',
+            'Tassi FX giornalieri BCE'
           ]
         },
         ads: {
-          title: 'Gestione Ads',
-          description: 'Non sprechiamo budget: le nostre campagne sono basate sugli intenti di ricerca reali scoperti dalla Deep Search.',
+          title: 'Gestione Google & Meta Ads',
+          description: 'Eseguiamo modifiche strutturali sicure passando da staging e validazione dry-run, escludendo cannibalizzazioni brand.',
           features: [
-            'Ottimizzazione continua AI',
-            'Test A/B dinamici',
-            'Report predittivi settimanali',
-            'Targeting basato su insight reali'
+            'Modifiche sicure in staging',
+            'Raggi X & Restrutturazione account',
+            'Controllo cannibalizzazione brand',
+            'Esclusione device e orari (Delivery)'
           ]
         },
         analytics: {
-          title: 'Analisi Dati',
-          description: 'L\'IA analizza moli di dati in tempo reale per restituirti dashboard chiare e azioni strategiche immediate.',
+          title: 'Analisi Dati & KPI Pura',
+          description: 'Generiamo report narrativi basati su modelli matematici di scomposizione LMDI del Δ per dirti esattamente perché cambiano i numeri.',
           features: [
-            'Elaborazione dati con AI',
-            'Previsioni e trend di mercato',
-            'Analisi competitiva profonda',
-            'Report strategici settimanali'
+            'Scomposizione algebrica delle variazioni',
+            'Modello MMM adstock per Amazon/KDP',
+            'Dossier di presa in carico (baseline t0)',
+            'Sanity checks e fresh tokens'
           ]
         },
         instantWebsites: {
@@ -125,6 +126,16 @@ export const translations = {
             'Smistamento proattivo',
             'Analisi del sentiment (opzionale)'
           ]
+        },
+        ecommercePlatform: {
+          title: 'La Nostra Tecnologia AI',
+          description: 'La suite proprietaria che abilita la nostra gestione delle campagne, senza farti perdere ordini o lead.',
+          features: [
+            'Mappa interattiva dei nostri flussi di lavoro',
+            'Creative Studio per concept basati su dati',
+            'Giudice Avversariale per il controllo di qualità',
+            'Riconciliazione ordini e lead reali'
+          ]
         }
       }
     }
@@ -136,82 +147,83 @@ export const translations = {
       about: 'About Us',
       call: 'Call Now',
       contact: 'Contact Us',
-      tagline: 'We Write the Script\nof Your Success Story',
+      tagline: 'Outsourced Campaign Management Driven by Real Data & Code',
       instantWebsites: 'Instant Websites',
+      ecommercePlatform: 'Our AI Tech',
       testimonials: 'Testimonials',
       callUs: 'Call Us Now'
     },
     hero: {
-      title: 'Generative Artificial Intelligence\nat the service of your Digital Success',
-      highlight: 'We intercept your customers\' hidden needs through Deep Search.',
-      description: 'We don\'t just create websites or campaigns. We use advanced AI models to explore the web deeply, understanding what your customers are really looking for, even when they don\'t say it. Based on this data, we build your marketing strategies.',
+      title: 'Outsourced Campaign Management Driven by Real Data & Code',
+      highlight: 'Eliminating traditional agency waste with our proprietary AI control suite.',
+      description: 'We are not a SaaS, and we don\'t optimize gross revenue based on assumptions. We manage your campaigns (E-commerce or Lead Generation) using our technology suite (masterAnalyzer) of 160,000 lines of code to reconcile backend orders and CRM leads, block brand cannibalization, and optimize exclusively on actual profit (POAS).',
       cta: {
-        primary: 'Discover the Deep Search Method',
+        primary: 'Discover Our AI Tech',
         secondary: 'Our Services'
       }
     },
     methodology: {
-      title: 'Our Method: AI & Deep Search',
-      subtitle: 'How we turn data into tangible results',
+      title: 'Our Method: AI, Code & Psychology',
+      subtitle: 'How we manage your campaigns reducing waste',
       steps: [
         {
-          title: 'Deep Search',
-          description: 'We scour the web with AI to extract insights about your target audience\'s unexpressed desires.'
+          title: '1. Deep Search & Intent',
+          description: 'We map real search intents and competitor claims to identify untapped niches and unused queries.'
         },
         {
-          title: 'Generative Blueprint',
-          description: 'Generative AI transforms data into the perfect communication strategy and funnel for your niche.'
+          title: '2. Creative Studio & Wounds',
+          description: 'We generate visual and copy concepts anchored to psychological wounds and target needs, filtered by our Adversarial Judge.'
         },
         {
-          title: 'Surgical Execution',
-          description: 'Only then do we create Websites, Landing Pages, or Ads, using pre-tested messaging guaranteed to convert.'
+          title: '3. CRM Reconciliation & POAS',
+          description: 'We deploy campaigns as PAUSED. We optimize them on real profit (POAS) and leads reconciled 100% with your CRM, not spam.'
         }
       ]
     },
     services: {
-      title: 'Services',
-      subtitle: 'AI-Driven Digital Solutions',
-      description: 'Our strategies are based on real data collected through Deep Search to ensure maximum ROI.',
-      available247: 'We respond 24/7 - Talk to Leonardo anytime',
+      title: 'Our Core Capabilities',
+      subtitle: 'Outsourced Campaign Management Powered by AI',
+      description: 'Every acquisition channel is supported by masterAnalyzer to guarantee zero waste and mathematical control over your ROI.',
+      available247: 'Available 24/7 - Toll-Free Number (Talk to Leonardo for booking)',
       sections: {
         leadGeneration: {
-          title: 'Lead Generation',
-          description: 'Qualified leads through AI-driven predictive campaigns. We hit the right target on the first try.',
+          title: 'Reconciled Lead Generation',
+          description: 'Acquire qualified leads by cleaning spam before training Smart Bidding. Fewer bots, higher quality contracts.',
           features: [
-            'AI-based targeting',
-            'WhatsApp Business integration',
-            'Leonardo virtual assistant 24/7',
-            'Complete process automation'
+            'CRM lead reconciliation',
+            'RispondoSubito conversational H24',
+            'Organic-to-RSA bridge (SEO → Ads)',
+            'Concepts based on wounds & objections'
           ]
         },
         ecommerce: {
-          title: 'AI E-commerce',
-          description: 'We structure offers and promotions by analyzing purchasing behavior with artificial intelligence.',
+          title: 'E-commerce Performance (POAS)',
+          description: 'Maximize the real profit of your store, tracking actual Shopify orders against GA4 and optimizing for margin.',
           features: [
-            'Advanced behavioral analysis',
-            'AI conversion optimization',
-            'Predictive retargeting strategies',
-            'Data-optimized UX'
+            'Optimization on profit (POAS)',
+            'Shopify vs GA4 order reconciliation',
+            'Creative Studio for product groups',
+            'Daily BCE exchange rates (FX Layer)'
           ]
         },
         ads: {
-          title: 'Ads Management',
-          description: 'We don\'t waste your budget: our campaigns are built on true search intents uncovered by Deep Search.',
+          title: 'Google & Meta Ads Management',
+          description: 'Deploy changes safely through staging and dry-run validation, eliminating branded search cannibalization.',
           features: [
-            'Continuous AI optimization',
-            'Dynamic A/B testing',
-            'Predictive weekly reports',
-            'Real insight-based targeting'
+            'Safe modifications in staging',
+            'X-Ray & Account restructuring',
+            'Brand cannibalization blocker',
+            'Device & Dayparting delivery controls'
           ]
-        },
+                },
         analytics: {
-          title: 'Data Analytics',
-          description: 'AI analyzes massive data in real time to give you clear dashboards and immediate strategic actions.',
+          title: 'Pure Data & KPI Analytics',
+          description: 'Generate narrative reports based on LMDI algebraic decomposition models of Δ to tell you exactly why metrics changed.',
           features: [
-            'AI data processing',
-            'Market forecasts and trends',
-            'Deep competitive analysis',
-            'Strategic weekly reporting'
+            'Algebraic change decomposition (LMDI)',
+            'MMM adstock model for Amazon/KDP',
+            'Day-0 onboarding dossier (t0 baseline)',
+            'Sanity checks & fresh tokens'
           ]
         },
         instantWebsites: {
@@ -252,6 +264,16 @@ export const translations = {
             'Deep CRM integration',
             'Proactive routing',
             'Sentiment analysis (optional)'
+          ]
+        },
+        ecommercePlatform: {
+          title: 'Our AI Technology',
+          description: 'The proprietary suite that empowers our campaign management, preventing lost orders or leads.',
+          features: [
+            'Interactive map of our workflows',
+            'Creative Studio for data-driven concepts',
+            'Adversarial Judge for quality assurance',
+            'Order & lead backend reconciliation'
           ]
         }
       }

@@ -13,99 +13,99 @@ export default function LandingPageProfessionali() {
 
   const content = language === 'it' ? {
     title: 'Landing Page Professionali',
-    subtitle: 'La Tua Landing Page in 5 Giorni',
-    description: 'Costruiamo Landing Page sui bisogni emersi dalla Deep Search. Aumenta le conversioni con contenuti che risuonano esattamente con ciò che il tuo target cerca. Ci occupiamo di tutto noi.',
+    subtitle: 'Landing page persuasive progettate in 5 Giorni',
+    description: 'Non creiamo layout generici. Costruiamo landing page basandoci sugli intenti reali della Deep Search e le filtriamo col nostro Giudice Avversariale per massimizzare il ROI.',
     features: [
       {
-        title: 'Pronta in 5 giorni lavorativi',
-        description: 'Ottieni la tua landing page operativa rapidamente.'
+        title: 'Creative Studio Concept',
+        description: 'Pagine strutturate sui concept emotivi emersi dalle ferite (Wound Thesaurus) e bisogni Maslow del target.'
       },
       {
-        title: 'Hosting incluso',
-        description: 'Ci occupiamo noi dell\'hosting per te.'
+        title: 'Copy anti-kitsch & policy-proof',
+        description: 'I testi vengono passati dal Giudice Avversariale per bloccare finti countdown, scritte pixelate e claim ingannevoli.'
       },
       {
-        title: 'Ottimizzata per le conversioni',
-        description: 'Progettata per massimizzare il tasso di conversione.'
+        title: 'Ottimizzazione per conversioni reali',
+        description: 'UX ed elementi interattivi posizionati per raccogliere dati puliti e pronti per la sincronizzazione CRM.'
       },
       {
-        title: 'Contenuti creati per te',
-        description: 'Creiamo contenuti coinvolgenti su misura per il tuo pubblico.'
+        title: 'Codice e Hosting blindati',
+        description: 'Sviluppo local-first/cloud-ready per garantire tempi di caricamento istantanei e sicurezza.'
       }
     ],
     process: {
-      title: 'Il Nostro Metodo',
+      title: 'Il Nostro Metodo Creativo',
       steps: [
         {
-          title: 'Giorno 1: Intervista e Briefing',
-          description: 'Raccogliamo tutte le informazioni necessarie per comprendere le tue esigenze.'
+          title: 'Briefing e baseline t0',
+          description: 'Raccogliamo gli obiettivi storici e gli intenti emersi dalla Deep Search.'
         },
         {
-          title: 'Giorno 2-3: Design e Sviluppo',
-          description: 'Il nostro team progetta e sviluppa la tua landing page.'
+          title: 'Design & Persuasione',
+          description: 'Stendiamo il copy basato sulla mappa dei bisogni e sulle ferite emotive.'
         },
         {
-          title: 'Giorno 4: Revisione e Modifiche',
-          description: 'Rivedi la landing page e fornisci feedback.'
+          title: 'Giudizio Avversariale',
+          description: 'Invio a revisione indipendente per pulire da cliché e didascalismi.'
         },
         {
-          title: 'Giorno 5: Pubblicazione',
-          description: 'Pubblichiamo la tua landing page e ci assicuriamo che funzioni correttamente.'
+          title: 'Pubblicazione e Tracciamento',
+          description: 'Messa online della landing page e configurazione del tracciamento eventi reali.'
         }
       ]
     },
     cta: {
-      title: 'Pronto a lanciare la tua landing page?',
-      description: 'Contattaci per una consulenza gratuita',
-      button: 'Inizia Ora'
+      title: 'Vuoi una landing page che converta davvero?',
+      description: 'Prenota un audit gratuito e scopri come applichiamo la psicologia persuasiva alle pagine.',
+      button: 'Contattaci Ora'
     }
   } : {
     title: 'Professional Landing Pages',
-    subtitle: 'Your Landing Page in 5 Days',
-    description: 'We build Landing Pages on the needs uncovered by Deep Search. Increase conversions with content that resonates exactly with what your target audience is looking for. We take care of everything.',
+    subtitle: 'Persuasive landing pages deployed in 5 Days',
+    description: 'We do not build generic templates. We build landing pages based on Deep Search intents and filter them through our Adversarial Judge to maximize conversions.',
     features: [
       {
-        title: 'Ready in 5 business days',
-        description: 'Get your landing page up and running quickly.'
+        title: 'Creative Studio Concepting',
+        description: 'Pages structured around emotional hooks derived from psychological wounds and Maslow needs.'
       },
       {
-        title: 'Hosting included',
-        description: 'We handle the hosting so you don\'t have to.'
+        title: 'Policy-proof Copy',
+        description: 'All text passes our Adversarial Judge to exclude fake urgency, pixelated overlays, and manipulative claims.'
       },
       {
-        title: 'Optimized for conversions',
-        description: 'Designed to maximize your conversion rates.'
+        title: 'Real Conversion Optimization',
+        description: 'Layouts built to capture verified leads, ready for CRM synchronization and algorithm training.'
       },
       {
-        title: 'Content created for you',
-        description: 'We create compelling content tailored to your audience.'
+        title: 'Cloud-ready Performance',
+        description: 'Local-first and cloud-optimized frameworks to guarantee instant load times and safety.'
       }
     ],
     process: {
-      title: 'Our Method',
+      title: 'Our Creative Protocol',
       steps: [
         {
-          title: 'Day 1: Interview and Briefing',
-          description: 'We gather all the necessary information to understand your needs.'
+          title: 't0 Briefing',
+          description: 'Gather historical targets and search intents uncovered by Deep Search.'
         },
         {
-          title: 'Day 2-3: Design and Development',
-          description: 'Our team designs and develops your landing page.'
+          title: 'Design & Persuasion',
+          description: 'Draft page copy anchored to psychological wounds and Maslow targets.'
         },
         {
-          title: 'Day 4: Review and Modifications',
-          description: 'You review the landing page and provide feedback.'
+          title: 'Adversarial Validation',
+          description: 'Pass concepts to independent review to purge visual and verbal clichés.'
         },
         {
-          title: 'Day 5: Publication',
-          description: 'We publish your landing page and ensure it\'s running smoothly.'
+          title: 'Launch & Event Track',
+          description: 'Go live and configure verified event trackers to feed clean database statistics.'
         }
       ]
     },
     cta: {
-      title: 'Ready to launch your landing page?',
-      description: 'Contact us for a free consultation',
-      button: 'Start Now'
+      title: 'Ready for a high-converting page?',
+      description: 'Book a free consultation and see how we apply persuasion frameworks to landing pages.',
+      button: 'Contact Us Now'
     }
   };
 

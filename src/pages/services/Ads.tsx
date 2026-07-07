@@ -12,100 +12,100 @@ export default function Ads() {
   const meta = metaContent.ads[language];
 
   const content = language === 'it' ? {
-    title: 'Gestione Ads',
-    subtitle: 'Campagne pubblicitarie che generano risultati',
-    description: 'Ottimizziamo le tue campagne Ads basandoci sui dati della Deep Search per dominare il mercato e massimizzare il ROI',
+    title: 'Gestione Google & Meta Ads',
+    subtitle: 'Modifiche sicure e controllo degli sprechi di budget',
+    description: 'Gestiamo le tue campagne pubblicitarie Google e Meta integrando masterAnalyzer per eliminare gli sprechi del brand e della delivery, ottimizzando solo sui dati reali.',
     features: [
       {
-        title: 'Ottimizzazione ROI',
-        description: 'Massimizziamo il ritorno sull\'investimento pubblicitario'
+        title: 'Raggi X automatici',
+        description: 'Audit periodico del tracciamento e dello spreco per-device per stanare anomalie prima dei costi.'
       },
       {
-        title: 'Test A/B Sistematici',
-        description: 'Ottimizzazione continua degli annunci attraverso test scientifici'
+        title: 'Delivery dayparting',
+        description: 'Controllo orario e device bid modifiers per ottimizzare la spesa su dati storici statistici.'
       },
       {
-        title: 'Report Dettagliati',
-        description: 'Report settimanali completi sulle performance delle campagne'
+        title: 'Modifiche in Staging',
+        description: 'Le nuove campagne vengono caricate in PAUSA ed esaminate prima dell\'invio reale.'
       },
       {
-        title: 'Targeting Demografico',
-        description: 'Raggiungimento preciso del tuo pubblico target ideale'
+        title: 'Restrutturazione RSA',
+        description: 'Annunci RSA strutturati in base ai cluster SEO e ai claim emersi dai competitor.'
       }
     ],
     process: {
-      title: 'Il Nostro Metodo',
+      title: 'Il Nostro Metodo di Gestione',
       steps: [
         {
-          title: 'Analisi di Mercato',
-          description: 'Studio del mercato e della concorrenza'
+          title: 'Audit baseline t0',
+          description: 'Fermiamo la baseline storica e tracciamo gli errori dell\'attuale configurazione.'
         },
         {
-          title: 'Strategia Ads',
-          description: 'Pianificazione delle campagne pubblicitarie'
+          title: 'Intent Mapping',
+          description: 'Mappiamo gli intenti e le query escludendo la cannibalizzazione brand.'
         },
         {
-          title: 'Implementazione',
-          description: 'Creazione e lancio delle campagne'
+          title: 'Staging & Dry-run',
+          description: 'Stadiamo gli interventi in coda approvazione ed effettuiamo dry-run di conformità.'
         },
         {
-          title: 'Ottimizzazione',
-          description: 'Monitoraggio e miglioramento continuo'
+          title: 'Riconciliazione POAS',
+          description: 'Colleghiamo le metriche reali ed ottimizziamo sul ritorno effettivo.'
         }
       ]
     },
     cta: {
-      title: 'Pronto a migliorare le tue campagne?',
-      description: 'Contattaci per una consulenza gratuita',
-      button: 'Inizia Ora'
+      title: 'Pronto a eliminare gli sprechi pubblicitari?',
+      description: 'Metti alla prova le tue campagne attuali con un audit Raggi X guidato dai dati.',
+      button: 'Prenota un Audit gratuito'
     }
   } : {
-    title: 'Ads Management',
-    subtitle: 'Advertising campaigns that generate results',
-    description: 'We optimize your Ad campaigns based on Deep Search data to dominate the market and maximize ROI',
+    title: 'Google & Meta Ads Management',
+    subtitle: 'Safe campaign modifications and budget waste control',
+    description: 'We manage your Google and Meta Ads campaigns integrated with masterAnalyzer to block brand cannibalization and delivery waste.',
     features: [
       {
-        title: 'ROI Optimization',
-        description: 'We maximize return on advertising investment'
+        title: 'Automatic X-Ray',
+        description: 'Periodic tracking and per-device waste audits to fix account drops before they burn cash.'
       },
       {
-        title: 'Systematic A/B Testing',
-        description: 'Continuous ad optimization through scientific testing'
+        title: 'Delivery Dayparting',
+        description: 'Hourly and device bid adjustments to optimize daily pacing based on historical math.'
       },
       {
-        title: 'Detailed Reports',
-        description: 'Complete weekly reports on campaign performance'
+        title: 'Paused Staging',
+        description: 'New campaigns are built strictly as PAUSED and review-staged before deployment.'
       },
       {
-        title: 'Demographic Targeting',
-        description: 'Precise reaching of your ideal target audience'
+        title: 'RSA restructuring',
+        description: 'RSA search ads structured around competitor claims and high-conversion search queries.'
       }
     ],
     process: {
-      title: 'Our Method',
+      title: 'Our Campaign Process',
       steps: [
         {
-          title: 'Market Analysis',
-          description: 'Study of the market and competition'
+          title: 'Baseline t0 Audit',
+          description: 'Freeze historical benchmarks and discover errors in current configurations.'
         },
         {
-          title: 'Ads Strategy',
-          description: 'Planning of advertising campaigns'
+          title: 'Intent Mapping',
+          description: 'Map user intent and queries while blocking branded search cannibalization.'
         },
         {
-          title: 'Implementation',
-          description: 'Creation and launch of campaigns'
+          title: 'Staging & Dry-run',
+          description: 'Stage changes in the approval queue and execute dry-run API validation.'
         },
         {
-          title: 'Optimization',
-          description: 'Continuous monitoring and improvement'
+          title: 'POAS Optimization',
+          description: 'Sync real backend orders and optimize campaigns strictly on net profit margins.'
         }
       ]
     },
     cta: {
-      title: 'Ready to improve your campaigns?',
-      description: 'Contact us for a free consultation',
-      button: 'Start Now'
+      title: 'Ready to cut advertising waste?',
+      description: 'Test your current campaigns with our data-driven 5-phase X-Ray audit.',
+      button: 'Book a Free Audit'
     }
   };
 

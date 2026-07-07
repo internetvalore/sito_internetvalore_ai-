@@ -25,6 +25,11 @@ export default function Navbar() {
       href: '/services/ecommerce'
     },
     {
+      name: t('services.sections.ecommercePlatform.title'),
+      description: t('services.sections.ecommercePlatform.description'),
+      href: '/la-nostra-tecnologia-ai'
+    },
+    {
       name: t('services.sections.ads.title'),
       description: t('services.sections.ads.description'),
       href: '/services/ads'
