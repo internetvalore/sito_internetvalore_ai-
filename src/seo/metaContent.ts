@@ -218,5 +218,125 @@ export const metaContent = {
       description: 'Discover Internet Valore\'s proprietary tech suite for outsourcing E-commerce and Lead Gen campaigns: detailed workflows, Creative Studio, and Adversarial Judge.',
       path: '/la-nostra-tecnologia-ai'
     }
+  },
+  solutionsHub: {
+    it: {
+      title: 'Soluzioni per Ruolo Aziendale | Internet Valore',
+      description: 'Scopri come la suite AI di Internet Valore risolve i problemi specifici di imprenditori, account manager, media buyer, specialisti SEO e ingegneri del dato.',
+      path: '/solutions'
+    },
+    en: {
+      title: 'Solutions by Business Role | Internet Valore',
+      description: 'Discover how Internet Valore\'s AI suite resolves specific challenges for business owners, account managers, media buyers, SEO specialists, and data engineers.',
+      path: '/solutions'
+    }
+  },
+  titolarePmi: {
+    it: {
+      title: 'Soluzioni per Titolari di PMI e Imprenditori | Internet Valore',
+      description: 'Valuta il profitto reale (POAS) delle tue campagne, proteggi il budget con l\'approval_mode a doppia firma ed evita modifiche non concordate dell\'agenzia.',
+      path: '/solutions/titolare-pmi'
+    },
+    en: {
+      title: 'Solutions for SME Owners & Entrepreneurs | Internet Valore',
+      description: 'Evaluate true profit (POAS) of your campaigns, protect your marketing budget with double-signature approval_mode, and block unauthorized edits.',
+      path: '/solutions/titolare-pmi'
+    }
+  },
+  accountManager: {
+    it: {
+      title: 'Soluzioni per Account Manager | Internet Valore',
+      description: 'Diagnostica cali di conversioni con la decomposizione algebrica LMDI del Δ, valida l\'affidabilità dei dati in 2 minuti e genera report narrativi automatici.',
+      path: '/solutions/account-manager'
+    },
+    en: {
+      title: 'Solutions for Account Managers | Internet Valore',
+      description: 'Diagnose conversion drops with algebraic LMDI Δ decomposition, validate data reliability in 2 minutes, and generate automated narrative reports.',
+      path: '/solutions/account-manager'
+    }
+  },
+  mediaBuyerGoogle: {
+    it: {
+      title: 'Soluzioni per Media Buyer Google Ads | Internet Valore',
+      description: 'Rileva Impression Share persa per Rank vs Budget, correggi il Quality Score in 8 fasi ed esegui modifiche protette tramite dry-run in staging.',
+      path: '/solutions/media-buyer-google-ads'
+    },
+    en: {
+      title: 'Solutions for Google Ads Media Buyers | Internet Valore',
+      description: 'Diagnose Impression Share lost to Rank vs Budget, restructure Quality Score in 8 phases, and deploy safely using staged dry-runs.',
+      path: '/solutions/media-buyer-google-ads'
+    }
+  },
+  mediaBuyerMeta: {
+    it: {
+      title: 'Soluzioni per Media Buyer Meta & Creative Strategist | Internet Valore',
+      description: 'Elimina l\'ad fatigue con il Creative Loop ABC, genera concept psicologici ancorati alle ferite del target ed elimina le discrepanze ROAS Meta vs GA4.',
+      path: '/solutions/media-buyer-meta'
+    },
+    en: {
+      title: 'Solutions for Meta Media Buyers & Creative Strategists | Internet Valore',
+      description: 'Mitigate ad fatigue with Creative Loop ABC, build psychological concepts tied to target pain points, and reconcile Meta vs GA4 ROAS numbers.',
+      path: '/solutions/media-buyer-meta'
+    }
+  },
+  specialistaSeo: {
+    it: {
+      title: 'Soluzioni per Specialist SEO & Contenuti | Internet Valore',
+      description: 'Ottimizza query striking distance in posizione 4-10, rileva cannibalizzazioni di keyword brand ed esporta le pagine organiche vincenti in annunci Search.',
+      path: '/solutions/specialista-seo'
+    },
+    en: {
+      title: 'Solutions for SEO & Content Specialists | Internet Valore',
+      description: 'Optimize striking distance queries in positions 4-10, identify brand keyword cannibalization, and bridge SEO winner pages directly to Search ads.',
+      path: '/solutions/specialista-seo'
+    }
+  },
+  measurementEngineer: {
+    it: {
+      title: 'Soluzioni per Measurement Engineer | Internet Valore',
+      description: 'Riconcilia ordini Shopify o contatti CRM contro GA4, rileva rotture silenti dei tag con hunt_tracking_break e tieni monitorata l\'integrità dei token.',
+      path: '/solutions/measurement-engineer'
+    },
+    en: {
+      title: 'Solutions for Measurement Engineers | Internet Valore',
+      description: 'Reconcile Shopify transactions or CRM leads against GA4, isolate silent tracking breakages, and monitor API token health indicators.',
+      path: '/solutions/measurement-engineer'
+    }
+  },
+  operatoreEcommerce: {
+    it: {
+      title: 'Soluzioni per E-commerce Multi-mercato | Internet Valore',
+      description: 'Gestisci listini multivaluta con tassi BCE storici, alloca budget estero basandoti sulla domanda reale ed espandi il mercato con un cancello a tre stadi.',
+      path: '/solutions/operatore-ecommerce'
+    },
+    en: {
+      title: 'Solutions for Multi-Market E-commerce Operators | Internet Valore',
+      description: 'Manage multi-currency sales using historical BCE rates, allocate international budgets on true demand, and expand via a three-stage gateway.',
+      path: '/solutions/operatore-ecommerce'
+    }
+  },
+  advertiserSenzaTracking: {
+    it: {
+      title: 'Soluzioni per Advertiser Senza Pixel Amazon e KDP | Internet Valore',
+      description: 'Ottimizza campagne ads per Amazon, KDP o negozi fisici senza pixel installati, misurando l\'incremento con modelli econometrici MMM e Adstock.',
+      path: '/solutions/advertiser-senza-tracking'
+    },
+    en: {
+      title: 'Solutions for No-Pixel Advertisers (Amazon & KDP) | Internet Valore',
+      description: 'Optimize ads for Amazon, KDP, or physical stores without pixel integrations, estimating incremental lift using MMM & Adstock models.',
+      path: '/solutions/advertiser-senza-tracking'
+    }
+  },
+  costruttoreSistema: {
+    it: {
+      title: 'Soluzioni per Ingegneri di Sistema e Sviluppatori | Internet Valore',
+      description: 'Architettura modular agentic della suite, gating di sicurezza OAuth per Streamlit, e code di job asincroni con protezione dalle esecuzioni duplicate.',
+      path: '/solutions/costruttore-sistema'
+    },
+    en: {
+      title: 'Solutions for System Builders & Platform Developers | Internet Valore',
+      description: 'Modular agentic suite architecture, Streamlit OAuth security gating, and background task queues with duplicate execution prevention.',
+      path: '/solutions/costruttore-sistema'
+    }
   }
 };

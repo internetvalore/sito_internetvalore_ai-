@@ -33,6 +33,18 @@ import GoogleAdsLandingPage from './pages/landing_page/GoogleAdsLandingPage';
 import AIPlatform from './pages/AIPlatform';
 import CapabilitiesSlider from './components/CapabilitiesSlider';
 
+// Solutions Pages
+import SolutionsHub from './pages/solutions/SolutionsHub';
+import TitolarePmi from './pages/solutions/TitolarePmi';
+import AccountManager from './pages/solutions/AccountManager';
+import MediaBuyerGoogle from './pages/solutions/MediaBuyerGoogle';
+import MediaBuyerMeta from './pages/solutions/MediaBuyerMeta';
+import SpecialistaSeo from './pages/solutions/SpecialistaSeo';
+import MeasurementEngineer from './pages/solutions/MeasurementEngineer';
+import OperatoreEcommerce from './pages/solutions/OperatoreEcommerce';
+import AdvertiserSenzaTracking from './pages/solutions/AdvertiserSenzaTracking';
+import CostruttoreSistema from './pages/solutions/CostruttoreSistema';
+
 function ScrollHandler() {
   const location = useLocation();
 
@@ -118,6 +130,18 @@ function App() {
             <Route path="/:lang/landing" element={<LandingPage />} />
             <Route path="/:lang/google-ads" element={<GoogleAdsLandingPage />} />
             <Route path="/:lang/la-nostra-tecnologia-ai" element={<AIPlatform />} />
+
+            {/* Solutions & Profile routes */}
+            <Route path="/:lang/solutions" element={<SolutionsHub />} />
+            <Route path="/:lang/solutions/titolare-pmi" element={<TitolarePmi />} />
+            <Route path="/:lang/solutions/account-manager" element={<AccountManager />} />
+            <Route path="/:lang/solutions/media-buyer-google-ads" element={<MediaBuyerGoogle />} />
+            <Route path="/:lang/solutions/media-buyer-meta" element={<MediaBuyerMeta />} />
+            <Route path="/:lang/solutions/specialista-seo" element={<SpecialistaSeo />} />
+            <Route path="/:lang/solutions/measurement-engineer" element={<MeasurementEngineer />} />
+            <Route path="/:lang/solutions/operatore-ecommerce" element={<OperatoreEcommerce />} />
+            <Route path="/:lang/solutions/advertiser-senza-tracking" element={<AdvertiserSenzaTracking />} />
+            <Route path="/:lang/solutions/costruttore-sistema" element={<CostruttoreSistema />} />
 
             {/* Catch all redirect */}
             <Route path="*" element={<Navigate to={`/${language}/`} replace />} />

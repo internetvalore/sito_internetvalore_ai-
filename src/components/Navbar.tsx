@@ -11,7 +11,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const services = [
     {
@@ -89,11 +89,18 @@ export default function Navbar() {
             </Popover.Button>
           </div>
           <div className="hidden md:flex space-x-10">
-            <NavLink to="/it/about" className={({ isActive }) => classNames(
+            <NavLink to={`/${language}/about`} className={({ isActive }) => classNames(
               isActive ? 'text-blue-500' : 'text-gray-500',
               'text-base font-medium hover:text-gray-900 transition-colors'
             )}>
               {t('nav.about')}
+            </NavLink>
+
+            <NavLink to={`/${language}/solutions`} className={({ isActive }) => classNames(
+              isActive ? 'text-blue-500' : 'text-gray-500',
+              'text-base font-medium hover:text-gray-900 transition-colors'
+            )}>
+              {language === 'it' ? 'Soluzioni per Ruolo' : 'Solutions by Role'}
             </NavLink>
 
             {/* Services Dropdown */}
@@ -215,8 +222,14 @@ export default function Navbar() {
               </div>
               <div className="mt-6">
                 <nav className="grid gap-y-8">
-                  <NavLink to="/it/about" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                  <NavLink to={`/${language}/about`} className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                     <span className="ml-3 text-base font-medium text-gray-900">{t('nav.about')}</span>
+                  </NavLink>
+
+                  <NavLink to={`/${language}/solutions`} className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                    <span className="ml-3 text-base font-medium text-gray-900">
+                      {language === 'it' ? 'Soluzioni per Ruolo' : 'Solutions by Role'}
+                    </span>
                   </NavLink>
 
                   {/* Mobile Services Menu */}
