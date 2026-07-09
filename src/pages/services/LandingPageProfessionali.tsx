@@ -115,6 +115,14 @@ export default function LandingPageProfessionali() {
         title={meta.title}
         description={meta.description}
         path="/landing-page-professionali"
+        serviceType={meta.serviceType}
+        serviceDescription={meta.serviceDescription}
+        priceRange={meta.priceRange}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },
+          { name: 'Landing Page', path: '/landing-page-professionali' }
+        ]}
       />
       <div className="bg-gradient-to-b from-white to-gray-50">
         <HeroSection
@@ -211,6 +219,27 @@ export default function LandingPageProfessionali() {
               </div>
             </div>
           </motion.div>
+
+          {/* Cross-linking to related solutions */}
+          <div className="mt-20 pb-8">
+            <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+              {language === 'it' ? 'Soluzioni per il tuo ruolo' : 'Solutions for your role'}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Link to={`/${language}/solutions/media-buyer-meta`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{language === 'it' ? 'Media Buyer Meta' : 'Meta Media Buyer'}</h3>
+                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Creative Loop ABC e concept psicologici' : 'Creative Loop ABC and psychological concepts'}</p>
+              </Link>
+              <Link to={`/${language}/solutions/specialista-seo`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{language === 'it' ? 'Specialista SEO' : 'SEO Specialist'}</h3>
+                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Striking distance e ponte SEO-to-Ads' : 'Striking distance and SEO-to-Ads bridge'}</p>
+              </Link>
+              <Link to={`/${language}/services/lead-generation`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Lead Generation</h3>
+                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Deep Search e integrazione WhatsApp CRM' : 'Deep Search and WhatsApp CRM integration'}</p>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>

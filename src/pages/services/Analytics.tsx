@@ -115,6 +115,14 @@ export default function Analytics() {
         title={meta.title}
         description={meta.description}
         path="/services/analytics"
+        serviceType={meta.serviceType}
+        serviceDescription={meta.serviceDescription}
+        priceRange={meta.priceRange}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },
+          { name: language === 'it' ? 'Analytics' : 'Analytics', path: '/services/analytics' }
+        ]}
       />
       <div className="bg-gradient-to-b from-white to-gray-50">
         <HeroSection
@@ -217,6 +225,27 @@ export default function Analytics() {
               </div>
             </div>
           </motion.div>
+
+          {/* Cross-linking to related solutions */}
+          <div className="mt-20 pb-8">
+            <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+              {language === 'it' ? 'Soluzioni per il tuo ruolo' : 'Solutions for your role'}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Link to={`/${language}/solutions/measurement-engineer`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{language === 'it' ? 'Measurement Engineer' : 'Measurement Engineer'}</h3>
+                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Riconciliazione ordini e audit tracciamento automatico' : 'Order reconciliation and automated tracking audit'}</p>
+              </Link>
+              <Link to={`/${language}/solutions/account-manager`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Account Manager</h3>
+                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Decomposizione LMDI e report narrativi' : 'LMDI decomposition and narrative reports'}</p>
+              </Link>
+              <Link to={`/${language}/solutions/advertiser-senza-tracking`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{language === 'it' ? 'Advertiser Senza Pixel' : 'No-Pixel Advertiser'}</h3>
+                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'MMM e Adstock per canali senza tracciamento' : 'MMM and Adstock for channels without tracking'}</p>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>

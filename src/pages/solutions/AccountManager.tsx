@@ -135,10 +135,20 @@ export default function AccountManager() {
     <div className="bg-gray-50 min-h-screen pt-10">
       <MetaTags
         title={isIt ? 'Soluzioni per Account Manager | Internet Valore' : 'Solutions for Account Managers | Internet Valore'}
-        description={isIt 
-          ? 'Diagnostica cali di fatturato con LMDI, prepara report narrativi in automatico ed evita discussioni basate sul rumore di mercato.' 
+        description={isIt
+          ? 'Diagnostica cali di fatturato con LMDI, prepara report narrativi in automatico ed evita discussioni basate sul rumore di mercato.'
           : 'Diagnose revenue drops with LMDI, prepare automated narrative reports, and avoid arguments based on market noise.'}
         path="/solutions/account-manager"
+        serviceType={isIt ? 'Diagnostica Performance & Reporting Automatico' : 'Performance Diagnostics & Automated Reporting'}
+        serviceDescription={isIt
+          ? 'Strumenti di diagnostica per account manager: decomposizione LMDI del calo conversioni, validazione affidabilità dati e report narrativi automatici.'
+          : 'Diagnostic tools for account managers: LMDI conversion drop decomposition, data reliability validation, and automated narrative reports.'}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: isIt ? 'Soluzioni' : 'Solutions', path: '/solutions' },
+          { name: 'Account Manager', path: '/solutions/account-manager' }
+        ]}
+        faq={c.pains.map(p => ({ question: p.q, answer: p.a }))}
       />
 
       {/* ─── HERO ────────────────────────────────────────────────────────── */}

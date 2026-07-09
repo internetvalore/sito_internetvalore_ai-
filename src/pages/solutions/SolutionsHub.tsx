@@ -200,12 +200,24 @@ export default function SolutionsHub() {
           title="Mappa dei Profili e delle Soluzioni | Internet Valore"
           description="Scopri come la suite AI di Internet Valore risolve i punti di dolore di ciascun ruolo aziendale in modo mirato e misurabile."
           path="/solutions"
+          serviceType="AI Marketing Suite"
+          serviceDescription="Suite di strumenti AI per la gestione campagne marketing, organizzata per ruolo aziendale: imprenditori, account manager, media buyer, SEO specialist e data engineer."
+          breadcrumbs={[
+            { name: 'Home', path: '/' },
+            { name: 'Soluzioni', path: '/solutions' }
+          ]}
         />
       ) : (
         <MetaTags
           title="Profile Map and Solutions | Internet Valore"
           description="Discover how Internet Valore's AI suite resolves specific pain points for each business role in a targeted and measurable way."
           path="/solutions"
+          serviceType="AI Marketing Suite"
+          serviceDescription="AI-powered marketing tool suite organized by business role: entrepreneurs, account managers, media buyers, SEO specialists, and data engineers."
+          breadcrumbs={[
+            { name: 'Home', path: '/' },
+            { name: 'Solutions', path: '/solutions' }
+          ]}
         />
       )}
 

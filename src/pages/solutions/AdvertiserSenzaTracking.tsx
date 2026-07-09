@@ -127,10 +127,20 @@ export default function AdvertiserSenzaTracking() {
     <div className="bg-gray-50 min-h-screen pt-10">
       <MetaTags
         title={isIt ? 'Soluzioni Ads Senza Pixel e MMM | Internet Valore' : 'No-Pixel Ads & MMM Solutions | Internet Valore'}
-        description={isIt 
-          ? 'Ottimizza ads per Amazon, KDP e canali offline tramite Marketing Mix Modeling (MMM) e decadimento Adstock.' 
+        description={isIt
+          ? 'Ottimizza ads per Amazon, KDP e canali offline tramite Marketing Mix Modeling (MMM) e decadimento Adstock.'
           : 'Optimize ads for Amazon, KDP, and offline channels via Marketing Mix Modeling (MMM) and Adstock decay.'}
         path="/solutions/advertiser-senza-tracking"
+        serviceType={isIt ? 'Marketing Mix Modeling & Econometria' : 'Marketing Mix Modeling & Econometrics'}
+        serviceDescription={isIt
+          ? 'Ottimizzazione campagne per marketplace senza pixel: modelli econometrici MMM Read-Through, Adstock decay e Correlation Window Analysis.'
+          : 'Campaign optimization for no-pixel marketplaces: MMM Read-Through econometric models, Adstock decay and Correlation Window Analysis.'}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: isIt ? 'Soluzioni' : 'Solutions', path: '/solutions' },
+          { name: isIt ? 'Advertiser Senza Pixel' : 'No-Pixel Advertiser', path: '/solutions/advertiser-senza-tracking' }
+        ]}
+        faq={c.pains.map(p => ({ question: p.q, answer: p.a }))}
       />
 
       {/* ─── HERO ────────────────────────────────────────────────────────── */}

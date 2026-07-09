@@ -135,10 +135,20 @@ export default function MediaBuyerMeta() {
     <div className="bg-gray-50 min-h-screen pt-10">
       <MetaTags
         title={isIt ? 'Soluzioni Meta Ads e Creative Loop | Internet Valore' : 'Meta Ads & Creative Loop Solutions | Internet Valore'}
-        description={isIt 
-          ? 'Risolvi l\'ad fatigue con il Creative Loop ABC, scrivi concept basati sulla psicologia ed elimina le discrepanze ROAS Meta vs GA4.' 
+        description={isIt
+          ? 'Risolvi l\'ad fatigue con il Creative Loop ABC, scrivi concept basati sulla psicologia ed elimina le discrepanze ROAS Meta vs GA4.'
           : 'Resolve ad fatigue with Creative Loop ABC, write psychology-driven concepts, and fix Meta vs GA4 ROAS discrepancies.'}
         path="/solutions/media-buyer-meta"
+        serviceType={isIt ? 'Ottimizzazione Meta Ads & Creative Strategy' : 'Meta Ads Optimization & Creative Strategy'}
+        serviceDescription={isIt
+          ? 'Creative Loop ABC per eliminare l\'ad fatigue, concept psicologici Maslow-driven e riconciliazione ROAS Meta vs GA4.'
+          : 'Creative Loop ABC to mitigate ad fatigue, Maslow-driven psychological concepts, and Meta vs GA4 ROAS reconciliation.'}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: isIt ? 'Soluzioni' : 'Solutions', path: '/solutions' },
+          { name: 'Media Buyer Meta', path: '/solutions/media-buyer-meta' }
+        ]}
+        faq={c.pains.map(p => ({ question: p.q, answer: p.a }))}
       />
 
       {/* ─── HERO ────────────────────────────────────────────────────────── */}

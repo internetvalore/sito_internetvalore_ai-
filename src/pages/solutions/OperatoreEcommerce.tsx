@@ -135,10 +135,20 @@ export default function OperatoreEcommerce() {
     <div className="bg-gray-50 min-h-screen pt-10">
       <MetaTags
         title={isIt ? 'Soluzioni E-commerce Multilingua e Multivaluta | Internet Valore' : 'Multi-Language & Multi-Currency E-commerce Solutions | Internet Valore'}
-        description={isIt 
-          ? 'Riconciliazione multivaluta con tassi BCE ufficiali, riallocazione budget estero e Difference-in-Differences geografico.' 
+        description={isIt
+          ? 'Riconciliazione multivaluta con tassi BCE ufficiali, riallocazione budget estero e Difference-in-Differences geografico.'
           : 'Multi-currency reconciliation with official BCE rates, foreign budget reallocation, and geographic Difference-in-Differences.'}
         path="/solutions/operatore-ecommerce"
+        serviceType={isIt ? 'E-commerce Internazionale & Multi-valuta' : 'International E-commerce & Multi-currency'}
+        serviceDescription={isIt
+          ? 'Gestione e-commerce multi-mercato: riconciliazione multivaluta BCE, allocazione budget estero e gate espansione mercati a tre stadi.'
+          : 'Multi-market e-commerce: BCE multi-currency reconciliation, demand-based international budget allocation, and three-stage market expansion.'}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: isIt ? 'Soluzioni' : 'Solutions', path: '/solutions' },
+          { name: isIt ? 'Operatore E-commerce' : 'E-commerce Operator', path: '/solutions/operatore-ecommerce' }
+        ]}
+        faq={c.pains.map(p => ({ question: p.q, answer: p.a }))}
       />
 
       {/* ─── HERO ────────────────────────────────────────────────────────── */}

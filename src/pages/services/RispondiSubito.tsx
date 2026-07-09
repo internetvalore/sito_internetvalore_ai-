@@ -125,6 +125,14 @@ export default function RispondiSubito() {
         title={meta.title}
         description={meta.description}
         path="/services/rispondi-subito"
+        serviceType={meta.serviceType}
+        serviceDescription={meta.serviceDescription}
+        priceRange={meta.priceRange}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },
+          { name: 'RispondoSubito', path: '/services/rispondi-subito' }
+        ]}
       />
       <div className="bg-gradient-to-b from-white to-gray-50">
         <HeroSection
@@ -239,6 +247,27 @@ export default function RispondiSubito() {
               </div>
             </div>
           </motion.div>
+
+          {/* Cross-linking to related solutions */}
+          <div className="mt-20 pb-8">
+            <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+              {language === 'it' ? 'Soluzioni per il tuo ruolo' : 'Solutions for your role'}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Link to={`/${language}/solutions/titolare-pmi`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{language === 'it' ? 'Titolare PMI' : 'SME Owner'}</h3>
+                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Controllo budget e profitto reale' : 'Budget control and real profit'}</p>
+              </Link>
+              <Link to={`/${language}/services/lead-generation`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Lead Generation</h3>
+                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Deep Search e saturazione nicchie' : 'Deep Search and niche saturation'}</p>
+              </Link>
+              <Link to={`/${language}/services/analytics`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Analytics</h3>
+                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Riconciliazione eventi e scomposizione LMDI' : 'Event reconciliation and LMDI decomposition'}</p>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>

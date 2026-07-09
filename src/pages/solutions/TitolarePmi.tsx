@@ -127,10 +127,20 @@ export default function TitolarePmi() {
     <div className="bg-gray-50 min-h-screen pt-10">
       <MetaTags
         title={isIt ? 'Soluzioni per Titolari PMI e Imprenditori | Internet Valore' : 'Solutions for SME Owners and Entrepreneurs | Internet Valore'}
-        description={isIt 
-          ? 'Controlla il profitto reale delle tue campagne. Baseline t0, approval_mode con doppia firma, e zero modifiche arbitrarie sul tuo account.' 
+        description={isIt
+          ? 'Controlla il profitto reale delle tue campagne. Baseline t0, approval_mode con doppia firma, e zero modifiche arbitrarie sul tuo account.'
           : 'Control the real profit of your campaigns. t0 baseline, approval_mode with double signatures, and zero arbitrary account changes.'}
         path="/solutions/titolare-pmi"
+        serviceType={isIt ? 'Consulenza Budget & Profitto Campagne' : 'Campaign Profit & Budget Control'}
+        serviceDescription={isIt
+          ? 'Controllo del profitto reale (POAS) sulle campagne e-commerce e lead generation, con sistema approval_mode a doppia firma e baseline t0.'
+          : 'Real profit (POAS) control for e-commerce and lead generation campaigns, with double-signature approval_mode and t0 baseline.'}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: isIt ? 'Soluzioni' : 'Solutions', path: '/solutions' },
+          { name: isIt ? 'Titolare PMI' : 'SME Owner', path: '/solutions/titolare-pmi' }
+        ]}
+        faq={c.pains.map(p => ({ question: p.q, answer: p.a }))}
       />
 
       {/* ─── HERO ────────────────────────────────────────────────────────── */}

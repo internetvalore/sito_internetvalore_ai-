@@ -135,10 +135,20 @@ export default function MeasurementEngineer() {
     <div className="bg-gray-50 min-h-screen pt-10">
       <MetaTags
         title={isIt ? 'Soluzioni Qualità del Dato e Tracciamento | Internet Valore' : 'Data Quality & Tracking Solutions | Internet Valore'}
-        description={isIt 
-          ? 'Riconciliazione ordini Shopify vs GA4, audit Tag Manager automatico e allarmi tempestivi per tracciamenti rotti.' 
+        description={isIt
+          ? 'Riconciliazione ordini Shopify vs GA4, audit Tag Manager automatico e allarmi tempestivi per tracciamenti rotti.'
           : 'Reconcile Shopify orders vs GA4, automate Tag Manager audits, and get fast alerts on broken tracking.'}
         path="/solutions/measurement-engineer"
+        serviceType={isIt ? 'Data Quality & Tracking Assurance' : 'Data Quality & Tracking Assurance'}
+        serviceDescription={isIt
+          ? 'Riconciliazione ordini Shopify/CRM contro GA4, rilevamento automatico rotture tag e monitoraggio integrità token API.'
+          : 'Shopify/CRM order reconciliation against GA4, automated tag breakage detection, and API token health monitoring.'}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: isIt ? 'Soluzioni' : 'Solutions', path: '/solutions' },
+          { name: 'Measurement Engineer', path: '/solutions/measurement-engineer' }
+        ]}
+        faq={c.pains.map(p => ({ question: p.q, answer: p.a }))}
       />
 
       {/* ─── HERO ────────────────────────────────────────────────────────── */}

@@ -135,10 +135,20 @@ export default function MediaBuyerGoogle() {
     <div className="bg-gray-50 min-h-screen pt-10">
       <MetaTags
         title={isIt ? 'Soluzioni Google Ads e Quality Score | Internet Valore' : 'Google Ads & Quality Score Solutions | Internet Valore'}
-        description={isIt 
-          ? 'Diagnosi di Impression Share persa per Rank vs Budget, ristrutturazione del Quality Score e modifiche protette in staging.' 
+        description={isIt
+          ? 'Diagnosi di Impression Share persa per Rank vs Budget, ristrutturazione del Quality Score e modifiche protette in staging.'
           : 'Diagnose Impression Share lost to Rank vs Budget, restructure Quality Scores, and protect changes in staging.'}
         path="/solutions/media-buyer-google-ads"
+        serviceType={isIt ? 'Ottimizzazione Google Ads Avanzata' : 'Advanced Google Ads Optimization'}
+        serviceDescription={isIt
+          ? 'Audit Raggi X: diagnosi Impression Share persa per Rank vs Budget, ristrutturazione Quality Score in 8 fasi e staging protetto.'
+          : 'X-Ray audit: Impression Share lost to Rank vs Budget diagnosis, 8-phase Quality Score restructuring, and protected staging.'}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: isIt ? 'Soluzioni' : 'Solutions', path: '/solutions' },
+          { name: 'Media Buyer Google Ads', path: '/solutions/media-buyer-google-ads' }
+        ]}
+        faq={c.pains.map(p => ({ question: p.q, answer: p.a }))}
       />
 
       {/* ─── HERO ────────────────────────────────────────────────────────── */}

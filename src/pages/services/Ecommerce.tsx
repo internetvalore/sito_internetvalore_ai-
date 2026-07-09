@@ -299,6 +299,17 @@ export default function Ecommerce() {
         description={c.meta.description}
         path="/services/ecommerce"
         image={c.meta.image}
+        serviceType={language === 'it' ? 'E-commerce Marketing' : 'E-commerce Marketing'}
+        serviceDescription={language === 'it'
+          ? 'Promozione e-commerce basata sul dato reale: tracciamento ordini riconciliato, ottimizzazione Google Ads e Meta sul profitto vero (POAS), con ogni modifica approvata dal cliente.'
+          : 'E-commerce promotion based on real data: reconciled order tracking, Google Ads and Meta optimization on true profit (POAS), with every change client-approved.'}
+        priceRange="€1500 - €7000"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },
+          { name: 'E-commerce', path: '/services/ecommerce' }
+        ]}
+        faq={c.faq.items.map(item => ({ question: item.q, answer: item.a }))}
       />
 
       <div className="bg-gradient-to-b from-white to-gray-50">

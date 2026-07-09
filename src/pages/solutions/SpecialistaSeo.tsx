@@ -135,10 +135,20 @@ export default function SpecialistaSeo() {
     <div className="bg-gray-50 min-h-screen pt-10">
       <MetaTags
         title={isIt ? 'Soluzioni SEO & Striking Distance | Internet Valore' : 'SEO & Striking Distance Solutions | Internet Valore'}
-        description={isIt 
-          ? 'Ottimizza query striking distance in posizione 4-10, rileva cannibalizzazioni Ads brand, e trasforma le pagine SEO in annunci Search.' 
+        description={isIt
+          ? 'Ottimizza query striking distance in posizione 4-10, rileva cannibalizzazioni Ads brand, e trasforma le pagine SEO in annunci Search.'
           : 'Optimize striking distance queries in positions 4-10, detect brand Ads cannibalization, and bridge SEO pages to Search ads.'}
         path="/solutions/specialista-seo"
+        serviceType={isIt ? 'SEO Avanzato & Content Optimization' : 'Advanced SEO & Content Optimization'}
+        serviceDescription={isIt
+          ? 'Mining query striking distance (posizioni 4-10), rilevamento cannibalizzazione brand e ponte automatico SEO-to-Ads.'
+          : 'Striking distance query mining (positions 4-10), brand cannibalization detection, and automated SEO-to-Ads bridge.'}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: isIt ? 'Soluzioni' : 'Solutions', path: '/solutions' },
+          { name: isIt ? 'Specialista SEO' : 'SEO Specialist', path: '/solutions/specialista-seo' }
+        ]}
+        faq={c.pains.map(p => ({ question: p.q, answer: p.a }))}
       />
 
       {/* ─── HERO ────────────────────────────────────────────────────────── */}

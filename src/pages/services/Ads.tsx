@@ -115,6 +115,14 @@ export default function Ads() {
         title={meta.title}
         description={meta.description}
         path="/services/ads"
+        serviceType={meta.serviceType}
+        serviceDescription={meta.serviceDescription}
+        priceRange={meta.priceRange}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },
+          { name: language === 'it' ? 'Gestione Ads' : 'Ads Management', path: '/services/ads' }
+        ]}
       />
       <div className="bg-gradient-to-b from-white to-gray-50">
         <HeroSection
@@ -217,6 +225,27 @@ export default function Ads() {
               </div>
             </div>
           </motion.div>
+
+          {/* Cross-linking to related solutions */}
+          <div className="mt-20 pb-8">
+            <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+              {language === 'it' ? 'Soluzioni per il tuo ruolo' : 'Solutions for your role'}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Link to={`/${language}/solutions/media-buyer-google-ads`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{language === 'it' ? 'Media Buyer Google Ads' : 'Google Ads Media Buyer'}</h3>
+                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Audit Raggi X, Quality Score e staging protetto' : 'X-Ray audit, Quality Score and protected staging'}</p>
+              </Link>
+              <Link to={`/${language}/solutions/media-buyer-meta`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{language === 'it' ? 'Media Buyer Meta' : 'Meta Media Buyer'}</h3>
+                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Creative Loop ABC e riconciliazione ROAS' : 'Creative Loop ABC and ROAS reconciliation'}</p>
+              </Link>
+              <Link to={`/${language}/solutions/titolare-pmi`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{language === 'it' ? 'Titolare PMI' : 'SME Owner'}</h3>
+                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Controllo budget e approval_mode a doppia firma' : 'Budget control and double-signature approval_mode'}</p>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>

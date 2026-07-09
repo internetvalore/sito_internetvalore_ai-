@@ -127,10 +127,20 @@ export default function CostruttoreSistema() {
     <div className="bg-gray-50 min-h-screen pt-10">
       <MetaTags
         title={isIt ? 'Soluzioni Architettura Suite Agentica | Internet Valore' : 'Agentic Suite Architecture Solutions | Internet Valore'}
-        description={isIt 
-          ? 'Architettura modular agentic, gating Streamlit OAuth e gestione sicura dei job in background deduplicati.' 
+        description={isIt
+          ? 'Architettura modular agentic, gating Streamlit OAuth e gestione sicura dei job in background deduplicati.'
           : 'Modular agentic architecture, Streamlit OAuth gating, and secure deduplicated background job management.'}
         path="/solutions/costruttore-sistema"
+        serviceType={isIt ? 'Architettura Software Agentica' : 'Agentic Software Architecture'}
+        serviceDescription={isIt
+          ? 'Architettura modulare agentica: capability-gating OAuth, modular tool-calling e code di job con protezione esecuzioni duplicate.'
+          : 'Modular agentic architecture: OAuth capability-gating, modular tool-calling, and task queues with duplicate execution prevention.'}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: isIt ? 'Soluzioni' : 'Solutions', path: '/solutions' },
+          { name: isIt ? 'Costruttore Sistema' : 'System Builder', path: '/solutions/costruttore-sistema' }
+        ]}
+        faq={c.pains.map(p => ({ question: p.q, answer: p.a }))}
       />
 
       {/* ─── HERO ────────────────────────────────────────────────────────── */}
