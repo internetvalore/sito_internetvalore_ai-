@@ -1,191 +1,416 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <!-- Italian URLs -->
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       HOMEPAGE
+       ═══════════════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://internetvalore.it/it/</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/" />
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://internetvalore.it/" />
   </url>
-  <url>
-    <loc>https://internetvalore.it/it/services/lead-generation</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/lead-generation" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/lead-generation" />
-  </url>
-  <url>
-    <loc>https://internetvalore.it/it/services/ecommerce</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/ecommerce" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/ecommerce" />
-  </url>
-  <url>
-    <loc>https://internetvalore.it/it/services/ads</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/ads" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/ads" />
-  </url>
-  <url>
-    <loc>https://internetvalore.it/it/services/analytics</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/analytics" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/analytics" />
-  </url>
-  <url>
-    <loc>https://internetvalore.it/it/services/rispondi-subito</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/rispondi-subito" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/rispondi-subito" />
-  </url>
-  <url>
-    <loc>https://internetvalore.it/it/instant-websites</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/instant-websites" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/instant-websites" />
-  </url>
-  <url>
-    <loc>https://internetvalore.it/it/flipping-catalog</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/flipping-catalog" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/flipping-catalog" />
-  </url>
-  <url>
-    <loc>https://internetvalore.it/it/specializations</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/specializations" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/specializations" />
-  </url>
-  <url>
-    <loc>https://internetvalore.it/it/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/about" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/about" />
-  </url>
-  <url>
-    <loc>https://internetvalore.it/it/landing-page-professionali</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/landing-page-professionali" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/landing-page-professionali" />
-  </url>
-  <url>
-    <loc>https://internetvalore.it/it/testimonials</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/testimonials" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/testimonials" />
-  </url>
-  <url>
-    <loc>https://internetvalore.it/it/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/contact" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/contact" />
-  </url>
-
-  <!-- English URLs -->
   <url>
     <loc>https://internetvalore.it/en/</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/" />
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://internetvalore.it/" />
+  </url>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       SERVIZI
+       ═══════════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://internetvalore.it/it/services/lead-generation</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/lead-generation" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/lead-generation" />
   </url>
   <url>
     <loc>https://internetvalore.it/en/services/lead-generation</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/lead-generation" />
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/lead-generation" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/lead-generation" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/services/ecommerce</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/ecommerce" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/ecommerce" />
   </url>
   <url>
     <loc>https://internetvalore.it/en/services/ecommerce</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/ecommerce" />
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/ecommerce" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/ecommerce" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/services/ads</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/ads" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/ads" />
   </url>
   <url>
     <loc>https://internetvalore.it/en/services/ads</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/ads" />
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/ads" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/ads" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/services/analytics</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/analytics" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/analytics" />
   </url>
   <url>
     <loc>https://internetvalore.it/en/services/analytics</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/analytics" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/analytics" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/services/rispondi-subito</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/analytics" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/analytics" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/rispondi-subito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/rispondi-subito" />
   </url>
   <url>
     <loc>https://internetvalore.it/en/services/rispondi-subito</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/rispondi-subito" />
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/rispondi-subito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/rispondi-subito" />
+  </url>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       PRODOTTI
+       ═══════════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://internetvalore.it/it/instant-websites</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/instant-websites" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/instant-websites" />
   </url>
   <url>
     <loc>https://internetvalore.it/en/instant-websites</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/instant-websites" />
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/instant-websites" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/instant-websites" />
   </url>
+
   <url>
-    <loc>https://internetvalore.it/en/flipping-catalog</loc>
+    <loc>https://internetvalore.it/it/landing-page-professionali</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/flipping-catalog" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/flipping-catalog" />
-  </url>
-  <url>
-    <loc>https://internetvalore.it/en/specializations</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/specializations" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/specializations" />
-  </url>
-  <url>
-    <loc>https://internetvalore.it/en/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/about" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/about" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/landing-page-professionali" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/landing-page-professionali" />
   </url>
   <url>
     <loc>https://internetvalore.it/en/landing-page-professionali</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/landing-page-professionali" />
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/landing-page-professionali" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/landing-page-professionali" />
+  </url>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       TECNOLOGIA AI
+       ═══════════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://internetvalore.it/it/la-nostra-tecnologia-ai</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/la-nostra-tecnologia-ai" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/la-nostra-tecnologia-ai" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/la-nostra-tecnologia-ai</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/la-nostra-tecnologia-ai" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/la-nostra-tecnologia-ai" />
+  </url>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       SOLUZIONI PER RUOLO
+       ═══════════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://internetvalore.it/it/solutions</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/solutions</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/solutions/titolare-pmi</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/titolare-pmi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/titolare-pmi" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/solutions/titolare-pmi</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/titolare-pmi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/titolare-pmi" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/solutions/account-manager</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/account-manager" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/account-manager" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/solutions/account-manager</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/account-manager" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/account-manager" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/solutions/media-buyer-google-ads</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/media-buyer-google-ads" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/media-buyer-google-ads" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/solutions/media-buyer-google-ads</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/media-buyer-google-ads" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/media-buyer-google-ads" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/solutions/media-buyer-meta</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/media-buyer-meta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/media-buyer-meta" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/solutions/media-buyer-meta</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/media-buyer-meta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/media-buyer-meta" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/solutions/specialista-seo</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/specialista-seo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/specialista-seo" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/solutions/specialista-seo</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/specialista-seo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/specialista-seo" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/solutions/measurement-engineer</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/measurement-engineer" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/measurement-engineer" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/solutions/measurement-engineer</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/measurement-engineer" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/measurement-engineer" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/solutions/operatore-ecommerce</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/operatore-ecommerce" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/operatore-ecommerce" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/solutions/operatore-ecommerce</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/operatore-ecommerce" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/operatore-ecommerce" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/solutions/advertiser-senza-tracking</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/advertiser-senza-tracking" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/advertiser-senza-tracking" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/solutions/advertiser-senza-tracking</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/advertiser-senza-tracking" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/advertiser-senza-tracking" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/solutions/costruttore-sistema</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/costruttore-sistema" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/costruttore-sistema" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/solutions/costruttore-sistema</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/solutions/costruttore-sistema" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/solutions/costruttore-sistema" />
+  </url>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       PAGINE ISTITUZIONALI
+       ═══════════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://internetvalore.it/it/about</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/about" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/about</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/about" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/specializations</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/specializations" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/specializations" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/specializations</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/specializations" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/specializations" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/testimonials</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/testimonials" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/testimonials" />
   </url>
   <url>
     <loc>https://internetvalore.it/en/testimonials</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/testimonials" />
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/testimonials" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/testimonials" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/contact</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/contact" />
   </url>
   <url>
     <loc>https://internetvalore.it/en/contact</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/contact" />
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/contact" />
   </url>
+
 </urlset>
