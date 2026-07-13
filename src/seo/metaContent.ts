@@ -378,5 +378,17 @@ export const metaContent = {
       serviceType: 'Agentic Software Architecture',
       serviceDescription: 'Modular agentic architecture: OAuth capability-gating for Streamlit, modular tool-calling, and background task queues with duplicate execution prevention and PDF signing.'
     }
+  },
+  manifesto: {
+    it: {
+      title: 'Il Manifesto di Metodo: Prima gli occhi, poi le gambe | Internet Valore',
+      description: 'Leggi il nostro manifesto fondato sulla misura oggettiva delle performance marketing. Esplora le 35 capacità tecnologiche della nostra suite dedicate ad evitare sprechi pubblicitari.',
+      path: '/manifesto'
+    },
+    en: {
+      title: 'Our Method Manifesto: Eyes first, then legs | Internet Valore',
+      description: 'Read our manifesto based on objective measurement of marketing performance. Explore the 35 technological capabilities of our suite dedicated to preventing ad waste.',
+      path: '/manifesto'
+    }
   }
 };

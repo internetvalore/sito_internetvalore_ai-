@@ -45,6 +45,10 @@ import OperatoreEcommerce from './pages/solutions/OperatoreEcommerce';
 import AdvertiserSenzaTracking from './pages/solutions/AdvertiserSenzaTracking';
 import CostruttoreSistema from './pages/solutions/CostruttoreSistema';
 
+// Manifesto & Video pages
+import Manifesto from './pages/manifesto/Manifesto';
+import VideoDetail from './pages/manifesto/VideoDetail';
+
 function ScrollHandler() {
   const location = useLocation();
 
@@ -142,6 +146,10 @@ function App() {
             <Route path="/:lang/solutions/operatore-ecommerce" element={<OperatoreEcommerce />} />
             <Route path="/:lang/solutions/advertiser-senza-tracking" element={<AdvertiserSenzaTracking />} />
             <Route path="/:lang/solutions/costruttore-sistema" element={<CostruttoreSistema />} />
+
+            {/* Manifesto & Video-Spot routes */}
+            <Route path="/:lang/manifesto" element={<Manifesto />} />
+            <Route path="/:lang/video/:videoId" element={<VideoDetail />} />
 
             {/* Catch all redirect */}
             <Route path="*" element={<Navigate to={`/${language}/`} replace />} />

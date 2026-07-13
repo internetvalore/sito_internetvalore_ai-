@@ -103,6 +103,13 @@ export default function Navbar() {
               {language === 'it' ? 'Soluzioni per Ruolo' : 'Solutions by Role'}
             </NavLink>
 
+            <NavLink to={`/${language}/manifesto`} className={({ isActive }) => classNames(
+              isActive ? 'text-blue-500' : 'text-gray-500',
+              'text-base font-medium hover:text-gray-900 transition-colors'
+            )}>
+              {language === 'it' ? 'Il Manifesto' : 'Our Manifesto'}
+            </NavLink>
+
             {/* Services Dropdown */}
             <Popover className="relative">
               {({ open }) => (
@@ -229,6 +236,12 @@ export default function Navbar() {
                   <NavLink to={`/${language}/solutions`} className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                     <span className="ml-3 text-base font-medium text-gray-900">
                       {language === 'it' ? 'Soluzioni per Ruolo' : 'Solutions by Role'}
+                    </span>
+                  </NavLink>
+
+                  <NavLink to={`/${language}/manifesto`} className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                    <span className="ml-3 text-base font-medium text-gray-900">
+                      {language === 'it' ? 'Il Manifesto' : 'Our Manifesto'}
                     </span>
                   </NavLink>
 
