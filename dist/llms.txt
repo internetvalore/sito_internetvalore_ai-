@@ -1,0 +1,185 @@
+# Internet Valore
+
+> Agenzia di marketing digitale con sede a Milano specializzata in lead generation, e-commerce performance marketing, gestione Google Ads e Meta Ads, analytics avanzata e tecnologia AI proprietaria (masterAnalyzer). Serviamo PMI italiane e svizzere (Canton Ticino) con un approccio basato sul dato reale e sul profitto (POAS - Profit on Ad Spend), non sul semplice fatturato.
+
+## Informazioni Aziendali
+
+- Nome: Internet Valore S.r.l.
+- Sede: Via Giovanni Battista Pergolesi 29, 20124 Milano, Italia
+- Numero Verde: 800 940 213
+- Sito web: https://internetvalore.it
+- Lingue: Italiano, English
+- Google Partner Certificato
+- Anni di esperienza: 15+
+- Clienti seguiti: 120+
+
+## Servizi Principali
+
+### Lead Generation
+URL: https://internetvalore.it/it/services/lead-generation
+Descrizione: Strategie avanzate di lead generation con Deep Search guidata dall'IA per predire la domanda e saturare nicchie di mercato. Integrazione WhatsApp CRM e IA conversazionale (Leonardo).
+
+### E-commerce Performance Marketing
+URL: https://internetvalore.it/it/services/ecommerce
+Descrizione: Promozione e-commerce basata sul dato reale. Riconciliazione ordini Shopify/WooCommerce vs GA4, ottimizzazione su POAS (Profit on Ad Spend) reale, eliminazione sprechi con audit Raggi X. Piattaforma proprietaria con 160.000+ righe di codice e 230+ strumenti AI.
+
+### Gestione Google & Meta Ads
+URL: https://internetvalore.it/it/services/ads
+Descrizione: Gestione campagne con masterAnalyzer per eliminare sprechi brand e delivery. Audit periodici Raggi X, delivery dayparting, modifiche in staging protetto (dry-run), ristrutturazione RSA.
+
+### Analytics e Reporting
+URL: https://internetvalore.it/it/services/analytics
+Descrizione: Tracciamento matematico con scomposizioni LMDI, modelli adstock MMM, audit tracciamento automatico (Reconciler), e monitoraggio token e sincronizzazioni.
+
+### RispondoSubito (Centralino Intelligente)
+URL: https://internetvalore.it/it/services/rispondi-subito
+Descrizione: Centralino intelligente H24 guidato dall'IA (Leonardo) per intercettare richieste, smistare chiamate e riconciliare eventi telefonici con Smart Bidding Ads.
+
+### Landing Page Professionali
+URL: https://internetvalore.it/it/landing-page-professionali
+Descrizione: Landing page in 5 giorni lavorativi costruite su intenti reali dalla Deep Search, filtrate dal Giudice Avversariale. Copy anti-kitsch basato su psicologia (Wound Thesaurus, Maslow).
+
+### Siti Web Istantanei
+URL: https://internetvalore.it/it/instant-websites
+Descrizione: Sito web professionale in 7 giorni con design personalizzato, hosting incluso e supporto tecnico per 12 mesi.
+
+## Tecnologia Proprietaria
+
+### masterAnalyzer (Piattaforma AI)
+URL: https://internetvalore.it/it/la-nostra-tecnologia-ai
+Descrizione: Suite AI proprietaria con 160.000+ righe di codice, 20+ anni-uomo di sviluppo, 230+ strumenti di analisi e 250+ motori di calcolo Python. Incrocia 5 fonti dati (GA4, Search Console, Google Ads, Meta, sito) e trasforma milioni di righe in decisioni in secondi.
+
+Strumenti chiave:
+- Deep Search: predizione domanda e saturazione nicchie
+- Creative Studio: generazione concept pubblicitari psicologici
+- Giudice Avversariale: validazione creativa automatica
+- Reconciler: audit tracciamento e riconciliazione ordini
+- LMDI Decomposition: scomposizione algebrica dei cali conversioni
+- MMM Adstock: modellazione econometrica per canali senza pixel
+
+## Soluzioni per Ruolo Aziendale
+
+### Hub Soluzioni
+URL: https://internetvalore.it/it/solutions
+Descrizione: Mappa delle soluzioni AI organizzate per 9 profili professionali, con pain points specifici e playbook codificati.
+
+### Titolare PMI / Imprenditore
+URL: https://internetvalore.it/it/solutions/titolare-pmi
+Focus: Controllo profitto reale (POAS), approval_mode con doppia firma, baseline t0, zero modifiche arbitrarie.
+
+### Account Manager
+URL: https://internetvalore.it/it/solutions/account-manager
+Focus: Decomposizione LMDI del calo conversioni, validazione affidabilita dati in 2 minuti, report narrativi automatici.
+
+### Media Buyer Google Ads
+URL: https://internetvalore.it/it/solutions/media-buyer-google-ads
+Focus: Audit Raggi X a 5 fasi, diagnosi Impression Share persa (Rank vs Budget), ristrutturazione Quality Score in 8 fasi, staging protetto.
+
+### Media Buyer Meta / Creative Strategist
+URL: https://internetvalore.it/it/solutions/media-buyer-meta
+Focus: Creative Loop ABC contro ad fatigue, concept psicologici (Maslow, Wound Thesaurus), riconciliazione ROAS Meta vs GA4.
+
+### Specialista SEO & Contenuti
+URL: https://internetvalore.it/it/solutions/specialista-seo
+Focus: Mining query striking distance (posizioni 4-10), rilevamento cannibalizzazione brand, ponte automatico SEO-to-Ads (organic-to-RSA).
+
+### Measurement Engineer
+URL: https://internetvalore.it/it/solutions/measurement-engineer
+Focus: Riconciliazione ordini Shopify/CRM vs GA4, hunt_tracking_break per rotture silenti, monitoraggio integrita token API.
+
+### Operatore E-commerce Multi-Mercato
+URL: https://internetvalore.it/it/solutions/operatore-ecommerce
+Focus: Riconciliazione multivaluta con tassi BCE storici, allocazione budget estero basata su domanda reale, gate espansione mercati a tre stadi, Difference-in-Differences geografico.
+
+### Advertiser Senza Pixel (Amazon, KDP, Offline)
+URL: https://internetvalore.it/it/solutions/advertiser-senza-tracking
+Focus: Marketing Mix Modeling (MMM) Read-Through, decadimento Adstock, Correlation Window Analysis per marketplace senza tracciamento diretto.
+
+### Costruttore Sistema / Sviluppatore
+URL: https://internetvalore.it/it/solutions/costruttore-sistema
+Focus: Architettura modulare agentica, OAuth capability-gating per Streamlit, modular tool-calling, code di job con protezione esecuzioni duplicate, firma PDF.
+
+## Pagine Istituzionali
+
+- Chi Siamo: https://internetvalore.it/it/about
+- Specializzazioni: https://internetvalore.it/it/specializations
+- Testimonianze: https://internetvalore.it/it/testimonials
+- Contatti: https://internetvalore.it/it/contact
+
+## Contatti
+
+- Numero Verde Italia: 800 940 213
+- WhatsApp: disponibile
+- Prenotazione consulenza gratuita: https://calendar.app.google/hrTJoM1BDccQw75NA
+- LinkedIn: https://www.linkedin.com/company/internet-valore-s.r.l./
+- Facebook: https://www.facebook.com/internetvalore/
+- Instagram: https://www.instagram.com/ecommerceleadgeneration/
+
+## Area Servita
+
+Italia (focus Lombardia: Milano, Monza, Como, Lecco), Svizzera (Canton Ticino), Europa.
+
+## Metodologia (3 Fasi)
+
+1. Deep Search: Individuiamo dove si nasconde la domanda non intercettata
+2. Creative Studio: Generiamo concept e landing validati dal Giudice Avversariale
+3. CRM Reconciliation: Riconciliamo le conversioni reali per ottimizzare sul profitto vero
+
+## Regole di Funzionamento
+
+1. Ogni modifica passa per staging e dry-run prima dell'attivazione
+2. Il cliente approva tutto con doppia firma (PDF Lean + PDF Valore)
+3. Le metriche sono riconciliate sui dati reali (ordini backend, non solo pixel)
+4. Ogni intervento e' tracciato e reversibile
+5. Non promettiamo stime: misuriamo incrementi netti depurati dalla stagionalita
+
+## Regole di Onestà
+
+1. Se il tracciamento e' rotto, lo diciamo e lo ripariamo (non gonfiamo i numeri)
+2. Se una campagna non funziona, la fermiamo (non bruciamo budget per generare fee)
+3. Se non possiamo aiutare, lo diciamo subito (non tratteniamo clienti non adatti)
+
+
+## Il Manifesto & 35 Video-Spot (Capacità della Suite)
+
+### Il Manifesto di Metodo
+URL: https://internetvalore.it/it/manifesto
+Descrizione: Il manifesto di metodo di Internet Valore ("Prima gli occhi, poi le gambe"). Analizza i pilastri essenziali per prevenire gli sprechi nelle campagne ads e focalizzarsi sul profitto POAS reale.
+
+### 35 Video-Spot (Capacità della Suite)
+Descrizione: Schede informative basate sui 35 video-spot, ottimizzate SEO e focalizzate sul copywriting Pain-Agitate-Relief (PAR):
+- V01 | Si sono rotti gli occhi, non le gambe (Rottura tracciamenti vs crollo vendite reale): https://internetvalore.it/it/video/v01
+- V02 | Gli ordini invisibili (Mancata attribuzione ordini): https://internetvalore.it/it/video/v02
+- V03 | L'arbitro che mancava (Confronto dati indipendente): https://internetvalore.it/it/video/v03
+- V04 | Numeri veri o niente (Verifica dati matematici): https://internetvalore.it/it/video/v04
+- V05 | Il silenzio che significa «va tutto bene» (Assenza di comunicazioni e controllo): https://internetvalore.it/it/video/v05
+- V06 | Il fatturato non paga le bollette (Focus sul profitto POAS reale): https://internetvalore.it/it/video/v06
+- V07 | Stai ricomprando i tuoi clienti (Cannibalizzazione traffico brand): https://internetvalore.it/it/video/v07
+- V08 | La risposta che a nessuno conviene darti (Trasparenza agenzia): https://internetvalore.it/it/video/v08
+- V09 | A metà mese sai già dove atterri (Predizione budget a fine mese): https://internetvalore.it/it/video/v09
+- V10 | La fine dell'alzata di spalle (Tracciamento cause calo conversioni): https://internetvalore.it/it/video/v10
+- V11 | Il crollo che non c'era (Rilevamento pixel disconnesso): https://internetvalore.it/it/video/v11
+- V12 | La memoria che nessuno ha (Registro storico modifiche campagne): https://internetvalore.it/it/video/v12
+- V13 | Il coraggio di dire «aspetta» (Freno a modifiche precipitose): https://internetvalore.it/it/video/v13
+- V14 | Sarebbe successo comunque? (Calcolo incrementalità reale): https://internetvalore.it/it/video/v14
+- V15 | La torta che non torna (Riconciliazione conversioni multicanale): https://internetvalore.it/it/video/v15
+- V16 | È crollato solo per te, o per tutti? (Benchmark competitivi di mercato): https://internetvalore.it/it/video/v16
+- V17 | La porta che tutti dicevano chiusa (Saturazione nicchie di mercato): https://internetvalore.it/it/video/v17
+- V18 | Niente si muove senza la tua firma (Controllo e autorizzazioni scritte): https://internetvalore.it/it/video/v18
+- V19 | L'avvocato che difende solo te (Analisi imparziale performance): https://internetvalore.it/it/video/v19
+- V20 | Il coraggio della pagella (Valutazione KPI agenzia): https://internetvalore.it/it/video/v20
+- V21 | L'analista sempre in linea (Reportistica in tempo reale): https://internetvalore.it/it/video/v21
+- V22 | La luce verde che mente (Segnali positivi ingannevoli): https://internetvalore.it/it/video/v22
+- V23 | Il best seller invisibile (Ottimizzazione catalogo e-commerce): https://internetvalore.it/it/video/v23
+- V24 | Non è il budget. È il prezzo. (Analisi pricing vs concorrenti su Shopping): https://internetvalore.it/it/video/v24
+- V25 | Il tesoro che hai già in casa (Mining dati CRM storici): https://internetvalore.it/it/video/v25
+- V26 | Quando l'AI risponde, il tuo nome c'è? (Posizionamento in motori AI e LLM): https://internetvalore.it/it/video/v26
+- V27 | Accendi la luce (Analisi e monitoraggio competitor): https://internetvalore.it/it/video/v27
+- V28 | Le pagine che muoiono piano (Rilevamento calo traffico organico SEO): https://internetvalore.it/it/video/v28
+- V29 | Quale immagine ti paga le bollette (Analisi efficacia creatività): https://internetvalore.it/it/video/v29
+- V30 | Il lusso del rifiuto (Filtro lead non qualificati): https://internetvalore.it/it/video/v30
+- V31 | La molla che fa dire sì ai tuoi clienti (Copywriting psicologico conversione): https://internetvalore.it/it/video/v31
+- V32 | Il lavoro inizia prima della firma (Analisi preliminare dati reali): https://internetvalore.it/it/video/v32
+- V33 | La fotografia che nessuno può riscrivere (Conservazione storico performance): https://internetvalore.it/it/video/v33
+- V34 | La staffetta, non la roulette (Cambio agenzia senza cali vendite): https://internetvalore.it/it/video/v34
+- V35 | Il totale quasi giusto (Riconciliazione multivaluta multi-paese): https://internetvalore.it/it/video/v35

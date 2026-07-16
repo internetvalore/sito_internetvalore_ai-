@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy</title>
+  <meta name="description" content="Privacy Policy per l'applicazione interna 'ads optimizer iv' di Internet Valore s.r.l. - Informativa sul trattamento dei dati personali ottenuti tramite le API di Meta.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Font di Google per un design premium -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      
+      /* Palette Chiara Curata (Slate & Indigo) */
+      --bg-gradient-start: #f8fafc;
+      --bg-gradient-end: #eff6ff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-light: #dbeafe;
+      --accent: #4f46e5;
+      --card-bg: #ffffff;
+      --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -6px rgba(0, 0, 0, 0.05);
+      --border-color: #e2e8f0;
+      --box-success-bg: rgba(16, 185, 129, 0.05);
+      --box-success-border: #10b981;
+      --box-alert-bg: rgba(239, 68, 68, 0.05);
+      --box-alert-border: #ef4444;
+      --box-info-bg: rgba(37, 99, 235, 0.04);
+      --box-info-border: #2563eb;
+    }
+
+    /* Supporto Automatico al Tema Scuro */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-gradient-start: #0f172a;
+        --bg-gradient-end: #1e293b;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --primary: #3b82f6;
+        --primary-hover: #60a5fa;
+        --primary-light: #1e3a8a;
+        --accent: #6366f1;
+        --card-bg: #1e293b;
+        --card-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3), 0 10px 20px -10px rgba(0, 0, 0, 0.3);
+        --border-color: #334155;
+        --box-success-bg: rgba(16, 185, 129, 0.08);
+        --box-success-border: #34d399;
+        --box-alert-bg: rgba(239, 68, 68, 0.08);
+        --box-alert-border: #f87171;
+        --box-info-bg: rgba(59, 130, 246, 0.08);
+        --box-info-border: #3b82f6;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text-main);
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      background-attachment: fixed;
+      line-height: 1.65;
+      padding: 4rem 1.5rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 1.5rem;
+      box-shadow: var(--card-shadow);
+      padding: 4rem 3.5rem;
+      border: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+      .card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 1rem;
+      }
+    }
+
+    header {
+      margin-bottom: 3.5rem;
+      border-bottom: 2px dashed var(--border-color);
+      padding-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--primary); /* Fallback */
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      background: var(--border-color);
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-weight: 600;
+    }
+
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.625rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 1.625rem;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
+    }
+
+    p strong {
+      color: var(--text-main);
+    }
+
+    /* Struttura Elenchi Customizzati */
+    ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    li strong {
+      color: var(--text-main);
+    }
+
+    .list-positive li::before {
+      content: "✓";
+      position: absolute;
+      left: 0.25rem;
+      top: 0;
+      color: #10b981;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .list-negative li::before {
+      content: "✕";
+      position: absolute;
+      left: 0.25rem;
+      top: 0;
+      color: #ef4444;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .list-neutral li::before {
+      content: "•";
+      position: absolute;
+      left: 0.5rem;
+      top: 0;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+
+    /* Box Informativi & Callout */
+    .info-panel {
+      background: var(--box-info-bg);
+      border-left: 4px solid var(--box-info-border);
+      padding: 1.75rem;
+      border-radius: 0.75rem;
+      margin: 1.75rem 0;
+    }
+
+    .info-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .deletion-panel {
+      background: var(--box-success-bg);
+      border-left: 4px solid var(--box-success-border);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      margin: 2rem 0;
+    }
+
+    .deletion-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .pending-panel {
+      background: var(--box-alert-bg);
+      border-left: 4px solid var(--box-alert-border);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .pending-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Links ed Elementi Interattivi */
+    a.clickable-email {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 2px dotted var(--primary);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-block;
+      padding: 0 0.25rem;
+      border-radius: 0.25rem;
+    }
+
+    a.clickable-email:hover {
+      color: var(--primary-hover);
+      background: var(--primary-light);
+      border-bottom-style: solid;
+    }
+
+    /* Griglia Dati di Contatto */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .contact-card {
+      border: 1px solid var(--border-color);
+      padding: 1.25rem;
+      border-radius: 0.75rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .contact-card-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Animazione di Caricamento */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <article class="card">
+      
+      <header>
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">Informativa sul trattamento dei dati personali dell'applicazione &ldquo;ads optimizer iv&rdquo;</p>
+        <div class="meta-badge">
+          <span>Ultimo aggiornamento: 16 luglio 2026</span>
+        </div>
+      </header>
+
+      <!-- 1. TITOLARE DEL TRATTAMENTO -->
+      <section>
+        <h2>1. Titolare del Trattamento</h2>
+        <p>Il Titolare del trattamento dei dati è:</p>
+        <p><strong>Internet Valore s.r.l.</strong><br>
+        Codice Fiscale e Partita IVA: 06767350967<br>
+        Sede legale: Via G.B. Pergolesi 16, Monza (MB), Italia.</p>
+        
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-card-title">Contatti Amministrazione</div>
+            <a href="mailto:amministrazione@internetvalore.it" class="clickable-email">amministrazione@internetvalore.it</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-title">Assistenza Clienti</div>
+            <p style="margin-bottom: 0; font-weight: 600; color: var(--text-main);">Numero Verde: 800 940 213</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. IDENTIFICAZIONE DELL'APPLICAZIONE E NATURA DELL'APP -->
+      <section>
+        <h2>2. Identificazione dell'Applicazione e Ambito di Utilizzo</h2>
+        <p>La presente informativa si riferisce esclusivamente all'applicazione:</p>
+        <ul class="list-neutral">
+          <li><strong>Nome applicazione:</strong> "ads optimizer iv"</li>
+          <li><strong>App ID:</strong> 1018285910656393</li>
+          <li><strong>Tipologia:</strong> Business app registrata sulla piattaforma Meta for Developers</li>
+          <li><strong>Proprietaria:</strong> Internet Valore s.r.l.</li>
+        </ul>
+        
+        <div class="info-panel">
+          <p><strong>Natura dell'applicazione:</strong> Si tratta di uno <strong>strumento ad uso esclusivamente INTERNO</strong> di Internet Valore s.r.l. L'applicazione non ha utenti pubblici, non offre il servizio di autenticazione &ldquo;Login con Facebook&rdquo; a terzi e non è in alcun modo distribuita né installabile da soggetti esterni alla società. L'uso è riservato al solo personale autorizzato di Internet Valore s.r.l. al fine di gestire gli account pubblicitari dei propri clienti configurati all'interno del Business Manager di Internet Valore s.r.l. L'accesso alle API di Meta avviene tramite un token System User del medesimo Business Manager.</p>
+        </div>
+      </section>
+
+      <!-- 3. DATI OTTENUTI DA META -->
+      <section>
+        <h2>3. Dati ottenuti tramite le API di Meta</h2>
+        <p>L'applicazione acquisisce ed elabora esclusivamente i seguenti dati e metadati provenienti dalle API di Meta (l'elenco è da considerarsi completo ed esaustivo):</p>
+        <ul class="list-positive">
+          <li><strong>Metriche pubblicitarie aggregate</strong> (suddivise per giorno, campagna e gruppo di inserzioni):
+            <ul>
+              <li>Spesa pubblicitaria;</li>
+              <li>Impression;</li>
+              <li>Click;</li>
+              <li>CTR (Click-Through Rate);</li>
+              <li>CPC (Costo per Click);</li>
+              <li>CPM (Costo per mille impression);</li>
+              <li>Azioni e conversioni;</li>
+              <li>Costo per azione;</li>
+              <li>ROAS (Ritorno sulla spesa pubblicitaria);</li>
+              <li>Copertura;</li>
+              <li>Frequenza.</li>
+            </ul>
+          </li>
+          <li><strong>Metadati degli account pubblicitari gestiti:</strong> ID dell'account, nome dell'account, ID del Business Manager di riferimento, valuta dell'account.</li>
+          <li><strong>Metadati delle Pagine Facebook e degli account Instagram collegati dei clienti:</strong> ID dell'account o della pagina, nome dell'account o della pagina.</li>
+          <li><strong>Struttura delle campagne esistenti:</strong> nomi e stato di attivazione di campagne, gruppi di inserzioni, inserzioni e creatività.</li>
+        </ul>
+      </section>
+
+      <!-- 4. DATI CHE L'APPLICAZIONE NON TRATTA -->
+      <section>
+        <h2>4. Dati esclusi dal trattamento (Dati non trattati)</h2>
+        <p>In conformità al principio di minimizzazione del trattamento, l'applicazione <strong>non raccoglie, non conserva e non tratta</strong> in alcun modo le seguenti tipologie di informazioni:</p>
+        <ul class="list-negative">
+          <li><strong>Nessun dato personale</strong> o identificativo degli utenti dei social network Facebook o Instagram.</li>
+          <li><strong>Nessun dato di contatto</strong> (come nomi, indirizzi email o numeri di telefono) di utenti finali.</li>
+          <li><strong>Nessun dato relativo ai moduli di contatto (Lead):</strong> sebbene l'applicazione provveda alla creazione di moduli per contatti diretti (Instant Form) all'interno degli account pubblicitari dei clienti, l'applicazione <strong>non scarica né conserva in alcun modo</strong> i contatti inviati dagli utenti finali. Tali dati rimangono memorizzati nei sistemi di Meta e sono a disposizione unicamente del cliente inserzionista, che agisce in qualità di titolare del trattamento per tali dati.</li>
+          <li><strong>Nessun dato di profilazione</strong> o di targeting individuale riferito ad utenti finali.</li>
+        </ul>
+      </section>
+
+      <!-- 5. FINALITÀ DEL TRATTAMENTO -->
+      <section>
+        <h2>5. Finalità del Trattamento</h2>
+        <p>I dati pubblicitari e i relativi metadati sono utilizzati esclusivamente per il perseguimento delle seguenti finalità:</p>
+        <ul class="list-neutral">
+          <li>Misurare e rendicontare l'andamento e le performance delle campagne pubblicitarie attive per i clienti di Internet Valore s.r.l.</li>
+          <li>Produrre analisi statistiche, report periodici e formulare proposte di ottimizzazione strategica delle campagne pubblicitarie per i suddetti clienti.</li>
+          <li>Creare e aggiornare le campagne, i gruppi di inserzioni e le creatività all'interno degli account pubblicitari gestiti, esclusivamente su esplicito mandato del cliente inserzionista e previa approvazione manuale ed esplicita da parte di un operatore di Internet Valore s.r.l.</li>
+        </ul>
+      </section>
+
+      <!-- 6. DESTINATARI DEI DATI -->
+      <section>
+        <h2>6. Destinatari dei Dati e Trasferimento</h2>
+        <p>I dati di performance pubblicitaria trattati dall'applicazione sono gestiti secondo le seguenti regole di comunicazione:</p>
+        <ul class="list-neutral">
+          <li><strong>Fornitori di modelli di intelligenza artificiale:</strong> I dati relativi alle performance pubblicitarie <strong>esclusivamente in formato aggregato</strong> sono trasmessi ad Anthropic (modelli Claude) e a Google (modelli Gemini) per produrre analisi statistiche e generare proposte di contenuti creativi. <strong>Nessun dato personale o identificativo viene mai trasmesso a questi fornitori.</strong> Si segnala che tali fornitori terzi possono trattare i dati di performance aggregati anche al di fuori dello Spazio Economico Europeo (SEE).</li>
+          <li><strong>Nessuna cessione commerciale:</strong> I dati trattati <strong>non sono venduti, ceduti né condivisi</strong> con ulteriori terze parti per finalità commerciali o di marketing proprie di queste ultime.</li>
+        </ul>
+      </section>
+
+      <!-- 7. CONSERVAZIONE, LUOGO E SICUREZZA -->
+      <section>
+        <h2>7. Conservazione, Luogo e Sicurezza</h2>
+        <p><strong>Luogo del trattamento e sicurezza:</strong> Tutti i dati gestiti sono memorizzati in un database sicuro ad accesso ristretto ed esclusivo del personale autorizzato di Internet Valore s.r.l., situato all'interno dello Spazio Economico Europeo (SEE).</p>
+        <p><strong>Tempi di conservazione:</strong> I dati sono conservati e trattati per tutta la durata del rapporto contrattuale ed economico con il cliente inserzionista e vengono cancellati in caso di risoluzione o su richiesta esplicita.</p>
+      </section>
+
+      <!-- 8. CANCELLAZIONE DEI DATI (DATA DELETION) -->
+      <section style="border: 1px solid var(--border-color); padding: 2rem; border-radius: 1rem; background: var(--bg-gradient-start);">
+        <h2 style="margin-bottom: 1rem;">8. Richiesta di Cancellazione dei Dati (Data Deletion)</h2>
+        <p>Chiunque può richiedere in qualsiasi momento la cancellazione o la rimozione dei dati trattati dall'applicazione. Per esercitare questo diritto o per revocare l'autorizzazione al trattamento, è necessario inviare una comunicazione scritta al Titolare:</p>
+        
+        <div class="deletion-panel">
+          <p><strong>Indirizzo email per le richieste di cancellazione:</strong><br>
+          👉 <a href="mailto:amministrazione@internetvalore.it" class="clickable-email" style="font-size: 1.1rem;">amministrazione@internetvalore.it</a></p>
+        </div>
+
+        <p>Le richieste di cancellazione sono gestite con le seguenti modalità:</p>
+        <ul class="list-neutral" style="margin-bottom: 0;">
+          <li>La richiesta viene evasa entro e non oltre <strong>30 giorni</strong> dalla ricezione della comunicazione.</li>
+          <li>Una volta completata la rimozione dei dati, verrà inviata una notifica scritta di conferma dell'avvenuta cancellazione all'indirizzo email del richiedente.</li>
+          <li>Ciascun cliente inserzionista può richiedere in ogni momento la rimozione immediata, integrale e definitiva di tutti i dati relativi al proprio account pubblicitario gestito.</li>
+        </ul>
+      </section>
+
+      <!-- 9. SEZIONI IN FASE DI DEFINIZIONE [DA CONFERMARE] -->
+      <section class="pending-panel">
+        <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">9. Ulteriori Informazioni [DA CONFERMARE]</h2>
+        <p>In adempimento ai requisiti del Regolamento Generale sulla Protezione dei Dati (GDPR - Regolamento UE 2016/679), le seguenti sezioni di natura prettamente legale e regolatoria sono in fase di validazione finale:</p>
+        <ul class="list-neutral" style="margin-bottom: 0;">
+          <li><strong>Base giuridica del trattamento:</strong> <span style="font-weight: 600; color: #ef4444;">[DA CONFERMARE]</span></li>
+          <li><strong>Elenco completo dei diritti dell'interessato (accesso, rettifica, limitazione):</strong> <span style="font-weight: 600; color: #ef4444;">[DA CONFERMARE]</span></li>
+          <li><strong>Indicazione del diritto di reclamo all'Autorità Garante per la protezione dei dati personali:</strong> <span style="font-weight: 600; color: #ef4444;">[DA CONFERMARE]</span></li>
+        </ul>
+      </section>
+
+    </article>
+    
+    <footer>
+      <p>&copy; 2026 Internet Valore s.r.l. - Tutti i diritti riservati.</p>
+    </footer>
+  </main>
+
+</body>
+</html>
