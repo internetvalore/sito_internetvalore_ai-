@@ -312,24 +312,26 @@ const GoogleAdsLandingPage = () => {
               >
                 {/* Removed the first button here */}
                 <div className="flex gap-3">
-                  <motion.button
+                  <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={openWhatsApp}
+                    href={`https://wa.me/${content.whatsappNumber.replace(/\+/g, '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-green-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center"
                   >
                     <MessageCircle className="mr-2 h-5 w-5" />
                     {content.whatsappText}
-                  </motion.button>
-                  <motion.button
+                  </motion.a>
+                  <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={callPhone}
+                    href={`tel:${content.phoneNumber.replace(/\s/g, '')}`}
                     className="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 flex items-center justify-center"
                   >
                     <Phone className="mr-2 h-5 w-5" />
                     {content.callText}
-                  </motion.button>
+                  </motion.a>
                 </div>
               </motion.div>
             </motion.div>
@@ -683,24 +685,26 @@ const GoogleAdsLandingPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <motion.button
+            <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={openWhatsApp}
+              href={`https://wa.me/${content.whatsappNumber.replace(/\+/g, '')}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-green-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center"
             >
               <MessageCircle className="mr-2 h-5 w-5" />
               {content.whatsappText}: {content.whatsappNumber}
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={callPhone}
+              href={`tel:${content.phoneNumber.replace(/\s/g, '')}`}
               className="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 flex items-center justify-center"
             >
               <Phone className="mr-2 h-5 w-5" />
               {content.callText}: {content.phoneNumber}
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </div>

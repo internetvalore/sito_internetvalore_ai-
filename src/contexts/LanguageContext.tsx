@@ -51,7 +51,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     } else {
       pathParts.splice(1, 0, newLang);
     }
-    navigate(pathParts.join('/'));
+    navigate(pathParts.join('/') + location.search + location.hash);
   };
 
   useEffect(() => {

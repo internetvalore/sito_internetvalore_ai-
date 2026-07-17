@@ -232,15 +232,17 @@ export default function Services() {
                           </ul>
                         )}
                         {service.whatsapp && (
-                          <motion.button
-                            onClick={handleWhatsAppClick}
+                          <motion.a
+                            href={`https://wa.me/393475012682?text=${encodeURIComponent("Ciao! Vorrei avere maggiori informazioni sui vostri servizi.")}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="mt-6 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors duration-200"
                           >
                             <MessageCircle className="h-5 w-5 mr-2" />
                             Invia messaggio
-                          </motion.button>
+                          </motion.a>
                         )}
                       </div>
                     </div>
@@ -252,15 +254,17 @@ export default function Services() {
                     >
                       <h3 className="text-xl font-bold text-gray-900 mb-6">{service.title}</h3>
                       {service.whatsapp ? (
-                        <motion.button
-                          onClick={handleWhatsAppClick}
+                        <motion.a
+                          href={`https://wa.me/393475012682?text=${encodeURIComponent("Ciao! Vorrei avere maggiori informazioni sui vostri servizi.")}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors duration-200 mb-6"
                         >
                           <MessageCircle className="h-5 w-5 mr-2" />
                           Invia messaggio o vocale
-                        </motion.button>
+                        </motion.a>
                       ) : (
                         <>
                           <motion.a

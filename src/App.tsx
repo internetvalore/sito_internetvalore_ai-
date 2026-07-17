@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useLanguage } from './contexts/LanguageContext';
 import MetaTags from './components/MetaTags';
@@ -71,6 +71,142 @@ function App() {
   const location = useLocation();
   const { language } = useLanguage();
   const meta = metaContent.home[language];
+  const isFirstRender = useRef(true);
+
+  // Global GTM Event Tracking
+  useEffect(() => {
+    // UUID v4 Generator
+    const generateUUIDv4 = () => {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+        const r = Math.random() * 16 | 0;
+        const v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    };
+
+    // dataLayer Push Helper
+    const pushToDataLayer = (eventName: string, extraParams: Record<string, any> = {}) => {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      const pathParts = location.pathname.split('/');
+      const lang = pathParts[1] === 'en' ? 'en' : 'it';
+      const page_path = location.pathname;
+      const service_context = (pathParts[2] === 'services' && pathParts[3]) ? pathParts[3] : null;
+      const event_id = generateUUIDv4();
+
+      (window as any).dataLayer.push({
+        event: eventName,
+        event_id,
+        lang,
+        page_path,
+        service_context,
+        ...extraParams
+      });
+    };
+
+    // Page view tracking (skip first render)
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+    } else {
+      // Defer push slightly to guarantee document.title has been updated by MetaTags component
+      const timer = setTimeout(() => {
+        pushToDataLayer('spa_page_view', {
+          page_title: document.title
+        });
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    // UUID v4 Generator
+    const generateUUIDv4 = () => {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+        const r = Math.random() * 16 | 0;
+        const v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    };
+
+    // dataLayer Push Helper
+    const pushToDataLayer = (eventName: string, extraParams: Record<string, any> = {}) => {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      const pathParts = location.pathname.split('/');
+      const lang = pathParts[1] === 'en' ? 'en' : 'it';
+      const page_path = location.pathname;
+      const service_context = (pathParts[2] === 'services' && pathParts[3]) ? pathParts[3] : null;
+      const event_id = generateUUIDv4();
+
+      (window as any).dataLayer.push({
+        event: eventName,
+        event_id,
+        lang,
+        page_path,
+        service_context,
+        ...extraParams
+      });
+    };
+
+    // Helper to identify link location
+    const getLinkLocation = (element: HTMLElement): string => {
+      let parent: HTMLElement | null = element;
+      while (parent) {
+        const id = (parent.id || '').toLowerCase();
+        const className = (typeof parent.className === 'string' ? parent.className : '').toLowerCase();
+        const tagName = parent.tagName.toLowerCase();
+
+        if (tagName === 'header' || id.includes('header') || id.includes('nav') || className.includes('header') || className.includes('nav')) {
+          return 'header';
+        }
+        if (tagName === 'footer' || id.includes('footer') || className.includes('footer')) {
+          return 'footer';
+        }
+        if (id.includes('sticky') || className.includes('sticky') || id.includes('floating') || className.includes('floating') || className.includes('fixed') || id.includes('navigation-guide') || className.includes('navigation-guide')) {
+          return 'sticky';
+        }
+        parent = parent.parentElement;
+      }
+      return 'body';
+    };
+
+    // Document-level Click Listener for tel, WhatsApp and booking links
+    const handleGlobalClick = (event: MouseEvent) => {
+      let target = event.target as HTMLElement | null;
+      while (target && target.tagName !== 'A') {
+        target = target.parentElement;
+      }
+
+      if (!target) return;
+
+      const href = target.getAttribute('href');
+      if (!href) return;
+
+      // Phone link click
+      if (href.startsWith('tel:')) {
+        const phoneNumber = href.substring(4).trim();
+        pushToDataLayer('phone_click', {
+          phone_number: phoneNumber,
+          link_location: getLinkLocation(target)
+        });
+      }
+      // WhatsApp link click
+      else if (href.includes('wa.me') || href.includes('api.whatsapp.com') || href.includes('whatsapp.com')) {
+        pushToDataLayer('whatsapp_click', {
+          link_location: getLinkLocation(target)
+        });
+      }
+      // Booking link click
+      else if (href.includes('calendar.app.google') || href.includes('calendly.com')) {
+        pushToDataLayer('booking_click', {
+          link_location: getLinkLocation(target)
+        });
+      }
+    };
+
+    document.addEventListener('click', handleGlobalClick, { capture: true });
+    return () => {
+      document.removeEventListener('click', handleGlobalClick, { capture: true });
+    };
+  }, [location.pathname]);
 
   // Get language from URL
   const urlLang = location.pathname.split('/')[1];
@@ -78,12 +214,12 @@ function App() {
 
   // Handle root path
   if (location.pathname === '/') {
-    return <Navigate to={`/${language}/`} replace />;
+    return <Navigate to={`/${language}/${location.search}${location.hash}`} replace />;
   }
 
   // Handle paths without language prefix
   if (!isValidLang && location.pathname !== '/') {
-    return <Navigate to={`/${language}${location.pathname}`} replace />;
+    return <Navigate to={`/${language}${location.pathname}${location.search}${location.hash}`} replace />;
   }
 
   return (
@@ -152,7 +288,7 @@ function App() {
             <Route path="/:lang/video/:videoId" element={<VideoDetail />} />
 
             {/* Catch all redirect */}
-            <Route path="*" element={<Navigate to={`/${language}/`} replace />} />
+            <Route path="*" element={<Navigate to={`/${language}/${location.search}${location.hash}`} replace />} />
           </Routes>
         </ErrorBoundary>
       </div>
