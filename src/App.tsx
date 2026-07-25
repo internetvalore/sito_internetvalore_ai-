@@ -32,6 +32,7 @@ import LandingPage from './pages/landing_page/LandingPage';
 import GoogleAdsLandingPage from './pages/landing_page/GoogleAdsLandingPage';
 import AIPlatform from './pages/AIPlatform';
 import CapabilitiesSlider from './components/CapabilitiesSlider';
+import FeaturedVideo from './components/FeaturedVideo';
 
 // Solutions Pages
 import SolutionsHub from './pages/solutions/SolutionsHub';
@@ -240,6 +241,7 @@ function App() {
             <Route path="/:lang" element={
               <>
                 <Hero />
+                <FeaturedVideo />
                 <Methodology />
                 <CapabilitiesSlider />
                 <Stats />
