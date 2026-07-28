@@ -112,6 +112,12 @@ export default function Hero() {
                 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl"
               >
                 <motion.span
+                  className="block text-blue-600 text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider mb-2"
+                  variants={textReveal}
+                >
+                  {language === 'it' ? 'Marketing Digitale e Lead Generation a Milano | Internet Valore' : 'Digital Marketing & Lead Generation in Milan | Internet Valore'}
+                </motion.span>
+                <motion.span
                   className="block"
                   variants={textReveal}
                 >
