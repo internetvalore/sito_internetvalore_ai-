@@ -11,6 +11,13 @@ interface FAQItem {
   answer: string;
 }
 
+interface ReviewItem {
+  author: string;
+  company?: string;
+  rating: number;
+  body: string;
+}
+
 interface MetaTagsProps {
   title: string;
   description: string;
@@ -21,6 +28,7 @@ interface MetaTagsProps {
   serviceDescription?: string;
   breadcrumbs?: BreadcrumbItem[];
   faq?: FAQItem[];
+  reviews?: ReviewItem[];
 }
 
 export default function MetaTags({
@@ -32,7 +40,8 @@ export default function MetaTags({
   serviceType,
   serviceDescription,
   breadcrumbs,
-  faq
+  faq,
+  reviews
 }: MetaTagsProps) {
   const { language } = useLanguage();
   const domain = 'https://internetvalore.it';
@@ -184,7 +193,97 @@ export default function MetaTags({
     } else {
       document.getElementById('faq-schema')?.remove();
     }
-  }, [title, description, canonicalUrl, image, language, serviceType, serviceDescription, priceRange, italianUrl, englishUrl, defaultUrl, breadcrumbs, faq]);
+
+    // Person (Founder & CEO) schema
+    const personScriptId = 'person-schema';
+    document.getElementById(personScriptId)?.remove();
+    const personScript = document.createElement('script');
+    personScript.type = 'application/ld+json';
+    personScript.id = personScriptId;
+    personScript.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://internetvalore.it/#person-andrea-falzin",
+      "name": "Andrea Falzin",
+      "jobTitle": "Founder & CEO",
+      "image": "https://leprimescelte.com/wp-content/uploads/2025/02/AFimmagine.jpg",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Internet Valore",
+        "url": "https://internetvalore.it"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/falzin/",
+        "https://www.facebook.com/internetvalore/"
+      ],
+      "description": "Founder & CEO di Internet Valore, specialista in marketing digitale, lead generation, e-commerce e sviluppatore della suite tecnologica masterAnalyzer.",
+      "knowsAbout": [
+        "Digital Marketing",
+        "Lead Generation",
+        "E-commerce Optimization",
+        "Google Ads",
+        "Meta Ads",
+        "POAS",
+        "masterAnalyzer AI"
+      ]
+    });
+    document.head.appendChild(personScript);
+
+    // Reviews & AggregateRating schema
+    if (reviews && reviews.length > 0) {
+      const reviewsScriptId = 'reviews-schema';
+      document.getElementById(reviewsScriptId)?.remove();
+      const reviewsScript = document.createElement('script');
+      reviewsScript.type = 'application/ld+json';
+      reviewsScript.id = reviewsScriptId;
+      reviewsScript.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://internetvalore.it",
+        "name": "Internet Valore",
+        "url": "https://internetvalore.it",
+        "image": "https://internetvalore.it/logo.png",
+        "telephone": "+39-800-940-213",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://internetvalore.it/#person-andrea-falzin",
+          "name": "Andrea Falzin",
+          "jobTitle": "Founder & CEO",
+          "sameAs": "https://www.linkedin.com/in/falzin/"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Via Giovanni Battista Pergolesi 29",
+          "addressLocality": "Milano",
+          "postalCode": "20124",
+          "addressCountry": "IT"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": reviews.length.toString(),
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": reviews.map(item => ({
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": item.author
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": item.rating.toString(),
+            "bestRating": "5"
+          },
+          "reviewBody": item.body
+        }))
+      });
+      document.head.appendChild(reviewsScript);
+    } else {
+      document.getElementById('reviews-schema')?.remove();
+    }
+  }, [title, description, canonicalUrl, image, language, serviceType, serviceDescription, priceRange, italianUrl, englishUrl, defaultUrl, breadcrumbs, faq, reviews]);
 
   return null;
 }
