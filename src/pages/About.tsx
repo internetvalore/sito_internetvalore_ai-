@@ -218,7 +218,7 @@ export default function About() {
                       <img
                         className="h-32 w-32 rounded-full object-cover"
                         src="https://leprimescelte.com/wp-content/uploads/2025/02/AFimmagine.jpg"
-                        alt="Andrea Falzin"
+                        alt="Andrea Falzin - Founder e CEO di Internet Valore"
                       />
                     </motion.div>
                   </div>

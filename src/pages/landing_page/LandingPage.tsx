@@ -397,7 +397,7 @@ const LandingPage = () => {
             <p className="text-xl text-blue-600 font-bold">{content.noTechnicalSkillsRequired}</p>
           </div>
           <div className="mt-16 flex justify-center">
-            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Simple management" className="rounded-xl shadow-xl max-w-full h-auto" style={{ maxHeight: '400px' }} />
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gestione Semplificata e Trasparente delle Campagne Pubblicitarie - Internet Valore" className="rounded-xl shadow-xl max-w-full h-auto" style={{ maxHeight: '400px' }} />
           </div>
         </div>
       </section>

@@ -77,7 +77,7 @@ export default function Navbar() {
             >
               <img
                 src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg"
-                alt="Google Partner"
+                alt="Badge Ufficiale Google Partner Certificato - Internet Valore S.r.l."
                 className="h-10"
               />
             </a>
@@ -215,7 +215,7 @@ export default function Navbar() {
                   >
                     <img
                       src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg"
-                      alt="Google Partner"
+                      alt="Badge Ufficiale Google Partner Certificato - Internet Valore S.r.l."
                       className="h-8"
                     />
                   </a>

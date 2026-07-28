@@ -343,7 +343,7 @@ const GoogleAdsLandingPage = () => {
             >
               <img
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
-                alt="Digital Marketing Team"
+                alt="Team di Esperti Marketing Digitale e Gestione Campagne Google Ads - Internet Valore"
                 className="rounded-lg shadow-2xl w-full h-auto object-cover"
               />
             </motion.div>

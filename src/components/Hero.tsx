@@ -264,7 +264,7 @@ export default function Hero() {
             <img
               className="absolute inset-0 w-full h-full object-cover backface-hidden"
               src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop"
-              alt={t('hero.title')}
+              alt={language === 'it' ? 'Internet Valore - Marketing Digitale e Lead Generation a Milano' : 'Internet Valore - Digital Marketing and Lead Generation in Milan'}
             />
 
             {/* Back side */}

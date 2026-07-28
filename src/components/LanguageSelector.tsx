@@ -21,7 +21,7 @@ export default function LanguageSelector() {
           srcSet="https://flagcdn.com/w80/it.png 2x"
           width="32"
           height="32"
-          alt="Italia"
+          alt="Bandiera Italiana - Seleziona lingua Italiano"
           className="object-cover"
         />
       </motion.button>
@@ -39,7 +39,7 @@ export default function LanguageSelector() {
           srcSet="https://flagcdn.com/w80/gb.png 2x"
           width="32"
           height="32"
-          alt="English"
+          alt="British Flag - Select English language"
           className="object-cover"
         />
       </motion.button>

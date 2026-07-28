@@ -139,7 +139,7 @@ export default function Clients() {
                       >
                         <img 
                           src={client.image} 
-                          alt={client.title} 
+                          alt={language === 'it' ? `Caso di Successo Cliente Internet Valore - ${client.title}` : `Internet Valore Client Success Story - ${client.title}`} 
                           className="w-full h-48 object-cover"
                         />
                         <div className="p-4">

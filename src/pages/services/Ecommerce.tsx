@@ -378,7 +378,7 @@ export default function Ecommerce() {
           >
             <img
               src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              alt="E-commerce analytics"
+              alt="Analisi Performance E-commerce e Tracciamento POAS - Internet Valore"
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent" />

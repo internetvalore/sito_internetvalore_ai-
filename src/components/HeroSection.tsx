@@ -116,7 +116,7 @@ export default function HeroSection({ title, subtitle, description, imageSrc = "
           <img
             className="absolute inset-0 w-full h-full object-cover"
             src={imageSrc}
-            alt={title}
+            alt={`${title} - Internet Valore Marketing Digitale`}
           />
           {/* Overlay gradient */}
           <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent lg:from-transparent pointer-events-none" />
