@@ -215,15 +215,65 @@ export default function Hero() {
                     : 'Digital Marketing Agency & Outsourced Campaign Management'}
                 </h2>
                 <p className="text-sm text-gray-600 leading-relaxed mb-3">
-                  {language === 'it'
-                    ? 'Internet Valore affianca e-commerce e aziende B2B nella gestione delle campagne Google Ads, Meta Ads e Lead Generation con un approccio matematico basato sui dati reali. Grazie alla nostra tecnologia proprietaria masterAnalyzer (160.000 righe di codice), eliminiamo gli sprechi delle agenzie tradizionali, purifichiamo i contatti dal CRM prima di addestrare lo Smart Bidding e ottimizziamo solo sul profitto (POAS) netto.'
-                    : 'Internet Valore partners with e-commerce and B2B companies to manage Google Ads, Meta Ads, and Lead Generation campaigns with a mathematical real-data approach. Powered by our proprietary masterAnalyzer technology (160,000 lines of code), we eliminate traditional agency waste, purify CRM leads before Smart Bidding training, and optimize strictly on net profit (POAS).'}
+                  {language === 'it' ? (
+                    <>
+                      Internet Valore affianca e-commerce e aziende B2B nella{' '}
+                      <Link to={`/${language}/services`} className="text-blue-600 font-bold underline hover:text-blue-800">
+                        gestione campagne pubblicitarie in outsourcing
+                      </Link>{' '}
+                      (Google Ads e Meta Ads) con un approccio matematico su dati reali. Grazie alla nostra{' '}
+                      <Link to={`/${language}/la-nostra-tecnologia-ai`} className="text-blue-600 font-bold underline hover:text-blue-800">
+                        tecnologia proprietaria masterAnalyzer
+                      </Link>{' '}
+                      (160.000 righe di codice), forniamo servizi avanzati di{' '}
+                      <Link to={`/${language}/services/lead-generation`} className="text-blue-600 font-bold underline hover:text-blue-800">
+                        lead generation riconciliata col CRM
+                      </Link>{' '}
+                      ed ottimizzazione{' '}
+                      <Link to={`/${language}/services/ecommerce`} className="text-blue-600 font-bold underline hover:text-blue-800">
+                        E-commerce sul profitto (POAS) netto
+                      </Link>. Scopri il profilo di{' '}
+                      <Link to={`/${language}/about`} className="text-blue-600 font-bold underline hover:text-blue-800">
+                        Andrea Falzin (Founder & CEO)
+                      </Link>{' '}
+                      e le{' '}
+                      <Link to={`/${language}/testimonials`} className="text-blue-600 font-bold underline hover:text-blue-800">
+                        recensioni verificate dei clienti
+                      </Link>.
+                    </>
+                  ) : (
+                    <>
+                      Internet Valore partners with e-commerce and B2B companies in{' '}
+                      <Link to={`/${language}/services`} className="text-blue-600 font-bold underline hover:text-blue-800">
+                        outsourced campaign management
+                      </Link>{' '}
+                      (Google & Meta Ads) using a mathematical real-data framework. Powered by our{' '}
+                      <Link to={`/${language}/la-nostra-tecnologia-ai`} className="text-blue-600 font-bold underline hover:text-blue-800">
+                        proprietary masterAnalyzer technology
+                      </Link>{' '}
+                      (160,000 lines of code), we deliver{' '}
+                      <Link to={`/${language}/services/lead-generation`} className="text-blue-600 font-bold underline hover:text-blue-800">
+                        CRM-reconciled lead generation
+                      </Link>{' '}
+                      and{' '}
+                      <Link to={`/${language}/services/ecommerce`} className="text-blue-600 font-bold underline hover:text-blue-800">
+                        E-commerce POAS net profit optimization
+                      </Link>. Learn more about{' '}
+                      <Link to={`/${language}/about`} className="text-blue-600 font-bold underline hover:text-blue-800">
+                        Andrea Falzin (Founder & CEO)
+                      </Link>{' '}
+                      and read our{' '}
+                      <Link to={`/${language}/testimonials`} className="text-blue-600 font-bold underline hover:text-blue-800">
+                        verified client reviews
+                      </Link>.
+                    </>
+                  )}
                 </p>
                 <div className="flex flex-wrap gap-2 text-xs font-semibold text-blue-700">
-                  <span className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">✓ Lead Generation Riconciliata</span>
-                  <span className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">✓ E-commerce POAS over ROAS</span>
-                  <span className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">✓ Controllo Cannibalizzazione Brand</span>
-                  <span className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">✓ 160.000 Righe di Codice Proprietario</span>
+                  <Link to={`/${language}/services/lead-generation`} className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors">✓ Lead Generation Riconciliata</Link>
+                  <Link to={`/${language}/services/ecommerce`} className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors">✓ E-commerce POAS over ROAS</Link>
+                  <Link to={`/${language}/services/ads`} className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors">✓ Controllo Cannibalizzazione Brand</Link>
+                  <Link to={`/${language}/la-nostra-tecnologia-ai`} className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors">✓ 160.000 Righe di Codice Proprietario</Link>
                 </div>
               </motion.div>
               {/* ─────────────────────────────────────────────────────────── */}
