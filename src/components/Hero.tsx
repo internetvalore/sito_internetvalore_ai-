@@ -203,6 +203,30 @@ export default function Hero() {
                   </motion.div>
                 </div>
               </motion.div>
+
+              {/* ── Open descriptive text block for users & SEO ───────────── */}
+              <motion.div
+                variants={textReveal}
+                className="mt-8 pt-6 border-t border-gray-200"
+              >
+                <h2 className="text-xl font-bold text-gray-900 mb-2">
+                  {language === 'it'
+                    ? 'Agenzia di Marketing Digitale & Gestione Campagne in Outsourcing'
+                    : 'Digital Marketing Agency & Outsourced Campaign Management'}
+                </h2>
+                <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                  {language === 'it'
+                    ? 'Internet Valore affianca e-commerce e aziende B2B nella gestione delle campagne Google Ads, Meta Ads e Lead Generation con un approccio matematico basato sui dati reali. Grazie alla nostra tecnologia proprietaria masterAnalyzer (160.000 righe di codice), eliminiamo gli sprechi delle agenzie tradizionali, purifichiamo i contatti dal CRM prima di addestrare lo Smart Bidding e ottimizziamo solo sul profitto (POAS) netto.'
+                    : 'Internet Valore partners with e-commerce and B2B companies to manage Google Ads, Meta Ads, and Lead Generation campaigns with a mathematical real-data approach. Powered by our proprietary masterAnalyzer technology (160,000 lines of code), we eliminate traditional agency waste, purify CRM leads before Smart Bidding training, and optimize strictly on net profit (POAS).'}
+                </p>
+                <div className="flex flex-wrap gap-2 text-xs font-semibold text-blue-700">
+                  <span className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">✓ Lead Generation Riconciliata</span>
+                  <span className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">✓ E-commerce POAS over ROAS</span>
+                  <span className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">✓ Controllo Cannibalizzazione Brand</span>
+                  <span className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">✓ 160.000 Righe di Codice Proprietario</span>
+                </div>
+              </motion.div>
+              {/* ─────────────────────────────────────────────────────────── */}
             </div>
           </motion.main>
 
