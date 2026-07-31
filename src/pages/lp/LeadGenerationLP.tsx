@@ -69,6 +69,9 @@ export default function LeadGenerationLP() {
     }
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   const encodeForm = (data: Record<string, string>) => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -77,7 +80,10 @@ export default function LeadGenerationLP() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.privacyAccepted) return;
+    if (!formData.privacyAccepted || isSubmitting) return;
+
+    setIsSubmitting(true);
+    setErrorMessage(null);
 
     const payload = {
       'form-name': 'lead-generation-form',
@@ -89,24 +95,41 @@ export default function LeadGenerationLP() {
       request_type: requestType
     };
 
-    // 1. Submit to Netlify Forms via POST fetch
+    // 1. Submit to Netlify Forms via POST fetch with res.ok validation
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encodeForm(payload)
-    }).catch(error => console.error('Netlify form submit error:', error));
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Netlify Form submit failed with status: ${res.status}`);
+        }
 
-    // 2. Push GTM dataLayer Event
-    (window as any).dataLayer = (window as any).dataLayer || [];
-    (window as any).dataLayer.push({
-      event: 'lead_submit',
-      event_id: generateUUIDv4(),
-      lang: language,
-      page_path: window.location.pathname,
-      ...payload
-    });
+        // 2. Push non-PII data to GTM dataLayer ONLY on successful form submission
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push({
+          event: 'lead_submit',
+          event_id: generateUUIDv4(),
+          lang: language,
+          page_path: window.location.pathname,
+          request_type: requestType,
+          already_investing: formData.alreadyInvesting
+        });
 
-    setSubmitted(true);
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        console.error('Netlify form submit error:', error);
+        setErrorMessage(
+          isIt
+            ? 'Si è verificato un errore durante l’invio al server. Riprova tra poco o chiamaci direttamente al numero verde 800 940 213.'
+            : 'An error occurred during submission. Please try again or call us at 800 940 213.'
+        );
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   const isIt = language === 'it';
@@ -546,6 +569,12 @@ export default function LeadGenerationLP() {
                 <p className="hidden">
                   <label>Don’t fill this out: <input name="bot-field" /></label>
                 </p>
+
+                {errorMessage && (
+                  <div className="bg-red-50 border border-red-200 text-red-800 text-sm font-semibold p-4 rounded-xl text-center">
+                    {errorMessage}
+                  </div>
+                )}
                 {/* Form type selector */}
                 <div className="flex rounded-xl bg-gray-100 p-1 font-bold text-xs sm:text-sm">
                   <button
