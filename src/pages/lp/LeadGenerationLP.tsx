@@ -69,23 +69,41 @@ export default function LeadGenerationLP() {
     }
   };
 
+  const encodeForm = (data: Record<string, string>) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.privacyAccepted) return;
 
-    // Push GTM dataLayer Event
+    const payload = {
+      'form-name': 'lead-generation-form',
+      name: formData.name,
+      company: formData.company,
+      email: formData.email,
+      phone: formData.phone,
+      alreadyInvesting: formData.alreadyInvesting,
+      request_type: requestType
+    };
+
+    // 1. Submit to Netlify Forms via POST fetch
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encodeForm(payload)
+    }).catch(error => console.error('Netlify form submit error:', error));
+
+    // 2. Push GTM dataLayer Event
     (window as any).dataLayer = (window as any).dataLayer || [];
     (window as any).dataLayer.push({
       event: 'lead_submit',
       event_id: generateUUIDv4(),
       lang: language,
       page_path: window.location.pathname,
-      name: formData.name,
-      company: formData.company,
-      email: formData.email,
-      phone: formData.phone,
-      already_investing: formData.alreadyInvesting,
-      request_type: requestType
+      ...payload
     });
 
     setSubmitted(true);
@@ -515,7 +533,19 @@ export default function LeadGenerationLP() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5 max-w-xl mx-auto">
+              <form
+                name="lead-generation-form"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+                className="space-y-5 max-w-xl mx-auto"
+              >
+                {/* Netlify Form Hidden Inputs */}
+                <input type="hidden" name="form-name" value="lead-generation-form" />
+                <p className="hidden">
+                  <label>Don’t fill this out: <input name="bot-field" /></label>
+                </p>
                 {/* Form type selector */}
                 <div className="flex rounded-xl bg-gray-100 p-1 font-bold text-xs sm:text-sm">
                   <button
