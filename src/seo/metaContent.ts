@@ -27,6 +27,24 @@ export const metaContent = {
       serviceDescription: 'Professional lead generation services with complete automation and WhatsApp Business integration.'
     }
   },
+  lpLeadGeneration: {
+    it: {
+      title: 'Agenzia Lead Generation B2B | Internet Valore',
+      description: 'Campagne lead generation B2B che portano contatti veri per la tua PMI. Ricevi l\'analisi gratuita del tuo account Google Ads in 3 giorni.',
+      path: '/lp/lead-generation',
+      priceRange: '€800 - €5000',
+      serviceType: 'B2B Lead Generation',
+      serviceDescription: 'Servizi di lead generation B2B per PMI con tracciamento della spesa e analisi account prima di firmare.'
+    },
+    en: {
+      title: 'B2B Lead Generation Agency | Internet Valore',
+      description: 'B2B lead generation campaigns delivering real contacts for your SMB. Receive a free analysis of your Google Ads account in 3 business days.',
+      path: '/lp/lead-generation',
+      priceRange: '€800 - €5000',
+      serviceType: 'B2B Lead Generation',
+      serviceDescription: 'B2B lead generation services for SMBs with transparent ad spend tracking and free account analysis.'
+    }
+  },
   ecommerce: {
     it: {
       title: 'E-commerce | Vendi di Più con il Dato Reale | Internet Valore',

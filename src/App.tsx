@@ -30,6 +30,7 @@ import TestimonialsSlider from './components/TestimonialsSlider';
 import ErrorBoundary from './components/ErrorBoundary';
 import LandingPage from './pages/landing_page/LandingPage';
 import GoogleAdsLandingPage from './pages/landing_page/GoogleAdsLandingPage';
+import LeadGenerationLP from './pages/lp/LeadGenerationLP';
 import AIPlatform from './pages/AIPlatform';
 import CapabilitiesSlider from './components/CapabilitiesSlider';
 import FeaturedVideo from './components/FeaturedVideo';
@@ -223,6 +224,8 @@ function App() {
     return <Navigate to={`/${language}${location.pathname}${location.search}${location.hash}`} replace />;
   }
 
+  const isLandingPage = location.pathname.includes('/lp/');
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {location.pathname === `/${language}` && (
@@ -232,9 +235,9 @@ function App() {
           path="/"
         />
       )}
-      <Navbar />
+      {!isLandingPage && <Navbar />}
       <ScrollHandler />
-      <div className="flex-grow pt-16">
+      <div className={`flex-grow ${isLandingPage ? '' : 'pt-16'}`}>
         <ErrorBoundary>
           <Routes location={location}>
             {/* Base routes with language prefix */}
@@ -261,6 +264,9 @@ function App() {
             <Route path="/:lang/services/ads" element={<Ads />} />
             <Route path="/:lang/services/analytics" element={<Analytics />} />
             <Route path="/:lang/services/rispondi-subito" element={<RispondiSubito />} />
+
+            {/* Dedicated Landing Pages (Isolated, Zero-Exit) */}
+            <Route path="/:lang/lp/lead-generation" element={<LeadGenerationLP />} />
 
             {/* Other routes */}
             <Route path="/:lang/instant-websites" element={<InstantWebsites />} />
@@ -294,8 +300,8 @@ function App() {
           </Routes>
         </ErrorBoundary>
       </div>
-      <NavigationGuide />
-      <Footer />
+      {!isLandingPage && <NavigationGuide />}
+      {!isLandingPage && <Footer />}
     </div>
   );
 }
