@@ -229,16 +229,16 @@ export default function LeadGenerationLP() {
                 <div className="absolute inset-0 bg-blue-600 rounded-3xl rotate-2 opacity-10"></div>
                 <div className="relative bg-white rounded-3xl p-4 shadow-xl border border-gray-100">
                   <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop"
-                    alt={isIt ? "Consulenza Lead Generation B2B Internet Valore" : "B2B Lead Generation Consulting Internet Valore"}
-                    className="rounded-2xl w-full h-64 object-cover"
+                    src="/images/andrea-falzin-office.jpg"
+                    alt={isIt ? "Andrea Falzin - Founder & CEO Internet Valore" : "Andrea Falzin - Founder & CEO Internet Valore"}
+                    className="rounded-2xl w-full h-64 object-cover object-top shadow-sm"
                   />
                   <div className="mt-3 text-center">
                     <p className="text-sm font-bold text-gray-900">
-                      {isIt ? 'Trasparenza e Chiarezza Totale' : 'Complete Transparency'}
+                      {isIt ? 'Andrea Falzin (Founder & CEO)' : 'Andrea Falzin (Founder & CEO)'}
                     </p>
                     <p className="text-xs text-gray-500">
-                      {isIt ? 'Parli in italiano, vedi ogni singolo euro speso.' : 'Clear metrics, zero hidden costs.'}
+                      {isIt ? 'Oltre 15 anni di esperienza in Lead Generation B2B' : 'Over 15 years in B2B Lead Generation'}
                     </p>
                   </div>
                 </div>
