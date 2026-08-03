@@ -1,12 +1,12 @@
 export const metaContent = {
   home: {
     it: {
-      title: 'Internet Valore | Marketing Digitale e Lead Generation per il Tuo Business',
-      description: 'Massimizziamo il tuo ROI attraverso strategie di marketing digitale innovative e misurabili. Consulenza gratuita!'
+      title: 'Internet Valore: Marketing Digitale e Lead Generation Milano',
+      description: 'Internet Valore a Milano: strategie di marketing digitale, Google Ads e lead generation per far crescere il tuo business. Richiedi una consulenza!'
     },
     en: {
-      title: 'Internet Valore | Digital Marketing and Lead Generation for Your Business',
-      description: 'We maximize your ROI through innovative and measurable digital marketing strategies. Free consultation!'
+      title: 'Internet Valore | Digital Marketing & Lead Gen Milan',
+      description: 'Internet Valore in Milan: digital marketing strategies, Google Ads & lead generation to grow your business. Request a free consultation!'
     }
   },
   leadGeneration: {
