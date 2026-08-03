@@ -251,18 +251,20 @@ export default function CapabilitiesSlider() {
       {/* Tailwind marquee animations embedded directly via styles */}
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marquee-left {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-50%, 0, 0); }
         }
         @keyframes marquee-right {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0); }
+          0% { transform: translate3d(-50%, 0, 0); }
+          100% { transform: translate3d(0, 0, 0); }
         }
         .animate-marquee-left {
           animation: marquee-left 35s linear infinite;
+          will-change: transform;
         }
         .animate-marquee-right {
           animation: marquee-right 35s linear infinite;
+          will-change: transform;
         }
         /* Pause marquee when any card is clicked (flipped) or on hover */
         .animate-marquee-left:hover,

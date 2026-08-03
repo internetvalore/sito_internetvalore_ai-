@@ -56,13 +56,14 @@ export default function Hero() {
     }
   };
 
-  // Gradient animation for the highlight text
+  // Gradient animation for the highlight text (GPU composited opacity/scale)
   const gradientAnimation = {
-    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+    opacity: [0.85, 1, 0.85],
+    scale: [1, 1.02, 1],
     transition: {
-      duration: 5,
+      duration: 4,
       repeat: Infinity,
-      ease: "linear"
+      ease: "easeInOut"
     }
   };
 
@@ -80,17 +81,18 @@ export default function Hero() {
   return (
     <div className="relative bg-white overflow-hidden">
       {/* Animated background pattern */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 animate-gradient-x"></div>
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute -inset-[25%] w-[150%] h-[150%] bg-gradient-to-r from-blue-50 to-indigo-50 animate-gradient-x will-change-transform"></div>
         <motion.div
-          className="absolute inset-0"
+          className="absolute -top-[60px] -left-[60px] w-[calc(100%+60px)] h-[calc(100%+60px)] will-change-transform"
           animate={{
-            backgroundPosition: ["0px 0px", "100px 100px"],
-            transition: {
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear"
-            }
+            x: [0, 60],
+            y: [0, 60]
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
           }}
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234F46E5' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
