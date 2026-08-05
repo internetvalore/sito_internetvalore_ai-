@@ -351,8 +351,8 @@ export default function SolutionsHub() {
           </h3>
           <p className="text-blue-100 mb-6 text-sm max-w-xl mx-auto">
             {isIt 
-              ? 'Mettici alla prova. Richiedi una diagnosi iniziale gratuita o prenota una chiamata con Leonardo per impostare il tracciamento sul dato reale.'
-              : 'Put us to the test. Book a free initial diagnosis or schedule a call with Leonardo to set up tracking on real data.'}
+              ? 'Mettici alla prova. Chiama il Numero Verde 800 940 213 attivo 7x24: risponde Leonardo, assistente AI digitale che raccoglie i tuoi dati per farti richiamare da un nostro consulente umano.'
+              : 'Put us to the test. Call Toll-Free 800 940 213 (active 24/7): answered by Leonardo, digital AI assistant collecting your info for a human consultant callback.'}
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
             <Link

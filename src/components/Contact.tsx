@@ -14,7 +14,9 @@ export default function Contact() {
     ? "Siamo qui per trasformare la tua visione in realtà. Contattaci per una consulenza gratuita e scopri come possiamo aiutarti a raggiungere i tuoi obiettivi digitali."
     : "We're here to transform your vision into reality. Contact us for a free consultation and discover how we can help you achieve your digital goals.";
 
-  const digitalConcierge = language === 'it' ? "Leonardo (Digital Concierge)" : "Leonardo (Digital Concierge)";
+  const digitalConcierge = language === 'it' 
+    ? "Risponde 7x24 Leonardo, il nostro assistente AI digitale, che raccoglie tutte le informazioni per farti richiamare da un nostro consulente umano." 
+    : "Answered 24/7 by Leonardo, our digital AI assistant, who collects all details for a prompt callback from a human consultant.";
   const bookMeeting = language === 'it' ? "Prenota una Consulenza Gratuita" : "Book a Free Consultation";
   const legalAddress = language === 'it' ? "Sede Legale" : "Legal Address";
   const operationalAddress = language === 'it' ? "Sede Operativa" : "Operational Address";

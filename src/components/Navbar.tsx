@@ -282,8 +282,10 @@ export default function Navbar() {
                 <a href="tel:800940213" className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700">
                   {t('nav.call')}
                 </a>
-                <p className="mt-6 text-center text-base font-medium text-gray-500">
-                  {t('nav.callUs')}
+                <p className="mt-4 text-center text-xs text-gray-500">
+                  {language === 'it' 
+                    ? 'Numero Verde 800 940 213 (7x24): risponde Leonardo, assistente AI digitale che raccoglie le informazioni per farti richiamare da un consulente umano.' 
+                    : 'Toll-Free 800 940 213 (24/7): answered by Leonardo, digital AI assistant collecting info for a human consultant callback.'}
                 </p>
               </div>
               <LanguageSelector />

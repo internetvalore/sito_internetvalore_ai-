@@ -45,7 +45,7 @@ export const translations = {
       title: 'Le Nostre Specializzazioni',
       subtitle: 'Gestione Campagne in Outsourcing potenziata dall\'AI',
       description: 'Ogni canale di acquisizione è supportato da masterAnalyzer per garantire l\'assenza di sprechi ed un controllo matematico dei risultati.',
-      available247: 'Disponibilità 24/7 - Numero Verde (Risponde Leonardo per appuntamenti)',
+      available247: 'Numero Verde 800 940 213 attivo 7x24: risponde Leonardo, il nostro assistente AI digitale, che raccoglie tutte le informazioni per farti richiamare da un nostro consulente umano.',
       sections: {
         leadGeneration: {
           title: 'Lead Generation Riconciliata',
@@ -184,7 +184,7 @@ export const translations = {
       title: 'Our Core Capabilities',
       subtitle: 'Outsourced Campaign Management Powered by AI',
       description: 'Every acquisition channel is supported by masterAnalyzer to guarantee zero waste and mathematical control over your ROI.',
-      available247: 'Available 24/7 - Toll-Free Number (Talk to Leonardo for booking)',
+      available247: 'Toll-Free Number 800 940 213 available 24/7: answered by Leonardo, our digital AI assistant, who gathers all your information for a prompt callback from a human consultant.',
       sections: {
         leadGeneration: {
           title: 'Reconciled Lead Generation',

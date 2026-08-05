@@ -17,13 +17,13 @@ export default function RispondiSubito() {
     description: 'Un Alleato basato sull\'IA per dominare il mercato. Centralino intelligente per intercettare le richieste H24 e trasformare ogni interazione in opportunità.',
     testCta: {
       title: 'Prova il Servizio Ora!',
-      description: 'Chiama il nostro numero verde 800 940 213 per testare il servizio e scoprire come funziona il nostro risponditore automatico.',
+      description: 'Chiama il Numero Verde 800 940 213 attivo 7x24: risponde Leonardo, il nostro assistente AI digitale, che raccoglie tutte le informazioni per farti richiamare da un consulente umano.',
       button: 'Chiama Ora'
     },
     features: [
       {
         title: 'Risponditore vocale intelligente H24',
-        description: 'Leonardo risponde sempre al primo squillo per qualificare contatti e prendere appuntamenti, senza operatori.'
+        description: 'Leonardo risponde 7x24 al Numero Verde 800 940 213 per raccogliere tutte le informazioni necessarie e far richiamare il cliente da un consulente umano.'
       },
       {
         title: 'Integrazione CRM',
@@ -70,13 +70,13 @@ export default function RispondiSubito() {
     description: 'An AI-based Ally to dominate the market. Intelligent switchboard to intercept requests 24/7 and turn every interaction into an opportunity.',
     testCta: {
       title: 'Try the Service Now!',
-      description: 'Call our toll-free number 800 940 213 to test the service and discover how our automatic answering system works.',
+      description: 'Call our toll-free number 800 940 213 (active 24/7): answered by Leonardo, our digital AI assistant, who gathers all info so a human consultant can call you back.',
       button: 'Call Now'
     },
     features: [
       {
         title: 'Intelligent 24/7 Voice Assistant',
-        description: 'Leonardo picks up instantly to qualify leads and book calendar appointments, without human agents.'
+        description: 'Leonardo answers 24/7 on Toll-Free 800 940 213 to collect all necessary information for a prompt callback from a human consultant.'
       },
       {
         title: 'CRM Deep Integration',

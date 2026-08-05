@@ -12,7 +12,7 @@ export default function ContactPage() {
     title: 'Contattaci',
     subtitle: 'Parliamo delle Tue Opportunità Nascoste',
     description: 'Siamo qui per applicare la nostra Deep Search e intercettare fette di mercato inesplorate per il tuo progetto. Contattaci per una prima analisi basata sull\'IA e scopri cosa cercano davvero i tuoi clienti.',
-    digitalConcierge: 'Leonardo (AI Concierge)',
+    digitalConcierge: 'Risponde 7x24 Leonardo, il nostro assistente AI digitale, che raccoglie le informazioni necessarie per farti richiamare da un nostro consulente umano.',
     bookMeeting: 'Prenota una Consulenza Gratuita',
     legalAddress: 'Sede Legale',
     operationalAddress: 'Sede Operativa'
@@ -20,7 +20,7 @@ export default function ContactPage() {
     title: 'Contact Us',
     subtitle: 'Let\'s Talk About Your Hidden Opportunities',
     description: 'We\'re here to apply our Deep Search and intercept unexplored market segments for your project. Contact us for an initial AI-driven analysis and discover what your customers are really looking for.',
-    digitalConcierge: 'Leonardo (AI Concierge)',
+    digitalConcierge: 'Answered 24/7 by Leonardo, our digital AI assistant, who gathers all info so a human consultant can call you back.',
     bookMeeting: 'Book a Free Consultation',
     legalAddress: 'Legal Address',
     operationalAddress: 'Operational Address'

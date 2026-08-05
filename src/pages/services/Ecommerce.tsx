@@ -93,7 +93,7 @@ function getContent(language: string) {
         ? 'Quasi tutti i negozi online vedono solo una parte degli ordini che incassano — e finiscono per tagliare campagne sane su numeri bucati. Noi partiamo da qui: ti diciamo quanti ordini il tuo tracciamento non vede e dove stai lasciando margine. Poi agiamo, con te, solo sul dato vero.'
         : 'Almost every online store sees only part of the orders it earns — and ends up cutting healthy campaigns on broken numbers. We start here: we tell you how many orders your tracking doesn\'t see and where you\'re leaving margin on the table. Then we act, with you, only on real data.',
       btnPrimary: it ? 'Prenota l\'analisi gratuita del tuo e-commerce' : 'Book your free e-commerce analysis',
-      btnPhone: it ? 'Chiama il Numero Verde (Risponde Leonardo per appuntamenti) · 800 940 213' : 'Call our Toll-Free Number (Talk to Leonardo for booking) · 800 940 213',
+      btnPhone: it ? 'Numero Verde 800 940 213 (7x24 risponde Leonardo AI per farti richiamare da un consulente umano)' : 'Toll-Free 800 940 213 (24/7 answered by Leonardo AI to get a human consultant callback)',
       btnWa: it ? 'Messaggia l\'agenzia su WhatsApp' : 'Message the agency on WhatsApp',
       trust: it
         ? 'Google Partner · 15+ anni di esperienza · oltre 120 realtà seguite'
@@ -276,7 +276,7 @@ function getContent(language: string) {
         ? 'Prenota una consulenza gratuita: analizziamo il tuo e-commerce e in pochi giorni ti diciamo quanti ordini il tuo tracciamento non vede e dove stai lasciando margine sul tavolo. Poi decidi tu.'
         : 'Book a free consultation: we analyse your e-commerce and within days tell you how many orders your tracking doesn\'t see and where you\'re leaving margin on the table. Then you decide.',
       btnPrimary: it ? 'Prenota l\'analisi gratuita' : 'Book the free analysis',
-      btnPhone: it ? 'Chiama il Numero Verde (Risponde Leonardo per appuntamenti) · 800 940 213' : 'Call our Toll-Free Number (Talk to Leonardo for booking) · 800 940 213',
+      btnPhone: it ? 'Numero Verde 800 940 213 (7x24 risponde Leonardo AI per farti richiamare da un consulente umano)' : 'Toll-Free 800 940 213 (24/7 answered by Leonardo AI to get a human consultant callback)',
       btnWa: it ? 'Messaggia l\'agenzia' : 'Message the agency',
     },
   };
