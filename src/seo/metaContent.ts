@@ -45,6 +45,24 @@ export const metaContent = {
       serviceDescription: 'B2B lead generation services for SMBs with transparent ad spend tracking and free account analysis.'
     }
   },
+  lpOutsourcingEcommerce: {
+    it: {
+      title: 'Chi guarda i tuoi soldi mentre tu fai impresa? | Internet Valore',
+      description: 'Orchestriamo in outsourcing le campagne del tuo ecommerce — Google Ads, Meta, Shopping — con un metodo che puoi controllare con i tuoi occhi.',
+      path: '/lp/outsourcing-campagne-ecommerce',
+      priceRange: '€1000 - €5000',
+      serviceType: 'Outsourcing Campagne Ecommerce',
+      serviceDescription: 'Gestione e orchestrazione in outsourcing delle campagne per ecommerce con metodo trasparente e verificabile.'
+    },
+    en: {
+      title: 'Who watches your money while you do business? | Internet Valore',
+      description: 'We orchestrate your ecommerce advertising campaigns in outsourcing — Google Ads, Meta, Shopping — with a method you can verify with your own eyes.',
+      path: '/lp/outsourcing-campagne-ecommerce',
+      priceRange: '€1000 - €5000',
+      serviceType: 'Ecommerce Campaigns Outsourcing',
+      serviceDescription: 'Transparent and verifiable ecommerce ads management and orchestration.'
+    }
+  },
   ecommerce: {
     it: {
       title: 'E-commerce | Vendi di Più con il Dato Reale | Internet Valore',

@@ -31,6 +31,8 @@ import ErrorBoundary from './components/ErrorBoundary';
 import LandingPage from './pages/landing_page/LandingPage';
 import GoogleAdsLandingPage from './pages/landing_page/GoogleAdsLandingPage';
 import LeadGenerationLP from './pages/lp/LeadGenerationLP';
+import OutsourcingEcommerceLP from './pages/lp/OutsourcingEcommerceLP';
+import OutsourcingEcommerceGrazie from './pages/lp/OutsourcingEcommerceGrazie';
 import AIPlatform from './pages/AIPlatform';
 import CapabilitiesSlider from './components/CapabilitiesSlider';
 import FeaturedVideo from './components/FeaturedVideo';
@@ -267,6 +269,8 @@ function App() {
 
             {/* Dedicated Landing Pages (Isolated, Zero-Exit) */}
             <Route path="/:lang/lp/lead-generation" element={<LeadGenerationLP />} />
+            <Route path="/:lang/lp/outsourcing-campagne-ecommerce" element={<OutsourcingEcommerceLP />} />
+            <Route path="/:lang/lp/outsourcing-campagne-ecommerce/grazie" element={<OutsourcingEcommerceGrazie />} />
 
             {/* Other routes */}
             <Route path="/:lang/instant-websites" element={<InstantWebsites />} />
