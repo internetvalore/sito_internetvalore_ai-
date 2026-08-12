@@ -250,7 +250,7 @@ export default function OutsourcingEcommerceLP() {
       email: formData.email.trim(),
       shop_url: formData.shop_url.trim(),
       ad_spend: formData.ad_spend || 'Non specificata',
-      bot_field: ''
+      'bot-field': ''
     };
 
     try {
@@ -1012,7 +1012,15 @@ export default function OutsourcingEcommerceLP() {
             )}
 
             {/* Form */}
-            <form onSubmit={handleFormSubmit} className="space-y-5">
+            <form
+              onSubmit={handleFormSubmit}
+              className="space-y-5"
+              name="lp-outsourcing-ecommerce"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="lp-outsourcing-ecommerce" />
+              <input type="hidden" name="bot-field" />
               
               {/* Field: Name */}
               <div>
