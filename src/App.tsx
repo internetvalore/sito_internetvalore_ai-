@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, lazy, Suspense } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useLanguage } from './contexts/LanguageContext';
 import MetaTags from './components/MetaTags';
@@ -10,48 +10,62 @@ import Services from './components/Services';
 import Methodology from './components/Methodology';
 import Stats from './components/Stats';
 import Process from './components/Process';
-import Clients from './components/Clients';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
-import ContactPage from './pages/Contact';
-import About from './pages/About';
-
-import Specializations from './pages/Specializations';
-import InstantWebsites from './pages/InstantWebsites';
-import LeadGeneration from './pages/services/LeadGeneration';
-import Ecommerce from './pages/services/Ecommerce';
-import Ads from './pages/services/Ads';
-import Analytics from './pages/services/Analytics';
-import NavigationGuide from './components/NavigationGuide';
-import LandingPageProfessionali from './pages/services/LandingPageProfessionali';
-import RispondiSubito from './pages/services/RispondiSubito';
-import Testimonials from './pages/Testimonials';
-import TestimonialsSlider from './components/TestimonialsSlider';
-import ErrorBoundary from './components/ErrorBoundary';
-import LandingPage from './pages/landing_page/LandingPage';
-import GoogleAdsLandingPage from './pages/landing_page/GoogleAdsLandingPage';
-import LeadGenerationLP from './pages/lp/LeadGenerationLP';
-import OutsourcingEcommerceLP from './pages/lp/OutsourcingEcommerceLP';
-import OutsourcingEcommerceGrazie from './pages/lp/OutsourcingEcommerceGrazie';
-import AIPlatform from './pages/AIPlatform';
-import CapabilitiesSlider from './components/CapabilitiesSlider';
 import FeaturedVideo from './components/FeaturedVideo';
+import ErrorBoundary from './components/ErrorBoundary';
 
-// Solutions Pages
-import SolutionsHub from './pages/solutions/SolutionsHub';
-import TitolarePmi from './pages/solutions/TitolarePmi';
-import AccountManager from './pages/solutions/AccountManager';
-import MediaBuyerGoogle from './pages/solutions/MediaBuyerGoogle';
-import MediaBuyerMeta from './pages/solutions/MediaBuyerMeta';
-import SpecialistaSeo from './pages/solutions/SpecialistaSeo';
-import MeasurementEngineer from './pages/solutions/MeasurementEngineer';
-import OperatoreEcommerce from './pages/solutions/OperatoreEcommerce';
-import AdvertiserSenzaTracking from './pages/solutions/AdvertiserSenzaTracking';
-import CostruttoreSistema from './pages/solutions/CostruttoreSistema';
+// Below-the-fold homepage components lazy-loaded
+const CapabilitiesSlider = lazy(() => import('./components/CapabilitiesSlider'));
+const TestimonialsSlider = lazy(() => import('./components/TestimonialsSlider'));
+const Clients = lazy(() => import('./components/Clients'));
+const FAQ = lazy(() => import('./components/FAQ'));
+const Contact = lazy(() => import('./components/Contact'));
+const NavigationGuide = lazy(() => import('./components/NavigationGuide'));
 
-// Manifesto & Video pages
-import Manifesto from './pages/manifesto/Manifesto';
-import VideoDetail from './pages/manifesto/VideoDetail';
+// Page level lazy-loaded components
+const ContactPage = lazy(() => import('./pages/Contact'));
+const About = lazy(() => import('./pages/About'));
+const Specializations = lazy(() => import('./pages/Specializations'));
+const InstantWebsites = lazy(() => import('./pages/InstantWebsites'));
+const LeadGeneration = lazy(() => import('./pages/services/LeadGeneration'));
+const Ecommerce = lazy(() => import('./pages/services/Ecommerce'));
+const Ads = lazy(() => import('./pages/services/Ads'));
+const Analytics = lazy(() => import('./pages/services/Analytics'));
+const LandingPageProfessionali = lazy(() => import('./pages/services/LandingPageProfessionali'));
+const RispondiSubito = lazy(() => import('./pages/services/RispondiSubito'));
+const Testimonials = lazy(() => import('./pages/Testimonials'));
+const LandingPage = lazy(() => import('./pages/landing_page/LandingPage'));
+const GoogleAdsLandingPage = lazy(() => import('./pages/landing_page/GoogleAdsLandingPage'));
+const LeadGenerationLP = lazy(() => import('./pages/lp/LeadGenerationLP'));
+const OutsourcingEcommerceLP = lazy(() => import('./pages/lp/OutsourcingEcommerceLP'));
+const OutsourcingEcommerceGrazie = lazy(() => import('./pages/lp/OutsourcingEcommerceGrazie'));
+const AIPlatform = lazy(() => import('./pages/AIPlatform'));
+
+// Solutions Pages lazy-loaded
+const SolutionsHub = lazy(() => import('./pages/solutions/SolutionsHub'));
+const TitolarePmi = lazy(() => import('./pages/solutions/TitolarePmi'));
+const AccountManager = lazy(() => import('./pages/solutions/AccountManager'));
+const MediaBuyerGoogle = lazy(() => import('./pages/solutions/MediaBuyerGoogle'));
+const MediaBuyerMeta = lazy(() => import('./pages/solutions/MediaBuyerMeta'));
+const SpecialistaSeo = lazy(() => import('./pages/solutions/SpecialistaSeo'));
+const MeasurementEngineer = lazy(() => import('./pages/solutions/MeasurementEngineer'));
+const OperatoreEcommerce = lazy(() => import('./pages/solutions/OperatoreEcommerce'));
+const AdvertiserSenzaTracking = lazy(() => import('./pages/solutions/AdvertiserSenzaTracking'));
+const CostruttoreSistema = lazy(() => import('./pages/solutions/CostruttoreSistema'));
+
+// Manifesto & Video pages lazy-loaded
+const Manifesto = lazy(() => import('./pages/manifesto/Manifesto'));
+const VideoDetail = lazy(() => import('./pages/manifesto/VideoDetail'));
+
+// Loading Fallback Component
+const PageLoader = () => (
+  <div className="min-h-[50vh] flex items-center justify-center p-8">
+    <div className="flex flex-col items-center gap-3">
+      <div className="w-8 h-8 border-3 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+      <span className="text-xs font-semibold text-slate-400">Caricamento...</span>
+    </div>
+  </div>
+);
+
 
 function ScrollHandler() {
   const location = useLocation();
@@ -241,70 +255,80 @@ function App() {
       <ScrollHandler />
       <div className={`flex-grow ${isLandingPage ? '' : 'pt-16'}`}>
         <ErrorBoundary>
-          <Routes location={location}>
-            {/* Base routes with language prefix */}
-            <Route path="/:lang" element={
-              <>
-                <Hero />
-                <FeaturedVideo />
-                <Methodology />
-                <CapabilitiesSlider />
-                <Stats />
-                <Services />
-                <Process />
-                <TestimonialsSlider />
-                <Clients />
-                <FAQ />
-                <Contact />
-              </>
-            } />
+          <Suspense fallback={<PageLoader />}>
+            <Routes location={location}>
+              {/* Base routes with language prefix */}
+              <Route path="/:lang" element={
+                <>
+                  <Hero />
+                  <FeaturedVideo />
+                  <Methodology />
+                  <Suspense fallback={<div className="py-12 flex justify-center"><div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div></div>}>
+                    <CapabilitiesSlider />
+                  </Suspense>
+                  <Stats />
+                  <Services />
+                  <Process />
+                  <Suspense fallback={<div className="py-12 flex justify-center"><div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div></div>}>
+                    <TestimonialsSlider />
+                    <Clients />
+                    <FAQ />
+                    <Contact />
+                  </Suspense>
+                </>
+              } />
 
-            {/* Service routes */}
-            <Route path="/:lang/services" element={<Services />} />
-            <Route path="/:lang/services/lead-generation" element={<LeadGeneration />} />
-            <Route path="/:lang/services/ecommerce" element={<Ecommerce />} />
-            <Route path="/:lang/services/ads" element={<Ads />} />
-            <Route path="/:lang/services/analytics" element={<Analytics />} />
-            <Route path="/:lang/services/rispondi-subito" element={<RispondiSubito />} />
+              {/* Service routes */}
+              <Route path="/:lang/services" element={<Services />} />
+              <Route path="/:lang/services/lead-generation" element={<LeadGeneration />} />
+              <Route path="/:lang/services/ecommerce" element={<Ecommerce />} />
+              <Route path="/:lang/services/ads" element={<Ads />} />
+              <Route path="/:lang/services/analytics" element={<Analytics />} />
+              <Route path="/:lang/services/rispondi-subito" element={<RispondiSubito />} />
 
-            {/* Dedicated Landing Pages (Isolated, Zero-Exit) */}
-            <Route path="/:lang/lp/lead-generation" element={<LeadGenerationLP />} />
-            <Route path="/:lang/lp/outsourcing-campagne-ecommerce" element={<OutsourcingEcommerceLP />} />
-            <Route path="/:lang/lp/outsourcing-campagne-ecommerce/grazie" element={<OutsourcingEcommerceGrazie />} />
+              {/* Dedicated Landing Pages (Isolated, Zero-Exit) */}
+              <Route path="/:lang/lp/lead-generation" element={<LeadGenerationLP />} />
+              <Route path="/:lang/lp/outsourcing-campagne-ecommerce" element={<OutsourcingEcommerceLP />} />
+              <Route path="/:lang/lp/outsourcing-campagne-ecommerce/grazie" element={<OutsourcingEcommerceGrazie />} />
 
-            {/* Other routes */}
-            <Route path="/:lang/instant-websites" element={<InstantWebsites />} />
-            <Route path="/:lang/specializations" element={<Specializations />} />
-            <Route path="/:lang/about" element={<About />} />
-            <Route path="/:lang/contact" element={<ContactPage />} />
-            <Route path="/:lang/landing-page-professionali" element={<LandingPageProfessionali />} />
-            <Route path="/:lang/testimonials" element={<Testimonials />} />
-            <Route path="/:lang/landing" element={<LandingPage />} />
-            <Route path="/:lang/google-ads" element={<GoogleAdsLandingPage />} />
-            <Route path="/:lang/la-nostra-tecnologia-ai" element={<AIPlatform />} />
+              {/* Other routes */}
+              <Route path="/:lang/instant-websites" element={<InstantWebsites />} />
+              <Route path="/:lang/specializations" element={<Specializations />} />
+              <Route path="/:lang/about" element={<About />} />
+              <Route path="/:lang/contact" element={<ContactPage />} />
+              <Route path="/:lang/landing-page-professionali" element={<LandingPageProfessionali />} />
+              <Route path="/:lang/testimonials" element={<Testimonials />} />
+              <Route path="/:lang/landing" element={<LandingPage />} />
+              <Route path="/:lang/google-ads" element={<GoogleAdsLandingPage />} />
+              <Route path="/:lang/la-nostra-tecnologia-ai" element={<AIPlatform />} />
 
-            {/* Solutions & Profile routes */}
-            <Route path="/:lang/solutions" element={<SolutionsHub />} />
-            <Route path="/:lang/solutions/titolare-pmi" element={<TitolarePmi />} />
-            <Route path="/:lang/solutions/account-manager" element={<AccountManager />} />
-            <Route path="/:lang/solutions/media-buyer-google-ads" element={<MediaBuyerGoogle />} />
-            <Route path="/:lang/solutions/media-buyer-meta" element={<MediaBuyerMeta />} />
-            <Route path="/:lang/solutions/specialista-seo" element={<SpecialistaSeo />} />
-            <Route path="/:lang/solutions/measurement-engineer" element={<MeasurementEngineer />} />
-            <Route path="/:lang/solutions/operatore-ecommerce" element={<OperatoreEcommerce />} />
-            <Route path="/:lang/solutions/advertiser-senza-tracking" element={<AdvertiserSenzaTracking />} />
-            <Route path="/:lang/solutions/costruttore-sistema" element={<CostruttoreSistema />} />
+              {/* Solutions & Profile routes */}
+              <Route path="/:lang/solutions" element={<SolutionsHub />} />
+              <Route path="/:lang/solutions/titolare-pmi" element={<TitolarePmi />} />
+              <Route path="/:lang/solutions/account-manager" element={<AccountManager />} />
+              <Route path="/:lang/solutions/media-buyer-google-ads" element={<MediaBuyerGoogle />} />
+              <Route path="/:lang/solutions/media-buyer-meta" element={<MediaBuyerMeta />} />
+              <Route path="/:lang/solutions/specialista-seo" element={<SpecialistaSeo />} />
+              <Route path="/:lang/solutions/measurement-engineer" element={<MeasurementEngineer />} />
+              <Route path="/:lang/solutions/operatore-ecommerce" element={<OperatoreEcommerce />} />
+              <Route path="/:lang/solutions/advertiser-senza-tracking" element={<AdvertiserSenzaTracking />} />
+              <Route path="/:lang/solutions/costruttore-sistema" element={<CostruttoreSistema />} />
 
-            {/* Manifesto & Video-Spot routes */}
-            <Route path="/:lang/manifesto" element={<Manifesto />} />
-            <Route path="/:lang/video/:videoId" element={<VideoDetail />} />
+              {/* Manifesto & Video-Spot routes */}
+              <Route path="/:lang/manifesto" element={<Manifesto />} />
+              <Route path="/:lang/video/:videoId" element={<VideoDetail />} />
 
-            {/* Catch all redirect */}
-            <Route path="*" element={<Navigate to={`/${language}/${location.search}${location.hash}`} replace />} />
-          </Routes>
+              {/* Catch all redirect */}
+              <Route path="*" element={<Navigate to={`/${language}/${location.search}${location.hash}`} replace />} />
+            </Routes>
+          </Suspense>
         </ErrorBoundary>
       </div>
-      {!isLandingPage && <NavigationGuide />}
+      {!isLandingPage && (
+        <Suspense fallback={null}>
+          <NavigationGuide />
+        </Suspense>
+      )}
       {!isLandingPage && <Footer />}
     </div>
   );

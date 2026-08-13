@@ -6,7 +6,7 @@ import MetaTags from '../../components/MetaTags';
 import { videoList } from './videoData';
 import { 
   ArrowLeft, ArrowRight, Copy, Check, HelpCircle, 
-  AlertTriangle, ShieldCheck, TrendingDown, ArrowUpRight
+  AlertTriangle, ShieldCheck, TrendingDown, ArrowUpRight, Play
 } from 'lucide-react';
 
 export default function VideoDetail() {
