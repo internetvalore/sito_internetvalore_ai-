@@ -518,6 +518,20 @@ export default function AIPlatform() {
         title={metaContent.aiPlatform[language].title}
         description={metaContent.aiPlatform[language].description}
         path="/la-nostra-tecnologia-ai"
+        serviceType={metaContent.aiPlatform[language].serviceType}
+        serviceDescription={metaContent.aiPlatform[language].serviceDescription}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: isIt ? 'Tecnologia AI' : 'AI Technology', path: '/la-nostra-tecnologia-ai' }
+        ]}
+        software={{
+          name: 'masterAnalyzer AI Suite',
+          description: isIt 
+            ? 'Suite tecnologica proprietaria di 160.000+ righe di codice per la riconciliazione dati, audit tracciamento e gestione avanzata di campagne Google Ads ed E-commerce.'
+            : 'Proprietary technology suite with 160,000+ lines of code for multi-source data reconciliation, tracking audits, and advanced Google Ads & E-commerce campaign management.',
+          applicationCategory: 'BusinessApplication',
+          operatingSystem: 'Web / Cloud'
+        }}
       />
 
       <div className="bg-slate-950 text-white min-h-screen font-sans selection:bg-indigo-500 selection:text-white overflow-hidden">

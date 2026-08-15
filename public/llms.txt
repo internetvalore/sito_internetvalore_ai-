@@ -39,6 +39,18 @@ Descrizione: Centralino intelligente H24 guidato dall'IA (Leonardo) per intercet
 URL: https://internetvalore.it/it/landing-page-professionali
 Descrizione: Landing page in 5 giorni lavorativi costruite su intenti reali dalla Deep Search, filtrate dal Giudice Avversariale. Copy anti-kitsch basato su psicologia (Wound Thesaurus, Maslow).
 
+### Hub Servizi
+URL: https://internetvalore.it/it/services
+Descrizione: Panoramica completa di tutti i servizi di marketing digitale avanzato, lead generation e gestione ads per PMI ed e-commerce.
+
+### Landing Page Deep Search
+URL: https://internetvalore.it/it/landing
+Descrizione: Servizio di sviluppo landing page commerciali veloci in 5 giorni lavorativi, basate sull'analisi della domanda di mercato.
+
+### Gestione Campagne Google Ads & AI
+URL: https://internetvalore.it/it/google-ads
+Descrizione: Gestione campagne pubblicitarie Google Ads e Meta Ads basata su intelligenza artificiale, Deep Search e modello Win-Win orientato al profitto aziendale.
+
 ### Siti Web Istantanei
 URL: https://internetvalore.it/it/instant-websites
 Descrizione: Sito web professionale in 7 giorni con design personalizzato, hosting incluso e supporto tecnico per 12 mesi.

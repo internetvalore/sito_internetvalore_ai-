@@ -61,6 +61,21 @@ export default function VideoDetail() {
         title={customTitle}
         description={customDescription}
         path={`/video/${video.id}`}
+        image={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
+        pageType="article"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: isIt ? 'Manifesto' : 'Manifesto', path: '/manifesto' },
+          { name: video.title.split(' — ')[0], path: `/video/${video.id}` }
+        ]}
+        video={{
+          name: video.title,
+          description: `${video.pain} ${video.relief}`,
+          thumbnailUrl: `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`,
+          uploadDate: '2026-07-09T08:00:00+02:00',
+          embedUrl: `https://www.youtube.com/embed/${video.youtubeId}`,
+          transcript: video.script
+        }}
       />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

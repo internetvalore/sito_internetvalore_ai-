@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Users, ShoppingBag, Target, BarChart, Rocket, Phone, MessageCircle, ArrowRight, Layout, PhoneCall } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import MetaTags from './MetaTags';
+import { metaContent } from '../seo/metaContent';
 
 export default function Services() {
   const { t, language } = useLanguage();
@@ -123,8 +125,25 @@ export default function Services() {
     window.open(`https://wa.me/393475012682?text=${message}`, '_blank');
   };
 
+  const location = useLocation();
+  const isServicesPage = location.pathname.endsWith('/services') || location.pathname.endsWith('/services/');
+  const meta = metaContent.services[language];
+
   return (
     <div className="py-12 bg-white">
+      {isServicesPage && (
+        <MetaTags
+          title={meta.title}
+          description={meta.description}
+          path="/services"
+          serviceType={meta.serviceType}
+          serviceDescription={meta.serviceDescription}
+          breadcrumbs={[
+            { name: 'Home', path: '/' },
+            { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' }
+          ]}
+        />
+      )}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -42,11 +42,7 @@ export default function Manifesto() {
   // Group videos by theme
   const themes = Array.from(new Set(videoList.map(v => v.theme)));
 
-  const metaKey = 'manifesto';
-  const currentMeta = metaContent[language]?.[metaKey] || {
-    title: isIt ? 'Manifesto & Video-Spot | Internet Valore' : 'Manifesto & Video-Spot | Internet Valore',
-    description: isIt ? 'Scopri il manifesto di Internet Valore e la nostra collana di 35 video-spot sulle capacità della nostra suite.' : 'Discover the Internet Valore manifesto and our series of 35 video-spots on the capabilities of our suite.'
-  };
+  const currentMeta = metaContent.manifesto[language];
 
   return (
     <div className="bg-gray-50 min-h-screen pt-24 pb-16">
@@ -54,6 +50,10 @@ export default function Manifesto() {
         title={currentMeta.title}
         description={currentMeta.description}
         path="/manifesto"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: isIt ? 'Manifesto' : 'Manifesto', path: '/manifesto' }
+        ]}
       />
 
       {/* Hero Section */}

@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import MetaTags from '../../components/MetaTags';
+import { metaContent } from '../../seo/metaContent';
 
 const LandingPage = () => {
   const { language } = useLanguage();
@@ -306,8 +308,22 @@ const LandingPage = () => {
     callUsNow: 'Call Now'
   };
 
+  const meta = metaContent.landing[language];
+
   return (
     <div className="bg-gradient-to-b from-white to-blue-50 landing-page-container">
+      <MetaTags
+        title={meta.title}
+        description={meta.description}
+        path="/landing"
+        serviceType={meta.serviceType}
+        serviceDescription={meta.serviceDescription}
+        priceRange={meta.priceRange}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: language === 'it' ? 'Landing Page' : 'Landing Page', path: '/landing' }
+        ]}
+      />
       <header className="bg-gradient-to-r from-blue-600 to-blue-800 py-20 landing-page-header relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-pattern"></div>

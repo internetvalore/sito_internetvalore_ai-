@@ -1,11 +1,32 @@
 User-agent: *
 Allow: /
-
 Disallow: /dist/
 Disallow: /src/
+Disallow: /it/lp/outsourcing-campagne-ecommerce/grazie
+Disallow: /en/lp/outsourcing-campagne-ecommerce/grazie
+Disallow: */grazie
+
+# AI & Search Engine Crawlers Explicit Access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
 
 # Sitemap
 Sitemap: https://internetvalore.it/sitemap.xml
 
-# LLMs.txt
+# AI / LLM Context
 # https://internetvalore.it/llms.txt

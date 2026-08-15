@@ -32,6 +32,10 @@ export default function ContactPage() {
         title={content.title}
         description={content.description}
         path="/contact"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: language === 'it' ? 'Contatti' : 'Contact', path: '/contact' }
+        ]}
       />
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">

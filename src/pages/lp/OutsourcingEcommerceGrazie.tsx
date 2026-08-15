@@ -49,6 +49,7 @@ export default function OutsourcingEcommerceGrazie() {
         title={isIt ? "Richiesta Ricevuta | Controllo del Giorno Zero | Internet Valore" : "Request Received | Day Zero Check | Internet Valore"}
         description={isIt ? "Abbiamo preso in carico la tua richiesta per il controllo del giorno zero del tuo ecommerce. Ecco i prossimi passi." : "We have received your request. Here are the next steps."}
         path="/lp/outsourcing-campagne-ecommerce/grazie"
+        noIndex={true}
       />
 
       {/* Minimal Header */}

@@ -1,34 +1,54 @@
 import { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-interface BreadcrumbItem {
+export interface BreadcrumbItem {
   name: string;
   path: string;
 }
 
-interface FAQItem {
+export interface FAQItem {
   question: string;
   answer: string;
 }
 
-interface ReviewItem {
+export interface ReviewItem {
   author: string;
   company?: string;
   rating: number;
   body: string;
 }
 
-interface MetaTagsProps {
+export interface VideoSchemaData {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  embedUrl: string;
+  transcript?: string;
+}
+
+export interface SoftwareSchemaData {
+  name: string;
+  description: string;
+  applicationCategory: string;
+  operatingSystem: string;
+}
+
+export interface MetaTagsProps {
   title: string;
   description: string;
   path: string;
   image?: string;
+  noIndex?: boolean;
+  pageType?: 'website' | 'article' | 'about' | 'contact' | 'service';
   priceRange?: string;
   serviceType?: string;
   serviceDescription?: string;
   breadcrumbs?: BreadcrumbItem[];
   faq?: FAQItem[];
   reviews?: ReviewItem[];
+  video?: VideoSchemaData;
+  software?: SoftwareSchemaData;
 }
 
 export default function MetaTags({
@@ -36,87 +56,103 @@ export default function MetaTags({
   description,
   path,
   image = 'https://internetvalore.it/og-image.jpg',
+  noIndex = false,
+  pageType = 'website',
   priceRange,
   serviceType,
   serviceDescription,
   breadcrumbs,
   faq,
-  reviews
+  reviews,
+  video,
+  software
 }: MetaTagsProps) {
   const { language } = useLanguage();
   const domain = 'https://internetvalore.it';
 
+  // Normalize path without trailing slash (except root)
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-  const trimmedPath = normalizedPath.endsWith('/') ? normalizedPath.slice(0, -1) : normalizedPath;
+  const isRoot = normalizedPath === '/' || normalizedPath === '';
+  const cleanPath = isRoot ? '' : (normalizedPath.endsWith('/') ? normalizedPath.slice(0, -1) : normalizedPath);
 
-  const italianUrl = `${domain}/it${trimmedPath}`;
-  const englishUrl = `${domain}/en${trimmedPath}`;
-  const defaultUrl = `${domain}${trimmedPath}`;
+  const italianUrl = isRoot ? `${domain}/it/` : `${domain}/it${cleanPath}`;
+  const englishUrl = isRoot ? `${domain}/en/` : `${domain}/en${cleanPath}`;
+  const defaultUrl = isRoot ? `${domain}/` : `${domain}${cleanPath}`;
 
   const canonicalUrl = language === 'it' ? italianUrl : englishUrl;
 
   useEffect(() => {
+    // 1. Page Title & Meta Description
     document.title = title;
-    document.querySelector('meta[name="description"]')?.setAttribute('content', description);
-    document.querySelector('meta[name="robots"]')?.setAttribute('content', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
 
-    document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
-    document.querySelector('meta[property="og:description"]')?.setAttribute('content', description);
-    document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonicalUrl);
-    document.querySelector('meta[property="og:image"]')?.setAttribute('content', image);
-    document.querySelector('meta[property="og:type"]')?.setAttribute('content', 'website');
-    document.querySelector('meta[property="og:site_name"]')?.setAttribute('content', 'Internet Valore');
-    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', language === 'it' ? 'it_IT' : 'en_US');
-    document.querySelector('meta[property="og:locale:alternate"]')?.setAttribute('content', language === 'it' ? 'en_US' : 'it_IT');
+    const setMeta = (name: string, content: string, isProperty = false) => {
+      const selector = isProperty ? `meta[property="${name}"]` : `meta[name="${name}"]`;
+      let meta = document.querySelector(selector);
+      if (!meta) {
+        meta = document.createElement('meta');
+        if (isProperty) {
+          meta.setAttribute('property', name);
+        } else {
+          meta.setAttribute('name', name);
+        }
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
 
-    document.querySelector('meta[name="twitter:card"]')?.setAttribute('content', 'summary_large_image');
-    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
-    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', description);
-    document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', image);
+    setMeta('description', description);
+    setMeta('robots', noIndex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
 
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', canonicalUrl);
+    // 2. Open Graph Tags
+    setMeta('og:title', title, true);
+    setMeta('og:description', description, true);
+    setMeta('og:url', canonicalUrl, true);
+    setMeta('og:image', image, true);
+    setMeta('og:image:alt', title, true);
+    setMeta('og:type', pageType === 'article' ? 'article' : 'website', true);
+    setMeta('og:site_name', 'Internet Valore', true);
+    setMeta('og:locale', language === 'it' ? 'it_IT' : 'en_US', true);
+    setMeta('og:locale:alternate', language === 'it' ? 'en_US' : 'it_IT', true);
 
-    let alternateItLink = document.querySelector('link[hreflang="it"]');
-    let alternateEnLink = document.querySelector('link[hreflang="en"]');
-    let alternateXDefaultLink = document.querySelector('link[hreflang="x-default"]');
+    // 3. Twitter Card Tags
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', title);
+    setMeta('twitter:description', description);
+    setMeta('twitter:image', image);
+    setMeta('twitter:image:alt', title);
 
-    if (!alternateItLink) {
-      alternateItLink = document.createElement('link');
-      alternateItLink.setAttribute('rel', 'alternate');
-      alternateItLink.setAttribute('hreflang', 'it');
-      document.head.appendChild(alternateItLink);
-    }
-    if (!alternateEnLink) {
-      alternateEnLink = document.createElement('link');
-      alternateEnLink.setAttribute('rel', 'alternate');
-      alternateEnLink.setAttribute('hreflang', 'en');
-      document.head.appendChild(alternateEnLink);
-    }
-    if (!alternateXDefaultLink) {
-      alternateXDefaultLink = document.createElement('link');
-      alternateXDefaultLink.setAttribute('rel', 'alternate');
-      alternateXDefaultLink.setAttribute('hreflang', 'x-default');
-      document.head.appendChild(alternateXDefaultLink);
-    }
+    // 4. Canonical & Hreflang Link tags
+    const setLink = (rel: string, href: string, hreflang?: string) => {
+      const selector = hreflang ? `link[rel="${rel}"][hreflang="${hreflang}"]` : `link[rel="${rel}"]`;
+      let link = document.querySelector(selector);
+      if (!link) {
+        link = document.createElement('link');
+        link.setAttribute('rel', rel);
+        if (hreflang) link.setAttribute('hreflang', hreflang);
+        document.head.appendChild(link);
+      }
+      link.setAttribute('href', href);
+    };
 
-    alternateItLink.setAttribute('href', italianUrl);
-    alternateEnLink.setAttribute('href', englishUrl);
-    alternateXDefaultLink.setAttribute('href', defaultUrl);
+    setLink('canonical', canonicalUrl);
+    setLink('alternate', italianUrl, 'it');
+    setLink('alternate', englishUrl, 'en');
+    setLink('alternate', defaultUrl, 'x-default');
 
-    // Service schema
+    // Schema helper
+    const injectSchema = (id: string, schemaData: object | null) => {
+      document.getElementById(id)?.remove();
+      if (!schemaData) return;
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.id = id;
+      script.text = JSON.stringify(schemaData);
+      document.head.appendChild(script);
+    };
+
+    // 5. Service Schema
     if (serviceType && serviceDescription) {
-      const serviceScriptId = 'service-schema';
-      document.getElementById(serviceScriptId)?.remove();
-      const serviceScript = document.createElement('script');
-      serviceScript.type = 'application/ld+json';
-      serviceScript.id = serviceScriptId;
-      serviceScript.text = JSON.stringify({
+      injectSchema('service-schema', {
         "@context": "https://schema.org",
         "@type": "Service",
         "name": title,
@@ -124,9 +160,10 @@ export default function MetaTags({
         "url": canonicalUrl,
         "provider": {
           "@type": "Organization",
+          "@id": "https://internetvalore.it/#organization",
           "name": "Internet Valore",
           "url": "https://internetvalore.it",
-          "logo": "https://internetvalore.it/logo.png",
+          "logo": "https://internetvalore.it/logo.svg",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Via Giovanni Battista Pergolesi 29",
@@ -138,46 +175,40 @@ export default function MetaTags({
         },
         "areaServed": language === 'it'
           ? ["Italia", "Lombardia", "Milano", "Monza-Lecco-Como", "Canton Ticino"]
-          : ["Italy", "Europe"],
+          : ["Italy", "Europe", "Switzerland"],
         "availableLanguage": ["Italian", "English"],
         "serviceType": serviceType,
-        ...(priceRange && { "priceRange": priceRange })
+        ...(priceRange ? { "priceRange": priceRange } : {})
       });
-      document.head.appendChild(serviceScript);
     } else {
-      document.getElementById('service-schema')?.remove();
+      injectSchema('service-schema', null);
     }
 
-    // BreadcrumbList schema
+    // 6. BreadcrumbList Schema
     if (breadcrumbs && breadcrumbs.length > 0) {
-      const breadcrumbScriptId = 'breadcrumb-schema';
-      document.getElementById(breadcrumbScriptId)?.remove();
-      const breadcrumbScript = document.createElement('script');
-      breadcrumbScript.type = 'application/ld+json';
-      breadcrumbScript.id = breadcrumbScriptId;
-      breadcrumbScript.text = JSON.stringify({
+      injectSchema('breadcrumb-schema', {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        "itemListElement": breadcrumbs.map((item, index) => ({
-          "@type": "ListItem",
-          "position": index + 1,
-          "name": item.name,
-          "item": `${domain}/${language}${item.path}`
-        }))
+        "itemListElement": breadcrumbs.map((item, index) => {
+          const itemCleanPath = item.path === '/' ? '' : item.path;
+          const fullItemUrl = isRoot && item.path === '/' 
+            ? `${domain}/${language}/` 
+            : `${domain}/${language}${itemCleanPath}`;
+          return {
+            "@type": "ListItem",
+            "position": index + 1,
+            "name": item.name,
+            "item": fullItemUrl
+          };
+        })
       });
-      document.head.appendChild(breadcrumbScript);
     } else {
-      document.getElementById('breadcrumb-schema')?.remove();
+      injectSchema('breadcrumb-schema', null);
     }
 
-    // FAQ schema
+    // 7. FAQPage Schema
     if (faq && faq.length > 0) {
-      const faqScriptId = 'faq-schema';
-      document.getElementById(faqScriptId)?.remove();
-      const faqScript = document.createElement('script');
-      faqScript.type = 'application/ld+json';
-      faqScript.id = faqScriptId;
-      faqScript.text = JSON.stringify({
+      injectSchema('faq-schema', {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": faq.map(item => ({
@@ -189,60 +220,64 @@ export default function MetaTags({
           }
         }))
       });
-      document.head.appendChild(faqScript);
     } else {
-      document.getElementById('faq-schema')?.remove();
+      injectSchema('faq-schema', null);
     }
 
-    // Person (Founder & CEO) schema
-    const personScriptId = 'person-schema';
-    document.getElementById(personScriptId)?.remove();
-    const personScript = document.createElement('script');
-    personScript.type = 'application/ld+json';
-    personScript.id = personScriptId;
-    personScript.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "@id": "https://internetvalore.it/#person-andrea-falzin",
-      "name": "Andrea Falzin",
-      "jobTitle": "Founder & CEO",
-      "image": "https://leprimescelte.com/wp-content/uploads/2025/02/AFimmagine.jpg",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Internet Valore",
-        "url": "https://internetvalore.it"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/falzin/",
-        "https://www.facebook.com/internetvalore/"
-      ],
-      "description": "Founder & CEO di Internet Valore, specialista in marketing digitale, lead generation, e-commerce e sviluppatore della suite tecnologica masterAnalyzer.",
-      "knowsAbout": [
-        "Digital Marketing",
-        "Lead Generation",
-        "E-commerce Optimization",
-        "Google Ads",
-        "Meta Ads",
-        "POAS",
-        "masterAnalyzer AI"
-      ]
-    });
-    document.head.appendChild(personScript);
+    // 8. VideoObject Schema
+    if (video) {
+      injectSchema('video-schema', {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": video.name,
+        "description": video.description,
+        "thumbnailUrl": [video.thumbnailUrl],
+        "uploadDate": video.uploadDate,
+        "embedUrl": video.embedUrl,
+        ...(video.transcript ? { "transcript": video.transcript } : {}),
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://internetvalore.it/#organization",
+          "name": "Internet Valore",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://internetvalore.it/logo.svg"
+          }
+        }
+      });
+    } else {
+      injectSchema('video-schema', null);
+    }
 
-    // Reviews & AggregateRating schema
+    // 9. SoftwareApplication Schema
+    if (software) {
+      injectSchema('software-schema', {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": software.name,
+        "description": software.description,
+        "applicationCategory": software.applicationCategory,
+        "operatingSystem": software.operatingSystem,
+        "author": {
+          "@type": "Organization",
+          "@id": "https://internetvalore.it/#organization",
+          "name": "Internet Valore"
+        },
+        "url": canonicalUrl
+      });
+    } else {
+      injectSchema('software-schema', null);
+    }
+
+    // 10. Reviews & AggregateRating Schema
     if (reviews && reviews.length > 0) {
-      const reviewsScriptId = 'reviews-schema';
-      document.getElementById(reviewsScriptId)?.remove();
-      const reviewsScript = document.createElement('script');
-      reviewsScript.type = 'application/ld+json';
-      reviewsScript.id = reviewsScriptId;
-      reviewsScript.text = JSON.stringify({
+      injectSchema('reviews-schema', {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "@id": "https://internetvalore.it",
+        "@id": "https://internetvalore.it/#localbusiness",
         "name": "Internet Valore",
         "url": "https://internetvalore.it",
-        "image": "https://internetvalore.it/logo.png",
+        "image": "https://internetvalore.it/logo.svg",
         "telephone": "+39-800-940-213",
         "founder": {
           "@type": "Person",
@@ -279,11 +314,35 @@ export default function MetaTags({
           "reviewBody": item.body
         }))
       });
-      document.head.appendChild(reviewsScript);
     } else {
-      document.getElementById('reviews-schema')?.remove();
+      injectSchema('reviews-schema', null);
     }
-  }, [title, description, canonicalUrl, image, language, serviceType, serviceDescription, priceRange, italianUrl, englishUrl, defaultUrl, breadcrumbs, faq, reviews]);
+
+    // Cleanup on unmount
+    return () => {
+      const schemasToClean = ['service-schema', 'breadcrumb-schema', 'faq-schema', 'video-schema', 'software-schema', 'reviews-schema'];
+      schemasToClean.forEach(id => document.getElementById(id)?.remove());
+    };
+  }, [
+    title,
+    description,
+    canonicalUrl,
+    image,
+    noIndex,
+    pageType,
+    language,
+    serviceType,
+    serviceDescription,
+    priceRange,
+    italianUrl,
+    englishUrl,
+    defaultUrl,
+    breadcrumbs,
+    faq,
+    reviews,
+    video,
+    software
+  ]);
 
   return null;
 }

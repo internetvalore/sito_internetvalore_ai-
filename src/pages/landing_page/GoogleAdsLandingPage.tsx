@@ -3,6 +3,8 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { Phone, MessageCircle, ChevronDown, CheckCircle, HelpCircle, TrendingUp, Clock, BarChart2, DollarSign } from 'lucide-react';
 import TestimonialsSlider from '../../components/TestimonialsSlider';
+import MetaTags from '../../components/MetaTags';
+import { metaContent } from '../../seo/metaContent';
 
 const GoogleAdsLandingPage = () => {
   const { language } = useLanguage();
@@ -261,8 +263,22 @@ const GoogleAdsLandingPage = () => {
     window.location.href = `tel:${content.phoneNumber.replace(/\s/g, '')}`;
   };
 
+  const meta = metaContent.googleAds[language];
+
   return (
     <div className="bg-white">
+      <MetaTags
+        title={meta.title}
+        description={meta.description}
+        path="/google-ads"
+        serviceType={meta.serviceType}
+        serviceDescription={meta.serviceDescription}
+        priceRange={meta.priceRange}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: language === 'it' ? 'Google Ads & AI' : 'Google Ads & AI', path: '/google-ads' }
+        ]}
+      />
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">

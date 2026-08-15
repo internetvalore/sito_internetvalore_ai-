@@ -140,6 +140,10 @@ export default function About() {
         title={meta.title}
         description={meta.description}
         path="/about"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: language === 'it' ? 'Chi Siamo' : 'About Us', path: '/about' }
+        ]}
       />
       <div className="bg-gradient-to-b from-white to-gray-50">
         <HeroSection
