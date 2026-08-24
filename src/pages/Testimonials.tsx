@@ -198,8 +198,13 @@ export default function Testimonials() {
         title={meta.title}
         description={meta.description}
         path="/testimonials"
+        includeLocalBusiness={true}
         faq={testimonialsFaqs}
         reviews={reviews}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: language === 'it' ? 'Testimonianze' : 'Testimonials', path: '/testimonials' }
+        ]}
       />
       <div className="bg-gradient-to-b from-white to-gray-50">
         <HeroSection

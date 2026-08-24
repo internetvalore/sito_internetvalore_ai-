@@ -58,33 +58,6 @@ export default function FAQ() {
     }
   ];
 
-  // Dynamic JSON-LD FAQPage Schema Injection
-  useEffect(() => {
-    const scriptId = 'faq-jsonld-schema';
-    document.getElementById(scriptId)?.remove();
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = scriptId;
-    script.text = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      'mainEntity': faqs.map((faq) => ({
-        '@type': 'Question',
-        'name': faq.question,
-        'acceptedAnswer': {
-          '@type': 'Answer',
-          'text': faq.answer
-        }
-      }))
-    });
-    document.head.appendChild(script);
-
-    return () => {
-      document.getElementById(scriptId)?.remove();
-    };
-  }, [language]);
-
   return (
     <section id="faq" className="bg-gray-50 py-24 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

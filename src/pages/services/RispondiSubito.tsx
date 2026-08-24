@@ -131,7 +131,7 @@ export default function RispondiSubito() {
         breadcrumbs={[
           { name: 'Home', path: '/' },
           { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },
-          { name: 'RispondoSubito', path: '/services/rispondi-subito' }
+          { name: 'RispondiSubito', path: '/services/rispondi-subito' }
         ]}
       />
       <div className="bg-gradient-to-b from-white to-gray-50">

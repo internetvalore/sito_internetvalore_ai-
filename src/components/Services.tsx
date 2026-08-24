@@ -5,6 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import MetaTags from './MetaTags';
 import { metaContent } from '../seo/metaContent';
+import { CORE_SERVICES_IT, CORE_SERVICES_EN, VERIFIED_REVIEWS } from '../seo/schemaData';
 
 export default function Services() {
   const { t, language } = useLanguage();
@@ -128,6 +129,7 @@ export default function Services() {
   const location = useLocation();
   const isServicesPage = location.pathname.endsWith('/services') || location.pathname.endsWith('/services/');
   const meta = metaContent.services[language];
+  const serviceOffersList = language === 'it' ? CORE_SERVICES_IT : CORE_SERVICES_EN;
 
   return (
     <div className="py-12 bg-white">
@@ -138,6 +140,9 @@ export default function Services() {
           path="/services"
           serviceType={meta.serviceType}
           serviceDescription={meta.serviceDescription}
+          serviceOffers={serviceOffersList}
+          includeLocalBusiness={true}
+          reviews={VERIFIED_REVIEWS}
           breadcrumbs={[
             { name: 'Home', path: '/' },
             { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' }

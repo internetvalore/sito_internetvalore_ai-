@@ -92,6 +92,14 @@ export default function InstantWebsites() {
         title={meta.title}
         description={meta.description}
         path="/instant-websites"
+        serviceType={meta.serviceType}
+        serviceDescription={meta.serviceDescription}
+        priceRange={meta.priceRange}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },
+          { name: language === 'it' ? 'Siti Web Istantanei' : 'Instant Websites', path: '/instant-websites' }
+        ]}
       />
       <div className="bg-gradient-to-b from-white to-gray-50">
         <HeroSection

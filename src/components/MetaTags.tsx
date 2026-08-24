@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { BUSINESS_INFO, VERIFIED_REVIEWS, CORE_SERVICES_IT, CORE_SERVICES_EN } from '../seo/schemaData';
 
 export interface BreadcrumbItem {
   name: string;
@@ -16,6 +17,15 @@ export interface ReviewItem {
   company?: string;
   rating: number;
   body: string;
+  datePublished?: string;
+}
+
+export interface ServiceOfferItem {
+  name: string;
+  description: string;
+  url?: string;
+  serviceType?: string;
+  priceRange?: string;
 }
 
 export interface VideoSchemaData {
@@ -44,9 +54,11 @@ export interface MetaTagsProps {
   priceRange?: string;
   serviceType?: string;
   serviceDescription?: string;
+  serviceOffers?: ServiceOfferItem[];
   breadcrumbs?: BreadcrumbItem[];
   faq?: FAQItem[];
   reviews?: ReviewItem[];
+  includeLocalBusiness?: boolean;
   video?: VideoSchemaData;
   software?: SoftwareSchemaData;
 }
@@ -61,9 +73,11 @@ export default function MetaTags({
   priceRange,
   serviceType,
   serviceDescription,
+  serviceOffers,
   breadcrumbs,
   faq,
   reviews,
+  includeLocalBusiness = false,
   video,
   software
 }: MetaTagsProps) {
@@ -139,7 +153,7 @@ export default function MetaTags({
     setLink('alternate', englishUrl, 'en');
     setLink('alternate', defaultUrl, 'x-default');
 
-    // Schema helper
+    // Schema injection helper
     const injectSchema = (id: string, schemaData: object | null) => {
       document.getElementById(id)?.remove();
       if (!schemaData) return;
@@ -150,41 +164,188 @@ export default function MetaTags({
       document.head.appendChild(script);
     };
 
-    // 5. Service Schema
-    if (serviceType && serviceDescription) {
+    // Shared Provider Object for Service schemas
+    const localBusinessProvider = {
+      "@type": "LocalBusiness",
+      "@id": "https://internetvalore.it/#localbusiness",
+      "name": BUSINESS_INFO.name,
+      "legalName": BUSINESS_INFO.legalName,
+      "url": BUSINESS_INFO.url,
+      "logo": BUSINESS_INFO.logo,
+      "image": BUSINESS_INFO.image,
+      "telephone": BUSINESS_INFO.telephone,
+      "email": BUSINESS_INFO.email,
+      "priceRange": BUSINESS_INFO.priceRange,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": BUSINESS_INFO.address.streetAddress,
+        "addressLocality": BUSINESS_INFO.address.addressLocality,
+        "addressRegion": BUSINESS_INFO.address.addressRegion,
+        "postalCode": BUSINESS_INFO.address.postalCode,
+        "addressCountry": BUSINESS_INFO.address.addressCountry
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": BUSINESS_INFO.geo.latitude,
+        "longitude": BUSINESS_INFO.geo.longitude
+      }
+    };
+
+    // 5. LocalBusiness & Organization Schema (with AggregateRating & Reviews)
+    const activeReviews = reviews || (isRoot || includeLocalBusiness ? VERIFIED_REVIEWS : undefined);
+    
+    if (includeLocalBusiness || isRoot || (activeReviews && activeReviews.length > 0)) {
+      const reviewList = (activeReviews || VERIFIED_REVIEWS).map(item => ({
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": item.author
+        },
+        "datePublished": item.datePublished || "2024-03-15",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": item.rating.toString(),
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "reviewBody": item.body,
+        "itemReviewed": {
+          "@type": "LocalBusiness",
+          "name": BUSINESS_INFO.name,
+          "image": BUSINESS_INFO.logo,
+          "telephone": BUSINESS_INFO.telephone,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": BUSINESS_INFO.address.streetAddress,
+            "addressLocality": BUSINESS_INFO.address.addressLocality,
+            "addressRegion": BUSINESS_INFO.address.addressRegion,
+            "postalCode": BUSINESS_INFO.address.postalCode,
+            "addressCountry": BUSINESS_INFO.address.addressCountry
+          }
+        }
+      }));
+
+      const coreServices = language === 'it' ? CORE_SERVICES_IT : CORE_SERVICES_EN;
+
+      injectSchema('localbusiness-schema', {
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://internetvalore.it/#localbusiness",
+        "name": BUSINESS_INFO.name,
+        "legalName": BUSINESS_INFO.legalName,
+        "url": canonicalUrl,
+        "logo": BUSINESS_INFO.logo,
+        "image": [BUSINESS_INFO.image, BUSINESS_INFO.logo],
+        "telephone": BUSINESS_INFO.telephone,
+        "email": BUSINESS_INFO.email,
+        "priceRange": BUSINESS_INFO.priceRange,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": BUSINESS_INFO.address.streetAddress,
+          "addressLocality": BUSINESS_INFO.address.addressLocality,
+          "addressRegion": BUSINESS_INFO.address.addressRegion,
+          "postalCode": BUSINESS_INFO.address.postalCode,
+          "addressCountry": BUSINESS_INFO.address.addressCountry
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": BUSINESS_INFO.geo.latitude,
+          "longitude": BUSINESS_INFO.geo.longitude
+        },
+        "openingHoursSpecification": BUSINESS_INFO.openingHours.map(spec => ({
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": spec.dayOfWeek,
+          "opens": spec.opens,
+          "closes": spec.closes
+        })),
+        "areaServed": BUSINESS_INFO.areaServed,
+        "sameAs": BUSINESS_INFO.sameAs,
+        "founder": {
+          "@type": "Person",
+          "@id": "https://internetvalore.it/#person-andrea-falzin",
+          "name": BUSINESS_INFO.founder.name,
+          "jobTitle": BUSINESS_INFO.founder.jobTitle,
+          "image": BUSINESS_INFO.founder.image,
+          "sameAs": BUSINESS_INFO.founder.sameAs,
+          "description": BUSINESS_INFO.founder.description
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": (activeReviews?.length || VERIFIED_REVIEWS.length).toString(),
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": reviewList,
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": language === 'it' ? "Servizi di Marketing Digitale & Lead Generation" : "Digital Marketing & Lead Generation Services",
+          "itemListElement": coreServices.map(srv => ({
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": srv.id,
+              "name": srv.name,
+              "serviceType": srv.serviceType,
+              "description": srv.description,
+              "url": srv.url
+            }
+          }))
+        }
+      });
+    } else {
+      injectSchema('localbusiness-schema', null);
+    }
+
+    // 6. Service & OfferCatalog Schema (For Service Pages)
+    if (serviceType || serviceDescription || (serviceOffers && serviceOffers.length > 0)) {
+      const catalogOffers = serviceOffers ? serviceOffers.map((offer) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": offer.name,
+          "description": offer.description,
+          "url": offer.url || canonicalUrl,
+          "serviceType": offer.serviceType || serviceType,
+          "provider": localBusinessProvider
+        }
+      })) : undefined;
+
       injectSchema('service-schema', {
         "@context": "https://schema.org",
         "@type": "Service",
         "name": title,
-        "description": serviceDescription,
+        "description": serviceDescription || description,
         "url": canonicalUrl,
-        "provider": {
-          "@type": "Organization",
-          "@id": "https://internetvalore.it/#organization",
-          "name": "Internet Valore",
-          "url": "https://internetvalore.it",
-          "logo": "https://internetvalore.it/logo.svg",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Via Giovanni Battista Pergolesi 29",
-            "addressLocality": "Milano",
-            "postalCode": "20124",
-            "addressCountry": "IT"
-          },
-          "telephone": "+39-800-940-213"
-        },
+        "serviceType": serviceType || title,
+        "provider": localBusinessProvider,
         "areaServed": language === 'it'
-          ? ["Italia", "Lombardia", "Milano", "Monza-Lecco-Como", "Canton Ticino"]
+          ? ["Italia", "Lombardia", "Milano", "Monza", "Como", "Lecco", "Canton Ticino", "Svizzera"]
           : ["Italy", "Europe", "Switzerland"],
         "availableLanguage": ["Italian", "English"],
-        "serviceType": serviceType,
-        ...(priceRange ? { "priceRange": priceRange } : {})
+        ...(priceRange ? {
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "EUR",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": priceRange
+            }
+          }
+        } : {}),
+        ...(catalogOffers ? {
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": title,
+            "itemListElement": catalogOffers
+          }
+        } : {})
       });
     } else {
       injectSchema('service-schema', null);
     }
 
-    // 6. BreadcrumbList Schema
+    // 7. BreadcrumbList Schema
     if (breadcrumbs && breadcrumbs.length > 0) {
       injectSchema('breadcrumb-schema', {
         "@context": "https://schema.org",
@@ -206,7 +367,7 @@ export default function MetaTags({
       injectSchema('breadcrumb-schema', null);
     }
 
-    // 7. FAQPage Schema
+    // 8. FAQPage Schema
     if (faq && faq.length > 0) {
       injectSchema('faq-schema', {
         "@context": "https://schema.org",
@@ -224,7 +385,7 @@ export default function MetaTags({
       injectSchema('faq-schema', null);
     }
 
-    // 8. VideoObject Schema
+    // 9. VideoObject Schema
     if (video) {
       injectSchema('video-schema', {
         "@context": "https://schema.org",
@@ -238,10 +399,10 @@ export default function MetaTags({
         "publisher": {
           "@type": "Organization",
           "@id": "https://internetvalore.it/#organization",
-          "name": "Internet Valore",
+          "name": BUSINESS_INFO.name,
           "logo": {
             "@type": "ImageObject",
-            "url": "https://internetvalore.it/logo.svg"
+            "url": BUSINESS_INFO.logo
           }
         }
       });
@@ -249,7 +410,7 @@ export default function MetaTags({
       injectSchema('video-schema', null);
     }
 
-    // 9. SoftwareApplication Schema
+    // 10. SoftwareApplication Schema
     if (software) {
       injectSchema('software-schema', {
         "@context": "https://schema.org",
@@ -261,7 +422,7 @@ export default function MetaTags({
         "author": {
           "@type": "Organization",
           "@id": "https://internetvalore.it/#organization",
-          "name": "Internet Valore"
+          "name": BUSINESS_INFO.name
         },
         "url": canonicalUrl
       });
@@ -269,58 +430,16 @@ export default function MetaTags({
       injectSchema('software-schema', null);
     }
 
-    // 10. Reviews & AggregateRating Schema
-    if (reviews && reviews.length > 0) {
-      injectSchema('reviews-schema', {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "@id": "https://internetvalore.it/#localbusiness",
-        "name": "Internet Valore",
-        "url": "https://internetvalore.it",
-        "image": "https://internetvalore.it/logo.svg",
-        "telephone": "+39-800-940-213",
-        "founder": {
-          "@type": "Person",
-          "@id": "https://internetvalore.it/#person-andrea-falzin",
-          "name": "Andrea Falzin",
-          "jobTitle": "Founder & CEO",
-          "sameAs": "https://www.linkedin.com/in/falzin/"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Via Giovanni Battista Pergolesi 29",
-          "addressLocality": "Milano",
-          "postalCode": "20124",
-          "addressCountry": "IT"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": reviews.length.toString(),
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "review": reviews.map(item => ({
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": item.author
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": item.rating.toString(),
-            "bestRating": "5"
-          },
-          "reviewBody": item.body
-        }))
-      });
-    } else {
-      injectSchema('reviews-schema', null);
-    }
-
     // Cleanup on unmount
     return () => {
-      const schemasToClean = ['service-schema', 'breadcrumb-schema', 'faq-schema', 'video-schema', 'software-schema', 'reviews-schema'];
+      const schemasToClean = [
+        'localbusiness-schema',
+        'service-schema',
+        'breadcrumb-schema',
+        'faq-schema',
+        'video-schema',
+        'software-schema'
+      ];
       schemasToClean.forEach(id => document.getElementById(id)?.remove());
     };
   }, [
@@ -333,6 +452,7 @@ export default function MetaTags({
     language,
     serviceType,
     serviceDescription,
+    serviceOffers,
     priceRange,
     italianUrl,
     englishUrl,
@@ -340,6 +460,7 @@ export default function MetaTags({
     breadcrumbs,
     faq,
     reviews,
+    includeLocalBusiness,
     video,
     software
   ]);

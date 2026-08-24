@@ -140,6 +140,7 @@ export default function About() {
         title={meta.title}
         description={meta.description}
         path="/about"
+        includeLocalBusiness={true}
         breadcrumbs={[
           { name: 'Home', path: '/' },
           { name: language === 'it' ? 'Chi Siamo' : 'About Us', path: '/about' }

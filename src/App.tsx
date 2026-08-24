@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useLanguage } from './contexts/LanguageContext';
 import MetaTags from './components/MetaTags';
 import { metaContent } from './seo/metaContent';
+import { VERIFIED_REVIEWS, HOMEPAGE_FAQS, HOMEPAGE_FAQS_EN } from './seo/schemaData';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -249,6 +250,12 @@ function App() {
           title={meta.title}
           description={meta.description}
           path="/"
+          includeLocalBusiness={true}
+          reviews={VERIFIED_REVIEWS}
+          faq={language === 'it' ? HOMEPAGE_FAQS : HOMEPAGE_FAQS_EN}
+          breadcrumbs={[
+            { name: 'Home', path: '/' }
+          ]}
         />
       )}
       {!isLandingPage && <Navbar />}
