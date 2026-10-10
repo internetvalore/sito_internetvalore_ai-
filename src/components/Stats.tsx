@@ -24,8 +24,8 @@ export default function Stats() {
     },
     {
       id: 3,
-      name: language === 'it' ? 'ROI Medio' : 'Average ROI',
-      value: '300%',
+      name: language === 'it' ? 'Righe di Codice masterAnalyzer' : 'masterAnalyzer Code Lines',
+      value: '160k+',
       icon: TrendingUp,
       color: 'from-purple-500 to-purple-600'
     },

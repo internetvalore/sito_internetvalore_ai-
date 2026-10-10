@@ -11,6 +11,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import MetaTags from '../../components/MetaTags';
 import Stats from '../../components/Stats';
 import TestimonialsSlider from '../../components/TestimonialsSlider';
+import QualifiedDossierSection from '../../components/QualifiedDossierSection';
 
 // ─── Fade-in on scroll ────────────────────────────────────────────────────────
 const fadeInUp = {
@@ -545,6 +546,9 @@ export default function Ecommerce() {
             </div>
           </div>
         </Section>
+
+        {/* ══ ACCESSO RISERVATO — DOSSIER & BENCHMARK E-COMMERCE ══════════════ */}
+        <QualifiedDossierSection />
 
         {/* ══ FAQ ══════════════════════════════════════════════════════════════ */}
         <div className="bg-gray-50 py-20">

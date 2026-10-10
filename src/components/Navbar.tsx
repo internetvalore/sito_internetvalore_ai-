@@ -15,44 +15,45 @@ export default function Navbar() {
 
   const services = [
     {
+      name: language === 'it' ? 'Outsourcing Campagne E-commerce' : 'E-commerce Campaign Outsourcing',
+      description: language === 'it' ? 'Ottimizzazione sul margine reale (POAS), riconciliazione carrello e zero cannibalizzazione.' : 'Real margin optimization (POAS), cart reconciliation and zero brand cannibalization.',
+      href: `/${language}/services/ecommerce`,
+      isPrimary: true
+    },
+    {
+      name: language === 'it' ? 'La Nostra AI (masterAnalyzer)' : 'Our AI (masterAnalyzer)',
+      description: language === 'it' ? '160.000 righe di codice proprietario per orchestrare campagne e margini.' : '160,000 lines of proprietary code to orchestrate campaigns and margins.',
+      href: `/${language}/la-nostra-tecnologia-ai`
+    },
+    {
+      name: language === 'it' ? 'Audit & Riconciliazione (Riservato)' : 'Audit & Reconciliation (Private)',
+      description: language === 'it' ? 'Verifica discrepanze carrello vs GA4 protetta da accordo NDA.' : 'Cart vs GA4 discrepancy audit protected by mutual NDA.',
+      href: `/${language}/casi-e-audit`
+    },
+    {
       name: t('services.sections.leadGeneration.title'),
       description: t('services.sections.leadGeneration.description'),
-      href: '/services/lead-generation'
-    },
-    {
-      name: t('services.sections.ecommerce.title'),
-      description: t('services.sections.ecommerce.description'),
-      href: '/services/ecommerce'
-    },
-    {
-      name: t('services.sections.ecommercePlatform.title'),
-      description: t('services.sections.ecommercePlatform.description'),
-      href: '/la-nostra-tecnologia-ai'
+      href: `/${language}/services/lead-generation`
     },
     {
       name: t('services.sections.ads.title'),
       description: t('services.sections.ads.description'),
-      href: '/services/ads'
+      href: `/${language}/services/ads`
     },
     {
       name: t('services.sections.analytics.title'),
       description: t('services.sections.analytics.description'),
-      href: '/services/analytics'
+      href: `/${language}/services/analytics`
     },
     {
       name: t('services.sections.instantWebsites.title'),
       description: t('services.sections.instantWebsites.description'),
-      href: '/instant-websites'
-    },
-    {
-      name: t('services.sections.landingPageProfessionali.title'),
-      description: t('services.sections.landingPageProfessionali.description'),
-      href: '/landing-page-professionali'
+      href: `/${language}/instant-websites`
     },
     {
       name: t('services.sections.rispondiSubito.title'),
       description: t('services.sections.rispondiSubito.description'),
-      href: '/services/rispondi-subito'
+      href: `/${language}/services/rispondi-subito`
     }
   ];
 
@@ -66,7 +67,9 @@ export default function Navbar() {
               <Logo />
               <div className="ml-3">
                 <p className="text-base font-medium text-gray-900">Internet Valore</p>
-                <p className="text-sm text-gray-500 leading-tight">Non lasciarli alla concorrenza. Sito in 7gg e prospect in 14</p>
+                <p className="text-sm text-gray-500 leading-tight">
+                  {language === 'it' ? 'Outsourcing Campagne E-commerce sul Margine Reale (POAS)' : 'E-commerce Campaign Outsourcing on Real Margin (POAS)'}
+                </p>
               </div>
             </Link>
             <a
@@ -146,12 +149,19 @@ export default function Navbar() {
                             <Link
                               key={service.name}
                               to={service.href}
-                              className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 transition duration-150"
+                              className={`-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 transition duration-150 ${(service as any).isPrimary ? 'bg-blue-50/70 border border-blue-200/60' : ''}`}
                             >
                               <div className="ml-4">
-                                <p className="text-base font-medium text-gray-900">
-                                  {service.name}
-                                </p>
+                                <div className="flex items-center gap-2">
+                                  <p className="text-base font-medium text-gray-900">
+                                    {service.name}
+                                  </p>
+                                  {(service as any).isPrimary && (
+                                    <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-blue-600 text-white">
+                                      Core
+                                    </span>
+                                  )}
+                                </div>
                                 <p className="mt-1 text-sm text-gray-500">
                                   {service.description}
                                 </p>
@@ -166,23 +176,32 @@ export default function Navbar() {
               )}
             </Popover>
 
-            <NavLink to="/it/specializations" className={({ isActive }) => classNames(
+            <NavLink to={`/${language}/specializations`} className={({ isActive }) => classNames(
               isActive ? 'text-blue-500' : 'text-gray-500',
               'text-base font-medium hover:text-gray-900 transition-colors'
             )}>
               {t('nav.specializations')}
             </NavLink>
-            <NavLink to="/it/testimonials" className={({ isActive }) => classNames(
+            <NavLink to={`/${language}/casi-e-audit`} className={({ isActive }) => classNames(
               isActive ? 'text-blue-500' : 'text-gray-500',
-              'text-base font-medium hover:text-gray-900 transition-colors'
+              'text-base font-medium hover:text-gray-900 transition-colors inline-flex items-center gap-1.5'
             )}>
-              {t('nav.testimonials')}
+              <span>{language === 'it' ? 'Casi & Audit' : 'Cases & Audit'}</span>
+              <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-blue-100 text-blue-700">
+                {language === 'it' ? 'Riservati' : 'Private'}
+              </span>
             </NavLink>
           </div>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
             <a href="tel:800940213" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900 mr-4">
               {t('nav.call')}
             </a>
+            <Link
+              to={`/${language}/casi-e-audit`}
+              className="mr-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-all duration-150 hover:shadow-md"
+            >
+              {language === 'it' ? 'Audit E-commerce' : 'E-commerce Audit'}
+            </Link>
             <LanguageSelector />
           </div>
         </div>
@@ -205,7 +224,9 @@ export default function Navbar() {
                   <Logo />
                   <div className="ml-3">
                     <p className="text-base font-medium text-gray-900">Internet Valore</p>
-                    <p className="text-xs text-gray-500 leading-tight">Non lasciarli alla concorrenza. Sito in 7gg e prospect in 14</p>
+                    <p className="text-xs text-gray-500 leading-tight">
+                      {language === 'it' ? 'Outsourcing Campagne E-commerce (POAS)' : 'E-commerce Campaign Outsourcing (POAS)'}
+                    </p>
                   </div>
                   <a
                     href="https://www.google.com/partners/agency?id=6948869441"
@@ -268,18 +289,29 @@ export default function Navbar() {
                     </div>
                   </div>
 
-                  <NavLink to="/it/specializations" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                  <NavLink to={`/${language}/specializations`} className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                     <span className="ml-3 text-base font-medium text-gray-900">{t('nav.specializations')}</span>
                   </NavLink>
-                  <NavLink to="/it/testimonials" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                    <span className="ml-3 text-base font-medium text-gray-900">{t('nav.testimonials')}</span>
+                  <NavLink to={`/${language}/casi-e-audit`} className="-m-3 p-3 flex items-center justify-between rounded-md hover:bg-gray-50">
+                    <span className="ml-3 text-base font-medium text-gray-900">
+                      {language === 'it' ? 'Casi & Audit' : 'Cases & Audit'}
+                    </span>
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-blue-100 text-blue-700 mr-2">
+                      {language === 'it' ? 'Riservati' : 'Private'}
+                    </span>
                   </NavLink>
                 </nav>
               </div>
             </div>
-            <div className="py-6 px-5 space-y-6">
-              <div>
-                <a href="tel:800940213" className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700">
+            <div className="py-6 px-5 space-y-4">
+              <div className="space-y-3">
+                <Link
+                  to={`/${language}/casi-e-audit`}
+                  className="w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-lg shadow-sm text-base font-bold text-white bg-blue-600 hover:bg-blue-700"
+                >
+                  {language === 'it' ? 'Richiedi Audit E-commerce' : 'Request E-commerce Audit'}
+                </Link>
+                <a href="tel:800940213" className="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
                   {t('nav.call')}
                 </a>
                 <p className="mt-4 text-center text-xs text-gray-500">

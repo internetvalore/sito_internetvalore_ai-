@@ -21,6 +21,7 @@ const Clients = lazy(() => import('./components/Clients'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const Contact = lazy(() => import('./components/Contact'));
 const NavigationGuide = lazy(() => import('./components/NavigationGuide'));
+const QualifiedDossierSection = lazy(() => import('./components/QualifiedDossierSection'));
 
 // Page level lazy-loaded components
 const ContactPage = lazy(() => import('./pages/Contact'));
@@ -277,6 +278,7 @@ function App() {
                   <Services />
                   <Process />
                   <Suspense fallback={<div className="py-12 flex justify-center"><div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div></div>}>
+                    <QualifiedDossierSection />
                     <TestimonialsSlider />
                     <Clients />
                     <FAQ />
@@ -297,6 +299,10 @@ function App() {
               <Route path="/:lang/lp/lead-generation" element={<LeadGenerationLP />} />
               <Route path="/:lang/lp/outsourcing-campagne-ecommerce" element={<OutsourcingEcommerceLP />} />
               <Route path="/:lang/lp/outsourcing-campagne-ecommerce/grazie" element={<OutsourcingEcommerceGrazie />} />
+
+              {/* Qualified Case & Audit Route */}
+              <Route path="/:lang/casi-e-audit" element={<QualifiedDossierSection />} />
+              <Route path="/:lang/dossier-riservato" element={<QualifiedDossierSection />} />
 
               {/* Other routes */}
               <Route path="/:lang/instant-websites" element={<InstantWebsites />} />

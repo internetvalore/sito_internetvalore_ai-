@@ -7,7 +7,7 @@
        ═══════════════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://internetvalore.it/it/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/" />
@@ -16,7 +16,7 @@
   </url>
   <url>
     <loc>https://internetvalore.it/en/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/" />
@@ -65,19 +65,53 @@
 
   <url>
     <loc>https://internetvalore.it/it/services/ecommerce</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/ecommerce" />
     <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/ecommerce" />
   </url>
   <url>
     <loc>https://internetvalore.it/en/services/ecommerce</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/services/ecommerce" />
     <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/services/ecommerce" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/casi-e-audit</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/casi-e-audit" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/casi-e-audit" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/casi-e-audit</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/casi-e-audit" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/casi-e-audit" />
+  </url>
+
+  <url>
+    <loc>https://internetvalore.it/it/lp/outsourcing-campagne-ecommerce</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/lp/outsourcing-campagne-ecommerce" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/lp/outsourcing-campagne-ecommerce" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/lp/outsourcing-campagne-ecommerce</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/lp/outsourcing-campagne-ecommerce" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/lp/outsourcing-campagne-ecommerce" />
   </url>
 
   <url>

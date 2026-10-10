@@ -8,19 +8,19 @@ export const translations = {
       about: 'Chi Siamo',
       call: 'Chiama Ora',
       contact: 'Contattaci',
-      tagline: 'Gestione Campagne in Outsourcing con Dati e Codice Reali',
+      tagline: 'Outsourcing Campagne E-commerce sul Margine Reale (POAS)',
       instantWebsites: 'Siti Istantanei',
       ecommercePlatform: 'La Nostra AI',
-      testimonials: 'Testimonianze',
+      testimonials: 'Casi & Audit (Riservati)',
       callUs: 'Chiamaci Ora'
     },
     hero: {
-      title: 'Gestione Campagne in Outsourcing con Dati e Codice Reali',
-      highlight: 'Eliminiamo gli sprechi delle agenzie tradizionali con la nostra suite AI proprietaria.',
-      description: 'Non siamo una SaaS e non ottimizziamo il fatturato lordo "a sentimento". Gestiamo le tue campagne (E-commerce o Lead Generation) integrando la nostra tecnologia (masterAnalyzer) da 160.000 righe di codice per riconciliare ordini reali ed eventi lead del tuo CRM, bloccare la cannibalizzazione del brand ed ottimizzare solo sul profitto (POAS) netto.',
+      title: 'Outsourcing Campagne E-commerce sul Margine Reale (POAS)',
+      highlight: 'Eliminiamo gli sprechi delle agenzie tradizionali ottimizzando solo sul profitto effettivo.',
+      description: 'Non siamo una SaaS e non ottimizziamo il fatturato lordo a sentimento. Gestiamo le tue campagne Google Ads, Shopping, PMax e Meta integrando la nostra tecnologia masterAnalyzer da 160.000 righe di codice per riconciliare gli ordini reali del carrello, bloccare la cannibalizzazione del brand ed ottimizzare solo sul profitto netto (POAS).',
       cta: {
-        primary: 'Scopri la nostra Tecnologia AI',
-        secondary: 'I Nostri Servizi'
+        primary: 'Richiedi Audit a Raggi X (Da 15k€/mese)',
+        secondary: 'Come Funziona l’Outsourcing'
       }
     },
     methodology: {
@@ -36,15 +36,15 @@ export const translations = {
           description: 'Generiamo concept visivi e testuali ancorandoli alle ferite psicologiche ed ai bisogni del target, filtrandoli con il Giudice Avversariale.'
         },
         {
-          title: '3. Riconciliazione CRM & POAS',
-          description: 'Pubblichiamo le campagne in PAUSA. Le ottimizziamo sul profitto reale (POAS) ed eventi lead riconciliati al 100% col tuo CRM, non sullo spam.'
+          title: '3. Riconciliazione Carrello & POAS',
+          description: 'Pubblichiamo le campagne in PAUSA e staging. Riconciliamo gli ordini del carrello (Shopify, Woo, PrestaShop) contro GA4 ed ottimizziamo solo sul profitto reale (POAS netto), eliminando la cannibalizzazione del brand.'
         }
       ]
     },
     services: {
       title: 'Le Nostre Specializzazioni',
-      subtitle: 'Gestione Campagne in Outsourcing potenziata dall\'AI',
-      description: 'Ogni canale di acquisizione è supportato da masterAnalyzer per garantire l\'assenza di sprechi ed un controllo matematico dei risultati.',
+      subtitle: 'Outsourcing Campagne E-commerce & Performance',
+      description: 'Ogni canale pubblicitario è orchestrato da masterAnalyzer per proteggere il margine reale (POAS), riconciliare il carrello ed eliminare la cannibalizzazione del brand.',
       available247: 'Numero Verde 800 940 213 attivo 7x24: risponde Leonardo, il nostro assistente AI digitale, che raccoglie tutte le informazioni per farti richiamare da un nostro consulente umano.',
       sections: {
         leadGeneration: {
@@ -147,19 +147,19 @@ export const translations = {
       about: 'About Us',
       call: 'Call Now',
       contact: 'Contact Us',
-      tagline: 'Outsourced Campaign Management Driven by Real Data & Code',
+      tagline: 'E-commerce Campaign Outsourcing on Real Margin (POAS)',
       instantWebsites: 'Instant Websites',
       ecommercePlatform: 'Our AI Tech',
-      testimonials: 'Testimonials',
+      testimonials: 'Cases & Audit (Private)',
       callUs: 'Call Us Now'
     },
     hero: {
-      title: 'Outsourced Campaign Management Driven by Real Data & Code',
-      highlight: 'Eliminating traditional agency waste with our proprietary AI control suite.',
-      description: 'We are not a SaaS, and we don\'t optimize gross revenue based on assumptions. We manage your campaigns (E-commerce or Lead Generation) using our technology suite (masterAnalyzer) of 160,000 lines of code to reconcile backend orders and CRM leads, block brand cannibalization, and optimize exclusively on actual profit (POAS).',
+      title: 'E-commerce Campaign Outsourcing on Real Margin (POAS)',
+      highlight: 'Eliminating traditional agency waste by optimizing strictly on real net profit.',
+      description: 'We are not a SaaS and we do not optimize gross revenue based on guesswork. We manage your Google Ads, Shopping, PMax and Meta campaigns using our proprietary masterAnalyzer suite (160,000 lines of code) to reconcile real cart orders, eliminate brand cannibalization, and optimize on true net profit (POAS).',
       cta: {
-        primary: 'Discover Our AI Tech',
-        secondary: 'Our Services'
+        primary: 'Request X-Ray Audit (From €15k/mo)',
+        secondary: 'How Outsourcing Works'
       }
     },
     methodology: {
@@ -175,15 +175,15 @@ export const translations = {
           description: 'We generate visual and copy concepts anchored to psychological wounds and target needs, filtered by our Adversarial Judge.'
         },
         {
-          title: '3. CRM Reconciliation & POAS',
-          description: 'We deploy campaigns as PAUSED. We optimize them on real profit (POAS) and leads reconciled 100% with your CRM, not spam.'
+          title: '3. Cart Reconciliation & POAS',
+          description: 'We publish campaigns in PAUSE and staging. We reconcile backend cart orders (Shopify, Woo, PrestaShop) against GA4 and optimize exclusively on real profit (net POAS), eliminating brand cannibalization.'
         }
       ]
     },
     services: {
       title: 'Our Core Capabilities',
-      subtitle: 'Outsourced Campaign Management Powered by AI',
-      description: 'Every acquisition channel is supported by masterAnalyzer to guarantee zero waste and mathematical control over your ROI.',
+      subtitle: 'Outsourced E-commerce Campaign Management & Performance',
+      description: 'Every advertising channel is orchestrated by masterAnalyzer to protect real margin (POAS), reconcile carts, and eliminate brand cannibalization.',
       available247: 'Toll-Free Number 800 940 213 available 24/7: answered by Leonardo, our digital AI assistant, who gathers all your information for a prompt callback from a human consultant.',
       sections: {
         leadGeneration: {

@@ -117,13 +117,13 @@ export default function Hero() {
                   className="block text-blue-600 text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider mb-2"
                   variants={textReveal}
                 >
-                  {language === 'it' ? 'Marketing Digitale e Lead Generation a Milano | Internet Valore' : 'Digital Marketing & Lead Generation in Milan | Internet Valore'}
+                  {language === 'it' ? 'Outsourcing Gestione Campagne E-commerce · Google Partner Certificato' : 'Outsourced E-commerce Campaign Management · Certified Google Partner'}
                 </motion.span>
                 <motion.span
                   className="block"
                   variants={textReveal}
                 >
-                  {t('hero.title')}
+                  {language === 'it' ? 'Il tuo e-commerce vende.' : 'Your e-commerce sells.'}
                 </motion.span>
                 <motion.span
                   className="block text-blue-600"
@@ -136,39 +136,41 @@ export default function Hero() {
                     backgroundClip: "text"
                   }}
                 >
-                  {t('hero.highlight')}
+                  {language === 'it' ? 'Ma quanto margine ti resta a fine mese?' : 'How much real margin stays in your bank?'}
                 </motion.span>
               </motion.h1>
               <motion.p
                 variants={textReveal}
                 className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
               >
-                {t('hero.description')}
+                {language === 'it'
+                  ? 'Orchestriamo in outsourcing le tue campagne Google Ads, Shopping, Performance Max e Meta con masterAnalyzer: 160.000 righe di codice proprietario per riconciliare gli ordini del carrello, bloccare la cannibalizzazione del brand e ottimizzare sul profitto reale (POAS) netto.'
+                  : 'We orchestrate your Google Ads, Shopping, PMax and Meta campaigns in outsourcing with masterAnalyzer: 160,000 lines of code reconciling cart orders, eliminating brand cannibalization, and optimizing strictly on net profit (POAS).'}
               </motion.p>
 
               {/* ── Platform claim cards ─────────────────────────────────── */}
               <motion.div variants={textReveal} className="mt-8">
                 <p className="text-xs font-bold tracking-widest text-blue-500 uppercase mb-4 sm:text-center lg:text-left">
                   {language === 'it'
-                    ? 'LA PIATTAFORMA CHE VEDE QUELLO CHE GLI ALTRI NON VEDONO'
-                    : 'THE PLATFORM THAT SEES WHAT OTHERS MISS'}
+                    ? 'LA TECNOLOGIA CHE RICONCILIA I TUOI CONTI'
+                    : 'THE TECHNOLOGY THAT RECONCILES YOUR NUMBERS'}
                 </p>
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                   {(language === 'it'
                     ? [
-                        { headline: 'Riconciliazione CRM contro bot e spam.',                          cta: 'Controlla la qualità dei lead →' },
-                        { headline: '160.000 righe di codice proprietario al tuo servizio.',            cta: 'Esplora masterAnalyzer →' },
-                        { headline: 'POAS over ROAS. Ottimizziamo il profitto, non il fatturato.',      cta: "Scopri le regole d'onestà →" },
+                        { headline: 'Riconciliazione Carrello vs GA4.', cta: 'Ordini reali Shopify & Woo →', to: `/${language}/services/ecommerce` },
+                        { headline: '160.000 righe di codice proprietario.', cta: 'Esplora masterAnalyzer →', to: `/${language}/la-nostra-tecnologia-ai` },
+                        { headline: 'POAS over ROAS. Margine Reale.', cta: 'Stop a ROAS gonfiati →', to: `/${language}/casi-e-audit` },
                       ]
                     : [
-                        { headline: 'CRM reconciliation against bots & spam.',                          cta: 'Check lead quality control →' },
-                        { headline: '160,000 lines of proprietary code at your service.',              cta: 'Explore masterAnalyzer →' },
-                        { headline: 'POAS over ROAS. We optimize profit, not gross revenue.',           cta: 'Discover the rules of honesty →' },
+                        { headline: 'Cart vs GA4 Reconciliation.', cta: 'Real Shopify & Woo orders →', to: `/${language}/services/ecommerce` },
+                        { headline: '160,000 lines of proprietary code.', cta: 'Explore masterAnalyzer →', to: `/${language}/la-nostra-tecnologia-ai` },
+                        { headline: 'POAS over ROAS. Real Margin.', cta: 'Stop vanity ROAS →', to: `/${language}/casi-e-audit` },
                       ]
                   ).map((card, i) => (
                     <Link
                       key={i}
-                      to={`/${language}/la-nostra-tecnologia-ai`}
+                      to={card.to}
                       className="group block rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm hover:border-blue-400 hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
                     >
                       <p className="text-sm font-bold text-gray-900 leading-snug mb-2">{card.headline}</p>
@@ -186,10 +188,10 @@ export default function Hero() {
                 <div className="rounded-md shadow">
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
-                      to={`/${language}/la-nostra-tecnologia-ai`}
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 md:py-4 md:text-lg md:px-10 transition-all duration-300 shadow-lg hover:shadow-xl animate-pulse-slow"
+                      to={`/${language}/casi-e-audit`}
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 md:py-4 md:text-lg md:px-10 transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
-                      {t('hero.cta.primary')}
+                      {language === 'it' ? 'Richiedi Audit a Raggi X (Da 15k€/mese)' : 'Request X-Ray Audit (From €15k/mo)'}
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </motion.div>
@@ -197,10 +199,10 @@ export default function Hero() {
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
-                      to={`/${language}/services`}
+                      to={`/${language}/services/ecommerce`}
                       className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200 md:py-4 md:text-lg md:px-10 transition-all duration-300"
                     >
-                      {t('hero.cta.secondary')}
+                      {language === 'it' ? 'Come Funziona l’Outsourcing' : 'How Outsourcing Works'}
                     </Link>
                   </motion.div>
                 </div>
@@ -213,8 +215,8 @@ export default function Hero() {
               >
                 <h2 className="text-xl font-bold text-gray-900 mb-2">
                   {language === 'it'
-                    ? 'Agenzia di Marketing Digitale & Gestione Campagne in Outsourcing'
-                    : 'Digital Marketing Agency & Outsourced Campaign Management'}
+                    ? 'Outsourcing Gestione Campagne E-commerce & Algoritmi POAS'
+                    : 'Outsourced E-commerce Campaign Management & POAS Algorithms'}
                 </h2>
                 <p className="text-sm text-gray-600 leading-relaxed mb-3">
                   {language === 'it' ? (

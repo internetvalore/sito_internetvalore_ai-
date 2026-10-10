@@ -5,6 +5,7 @@ import { Star, ChevronDown, CheckCircle, ExternalLink } from 'lucide-react';
 import MetaTags from '../components/MetaTags';
 import { metaContent } from '../seo/metaContent';
 import HeroSection from '../components/HeroSection';
+import QualifiedDossierSection from '../components/QualifiedDossierSection';
 
 const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=Internet%20Valore%20srl%20Recensioni&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDG0NDAzMLc0NzAzsTA2MQESGxgZXzHKeeaVpBYlpZYohCXm5BelKhQX5SgEpSan5hVn5udlLmIloAAAalPXI10AAAA&rldimm=14190607970648344483&tbm=lcl&hl=it&sa=X&ved=0CCEQ9fQKKABqFwoTCLDmluTPnowDFQAAAAAdAAAAABAG&biw=1920&bih=911&dpr=1#lkt=LocalPoiReviews";
 
@@ -349,6 +350,9 @@ export default function Testimonials() {
             </div>
           </div>
         </div>
+
+        {/* Sezione Riservatezza & Casi Studio Qualificati */}
+        <QualifiedDossierSection />
 
         {/* Testimonials FAQ Section */}
         <section id="testimonials-faq" className="bg-white py-20 border-t border-gray-200">

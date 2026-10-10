@@ -1,13 +1,13 @@
 export const metaContent = {
   home: {
     it: {
-      title: 'Internet Valore: Marketing Digitale e Lead Generation Milano',
-      description: 'Internet Valore a Milano: strategie di marketing digitale, Google Ads, e-commerce e lead generation per far crescere il tuo business. Richiedi una consulenza!',
+      title: 'Outsourcing Campagne E-commerce (POAS) | Internet Valore',
+      description: 'Outsourcing campagne Google Ads, Shopping e Meta per e-commerce >15k€/mese. Riconciliazione ordini reali, POAS netto e zero cannibalizzazione brand.',
       path: '/'
     },
     en: {
-      title: 'Internet Valore: Digital Marketing & Lead Generation Milan',
-      description: 'Internet Valore in Milan: digital marketing strategies, Google Ads, e-commerce & lead generation to grow your business. Request a free consultation!',
+      title: 'Outsourced E-commerce Campaigns (POAS) | Internet Valore',
+      description: 'Outsourced Google Ads, Shopping & Meta campaigns for e-commerce >€15k/mo. Real cart reconciliation, net POAS & zero brand cannibalization.',
       path: '/'
     }
   },

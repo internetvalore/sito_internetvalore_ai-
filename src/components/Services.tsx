@@ -16,13 +16,6 @@ export default function Services() {
 
   const services = [
     {
-      title: t('services.sections.leadGeneration.title'),
-      description: t('services.sections.leadGeneration.description'),
-      icon: Users,
-      features: t('services.sections.leadGeneration.features'),
-      path: '/services/lead-generation'
-    },
-    {
       title: t('services.sections.ecommerce.title'),
       description: t('services.sections.ecommerce.description'),
       icon: ShoppingBag,
@@ -42,6 +35,13 @@ export default function Services() {
       icon: BarChart,
       features: t('services.sections.analytics.features'),
       path: '/services/analytics'
+    },
+    {
+      title: t('services.sections.leadGeneration.title'),
+      description: t('services.sections.leadGeneration.description'),
+      icon: Users,
+      features: t('services.sections.leadGeneration.features'),
+      path: '/services/lead-generation'
     },
     {
       title: t('services.sections.instantWebsites.title'),

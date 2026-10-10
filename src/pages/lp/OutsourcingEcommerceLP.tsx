@@ -1085,11 +1085,10 @@ export default function OutsourcingEcommerceLP() {
                   onChange={(e) => setFormData({ ...formData, ad_spend: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                 >
-                  <option value="">Seleziona fascia di spesa...</option>
-                  <option value="< 1.000 €/mese">&lt; 1.000 €/mese</option>
-                  <option value="1.000 € – 5.000 €/mese">1.000 € – 5.000 €/mese</option>
-                  <option value="5.000 € – 20.000 €/mese">5.000 € – 20.000 €/mese</option>
-                  <option value="> 20.000 €/mese">&gt; 20.000 €/mese</option>
+                  <option value="">Seleziona fascia di spesa mensile...</option>
+                  <option value="15.000 € – 50.000 €/mese">15.000 € – 50.000 €/mese</option>
+                  <option value="50.000 € – 100.000 €/mese">50.000 € – 100.000 €/mese</option>
+                  <option value="> 100.000 €/mese">&gt; 100.000 €/mese</option>
                 </select>
               </div>
 
