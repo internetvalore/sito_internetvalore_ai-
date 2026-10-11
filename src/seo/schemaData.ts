@@ -327,7 +327,7 @@ export const HOMEPAGE_FAQS: SchemaFAQItem[] = [
   },
   {
     question: "Cos'è la tecnologia proprietaria masterAnalyzer?",
-    answer: "masterAnalyzer è la nostra suite software proprietaria composta da oltre 160.000 righe di codice. Riconcilia in tempo reale gli ordini e-commerce (Shopify vs GA4) ed i lead del CRM, blocca la cannibalizzazione delle ricerche brand ed esegue analisi algebriche della variazione dei dati."
+    answer: "masterAnalyzer è la nostra suite software proprietaria (oltre 1.000.000 di righe totali censite, 775.752 righe Python, 482 tool LLM e 293 playbook operativi). Riconcilia in tempo reale gli ordini e-commerce (Shopify/WooCommerce vs GA4) ed i lead del CRM, blocca la cannibalizzazione delle ricerche brand ed esegue analisi algebriche della variazione dei dati."
   },
   {
     question: "Come funziona la consulenza gratuita iniziale?",
@@ -354,7 +354,7 @@ export const HOMEPAGE_FAQS_EN: SchemaFAQItem[] = [
   },
   {
     question: "What is the proprietary masterAnalyzer technology?",
-    answer: "masterAnalyzer is our proprietary software suite of over 160,000 lines of code. It reconciles e-commerce orders (Shopify vs GA4) and CRM leads in real time, blocks brand search cannibalization, and performs algebraic performance variance analysis."
+    answer: "masterAnalyzer is our proprietary software suite (over 1,000,000 total census lines, 775,752 Python lines, 482 LLM tools, and 293 operational playbooks). It reconciles e-commerce orders (Shopify/WooCommerce vs GA4) and CRM leads in real time, blocks brand search cannibalization, and performs algebraic performance variance analysis."
   },
   {
     question: "How does the initial free consultation work?",

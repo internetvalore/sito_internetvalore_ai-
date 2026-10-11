@@ -22,7 +22,7 @@ export default function Navbar() {
     },
     {
       name: language === 'it' ? 'La Nostra AI (masterAnalyzer)' : 'Our AI (masterAnalyzer)',
-      description: language === 'it' ? '160.000 righe di codice proprietario per orchestrare campagne e margini.' : '160,000 lines of proprietary code to orchestrate campaigns and margins.',
+      description: language === 'it' ? '1M+ di righe di codice proprietario, 482 tool LLM e 293 playbook.' : '1M+ lines of proprietary code, 482 LLM tools and 293 playbooks.',
       href: `/${language}/la-nostra-tecnologia-ai`
     },
     {

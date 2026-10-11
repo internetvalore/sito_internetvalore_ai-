@@ -527,8 +527,8 @@ export default function AIPlatform() {
         software={{
           name: 'masterAnalyzer AI Suite',
           description: isIt 
-            ? 'Suite tecnologica proprietaria di 160.000+ righe di codice per la riconciliazione dati, audit tracciamento e gestione avanzata di campagne Google Ads ed E-commerce.'
-            : 'Proprietary technology suite with 160,000+ lines of code for multi-source data reconciliation, tracking audits, and advanced Google Ads & E-commerce campaign management.',
+            ? 'Suite tecnologica proprietaria di oltre 1.000.000 di righe censite (775.752 righe Python, 482 tool LLM e 293 playbook) per la riconciliazione dati, audit tracciamento e gestione avanzata di campagne Google Ads ed E-commerce.'
+            : 'Proprietary technology suite with over 1,000,000 total census lines (775,752 Python lines, 482 LLM tools, 293 playbooks) for multi-source data reconciliation, tracking audits, and advanced Google Ads & E-commerce campaign management.',
           applicationCategory: 'BusinessApplication',
           operatingSystem: 'Web / Cloud'
         }}
@@ -571,6 +571,135 @@ export default function AIPlatform() {
               : 'We do not sell software. Our proprietary suite (masterAnalyzer / Leonardo) is the exclusive technology we use to manage your outsourced campaigns. Maximum transparency, zero waste, optimization on actual profit (POAS) and verified leads.'}
           </motion.p>
         </header>
+
+        {/* ─── CENSIMENTO DIMENSIONALE & ARCHITETTURA SECTION ─────────────── */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+          <div className="bg-gradient-to-b from-indigo-950/40 via-slate-900/60 to-slate-950 border border-indigo-500/20 rounded-3xl p-6 sm:p-10 backdrop-blur-xl shadow-2xl">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 border-b border-white/10">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-950/40 text-emerald-300 text-xs font-mono mb-3">
+                  <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                  {isIt ? '13ª BATTUTA DI RILEVAMENTO · MISURA ESEGUITA, NON STIMATA' : '13TH CENSUS CYCLE · MEASURED, NOT ESTIMATED'}
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+                  {isIt ? 'Censimento Dimensionale di masterAnalyzer' : 'Dimensional Census of masterAnalyzer'}
+                </h2>
+                <p className="text-sm text-slate-400 mt-1">
+                  {isIt 
+                    ? 'Misura verificata su ramo main (2.965 commit progressivi di ingegneria proprietaria)' 
+                    : 'Verified census on main branch (2,965 progressive commits of proprietary software engineering)'}
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/10 font-mono text-xs text-indigo-300">
+                  {isIt ? 'Massa Totale: 1.004.600+ righe' : 'Total Mass: 1,004,600+ lines'}
+                </div>
+                <div className="px-3 py-1.5 rounded-lg bg-indigo-950/60 border border-indigo-500/30 font-mono text-xs text-indigo-200">
+                  {isIt ? 'Compressione: 126×' : 'Compression: 126×'}
+                </div>
+              </div>
+            </div>
+
+            {/* 6 Key Architectural Metrics Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 pt-8 pb-8 border-b border-white/10 text-center">
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                <div className="text-2xl sm:text-3xl font-black text-indigo-400 font-mono">775.752</div>
+                <div className="text-xs font-bold text-white mt-1">{isIt ? 'Righe Python' : 'Python Lines'}</div>
+                <div className="text-[11px] text-slate-400 mt-0.5">{isIt ? '1.964 file · 523k puro codice' : '1,964 files · 523k pure code'}</div>
+              </div>
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                <div className="text-2xl sm:text-3xl font-black text-purple-400 font-mono">482</div>
+                <div className="text-xs font-bold text-white mt-1">{isIt ? 'Tool LLM' : 'LLM Tools'}</div>
+                <div className="text-[11px] text-slate-400 mt-0.5">{isIt ? '18 famiglie specializzate' : '18 specialized families'}</div>
+              </div>
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                <div className="text-2xl sm:text-3xl font-black text-blue-400 font-mono">293</div>
+                <div className="text-xs font-bold text-white mt-1">{isIt ? 'Playbook Operativi' : 'Execution Playbooks'}</div>
+                <div className="text-[11px] text-slate-400 mt-0.5">{isIt ? '10 categorie · 93,5% one-click' : '10 categories · 93.5% one-click'}</div>
+              </div>
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                <div className="text-2xl sm:text-3xl font-black text-cyan-400 font-mono">1.533</div>
+                <div className="text-xs font-bold text-white mt-1">{isIt ? 'Anelli di Catena' : 'Chain Links'}</div>
+                <div className="text-[11px] text-slate-400 mt-0.5">{isIt ? '370 tappe analitiche distinte' : '370 distinct analytical steps'}</div>
+              </div>
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                <div className="text-2xl sm:text-3xl font-black text-emerald-400 font-mono">16.364</div>
+                <div className="text-xs font-bold text-white mt-1">{isIt ? 'Test Automatici' : 'Automated Tests'}</div>
+                <div className="text-[11px] text-slate-400 mt-0.5">{isIt ? '931 file · 300k righe test' : '931 files · 300k test lines'}</div>
+              </div>
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                <div className="text-2xl sm:text-3xl font-black text-amber-400 font-mono">34,9</div>
+                <div className="text-xs font-bold text-white mt-1">{isIt ? 'Anni-Uomo Eq.' : 'Person-Years Eq.'}</div>
+                <div className="text-[11px] text-slate-400 mt-0.5">{isIt ? 'Sforzo modellato (126×)' : 'Modeled effort (126×)'}</div>
+              </div>
+            </div>
+
+            {/* Deep Breakdown Rows: Tool Families & Data Schema */}
+            <div className="grid md:grid-cols-2 gap-6 pt-6 text-sm">
+              <div className="p-5 rounded-2xl bg-slate-900/40 border border-white/5">
+                <div className="flex items-center gap-2 mb-3">
+                  <Cpu className="w-4 h-4 text-indigo-400" />
+                  <h3 className="font-bold text-white text-sm">
+                    {isIt ? 'Mappatura Tool LLM per Canale Pubblicitario' : 'LLM Tool Distribution by Advertising Channel'}
+                  </h3>
+                </div>
+                <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                  {isIt
+                    ? '482 tool specializzati interrogabili direttamente dai nostri operatori in chat per audit istantanei e calcoli algebrici:'
+                    : '482 specialized tools accessible via operator chat for real-time audits and algebraic reconciliations:'}
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs font-mono">
+                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5">
+                    <span className="text-indigo-300 font-bold">167</span> <span className="text-slate-400">Google Ads</span>
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5">
+                    <span className="text-indigo-300 font-bold">123</span> <span className="text-slate-400">GA4 Analytics</span>
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5">
+                    <span className="text-indigo-300 font-bold">105</span> <span className="text-slate-400">Meta Ads</span>
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5">
+                    <span className="text-indigo-300 font-bold">80</span> <span className="text-slate-400">Search Console</span>
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5">
+                    <span className="text-indigo-300 font-bold">23</span> <span className="text-slate-400">Merchant Center</span>
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5">
+                    <span className="text-indigo-300 font-bold">29</span> <span className="text-slate-400">Chat-Scoped</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-slate-900/40 border border-white/5">
+                <div className="flex items-center gap-2 mb-3">
+                  <Database className="w-4 h-4 text-emerald-400" />
+                  <h3 className="font-bold text-white text-sm">
+                    {isIt ? 'Infrastruttura SQL, Test & Documentazione' : 'SQL Architecture, Testing & Documentation'}
+                  </h3>
+                </div>
+                <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                  {isIt
+                    ? 'Struttura ingegneristica verificata per garantire isolamento cliente, zero allucinazioni e replicabilità scientifica:'
+                    : 'Audited engineering framework ensuring client isolation, zero hallucinations, and scientific repeatability:'}
+                </p>
+                <div className="space-y-2 text-xs">
+                  <div className="flex justify-between items-center p-2 rounded-lg bg-white/[0.02] border border-white/5">
+                    <span className="text-slate-300">{isIt ? 'Schema Dati Relazionale SQL' : 'Relational SQL Data Schema'}</span>
+                    <span className="font-mono text-emerald-400 font-bold">{isIt ? '188 tabelle · 144 indici' : '188 tables · 144 indices'}</span>
+                  </div>
+                  <div className="flex justify-between items-center p-2 rounded-lg bg-white/[0.02] border border-white/5">
+                    <span className="text-slate-300">{isIt ? 'Batteria di Test di Regressione' : 'Automated Regression Tests'}</span>
+                    <span className="font-mono text-emerald-400 font-bold">{isIt ? '16.364 asserzioni (300k righe)' : '16,364 assertions (300k lines)'}</span>
+                  </div>
+                  <div className="flex justify-between items-center p-2 rounded-lg bg-white/[0.02] border border-white/5">
+                    <span className="text-slate-300">{isIt ? 'Documentazione Tecnica e Docstring' : 'Technical Docs & Engine Docstrings'}</span>
+                    <span className="font-mono text-emerald-400 font-bold">{isIt ? '281.517 righe di specifica' : '281,517 specification lines'}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* ─── CHALLENGE THE PROVIDER SECTION (Sfida il fornitore) ─────────── */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 border-t border-white/5">

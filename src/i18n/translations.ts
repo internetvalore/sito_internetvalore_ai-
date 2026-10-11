@@ -17,7 +17,7 @@ export const translations = {
     hero: {
       title: 'Outsourcing Campagne E-commerce sul Margine Reale (POAS)',
       highlight: 'Eliminiamo gli sprechi delle agenzie tradizionali ottimizzando solo sul profitto effettivo.',
-      description: 'Non siamo una SaaS e non ottimizziamo il fatturato lordo a sentimento. Gestiamo le tue campagne Google Ads, Shopping, PMax e Meta integrando la nostra tecnologia masterAnalyzer da 160.000 righe di codice per riconciliare gli ordini reali del carrello, bloccare la cannibalizzazione del brand ed ottimizzare solo sul profitto netto (POAS).',
+      description: 'Non siamo una SaaS e non ottimizziamo il fatturato lordo a sentimento. Gestiamo le tue campagne Google Ads, Shopping, PMax e Meta integrando la nostra tecnologia masterAnalyzer da oltre 1.000.000 di righe censite (775k+ Python, 482 tool LLM e 293 playbook operativi) per riconciliare gli ordini reali del carrello, bloccare la cannibalizzazione del brand ed ottimizzare solo sul profitto netto (POAS).',
       cta: {
         primary: 'Richiedi Audit a Raggi X (Da 15k€/mese)',
         secondary: 'Come Funziona l’Outsourcing'
@@ -156,7 +156,7 @@ export const translations = {
     hero: {
       title: 'E-commerce Campaign Outsourcing on Real Margin (POAS)',
       highlight: 'Eliminating traditional agency waste by optimizing strictly on real net profit.',
-      description: 'We are not a SaaS and we do not optimize gross revenue based on guesswork. We manage your Google Ads, Shopping, PMax and Meta campaigns using our proprietary masterAnalyzer suite (160,000 lines of code) to reconcile real cart orders, eliminate brand cannibalization, and optimize on true net profit (POAS).',
+      description: 'We are not a SaaS and we do not optimize gross revenue based on guesswork. We manage your Google Ads, Shopping, PMax and Meta campaigns using our proprietary masterAnalyzer suite (over 1,000,000 total census lines, 775k+ Python, 482 LLM tools and 293 execution playbooks) to reconcile real cart orders, eliminate brand cannibalization, and optimize on true net profit (POAS).',
       cta: {
         primary: 'Request X-Ray Audit (From €15k/mo)',
         secondary: 'How Outsourcing Works'

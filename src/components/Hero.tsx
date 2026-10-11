@@ -144,8 +144,8 @@ export default function Hero() {
                 className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
               >
                 {language === 'it'
-                  ? 'Orchestriamo in outsourcing le tue campagne Google Ads, Shopping, Performance Max e Meta con masterAnalyzer: 160.000 righe di codice proprietario per riconciliare gli ordini del carrello, bloccare la cannibalizzazione del brand e ottimizzare sul profitto reale (POAS) netto.'
-                  : 'We orchestrate your Google Ads, Shopping, PMax and Meta campaigns in outsourcing with masterAnalyzer: 160,000 lines of code reconciling cart orders, eliminating brand cannibalization, and optimizing strictly on net profit (POAS).'}
+                  ? 'Orchestriamo in outsourcing le tue campagne Google Ads, Shopping, Performance Max e Meta con masterAnalyzer: oltre 1.000.000 di righe censite (775k+ Python, 482 tool LLM e 293 playbook operativi) per riconciliare gli ordini del carrello, bloccare la cannibalizzazione del brand e ottimizzare sul profitto reale (POAS) netto.'
+                  : 'We orchestrate your Google Ads, Shopping, PMax and Meta campaigns in outsourcing with masterAnalyzer: over 1,000,000 total census lines (775k+ Python, 482 LLM tools and 293 execution playbooks) reconciling cart orders, eliminating brand cannibalization, and optimizing strictly on net profit (POAS).'}
               </motion.p>
 
               {/* ── Platform claim cards ─────────────────────────────────── */}
@@ -159,12 +159,12 @@ export default function Hero() {
                   {(language === 'it'
                     ? [
                         { headline: 'Riconciliazione Carrello vs GA4.', cta: 'Ordini reali Shopify & Woo →', to: `/${language}/services/ecommerce` },
-                        { headline: '160.000 righe di codice proprietario.', cta: 'Esplora masterAnalyzer →', to: `/${language}/la-nostra-tecnologia-ai` },
+                        { headline: '1M+ righe di codice · 482 tool LLM.', cta: 'Esplora masterAnalyzer →', to: `/${language}/la-nostra-tecnologia-ai` },
                         { headline: 'POAS over ROAS. Margine Reale.', cta: 'Stop a ROAS gonfiati →', to: `/${language}/casi-e-audit` },
                       ]
                     : [
                         { headline: 'Cart vs GA4 Reconciliation.', cta: 'Real Shopify & Woo orders →', to: `/${language}/services/ecommerce` },
-                        { headline: '160,000 lines of proprietary code.', cta: 'Explore masterAnalyzer →', to: `/${language}/la-nostra-tecnologia-ai` },
+                        { headline: '1M+ lines of code · 482 LLM tools.', cta: 'Explore masterAnalyzer →', to: `/${language}/la-nostra-tecnologia-ai` },
                         { headline: 'POAS over ROAS. Real Margin.', cta: 'Stop vanity ROAS →', to: `/${language}/casi-e-audit` },
                       ]
                   ).map((card, i) => (
@@ -229,7 +229,7 @@ export default function Hero() {
                       <Link to={`/${language}/la-nostra-tecnologia-ai`} className="text-blue-600 font-bold underline hover:text-blue-800">
                         tecnologia proprietaria masterAnalyzer
                       </Link>{' '}
-                      (160.000 righe di codice), forniamo servizi avanzati di{' '}
+                      (oltre 1.000.000 di righe censite, 775k+ Python e 482 tool AI), forniamo servizi avanzati di{' '}
                       <Link to={`/${language}/services/lead-generation`} className="text-blue-600 font-bold underline hover:text-blue-800">
                         lead generation riconciliata col CRM
                       </Link>{' '}
@@ -255,7 +255,7 @@ export default function Hero() {
                       <Link to={`/${language}/la-nostra-tecnologia-ai`} className="text-blue-600 font-bold underline hover:text-blue-800">
                         proprietary masterAnalyzer technology
                       </Link>{' '}
-                      (160,000 lines of code), we deliver{' '}
+                      (over 1,000,000 total lines, 775k+ Python and 482 AI tools), we deliver{' '}
                       <Link to={`/${language}/services/lead-generation`} className="text-blue-600 font-bold underline hover:text-blue-800">
                         CRM-reconciled lead generation
                       </Link>{' '}
@@ -277,7 +277,7 @@ export default function Hero() {
                   <Link to={`/${language}/services/lead-generation`} className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors">✓ Lead Generation Riconciliata</Link>
                   <Link to={`/${language}/services/ecommerce`} className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors">✓ E-commerce POAS over ROAS</Link>
                   <Link to={`/${language}/services/ads`} className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors">✓ Controllo Cannibalizzazione Brand</Link>
-                  <Link to={`/${language}/la-nostra-tecnologia-ai`} className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors">✓ 160.000 Righe di Codice Proprietario</Link>
+                  <Link to={`/${language}/la-nostra-tecnologia-ai`} className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors">✓ 1M+ Righe Codice · 482 Tool LLM</Link>
                 </div>
               </motion.div>
               {/* ─────────────────────────────────────────────────────────── */}

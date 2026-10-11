@@ -29,7 +29,7 @@ export default function About() {
   const features = language === 'it' ? [
     {
       title: '15+ Anni di Codice e Gestione',
-      description: 'Esperienza solida basata su 160.000 righe di codice proprietario al servizio del marketing e-commerce e lead gen.'
+      description: 'Esperienza solida basata su oltre 1.000.000 di righe censite e 775k+ righe Python proprietarie al servizio del marketing e-commerce e lead gen.'
     },
     {
       title: 'No dati → No verdetti',
@@ -42,7 +42,7 @@ export default function About() {
   ] : [
     {
       title: '15+ Years of Code & Management',
-      description: 'Solid experience backed by 160,000 lines of proprietary code to power e-commerce and lead gen campaigns.'
+      description: 'Solid experience backed by over 1,000,000 total census lines and 775k+ Python lines to power e-commerce and lead gen campaigns.'
     },
     {
       title: 'No Data → No Verdicts',

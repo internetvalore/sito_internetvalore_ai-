@@ -24,8 +24,8 @@ export default function Stats() {
     },
     {
       id: 3,
-      name: language === 'it' ? 'Righe di Codice masterAnalyzer' : 'masterAnalyzer Code Lines',
-      value: '160k+',
+      name: language === 'it' ? 'Righe di Codice (482 Tool LLM)' : 'Lines of Code (482 LLM Tools)',
+      value: '1M+',
       icon: TrendingUp,
       color: 'from-purple-500 to-purple-600'
     },

@@ -21,7 +21,7 @@ Descrizione: Strategie avanzate di lead generation con Deep Search guidata dall'
 
 ### E-commerce Performance Marketing
 URL: https://internetvalore.it/it/services/ecommerce
-Descrizione: Promozione e-commerce basata sul dato reale. Riconciliazione ordini Shopify/WooCommerce vs GA4, ottimizzazione su POAS (Profit on Ad Spend) reale, eliminazione sprechi con audit Raggi X. Piattaforma proprietaria con 160.000+ righe di codice e 230+ strumenti AI.
+Descrizione: Promozione e-commerce basata sul dato reale. Riconciliazione ordini Shopify/WooCommerce vs GA4, ottimizzazione su POAS (Profit on Ad Spend) reale, eliminazione sprechi con audit Raggi X. Piattaforma proprietaria con 1.004.600+ righe di codice censite (775k+ Python), 482 tool LLM e 293 playbook operativi.
 
 ### Gestione Google & Meta Ads
 URL: https://internetvalore.it/it/services/ads
@@ -59,7 +59,7 @@ Descrizione: Sito web professionale in 7 giorni con design personalizzato, hosti
 
 ### masterAnalyzer (Piattaforma AI)
 URL: https://internetvalore.it/it/la-nostra-tecnologia-ai
-Descrizione: Suite AI proprietaria con 160.000+ righe di codice, 20+ anni-uomo di sviluppo, 230+ strumenti di analisi e 250+ motori di calcolo Python. Incrocia 5 fonti dati (GA4, Search Console, Google Ads, Meta, sito) e trasforma milioni di righe in decisioni in secondi.
+Descrizione: Suite AI proprietaria con oltre 1.000.000 di righe censite (775.752 righe Python), 34,9 anni-uomo equivalenti a compressione 126×, 482 tool LLM su 18 famiglie, 293 playbook operativi (1.533 anelli di catena) e 16.364 test automatici su 188 tabelle SQL. Incrocia 5 fonti dati (GA4, Search Console, Google Ads, Meta, carrello e-commerce) e trasforma milioni di righe in decisioni in secondi.
 
 Strumenti chiave:
 - Deep Search: predizione domanda e saturazione nicchie

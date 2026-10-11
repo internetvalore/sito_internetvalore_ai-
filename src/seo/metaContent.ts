@@ -251,7 +251,7 @@ export const metaContent = {
     },
     en: {
       title: 'About Us | Methodology & AI Technology | Internet Valore Milan',
-      description: 'Learn about Internet Valore story, founder Andrea Falzin vision, and our scientific methodology powered by 160k+ lines of code in masterAnalyzer.',
+      description: 'Learn about Internet Valore story, founder Andrea Falzin vision, and our scientific methodology powered by over 1M lines of code in masterAnalyzer.',
       path: '/about'
     }
   },
@@ -282,14 +282,14 @@ export const metaContent = {
   aiPlatform: {
     it: {
       title: 'Suite AI masterAnalyzer per Gestione Campagne | Internet Valore',
-      description: 'Scopri la suite AI proprietaria di Internet Valore con oltre 160.000 righe di codice: Deep Search, Creative Studio, Giudice Avversariale e Reconciler.',
+      description: 'Scopri la suite proprietaria masterAnalyzer con oltre 1M di righe e 482 tool AI: Deep Search, Creative Studio, Giudice Avversariale e Reconciler POAS.',
       path: '/la-nostra-tecnologia-ai',
       serviceType: 'Proprietary AI Marketing Platform',
       serviceDescription: 'Suite software proprietaria per la gestione in outsourcing di campagne pubblicitarie con intelligenza artificiale e riconciliazione ordini.'
     },
     en: {
       title: 'masterAnalyzer AI Suite for Campaign Management | Internet Valore',
-      description: 'Explore Internet Valore proprietary AI suite with 160,000+ lines of code: Deep Search, Creative Studio, Adversarial Judge, and Data Reconciler.',
+      description: 'Explore Internet Valore proprietary AI suite with 1M+ lines of code & 482 tools: Deep Search, Creative Studio, Adversarial Judge, and POAS Reconciler.',
       path: '/la-nostra-tecnologia-ai',
       serviceType: 'Proprietary AI Marketing Platform',
       serviceDescription: 'Proprietary software suite for outsourced advertising campaign management with AI and multi-source data reconciliation.'
