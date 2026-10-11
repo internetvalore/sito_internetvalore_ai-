@@ -17,7 +17,6 @@ import ErrorBoundary from './components/ErrorBoundary';
 // Below-the-fold homepage components lazy-loaded
 const CapabilitiesSlider = lazy(() => import('./components/CapabilitiesSlider'));
 const TestimonialsSlider = lazy(() => import('./components/TestimonialsSlider'));
-const Clients = lazy(() => import('./components/Clients'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const Contact = lazy(() => import('./components/Contact'));
 const NavigationGuide = lazy(() => import('./components/NavigationGuide'));
@@ -280,7 +279,6 @@ function App() {
                   <Suspense fallback={<div className="py-12 flex justify-center"><div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div></div>}>
                     <QualifiedDossierSection />
                     <TestimonialsSlider />
-                    <Clients />
                     <FAQ />
                     <Contact />
                   </Suspense>
