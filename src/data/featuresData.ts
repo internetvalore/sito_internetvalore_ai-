@@ -108,7 +108,7 @@ export const FEATURE_THEMES: Record<string, FeatureThemeHub> = {
         spokeSlug: 'conversioni-gonfiate-difendibili'
       }
     ],
-    adjacentThemes: ['profitto-reale'],
+    adjacentThemes: ['profitto-reale', 'diagnosi-cali-vendite'],
     faqs: [
       {
         question: {
@@ -685,7 +685,7 @@ export const FEATURE_THEMES: Record<string, FeatureThemeHub> = {
         spokeSlug: 'previsione-budget-fine-mese'
       }
     ],
-    adjacentThemes: ['dati-affidabili'],
+    adjacentThemes: ['dati-affidabili', 'shopping-e-feed'],
     faqs: [
       {
         question: {
@@ -1204,6 +1204,1029 @@ export const FEATURE_THEMES: Record<string, FeatureThemeHub> = {
           }
         ],
         relatedSpokes: ['poas-profitto-sulla-spesa', 'campagne-brand-cannibalizzazione', 'audit-google-ads-indipendente']
+      }
+    ]
+  },
+
+  'diagnosi-cali-vendite': {
+    id: 'diagnosi-cali-vendite',
+    title: {
+      it: 'Diagnosi Cali Improvvisi & Decomposizione LMDI',
+      en: 'Sales Drop Diagnostics & LMDI Decomposition'
+    },
+    tagline: {
+      it: 'Perché le vendite sono calate? Scomponiamo le cause con la matematica, non con l\'alzata di spalle.',
+      en: 'Why did sales drop? Decomposing root causes with mathematics instead of shoulder shrugs.'
+    },
+    metaTitle: {
+      it: 'Diagnosi Calo Vendite E-commerce & Metodo LMDI | masterAnalyzer',
+      en: 'E-commerce Sales Drop Diagnostics & LMDI Method | masterAnalyzer'
+    },
+    metaDescription: {
+      it: 'Quando le vendite calano l\'agenzia incolpa il mercato? masterAnalyzer scompone algebricamente traffico, carrello e scontrino con test statistici di Poisson.',
+      en: 'When sales drop does your agency blame market headwinds? masterAnalyzer algebraically isolates traffic, conversion rate, and AOV using Poisson tests.'
+    },
+    primaryKeyword: 'diagnosi calo vendite ecommerce cause',
+    intro: {
+      it: 'Le vendite calano e la risposta è quasi sempre la solita: «è il mercato, è la stagionalità, è l\'algoritmo». Frasi vaghe che portano a cure disastrose, come rifare il sito quando il problema era il CPC o tagliare campagne sane. masterAnalyzer scompone ogni variazione nelle sue cause algebriche esatte e applica test di Poisson per distinguere il rumore dal crollo reale.',
+      en: 'Sales decline and the standard response is always vague: "market slowdown, seasonal dip, algorithm changes". Vague excuses lead to destructive fixes. masterAnalyzer algebraically isolates exact drivers and applies Poisson statistical tests to separate random noise from true drops.'
+    },
+    videoOverviewId: 'mzQY4U9JL-k',
+    symptoms: [
+      {
+        text: {
+          it: 'Le vendite di questo mese sono inferiori al precedente ma nessuno sa quantificare quanto dipenda dal traffico e quanto dal carrello.',
+          en: 'Monthly sales fell below targets but nobody can quantify what share stems from traffic versus on-site conversion.'
+        },
+        spokeSlug: 'decomposizione-algebrica-lmdi'
+      },
+      {
+        text: {
+          it: 'Il lunedì mattina scatta il panico per la domenica debole, spendendo ore a cercare colpevoli per normali oscillazioni settimanali.',
+          en: 'Monday panic erupts over a slow Sunday, wasting hours hunting culprits for normal day-of-week fluctuations.'
+        },
+        spokeSlug: 'test-significativita-poisson'
+      },
+      {
+        text: {
+          it: 'I numeri peggiorano da giorni ma nessuno in azienda o in agenzia si ricorda cosa sia stato modificato esattamente in quelle date.',
+          en: 'Metrics have degraded for days but neither team nor agency remembers what was edited on those exact dates.'
+        },
+        spokeSlug: 'storico-modifiche-account'
+      },
+      {
+        text: {
+          it: 'Una campagna appena lanciata viene spenta dopo 7 giorni senza sapere che le conversioni su Google arrivano con giorni di ritardo.',
+          en: 'A freshly launched campaign is shut off after 7 days, unaware that Google Ads conversions lag by days.'
+        },
+        spokeSlug: 'fase-apprendimento-smart-bidding'
+      }
+    ],
+    adjacentThemes: ['dati-affidabili', 'profitto-reale', 'shopping-e-feed'],
+    faqs: [
+      {
+        question: {
+          it: 'Cos\'è il metodo matematico LMDI?',
+          en: 'What is the LMDI mathematical decomposition method?'
+        },
+        answer: {
+          it: 'LMDI (Logarithmic Mean Divisia Index) è un modello econometrico che decompone la variazione di una grandezza (il fatturato) nella somma esatta dei suoi fattori moltiplicativi (Sessioni × Conversion Rate × AOV), garantendo che i pesi percentuali sommino esattamente al 100% senza scarti residui.',
+          en: 'LMDI (Logarithmic Mean Divisia Index) is an econometric decomposition modeling changes in aggregate revenue into the exact sum of multiplicative factors (Sessions × CVR × AOV), ensuring weights sum to 100% with zero residual.'
+        }
+      },
+      {
+        question: {
+          it: 'Come evitate di reagire in modo eccessivo ai cali del weekend?',
+          en: 'How do you avoid overreacting to weekend sales dips?'
+        },
+        answer: {
+          it: 'Confrontiamo ogni giorno unicamente con i suoi omologhi storici (es. sabato con gli ultimi 8 sabati) e applichiamo un intervallo di confidenza Poisson. Se il dato rientra nella varianza naturale, viene etichettato come "Rumore Casuale", bloccando modifiche impulsive.',
+          en: 'We compare every calendar day strictly against historical peers (e.g. Saturday vs last 8 Saturdays) applying Poisson confidence intervals to label natural variance as Random Noise.'
+        }
+      }
+    ],
+    spokes: [
+      {
+        slug: 'decomposizione-algebrica-lmdi',
+        themeId: 'diagnosi-cali-vendite',
+        videoId: 'mzQY4U9JL-k', // V10: La fine dell'alzata di spalle
+        h1: {
+          it: 'Decomposizione Algebrica LMDI: La fine dell\'alzata di spalle sul calo vendite',
+          en: 'LMDI Algebraic Decomposition: Ending Shoulder Shrugs Over Sales Dips'
+        },
+        uspTagline: {
+          it: 'Isoliamo il peso esatto di traffico, conversione interna e scontrino medio con numeri che sommano al 100%.',
+          en: 'Isolating the exact percentage weight of traffic, checkout conversion, and AOV summing strictly to 100%.'
+        },
+        metaTitle: {
+          it: 'Perché le Vendite Calano? Decomposizione Algebrica LMDI | masterAnalyzer',
+          en: 'Why Did Sales Drop? LMDI Algebraic Decomposition | masterAnalyzer'
+        },
+        metaDescription: {
+          it: 'Basta scuse d\'agenzia. masterAnalyzer scompone algebricamente ogni calo e-commerce in traffico, CVR e AOV con pesi che sommano al 100%.',
+          en: 'Stop accepting agency excuses. masterAnalyzer decomposes e-commerce drops into exact traffic, conversion rate, and AOV weights.'
+        },
+        primaryKeyword: 'decomposizione calo vendite lmdi',
+        problemStory: {
+          it: [
+            'Lunedì di chiusura mese: il fatturato dell\'e-commerce segna un -18%. L\'imprenditore convoca la riunione e l\'agenzia si rifugia nella solita lista di alibi: «è la congiuntura economica», «a ottobre la gente aspetta il Black Friday», «l\'algoritmo di Google ha cambiato le aste».',
+            'Senza una scomposizione matematica, l\'azienda applica la cura sbagliata: assume un copywriter per riscrivere le landing page quando il problema era l\'aumento del CPC, oppure taglia le ads quando a crollare era la disponibilità a magazzino.'
+          ],
+          en: [
+            'Month-end review: e-commerce revenue drops 18%. The founder calls a meeting and the agency retreats into standard alibis: "macroeconomic headwinds, buyers waiting for Black Friday, Google auction shifts".',
+            'Without mathematical decomposition, leadership deploys destructive treatments: rewriting landing pages when CPCs spiked, or slashing ads when inventory stock-outs caused the dip.'
+          ]
+        },
+        blindSpot: {
+          it: [
+            'I report di web analytics standard mostrano tabelle di dati affiancati ma non calcolano l\'elasticità causale reciproca tra volume e scontrino.',
+            'Nessuno distingue se il calo di conversione è colpa del sito o solo dell\'inquinamento del mix di traffico (più utenti freddi a parità di offerta).'
+          ],
+          en: [
+            'Standard analytics dashboards display side-by-side data tables without calculating causal elasticity between volume, conversion, and ticket size.',
+            'Nobody isolates whether conversion rate drop is site failure or simply colder traffic mix dilution.'
+          ]
+        },
+        howWeDoIt: [
+          {
+            step: 1,
+            title: { it: 'Estrazione Terna Fondamentale', en: 'Triad Metric Ingestion' },
+            description: {
+              it: 'Estraiamo su base oraria e giornaliera il volume delle sessioni qualificate, le transazioni concluse e il valore medio del carrello.',
+              en: 'We extract qualified sessions, completed transactions, and average order value on hourly and daily grains.'
+            }
+          },
+          {
+            step: 2,
+            title: { it: 'Applicazione Formula LMDI-I', en: 'LMDI-I Formula Application' },
+            description: {
+              it: 'Il modulo computazionale divide la varianza totale tra Effetto Traffico, Effetto Conversione ed Effetto Prezzo, garantendo perfetta continuità algebrica.',
+              en: 'The computation module separates variance into Traffic Effect, Conversion Effect, and Price Effect with zero residual error.'
+            }
+          },
+          {
+            step: 3,
+            title: { it: 'Prescrizione Chirurgica', en: 'Surgical Action Prescription' },
+            description: {
+              it: 'Indichiamo esattamente quale leva correggere: se il 70% del calo dipende dal CPC, interveniamo sulle corrispondenze; se dipende dall\'AOV, sul cross-sell.',
+              en: 'We prescribe exact corrective levers: if 70% of drop stems from CPC, refine match types; if from AOV, re-bundle cross-sells.'
+            }
+          }
+        ],
+        whatYouGet: {
+          title: { it: 'Cosa Ricevi', en: 'Deliverables' },
+          items: {
+            it: [
+              'Tabella di decomposizione LMDI con pesi percentuali certificati che sommano al 100% della variazione.',
+              'Isolamento dell\'effetto del mix di traffico rispetto alla tenuta intrinseca del carrello.',
+              'Priorità d\'intervento ordinate per impatto economico diretto sul margine.'
+            ],
+            en: [
+              'LMDI decomposition matrix with certified percentage weights summing to 100% of variance.',
+              'Isolation of traffic mix dilution vs genuine on-site checkout friction.',
+              'Corrective action checklist ranked by net margin recovery impact.'
+            ]
+          }
+        },
+        proofData: {
+          metric: '100.0%',
+          label: {
+            it: 'riconciliazione algebrica della varianza senza residuo non spiegato',
+            en: 'algebraic variance reconciliation with zero unexplained residual'
+          },
+          sourceTimestamp: 'Censimento masterAnalyzer 13ª battuta, 11 Ottobre 2026'
+        },
+        whatWeDoNotPromise: {
+          it: [
+            'Non promettiamo che la decomposizione faccia risalire magicamente le vendite: la matematica spiega la causa esatta, eliminando discussioni inutili.',
+            'Se i dati di tracciamento a monte sono corrotti o incompleti, il calcolo LMDI viene sospeso e dichiarato inaffidabile.'
+          ],
+          en: [
+            'We do not promise decomposition magically restores sales: mathematics exposes root causes, ending futile arguments.',
+            'If upstream telemetry is corrupt or incomplete, LMDI calculation is halted and flagged as unreliable.'
+          ]
+        },
+        faqs: [
+          {
+            question: {
+              it: 'Perché la decomposizione LMDI è superiore a un semplice confronto percentuale?',
+              en: 'Why is LMDI decomposition superior to standard percentage comparisons?'
+            },
+            answer: {
+              it: 'Perché le percentuali ordinarie non si sommano tra loro quando i fattori si moltiplicano (Sessioni × CVR × AOV). LMDI utilizza pesi logaritmici che preservano la coerenza del totale in euro.',
+              en: 'Ordinary percentages do not sum when underlying drivers multiply. LMDI uses logarithmic weights preserving exact financial euro totals.'
+            }
+          },
+          {
+            question: {
+              it: 'Quanto tempo richiede l\'elaborazione del report LMDI?',
+              en: 'How long does an LMDI audit report take to process?'
+            },
+            answer: {
+              it: 'Una volta collegata l\'API di GA4 e Google Ads, masterAnalyzer elabora la decomposizione dell\'intero trimestre in meno di 60 secondi.',
+              en: 'Once GA4 and Google Ads APIs are authenticated, masterAnalyzer computes quarterly decompositions in under 60 seconds.'
+            }
+          }
+        ],
+        relatedSpokes: ['test-significativita-poisson', 'storico-modifiche-account', 'fase-apprendimento-smart-bidding']
+      },
+      {
+        slug: 'test-significativita-poisson',
+        themeId: 'diagnosi-cali-vendite',
+        videoId: 'H4Eblfb8FJ8', // V11: Il crollo che non c'era
+        h1: {
+          it: 'Test di Poisson sulle Fluttuazioni: Distinguere il crollo vero dal rumore del weekend',
+          en: 'Poisson Significance Testing: Separating True Drops from Weekend Noise'
+        },
+        uspTagline: {
+          it: 'Confrontiamo ogni giorno con i suoi pari storici per bloccare il panico del lunedì mattina.',
+          en: 'Comparing every day strictly against historical peers to eliminate Monday morning panic.'
+        },
+        metaTitle: {
+          it: 'Test Statistici Poisson per Campagne Ads | masterAnalyzer',
+          en: 'Poisson Statistical Testing for Ad Campaigns | masterAnalyzer'
+        },
+        metaDescription: {
+          it: 'Il calo delle conversioni è reale o è solo rumore statistico? masterAnalyzer etichetta ogni oscillazione per evitare cambi di budget inutili.',
+          en: 'Is your conversion drop real or statistical noise? masterAnalyzer labels every variance to prevent harmful budget edits.'
+        },
+        primaryKeyword: 'fluttuazioni vendite rumore statistico',
+        problemStory: {
+          it: [
+            'Domenica sera: l\'e-commerce registra solo 8 ordini contro i 25 di venerdì. Lunedì mattina il responsabile marketing apre la dashboard, va nel panico e ordina di rifare le creatività o alzare i bid di 50 centesimi.',
+            'Poi si guarda lo storico degli ultimi sei mesi e si scopre che tutte le domeniche oscillano naturalmente tra 7 e 11 ordini. Il panico ha portato a modificare campagne sane, resettando l\'apprendimento dello Smart Bidding e bruciando budget.'
+          ],
+          en: [
+            'Sunday night: the store records 8 orders vs 25 on Friday. Monday morning brings panic, with orders to overhaul ad copy and spike bids by 50 cents.',
+            'Looking at the last six months reveals every Sunday naturally fluctuates between 7 and 11 orders. Panic provoked edits on healthy campaigns, resetting Smart Bidding algorithms.'
+          ]
+        },
+        blindSpot: {
+          it: [
+            'Le agenzie tradizionali reagiscono emotivamente a ogni singolo dato giornaliero, vendendo ore di consulenza per risolvere problemi che non esistono.',
+            'Nessuno calcola la distribuzione di probabilità di Poisson per verificare se la deviazione standard è statisticamente rilevante (p < 0.05).'
+          ],
+          en: [
+            'Agencies react emotionally to single-day blips, billing retainers to "fix" non-existent issues.',
+            'Nobody runs Poisson distribution models to test whether standard deviations are statistically significant (p < 0.05).'
+          ]
+        },
+        howWeDoIt: [
+          {
+            step: 1,
+            title: { it: 'Segmentazione Peer-to-Peer', en: 'Peer-to-Peer Dayparting' },
+            description: {
+              it: 'Confrontiamo la domenica con le ultime 8 domeniche, il sabato con i sabati, neutralizzando la ciclicità infrasettimanale.',
+              en: 'We benchmark Sunday against the last 8 Sundays, eliminating natural day-of-week intra-week seasonality.'
+            }
+          },
+          {
+            step: 2,
+            title: { it: 'Intervallo di Confidenza Poisson', en: 'Poisson Confidence Interval' },
+            description: {
+              it: 'Calcoliamo l\'intervallo di varianza atteso. Se il valore osservato cade dentro la campana, scatta l\'etichetta «Rumore Casuale».',
+              en: 'We model the expected variance band. If observations sit inside the confidence envelope, it is labeled "Random Noise".'
+            }
+          },
+          {
+            step: 3,
+            title: { it: 'Blocco Freno Emergenza', en: 'Emergency Brake Lock' },
+            description: {
+              it: 'Il nostro software impedisce di applicare modifiche a campagne che registrano oscillazioni non significative, preservando la stabilità.',
+              en: 'Our software prohibits applying structural edits to campaigns undergoing statistically non-significant variance.'
+            }
+          }
+        ],
+        whatYouGet: {
+          title: { it: 'Cosa Ricevi', en: 'Deliverables' },
+          items: {
+            it: [
+              'Etichettatura scientifica di ogni variazione: «Rumore Casuale», «Significativo», «Dati Insufficienti».',
+              'Analisi della stagionalità oraria e infrasettimanale depurata dalle anomalie.',
+              'Protezione degli algoritmi di Smart Bidding da modifiche impulsive.'
+            ],
+            en: [
+              'Scientific variance labeling: "Random Noise", "Significant Drop", "Insufficient Sample".',
+              'Day-of-week seasonality curve purged of false alarm outliers.',
+              'Protection of Smart Bidding machine learning from impulsive overrides.'
+            ]
+          }
+        },
+        proofData: {
+          metric: 'p < 0.05',
+          label: {
+            it: 'soglia di significatività statistica richiesta per autorizzare interventi strutturali',
+            en: 'statistical significance threshold required before authorizing structural ad edits'
+          },
+          sourceTimestamp: 'Censimento masterAnalyzer 13ª battuta, 11 Ottobre 2026'
+        },
+        whatWeDoNotPromise: {
+          it: [
+            'Non promettiamo che le vendite non caleranno mai: quando il calo è statisticamente significativo, il sistema lancia l\'allarme entro 6 ore.',
+            'Nei piccoli e-commerce con meno di 5 ordini al giorno, la varianza statistica è elevata e richiede periodi di osservazione più lunghi.'
+          ],
+          en: [
+            'We do not promise sales never decline: when drops cross significance thresholds, watchdog alarms fire within 6 hours.',
+            'For smaller stores with fewer than 5 orders/day, sample sizes require wider observation windows.'
+          ]
+        },
+        faqs: [
+          {
+            question: {
+              it: 'Perché la distribuzione di Poisson è adatta alle vendite e-commerce?',
+              en: 'Why is Poisson distribution optimal for e-commerce transactions?'
+            },
+            answer: {
+              it: 'Perché gli acquisti online sono eventi discreti e indipendenti che avvengono in un intervallo di tempo continuo. Poisson modella perfettamente il conteggio di eventi rari rispetto a una normale curva gaussiana.',
+              en: 'Online transactions are discrete, independent events occurring in continuous time. Poisson models discrete transaction counts far better than generic Gaussians.'
+            }
+          },
+          {
+            question: {
+              it: 'Cosa fa masterAnalyzer quando un calo è etichettato come "Rumore"?',
+              en: 'What does masterAnalyzer do when a dip is labeled "Noise"?'
+            },
+            answer: {
+              it: 'Emette un avviso rassicurante: "Tutto tranquillo: la variazione rientra nella normale varianza attesa. Nessun intervento consigliato."',
+              en: 'It issues a reassuring confirmation: "All steady: variance falls within expected bounds. Zero edits recommended."'
+            }
+          }
+        ],
+        relatedSpokes: ['decomposizione-algebrica-lmdi', 'storico-modifiche-account', 'fase-apprendimento-smart-bidding']
+      },
+      {
+        slug: 'storico-modifiche-account',
+        themeId: 'diagnosi-cali-vendite',
+        videoId: 'ZZtJTYTnlRY', // V12: La memoria che nessuno ha
+        h1: {
+          it: 'Timeline Modifiche & Tagging: La memoria storica che inchioda le cause dei cali',
+          en: 'Change Timeline & Tagging: Historical Memory Pinpointing Drop Causes'
+        },
+        uspTagline: {
+          it: 'Allineiamo sul grafico ogni modifica a campagne, codice sito e consigli automatici di Google.',
+          en: 'Aligning every ad edit, website code deployment, and Google auto-apply recommendation on one timeline.'
+        },
+        metaTitle: {
+          it: 'Cronologia Modifiche Google Ads & Cause Calo | masterAnalyzer',
+          en: 'Google Ads Change History & Sales Drop Causes | masterAnalyzer'
+        },
+        metaDescription: {
+          it: 'Le conversioni calano e nessuno ricorda cosa sia stato toccato? masterAnalyzer traccia ogni modifica di ads, tema e codice in un registro immutabile.',
+          en: 'Conversions dropped and nobody recalls what changed? masterAnalyzer logs every ad update, theme release, and script in an immutable ledger.'
+        },
+        primaryKeyword: 'cronologia modifiche google ads calo',
+        problemStory: {
+          it: [
+            'Le vendite calano da una settimana. In call, l\'imprenditore chiede: «Ma cosa abbiamo toccato nei giorni precedenti?». Il media buyer dice di non aver cambiato nulla, lo sviluppatore web giura di aver fatto solo una piccola modifica grafica, e Google ha applicato in silenzio un consiglio automatico non richiesto.',
+            'Senza un registro temporale unificato, trovare la causa è impossibile. Si perde tempo prezioso accusando il mercato mentre il danno economico si allarga.'
+          ],
+          en: [
+            'Conversions have dipped for a week. On the call, management asks: "What changed prior to the drop?". The media buyer denies touching bids, the web developer claims minor CSS edits, and Google quietly applied an unsolicited auto-recommendation.',
+            'Without a unified temporal ledger, isolating the root cause is impossible, burning budget while teams debate.'
+          ]
+        },
+        blindSpot: {
+          it: [
+            'I pannelli pubblicitari tengono la cronologia delle ads ma non sanno nulla delle modifiche al codice del sito, mentre GitHub non sa nulla dei cambi di budget.',
+            'Quasi nessuno monitora le "Modifiche Automatiche" di Google Ads, dove l\'algoritmo attiva da solo parole chiave generiche espandendo la spesa.'
+          ],
+          en: [
+            'Native ad dashboards record campaign changes but know nothing of code deployments, while Git knows nothing of budget shifts.',
+            'Rarely does anyone monitor Google Ads "Auto-Apply Recommendations", where algorithms activate broad queries on auto-pilot.'
+          ]
+        },
+        howWeDoIt: [
+          {
+            step: 1,
+            title: { it: 'Registro Cronologico Unificato', en: 'Unified Timeline Ledger' },
+            description: {
+              it: 'masterAnalyzer raccoglie in un unico flusso continuo i changelog delle campagne, le release di codice web e gli aggiornamenti di catalogo.',
+              en: 'masterAnalyzer ingests campaign changelogs, web releases, and product feed updates into one unified timeline.'
+            }
+          },
+          {
+            step: 2,
+            title: { it: 'Rilevamento Auto-Modifiche Google', en: 'Google Auto-Apply Detection' },
+            description: {
+              it: 'Scansioniamo le modifiche non autorizzate applicate automaticamente da Google, evidenziando aperture inopportune delle corrispondenze.',
+              en: 'We scan unauthorized automated changes pushed by Google, pinpointing match type dilutions.'
+            }
+          },
+          {
+            step: 3,
+            title: { it: 'Correlazione Punto di Flesso', en: 'Inflection Point Correlation' },
+            description: {
+              it: 'Identifichiamo la correlazione temporale tra la data del cambio e la data di flessione del grafico con verdetto causale verificabile.',
+              en: 'We match the exact deployment timestamp against performance graph inflection points with transparent causal verification.'
+            }
+          }
+        ],
+        whatYouGet: {
+          title: { it: 'Cosa Ricevi', en: 'Deliverables' },
+          items: {
+            it: [
+              'Timeline unificata con allineamento grafico tra modifiche tecniche e andamento conversioni.',
+              'Audit delle modifiche automatiche di Google attive nell\'account da disabilitare.',
+              'Protocollo di roll-back immediato per ripristinare la configurazione pre-calo.'
+            ],
+            en: [
+              'Unified timeline aligning code releases and ad changes directly against revenue trajectories.',
+              'Audit of active Google Auto-Apply settings that must be deactivated.',
+              'Instant roll-back blueprint restoring high-performing pre-drop baselines.'
+            ]
+          }
+        },
+        proofData: {
+          metric: '100%',
+          label: {
+            it: 'tracciamento immutabile di ogni chiamata API di modifica su campagne e budget',
+            en: 'immutable tracking of every campaign and budget API modification call'
+          },
+          sourceTimestamp: 'Censimento masterAnalyzer 13ª battuta, 11 Ottobre 2026'
+        },
+        whatWeDoNotPromise: {
+          it: [
+            'Non promettiamo che una coincidenza di date sia sempre una colpa certa: è un indizio forte che richiede verifica tecnica prima di accusare.',
+            'Senza permessi API in sola lettura sull\'account, non possiamo recuperare le modifiche storiche non registrate.'
+          ],
+          en: [
+            'We do not assert temporal correlation is automatic causation: it is a strong lead requiring technical validation.',
+            'Without read-only API access, historical unrecorded edits cannot be ingested retroactively.'
+          ]
+        },
+        faqs: [
+          {
+            question: {
+              it: 'Come fa Google ad applicare modifiche senza il mio consenso?',
+              en: 'How does Google apply changes without my active consent?'
+            },
+            answer: {
+              it: 'Durante la configurazione iniziale dell\'account o gli aggiornamenti di Google Ads, l\'opzione "Applica automaticamente i consigli" viene spesso attivata di default dall\'agenzia o dall\'interfaccia.',
+              en: 'During account creation or updates, "Auto-apply recommendations" is frequently checked by default by agencies or interfaces.'
+            }
+          },
+          {
+            question: {
+              it: 'Tracciate anche i cambi di prezzo dei prodotti?',
+              en: 'Do you track catalog price modifications as well?'
+            },
+            answer: {
+              it: 'Sì, masterAnalyzer registra le variazioni di prezzo dei singoli prodotti nel catalogo per verificare se un calo delle vendite dipenda da un rincaro a listino.',
+              en: 'Yes, masterAnalyzer logs SKU-level price changes to determine whether drops stem from catalog price increases.'
+            }
+          }
+        ],
+        relatedSpokes: ['decomposizione-algebrica-lmdi', 'test-significativita-poisson', 'fase-apprendimento-smart-bidding']
+      },
+      {
+        slug: 'fase-apprendimento-smart-bidding',
+        themeId: 'diagnosi-cali-vendite',
+        videoId: 'JmyvBBGWe3M', // V13: Il coraggio di dire «aspetta»
+        h1: {
+          it: 'Data Lag & Fase di Apprendimento: Il coraggio di dire aspetta prima di spegnere',
+          en: 'Conversion Lag & Learning Phase: The Discipline to Wait Before Pausing'
+        },
+        uspTagline: {
+          it: 'Stimiamo quante conversioni sono già in viaggio per evitare di tagliare campagne che stanno già vendendo.',
+          en: 'Modeling in-flight conversions to prevent prematurely killing campaigns that are already selling.'
+        },
+        metaTitle: {
+          it: 'Ritardo Conversione Google Ads & Data Lag | masterAnalyzer',
+          en: 'Google Ads Conversion Lag & Learning Phase | masterAnalyzer'
+        },
+        metaDescription: {
+          it: 'Non spegnere campagne giovani. masterAnalyzer calcola il data lag storico e blocca le modifiche impulsive durante la fase di apprendimento.',
+          en: 'Stop killing young campaigns. masterAnalyzer computes historical conversion delay to protect learning phases from panic edits.'
+        },
+        primaryKeyword: 'fase apprendimento smart bidding ritardo conversione',
+        problemStory: {
+          it: [
+            'Lanci una campagna nuova. Passano 7 giorni: zero conversioni a pannello, spesi 1.200€. Il panico porta a spegnere subito il canale giudicandolo fallimentare.',
+            'Due settimane dopo riapri lo stesso report e scopri che quella campagna ha registrato 14 acquisti retrodatati: gli utenti ci mettevano in media 6-10 giorni dal click per completare l\'ordine. Spegnere la campagna ha buttato via l\'apprendimento dell\'algoritmo proprio nel momento in cui stava per scalare.'
+          ],
+          en: [
+            'You launch a new campaign. Seven days pass: zero conversions in dashboard, €1,200 spent. Panic dictates shutting it down as an expensive failure.',
+            'Two weeks later, re-opening that same report reveals 14 backdated sales: buyers naturally took 6-10 days from click to checkout. Shutting off the campaign threw away machine learning right as it reached scale.'
+          ]
+        },
+        blindSpot: {
+          it: [
+            'Le agenzie inesperte guardano solo i dati consolidati a 7 giorni, ignorando la finestra temporale reale del "Conversion Delay" specifica dell\'account.',
+            'Nessuno calcola la forbice statistica delle vendite "in viaggio" basata sul comportamento storico d\'acquisto.'
+          ],
+          en: [
+            'Inexperienced teams look solely at unadjusted 7-day reports, ignoring true account-specific Conversion Lag windows.',
+            'Nobody models statistical ranges of in-flight orders based on historical buying cycles.'
+          ]
+        },
+        howWeDoIt: [
+          {
+            step: 1,
+            title: { it: 'Calcolo Finestra Data Lag', en: 'Conversion Lag Profiling' },
+            description: {
+              it: 'Analizziamo gli ultimi 90 giorni per misurare la distribuzione dei giorni trascorsi tra primo click e acquisto finale per ciascuna categoria.',
+              en: 'We analyze 90-day purchase lags measuring distribution of days between ad click and final checkout per SKU tier.'
+            }
+          },
+          {
+            step: 2,
+            title: { it: 'Stima Ordini in Viaggio', en: 'In-Flight Order Projection' },
+            description: {
+              it: 'Proiettiamo la forchetta delle conversioni attese ma non ancora visibili, ricalcolando il CPA atteso a maturazione.',
+              en: 'We project expected in-flight conversions, recomputing mature CPA projections before dashboards update.'
+            }
+          },
+          {
+            step: 3,
+            title: { it: 'Freno Meccanico su Modifiche', en: 'Mechanical Edit Safeguard' },
+            description: {
+              it: 'Il nostro software impedisce di giudicare o ritoccare una campagna prima che sia trascorso l\'85% del periodo di maturazione storico.',
+              en: 'Our software enforces an analytical freeze, preventing judgment until 85% of the maturation cycle has elapsed.'
+            }
+          }
+        ],
+        whatYouGet: {
+          title: { it: 'Cosa Ricevi', en: 'Deliverables' },
+          items: {
+            it: [
+              'Curva di ritardo di conversione (Conversion Delay Curve) specifica per il tuo store.',
+              'Stima in tempo reale degli ordini già maturati ma non ancora visualizzati nel pannello.',
+              'Calendario rigoroso delle date minime per autorizzare modifiche o riduzioni di budget.'
+            ],
+            en: [
+              'Custom Conversion Delay Curve specific to your store categories.',
+              'Real-time projection of in-flight conversions lagging in ad interfaces.',
+              'Strict calendar schedule locking minimum observation thresholds before budget adjustments.'
+            ]
+          }
+        },
+        proofData: {
+          metric: '85%',
+          label: {
+            it: 'soglia minima di maturazione del dato storico richiesta prima di autorizzare modifiche di offerta',
+            en: 'minimum historical data maturation threshold required before authorizing bidding changes'
+          },
+          sourceTimestamp: 'Censimento masterAnalyzer 13ª battuta, 11 Ottobre 2026'
+        },
+        whatWeDoNotPromise: {
+          it: [
+            'Non promettiamo che ogni campagna spenta presto stesse per diventare vincente: diciamo che spegnere prima del tempo distrugge il capitale speso per addestrare il machine learning.',
+            'I prodotti ad acquisto d\'impulso hanno un ritardo breve (1-2 giorni), mentre arredo e B2B richiedono fino a 30 giorni.'
+          ],
+          en: [
+            'We do not promise every prematurely paused campaign was a winner: we state that shutting down early burns ad learning capital.',
+            'Impulse purchases carry short lags (1-2 days), whereas luxury and B2B require up to 30 days.'
+          ]
+        },
+        faqs: [
+          {
+            question: {
+              it: 'Dove si vede il ritardo di conversione su Google Ads?',
+              en: 'Where do you find conversion lag in Google Ads?'
+            },
+            answer: {
+              it: 'Nel report "Tempo fino alla conversione" negli strumenti di attribuzione. masterAnalyzer estrae questo dato via API e lo integra direttamente nei modelli decisionali.',
+              en: 'Under Attribution tools in the "Days to conversion" report. masterAnalyzer ingests this via API directly into bidding logic.'
+            }
+          },
+          {
+            question: {
+              it: 'Se cambio budget durante la fase di apprendimento cosa succede?',
+              en: 'What happens if I adjust budget during learning phase?'
+            },
+            answer: {
+              it: 'Una modifica superiore al 20% resetta completamente l\'apprendimento dello Smart Bidding, costringendo l\'algoritmo a ricominciare da capo a spese del cliente.',
+              en: 'Changes greater than 20% reset Smart Bidding learning, forcing algorithms to restart training at client expense.'
+            }
+          }
+        ],
+        relatedSpokes: ['decomposizione-algebrica-lmdi', 'test-significativita-poisson', 'storico-modifiche-account']
+      }
+    ]
+  },
+
+  'shopping-e-feed': {
+    id: 'shopping-e-feed',
+    title: {
+      it: 'Google Shopping, Feed & Merchant Center',
+      en: 'Google Shopping, Feed & Merchant Center'
+    },
+    tagline: {
+      it: 'Perché i prodotti non vendono su Google Shopping? Scoperchiamo la black box di PMax e Merchant Center.',
+      en: 'Why do products stall on Google Shopping? Unlocking the black box of PMax and Merchant Center feeds.'
+    },
+    metaTitle: {
+      it: 'Audit Google Shopping & Feed Merchant Center | masterAnalyzer',
+      en: 'Google Shopping & Merchant Center Feed Audit | masterAnalyzer'
+    },
+    metaDescription: {
+      it: 'Migliaia di prodotti a catalogo e solo 3 vendono? Scopri i blocchi silenziosi di Merchant Center e ottimizza Google Shopping sul margine reale.',
+      en: 'Thousands of SKUs and only 3 generate sales? Expose silent Merchant Center rejections and optimize Google Shopping on true margins.'
+    },
+    primaryKeyword: 'ottimizzazione google shopping feed merchant center',
+    intro: {
+      it: 'Google Shopping e le campagne Performance Max soffrono di un monopolio interno: l\'algoritmo tende a spendere l\'80% del budget pubblicitario sempre sulle stesse 3 o 4 referenze storiche, lasciando centinaia o migliaia di prodotti a zero impression. E su Merchant Center, il semaforo "Verde / Approvato" nasconde spesso blocchi silenziosi che impediscono la partecipazione alle aste. masterAnalyzer audita il catalogo SKU per SKU.',
+      en: 'Google Shopping and Performance Max suffer from internal monopoly: algorithms spend 80% of budget on the same 3-4 historical SKUs, leaving thousands of products with zero impressions. Meanwhile, green Merchant Center dashboards conceal silent rejections. masterAnalyzer audits inventory SKU by SKU.'
+    },
+    videoOverviewId: 'xo7AOcJsnLI',
+    symptoms: [
+      {
+        text: {
+          it: 'Il Merchant Center dice "Tutto Approvato" ma decine di articoli ad alto margine non generano alcuna vendita né impression.',
+          en: 'Merchant Center reports all approved yet high-margin hero SKUs register zero impressions and sales.'
+        },
+        spokeSlug: 'audit-merchant-center-errori'
+      },
+      {
+        text: {
+          it: 'Google Shopping spende quasi tutto il budget sui soliti 3 prodotti, lasciando il magazzino pieno di novità invendute.',
+          en: 'Google Shopping dumps all spend on 3 legacy items, stranding warehouse stock of fresh high-margin arrivals.'
+        },
+        spokeSlug: 'prodotti-bestseller-invisibili'
+      },
+      {
+        text: {
+          it: 'Aumenti il budget su Shopping ma le vendite non salgono perché i concorrenti offrono lo stesso articolo a un prezzo inferiore.',
+          en: 'You increase Shopping budget but sales flatline because competitors offer identical SKUs at lower prices.'
+        },
+        spokeSlug: 'competitivita-prezzo-shopping'
+      }
+    ],
+    adjacentThemes: ['profitto-reale', 'dati-affidabili', 'diagnosi-cali-vendite'],
+    faqs: [
+      {
+        question: {
+          it: 'Perché Google Shopping ignora la maggior parte dei miei prodotti?',
+          en: 'Why does Google Shopping ignore the majority of my catalog?'
+        },
+        answer: {
+          it: 'Perché l\'algoritmo Smart Bidding cerca la via più sicura: punta sulle schede che hanno già storico di click e conversioni. Se non crei strutture di campagna granulari con priorità ed esclusioni, i nuovi prodotti non riceveranno mai la prima impression.',
+          en: 'Smart Bidding takes the path of least resistance: funding SKUs with established conversion history. Without granular campaign structures, new SKUs never receive initial auction impressions.'
+        }
+      },
+      {
+        question: {
+          it: 'Come verificate la competitività dei prezzi su Google Shopping?',
+          en: 'How do you benchmark price competitiveness on Google Shopping?'
+        },
+        answer: {
+          it: 'masterAnalyzer interroga il report di Price Competitiveness di Google Merchant Center incrociando i prezzi medi dei rivali con il margine lordo del tuo catalogo, segnalando quando alzare il budget sarebbe puro spreco.',
+          en: 'masterAnalyzer queries Google Merchant Center Price Competitiveness reports, crossing competitor averages with your gross SKU margins to flag when bidding more would waste cash.'
+        }
+      }
+    ],
+    spokes: [
+      {
+        slug: 'audit-merchant-center-errori',
+        themeId: 'shopping-e-feed',
+        videoId: 'xo7AOcJsnLI', // V22: La luce verde che mente
+        h1: {
+          it: 'Audit Merchant Center a Raggi X: La luce verde che nasconde prodotti bloccati',
+          en: 'Merchant Center X-Ray Audit: The Green Dashboard Concealing Excluded SKUs'
+        },
+        uspTagline: {
+          it: 'Scoviamo i blocchi silenziosi e le disapprovazioni di prodotto che la dashboard non ti segnala.',
+          en: 'Uncovering silent exclusions and SKU rejections that native dashboards conceal.'
+        },
+        metaTitle: {
+          it: 'Errori Merchant Center Google Shopping | Audit masterAnalyzer',
+          en: 'Merchant Center Silent Errors Audit | masterAnalyzer'
+        },
+        metaDescription: {
+          it: 'Pensi che il feed Shopping sia a posto perché vedi la luce verde? masterAnalyzer audita SKU per SKU per scovare discrepanze di prezzo e blocchi policy.',
+          en: 'Think your Shopping feed is perfect because dashboards show green? masterAnalyzer audits SKU by SKU uncovering hidden price and policy blocks.'
+        },
+        primaryKeyword: 'errori silenziosi google merchant center',
+        problemStory: {
+          it: [
+            'Apri Google Merchant Center: la schermata principale mostra semaforo verde, 98% dei prodotti approvati. Sei convinto che tutto stia partecipando regolarmente alle aste di Google Shopping.',
+            'Poi analizzi le singole referenze e scopri che i tuoi tre prodotti più profittevoli sono esclusi dall\'asta da 45 giorni per una discrepanza di IVA o per un attributo GTIN mancante. Nessun allarme è mai arrivato via email e il magazzino è rimasto fermo.'
+          ],
+          en: [
+            'You open Google Merchant Center: the main screen displays a green checkmark with 98% approved. You assume your full catalog is competing in live auctions.',
+            'Digging into individual SKUs reveals your 3 most profitable products have been quietly excluded for 45 days due to tax mismatch or missing GTINs. Zero email alerts were dispatched and stock remained frozen.'
+          ]
+        },
+        blindSpot: {
+          it: [
+            'Le agenzie guardano solo la percentuale aggregata di approvazione del catalogo, ignorando quali specifici prodotti ad alto margine sono stati spenti da Google.',
+            'I feed automatici dei plugin CMS (Shopify, WooCommerce) spesso corrodono le descrizioni e i titoli senza che nessuno controlli la qualità semantica.'
+          ],
+          en: [
+            'Agencies monitor aggregate catalog approval rates, ignoring which specific high-margin SKUs were shut off by Google.',
+            'Standard CMS plugins silently truncate titles and descriptions without anyone auditing semantic relevance.'
+          ]
+        },
+        howWeDoIt: [
+          {
+            step: 1,
+            title: { it: 'Scansione Granulare SKU-by-SKU', en: 'SKU-by-SKU Granular Scan' },
+            description: {
+              it: 'Analizziamo lo stato d\'asta di ogni singolo prodotto nel feed incrociandolo con lo storico di vendita a gestionale.',
+              en: 'We inspect live auction eligibility per SKU, cross-referencing store sales velocity.'
+            }
+          },
+          {
+            step: 2,
+            title: { it: 'Identificazione Discrepanze Prezzo & GTIN', en: 'Price & GTIN Discrepancy Isolation' },
+            description: {
+              it: 'Isoliamo i disallineamenti tra prezzo nel feed e prezzo al checkout che causano le disapprovazioni silenziose.',
+              en: 'We isolate divergences between feed prices and checkout prices triggering silent rejections.'
+            }
+          },
+          {
+            step: 3,
+            title: { it: 'Bonifica Automatica Regole Feed', en: 'Automated Feed Rules Remediation' },
+            description: {
+              it: 'Configuriamo regole di feed avanzate e supplemental feeds per ripristinare la piena eleggibilità senza toccare il codice del sito.',
+              en: 'We configure supplemental feeds and advanced feed transformation rules, restoring full auction presence without CMS edits.'
+            }
+          }
+        ],
+        whatYouGet: {
+          title: { it: 'Cosa Ricevi', en: 'Deliverables' },
+          items: {
+            it: [
+              'Report di censimento dei prodotti bloccati o limitati nelle aste con stima del fatturato perso.',
+              'Mappa delle discrepanze di prezzo e degli attributi GTIN / MPN da correggere.',
+              'Configurazione dei Supplemental Feeds di bonifica pronti per il caricamento.'
+            ],
+            en: [
+              'Census audit of excluded/throttled SKUs with quantified lost revenue modeling.',
+              'Discrepancy log covering tax, price, and missing GTIN/MPN identifiers.',
+              'Supplemental Feed configuration bundle ready for deployment.'
+            ]
+          }
+        },
+        proofData: {
+          metric: '100%',
+          label: {
+            it: 'copertura diagnostica delle anomalie SKU su cataloghi fino a 250.000 referenze',
+            en: 'diagnostic SKU anomaly coverage on catalogs up to 250,000 products'
+          },
+          sourceTimestamp: 'Censimento masterAnalyzer 13ª battuta, 11 Ottobre 2026'
+        },
+        whatWeDoNotPromise: {
+          it: [
+            'Non promettiamo che riparare il feed faccia vendere prodotti scadenti o fuori mercato: ripariamo la visibilità, non il prodotto.',
+            'Se il merchant è sospeso per violazione grave delle policy di Google, è necessario un percorso di revisione legale e di conformità.'
+          ],
+          en: [
+            'We do not promise fixing feeds turns unappealing products into bestsellers: we restore visibility, not consumer demand.',
+            'If an account suffers a domain-level policy suspension, a full compliance remediation process is required.'
+          ]
+        },
+        faqs: [
+          {
+            question: {
+              it: 'Cosa sono i Supplemental Feeds?',
+              en: 'What are Supplemental Feeds?'
+            },
+            answer: {
+              it: 'Sono feed secondari che integrano o correggono i dati del feed principale di Shopify/Woo senza modificare il gestionale, permettendo di arricchire titoli e correggere errori istantaneamente.',
+              en: 'Secondary data feeds enriching or overriding primary catalog data without modifying store code, optimizing titles and fixing errors instantly.'
+            }
+          },
+          {
+            question: {
+              it: 'Quanto tempo impiega Google a riammettere un prodotto corretto?',
+              en: 'How long does Google take to approve corrected SKUs?'
+            },
+            answer: {
+              it: 'Solitamente tra 12 e 48 ore dalla pubblicazione del supplemental feed aggiornato.',
+              en: 'Typically between 12 and 48 hours following updated supplemental feed ingestion.'
+            }
+          }
+        ],
+        relatedSpokes: ['prodotti-bestseller-invisibili', 'competitivita-prezzo-shopping', 'poas-profitto-sulla-spesa']
+      },
+      {
+        slug: 'prodotti-bestseller-invisibili',
+        themeId: 'shopping-e-feed',
+        videoId: '5ISJ2I-hPKI', // V23: Il best seller invisibile
+        h1: {
+          it: 'Sblocco Best Seller Invisibili: Rompere il monopolio di spesa su Google Shopping',
+          en: 'Unlocking Invisible Best Sellers: Breaking Ad Spend Monopolies on Google Shopping'
+        },
+        uspTagline: {
+          it: 'Riallochiamo il budget per forzare l\'esposizione dei prodotti ad alto margine trascurati dall\'algoritmo.',
+          en: 'Reallocating spend to force exposure of high-margin SKUs neglected by bidding algorithms.'
+        },
+        metaTitle: {
+          it: 'Prodotti Google Shopping Senza Impression | masterAnalyzer',
+          en: 'Google Shopping SKUs with Zero Impressions | masterAnalyzer'
+        },
+        metaDescription: {
+          it: 'Google Shopping spende solo sui soliti 3 articoli? masterAnalyzer spezza il monopolio interno e porta traffico sulle referenze con più margine.',
+          en: 'Does Google Shopping spend exclusively on 3 legacy items? masterAnalyzer breaks catalog monopolies and routes budget to high-margin SKUs.'
+        },
+        primaryKeyword: 'google shopping prodotti senza impressioni',
+        problemStory: {
+          it: [
+            'Hai un catalogo e-commerce con centinaia di prodotti eccellenti, magazzino pieno di novità e articoli ad alta marginalità. Poi apri il report di spesa di Google Shopping e scopri che l\'82% dell\'intero budget mensile è stato assorbito sempre dalle stesse quattro referenze storiche.',
+            'Il resto del catalogo ha ricevuto meno di 5 impression in 30 giorni: sono i "bestseller invisibili". L\'algoritmo di Google si è impigrito su ciò che conosce già, ignorando prodotti che potrebbero raddoppiare l\'utile aziendale.'
+          ],
+          en: [
+            'Your catalog features hundreds of top-tier products, fresh seasonal arrivals, and high-margin SKUs. Yet checking ad spend reveals 82% of budget is monopolized by the same 4 legacy items.',
+            'The rest of the catalog logged under 5 impressions in 30 days: invisible bestsellers. Google algorithms grow lazy on historical signals, starving products capable of doubling retained profit.'
+          ]
+        },
+        blindSpot: {
+          it: [
+            'Le agenzie mettono tutto il catalogo in un\'unica campagna Performance Max con un unico asset group, lasciando a Google la totale libertà di favorire i prodotti con più click a scapito del margine.',
+            'Nessuno mappa la distribuzione di Gini della spesa sul catalogo per misurare la concentrazione del rischio.'
+          ],
+          en: [
+            'Agencies lump the entire catalog into a single Performance Max campaign, leaving Google free to favor high-click, low-margin legacy SKUs.',
+            'Nobody computes Gini coefficient spend distributions across the catalog to quantify concentration risk.'
+          ]
+        },
+        howWeDoIt: [
+          {
+            step: 1,
+            title: { it: 'Mappatura Concentrazione Spesa', en: 'Spend Concentration Mapping' },
+            description: {
+              it: 'masterAnalyzer divide il catalogo in 4 quadranti: Eroi Attivi, Bestseller Invisibili, Prodotti Zombie e Pozzi di Spesa a margine zero.',
+              en: 'masterAnalyzer clusters inventory into 4 quadrants: Active Heroes, Invisible Bestsellers, Zombie SKUs, and Zero-Margin Drainers.'
+            }
+          },
+          {
+            step: 2,
+            title: { it: 'Segmentazione Custom Label', en: 'Custom Label Feed Segmentation' },
+            description: {
+              it: 'Applichiamo Custom Labels dinamiche basate sulla velocità di vendita a gestionale e sul margine POAS effettivo.',
+              en: 'We deploy dynamic Custom Labels based on backend sales velocity and true net POAS margin.'
+            }
+          },
+          {
+            step: 3,
+            title: { it: 'Campagne Catch-All & Incubatore', en: 'Incubator & Granular Ad Clusters' },
+            description: {
+              it: 'Creiamo strutture dedicate con budget protetto che forzano Google a esplorare i prodotti invisibili fino a validarne il potenziale.',
+              en: 'We establish dedicated campaigns with ring-fenced budgets forcing Google to test invisible SKUs until traction is proven.'
+            }
+          }
+        ],
+        whatYouGet: {
+          title: { it: 'Cosa Ricevi', en: 'Deliverables' },
+          items: {
+            it: [
+              'Indice di concentrazione della spesa (Gini Spend Index) del tuo catalogo Shopping.',
+              'Identificazione della lista esatta dei prodotti "Bestseller Invisibili" ad alto potenziale.',
+              'Struttura di campagne segmentate per fasce di margine e priorità d\'asta.'
+            ],
+            en: [
+              'Gini Spend Index quantifying catalog advertising concentration.',
+              'Prioritized catalog manifest of high-margin "Invisible Bestsellers".',
+              'Segmented campaign architecture with margin-tiered bidding structures.'
+            ]
+          }
+        },
+        proofData: {
+          metric: '4 Quadranti',
+          label: {
+            it: 'classificazione algebrica del catalogo Shopping (Eroi, Invisibili, Zombie, Drainer)',
+            en: 'algebraic catalog classification (Heroes, Invisibles, Zombies, Drainers)'
+          },
+          sourceTimestamp: 'Censimento masterAnalyzer 13ª battuta, 11 Ottobre 2026'
+        },
+        whatWeDoNotPromise: {
+          it: [
+            'Non promettiamo che ogni singolo prodotto dimenticato diventerà un campione di vendite: promettiamo che riceverà la visibilità necessaria per dimostrarlo con dati oggettivi.',
+            'Se un articolo ha prezzo fuori mercato rispetto alla concorrenza, la visibilità forzata confermerà rapidamente l\'esigenza di ribasso.'
+          ],
+          en: [
+            'We do not promise every neglected SKU becomes a hit: we guarantee it receives the statistical impressions needed to prove viability.',
+            'If an item is uncompetitively priced, forced impressions will quickly confirm the necessity of repricing.'
+          ]
+        },
+        faqs: [
+          {
+            question: {
+              it: 'Cosa sono i prodotti Zombie in Google Shopping?',
+              en: 'What are Zombie SKUs in Google Shopping?'
+            },
+            answer: {
+              it: 'Sono prodotti approvati nel feed che ricevono zero o meno di 10 impression in 30 giorni, rimanendo completamente invisibili agli acquirenti online.',
+              en: 'Eligible products in the feed recording zero or fewer than 10 impressions over 30 days, invisible to active shoppers.'
+            }
+          },
+          {
+            question: {
+              it: 'Come evitate che i prodotti invisibili brucino budget a vuoto?',
+              en: 'How do you prevent newly exposed SKUs from wasting budget?'
+            },
+            answer: {
+              it: 'Assegniamo budget di esplorazione contenuti e bid massimi cauti, spostando i prodotti nelle campagne scalabili solo quando dimostrano un POAS sano.',
+              en: 'We allocate strict micro-budgets and capped bids, promoting items to scaling campaigns only once profitable POAS is established.'
+            }
+          }
+        ],
+        relatedSpokes: ['audit-merchant-center-errori', 'competitivita-prezzo-shopping', 'poas-profitto-sulla-spesa']
+      },
+      {
+        slug: 'competitivita-prezzo-shopping',
+        themeId: 'shopping-e-feed',
+        videoId: 'wgxlgXfoYi8', // V24: Non è il budget. È il prezzo.
+        h1: {
+          it: 'Benchmark Competitività Prezzo: Non è il budget, è il prezzo fuori mercato',
+          en: 'Price Competitiveness Benchmark: The Issue is Pricing, Not Budget'
+        },
+        uspTagline: {
+          it: 'Incrociamo i prezzi dei tuoi rivali con le performance delle ads per smettere di comprare sconfitte più care.',
+          en: 'Cross-referencing rival prices against ad telemetry to stop buying expensive losses.'
+        },
+        metaTitle: {
+          it: 'Competitività Prezzi Google Shopping & Elasticità | masterAnalyzer',
+          en: 'Google Shopping Price Competitiveness & Elasticity | masterAnalyzer'
+        },
+        metaDescription: {
+          it: 'Le campagne Shopping non convertono? Forse sei più caro dei competitor nella SERP. masterAnalyzer misura l\'elasticità prezzo prima di toccare i bid.',
+          en: 'Shopping campaigns stalling? You may be overpriced in the SERP. masterAnalyzer correlates pricing elasticity before touching bids.'
+        },
+        primaryKeyword: 'competitivita prezzi google shopping',
+        problemStory: {
+          it: [
+            'Aumenti i budget su Google Shopping, ottimizzi i titoli, cambi le immagini, ma le vendite non salgono. L\'agenzia ti dice che «serve ancora più budget per vincere le aste».',
+            'Poi apri Google, cerchi il tuo prodotto e scopri che proprio accanto al tuo annuncio a 89€ c\'è un concorrente che vende lo stesso identico articolo a 79€ con spedizione inclusa. Nessun aumento di budget potrà mai farti vendere un prodotto identico a 10€ in più a un utente che confronta i prezzi al centesimo.'
+          ],
+          en: [
+            'You increase Shopping budget, optimize titles, refresh imagery, but sales stay flat. The agency insists "more budget is needed to win auctions".',
+            'Then you open Google, search your product, and see a competitor selling the identical SKU for €79 with free delivery right beside your €89 listing. Zero ad budget will compel shoppers to pay €10 more on a price comparison grid.'
+          ]
+        },
+        blindSpot: {
+          it: [
+            'I media buyer guardano solo le metriche di pannello (CPC, CTR, Quality Score) ignorando completamente l\'elasticità del prezzo e la SERP reale vista dall\'utente.',
+            'Nessuno consulta i dati di Price Competitiveness di Merchant Center prima di raccomandare un rialzo di budget.'
+          ],
+          en: [
+            'Media buyers monitor platform metrics (CPC, CTR, Quality Score) while ignoring commercial pricing dynamics visible in the actual SERP.',
+            'Nobody consults Merchant Center Price Competitiveness benchmarks before recommending budget hikes.'
+          ]
+        },
+        howWeDoIt: [
+          {
+            step: 1,
+            title: { it: 'Estrazione Benchmark Prezzo', en: 'Benchmark Price Extraction' },
+            description: {
+              it: 'Estraiamo i report di Price Competitiveness di Google Merchant Center identificando lo scostamento percentuale rispetto al prezzo mediano.',
+              en: 'We extract Google Price Competitiveness metrics calculating percentage variance against median market prices.'
+            }
+          },
+          {
+            step: 2,
+            title: { it: 'Correlazione Prezzo vs Tasso Conversione', en: 'Price vs Conversion Elasticity' },
+            description: {
+              it: 'Misuriamo la sensibilità del carrello alle variazioni di prezzo per identificare i prodotti dove un ritocco di 1€ sblocca volumi significativi.',
+              en: 'We quantify checkout sensitivity to price variances, identifying products where small adjustments unlock massive volume.'
+            }
+          },
+          {
+            step: 3,
+            title: { it: 'Regole di Bidding Dipendenti dal Prezzo', en: 'Price-Governed Bidding Rules' },
+            description: {
+              it: 'Impostiamo regole software che riducono automaticamente i bid sui prodotti non competitivi, concentrando la spesa dove il prezzo è vincente.',
+              en: 'We configure rules reducing bids on overpriced items while aggressively scaling SKUs where pricing holds competitive advantage.'
+            }
+          }
+        ],
+        whatYouGet: {
+          title: { it: 'Cosa Ricevi', en: 'Deliverables' },
+          items: {
+            it: [
+              'Mappa di competitività prezzo SKU per SKU con indicazione dello scostamento rispetto ai competitor.',
+              'Matrice di elasticità prezzo / conversione per identificare i margini di manovra sul catalogo.',
+              'Filtro automatico di esclusione o riduzione bid per prodotti strutturalmente fuori prezzo.'
+            ],
+            en: [
+              'SKU-by-SKU price competitiveness audit measuring divergence from SERP rivals.',
+              'Price elasticity matrix identifying high-leverage catalog pricing adjustments.',
+              'Automated bidding rules suppressing ad spend on structurally uncompetitive items.'
+            ]
+          }
+        },
+        proofData: {
+          metric: '±0.01 €',
+          label: {
+            it: 'sensibilità del benchmark Google Merchant Center sul prezzo mediano di mercato',
+            en: 'Google Merchant Center benchmark sensitivity tracking median market pricing'
+          },
+          sourceTimestamp: 'Censimento masterAnalyzer 13ª battuta, 11 Ottobre 2026'
+        },
+        whatWeDoNotPromise: {
+          it: [
+            'Non promettiamo che devi sempre fare la guerra del prezzo al ribasso: quando un prodotto ha un brand forte o un servizio superiore, difendiamo il prezzo spiegando il valore.',
+            'Sui prodotti a marchio esclusivo (senza GTIN identico concorrente), il benchmark dei comparatori non è disponibile.'
+          ],
+          en: [
+            'We do not advocate destructive price wars: when brand equity or service is superior, we defend premium pricing through value messaging.',
+            'For exclusive private-label items without competitor GTINs, direct marketplace benchmarks are unavailable.'
+          ]
+        },
+        faqs: [
+          {
+            question: {
+              it: 'Come fa Google a sapere i prezzi dei concorrenti?',
+              en: 'How does Google track competitor pricing?'
+            },
+            answer: {
+              it: 'Google aggrega i feed Shopping di tutti i merchant che vendono lo stesso codice GTIN/EAN e calcola in tempo reale il prezzo mediano d\'asta.',
+              en: 'Google aggregates Shopping feeds across all merchants offering identical GTIN/EAN barcodes, computing real-time median prices.'
+            }
+          },
+          {
+            question: {
+              it: 'Conviene abbassare il prezzo del prodotto o aumentare il budget ads?',
+              en: 'Is it better to lower product price or increase ad spend?'
+            },
+            answer: {
+              it: 'Se un prodotto è del 15% più caro della concorrenza, raddoppiare il budget ads aumenterà solo i click di utenti che poi acquisteranno dal rivale. Il nostro calcolo algebrico mostra quale mossa massimizza il profitto netto.',
+              en: 'If an item is 15% pricier than rivals, doubling spend merely buys clicks that convert on competitor stores. Our algebraic models show which move maximizes net cash.'
+            }
+          }
+        ],
+        relatedSpokes: ['audit-merchant-center-errori', 'prodotti-bestseller-invisibili', 'poas-profitto-sulla-spesa']
       }
     ]
   }

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import MetaTags from '../../components/MetaTags';
 import { FEATURE_THEMES } from '../../data/featuresData';
+import InteractiveAuditCalculator from '../../components/InteractiveAuditCalculator';
 import {
   Cpu,
   ShieldCheck,
@@ -151,6 +152,11 @@ export default function FeaturesHub() {
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* ── Interactive Pre-Audit Calculator ───────────────────────────── */}
+          <div className="mt-16">
+            <InteractiveAuditCalculator />
           </div>
 
           {/* ── Bottom Section: Protected Access Reminder ─────────────────── */}
