@@ -57,6 +57,11 @@ const CostruttoreSistema = lazy(() => import('./pages/solutions/CostruttoreSiste
 const Manifesto = lazy(() => import('./pages/manifesto/Manifesto'));
 const VideoDetail = lazy(() => import('./pages/manifesto/VideoDetail'));
 
+// Features & Capability pages lazy-loaded
+const FeaturesHub = lazy(() => import('./pages/features/FeaturesHub'));
+const ThroughPage = lazy(() => import('./pages/features/ThroughPage'));
+const LandingUspPage = lazy(() => import('./pages/features/LandingUspPage'));
+
 // Loading Fallback Component
 const PageLoader = () => (
   <div className="min-h-[50vh] flex items-center justify-center p-8">
@@ -328,6 +333,11 @@ function App() {
               {/* Manifesto & Video-Spot routes */}
               <Route path="/:lang/manifesto" element={<Manifesto />} />
               <Route path="/:lang/video/:videoId" element={<VideoDetail />} />
+
+              {/* Features & Capability Architecture routes */}
+              <Route path="/:lang/funzionalita" element={<FeaturesHub />} />
+              <Route path="/:lang/funzionalita/:themeId" element={<ThroughPage />} />
+              <Route path="/:lang/funzionalita/:themeId/:featureSlug" element={<LandingUspPage />} />
 
               {/* Catch all redirect */}
               <Route path="*" element={<Navigate to={`/${language}/${location.search}${location.hash}`} replace />} />

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
+import MetaTags from './MetaTags';
+import { FEATURE_THEMES } from '../data/featuresData';
 import {
   ShieldCheck,
   Lock,
@@ -10,7 +13,8 @@ import {
   AlertCircle,
   ArrowRight,
   TrendingUp,
-  Sparkles
+  Sparkles,
+  Cpu
 } from 'lucide-react';
 
 const generateUUIDv4 = () => {
@@ -24,6 +28,15 @@ const generateUUIDv4 = () => {
 export default function QualifiedDossierSection() {
   const { language } = useLanguage();
   const isIt = language === 'it';
+  const location = useLocation();
+
+  const searchParams = new URLSearchParams(location.search);
+  const themeParam = searchParams.get('tema');
+  const capParam = searchParams.get('cap');
+
+  const focusedTheme = themeParam ? FEATURE_THEMES[themeParam] : undefined;
+  const focusedSpoke = focusedTheme && capParam ? focusedTheme.spokes.find((s) => s.slug === capParam) : undefined;
+  const isStandalonePage = location.pathname.includes('/casi-e-audit') || location.pathname.includes('/dossier-riservato');
 
   const [formData, setFormData] = useState({
     name: '',
@@ -71,7 +84,9 @@ export default function QualifiedDossierSection() {
         'shop_url': formData.shop_url,
         'role': formData.role,
         'ad_spend': formData.ad_spend,
-        'nda_requested': formData.nda_requested ? 'true' : 'false'
+        'nda_requested': formData.nda_requested ? 'true' : 'false',
+        'tema': themeParam || '',
+        'cap': capParam || ''
       }).toString();
 
       const response = await fetch('/', {
@@ -91,7 +106,9 @@ export default function QualifiedDossierSection() {
         event_id: generateUUIDv4(),
         ad_spend_tier: formData.ad_spend,
         nda_requested: formData.nda_requested,
-        role: formData.role
+        role: formData.role,
+        tema: themeParam || null,
+        cap: capParam || null
       });
 
       setIsSubmitted(true);
@@ -108,7 +125,22 @@ export default function QualifiedDossierSection() {
   };
 
   return (
-    <section id="casi-audit-riservati" className="py-20 sm:py-28 bg-slate-950 text-white relative overflow-hidden border-t border-b border-slate-800">
+    <>
+      {isStandalonePage && (
+        <MetaTags
+          title={isIt ? 'Dossier di Audit Qualificato & Benchmark E-commerce | Internet Valore' : 'Qualified E-commerce Audit Dossier & Benchmark | Internet Valore'}
+          description={isIt
+            ? 'Richiedi l’accesso al dossier riservato di audit e benchmark e-commerce. Sessioni protette da NDA riservate ad investimenti pubblicitari a partire da 15.000€/mese.'
+            : 'Request access to the confidential e-commerce audit dossier and benchmark. Mutual NDA sessions reserved for advertising spend starting from €15,000/mo.'}
+          path="/casi-e-audit"
+          breadcrumbs={[
+            { name: 'Home', path: '/' },
+            { name: isIt ? 'Audit Riservato' : 'Confidential Audit', path: '/casi-e-audit' }
+          ]}
+        />
+      )}
+
+      <section id="casi-audit-riservati" className="py-20 sm:py-28 bg-slate-950 text-white relative overflow-hidden border-t border-b border-slate-800">
       {/* Background Decorative Glow */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -201,6 +233,26 @@ export default function QualifiedDossierSection() {
                 : 'Fill out the form to verify methodological fit with our outsourcing framework. We respond within 24 business hours to arrange a confidential session.'}
             </p>
           </div>
+
+          {/* Focused Module Contextual Banner */}
+          {focusedTheme && (
+            <div className="mb-6 p-4 rounded-2xl bg-indigo-950/70 border border-indigo-500/40 text-left flex items-start gap-3">
+              <Cpu className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+              <div>
+                <div className="text-[11px] font-mono uppercase tracking-wider text-indigo-300 font-bold">
+                  {isIt ? 'Focus Modulo Audit Selezionato' : 'Focused Audit Module Selected'}
+                </div>
+                <div className="text-sm font-bold text-white mt-0.5">
+                  {focusedSpoke ? focusedSpoke.h1[language] : focusedTheme.title[language]}
+                </div>
+                <p className="text-xs text-slate-300 mt-1">
+                  {isIt
+                    ? 'La scansione API in sola lettura e il dossier riservato approfondiranno prioritariamente le metriche di questo modulo.'
+                    : 'The read-only API inspection and confidential dossier will prioritize telemetry for this module.'}
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Success State */}
           <AnimatePresence>
@@ -404,5 +456,6 @@ export default function QualifiedDossierSection() {
 
       </div>
     </section>
+    </>
   );
 }

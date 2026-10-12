@@ -21,6 +21,11 @@ export default function Navbar() {
       isPrimary: true
     },
     {
+      name: language === 'it' ? 'Funzionalità masterAnalyzer' : 'masterAnalyzer Capabilities',
+      description: language === 'it' ? 'I cluster tecnologici e le capacità di audit deterministico.' : 'Technological clusters and deterministic audit capabilities.',
+      href: `/${language}/funzionalita`
+    },
+    {
       name: language === 'it' ? 'La Nostra AI (masterAnalyzer)' : 'Our AI (masterAnalyzer)',
       description: language === 'it' ? '1M+ di righe di codice proprietario, 482 tool LLM e 293 playbook.' : '1M+ lines of proprietary code, 482 LLM tools and 293 playbooks.',
       href: `/${language}/la-nostra-tecnologia-ai`

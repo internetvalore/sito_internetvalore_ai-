@@ -1085,4 +1085,205 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/video/v35" />
   </url>
 
+  <!-- ═══════════════════════════════════════════════════════════════════
+       ARCHITETTURA FUNZIONALITÀ & CAPACITÀ MASTERANALYZER
+       ═══════════════════════════════════════════════════════════════════ -->
+  <!-- Pillar Hub Level 1 -->
+  <url>
+    <loc>https://internetvalore.it/it/funzionalita</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/funzionalita</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita" />
+  </url>
+
+  <!-- Cluster T1: Dati Affidabili (Through Page Level 2) -->
+  <url>
+    <loc>https://internetvalore.it/it/funzionalita/dati-affidabili</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/dati-affidabili" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/dati-affidabili" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/funzionalita/dati-affidabili</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/dati-affidabili" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/dati-affidabili" />
+  </url>
+
+  <!-- Spoke T1-1: Tracciamento Rotto & Allarmi -->
+  <url>
+    <loc>https://internetvalore.it/it/funzionalita/dati-affidabili/tracciamento-rotto-allarmi</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/dati-affidabili/tracciamento-rotto-allarmi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/dati-affidabili/tracciamento-rotto-allarmi" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/funzionalita/dati-affidabili/tracciamento-rotto-allarmi</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/dati-affidabili/tracciamento-rotto-allarmi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/dati-affidabili/tracciamento-rotto-allarmi" />
+  </url>
+
+  <!-- Spoke T1-2: Ordini Non Tracciati GA4 -->
+  <url>
+    <loc>https://internetvalore.it/it/funzionalita/dati-affidabili/ordini-non-tracciati-analytics</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/dati-affidabili/ordini-non-tracciati-analytics" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/dati-affidabili/ordini-non-tracciati-analytics" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/funzionalita/dati-affidabili/ordini-non-tracciati-analytics</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/dati-affidabili/ordini-non-tracciati-analytics" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/dati-affidabili/ordini-non-tracciati-analytics" />
+  </url>
+
+  <!-- Spoke T1-3: Discrepanza Ads vs Analytics -->
+  <url>
+    <loc>https://internetvalore.it/it/funzionalita/dati-affidabili/discrepanza-google-ads-vs-analytics</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/dati-affidabili/discrepanza-google-ads-vs-analytics" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/dati-affidabili/discrepanza-google-ads-vs-analytics" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/funzionalita/dati-affidabili/discrepanza-google-ads-vs-analytics</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/dati-affidabili/discrepanza-google-ads-vs-analytics" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/dati-affidabili/discrepanza-google-ads-vs-analytics" />
+  </url>
+
+  <!-- Spoke T1-4: Conversioni Gonfiate Difendibili -->
+  <url>
+    <loc>https://internetvalore.it/it/funzionalita/dati-affidabili/conversioni-gonfiate-difendibili</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/dati-affidabili/conversioni-gonfiate-difendibili" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/dati-affidabili/conversioni-gonfiate-difendibili" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/funzionalita/dati-affidabili/conversioni-gonfiate-difendibili</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/dati-affidabili/conversioni-gonfiate-difendibili" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/dati-affidabili/conversioni-gonfiate-difendibili" />
+  </url>
+
+  <!-- Cluster T2: Profitto Reale (Through Page Level 2) -->
+  <url>
+    <loc>https://internetvalore.it/it/funzionalita/profitto-reale</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/profitto-reale" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/profitto-reale" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/funzionalita/profitto-reale</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/profitto-reale" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/profitto-reale" />
+  </url>
+
+  <!-- Spoke T2-1: POAS Profitto sulla Spesa -->
+  <url>
+    <loc>https://internetvalore.it/it/funzionalita/profitto-reale/poas-profitto-sulla-spesa</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/profitto-reale/poas-profitto-sulla-spesa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/profitto-reale/poas-profitto-sulla-spesa" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/funzionalita/profitto-reale/poas-profitto-sulla-spesa</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/profitto-reale/poas-profitto-sulla-spesa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/profitto-reale/poas-profitto-sulla-spesa" />
+  </url>
+
+  <!-- Spoke T2-2: Campagne Brand Cannibalizzazione -->
+  <url>
+    <loc>https://internetvalore.it/it/funzionalita/profitto-reale/campagne-brand-cannibalizzazione</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/profitto-reale/campagne-brand-cannibalizzazione" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/profitto-reale/campagne-brand-cannibalizzazione" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/funzionalita/profitto-reale/campagne-brand-cannibalizzazione</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/profitto-reale/campagne-brand-cannibalizzazione" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/profitto-reale/campagne-brand-cannibalizzazione" />
+  </url>
+
+  <!-- Spoke T2-3: Audit Google Ads Indipendente -->
+  <url>
+    <loc>https://internetvalore.it/it/funzionalita/profitto-reale/audit-google-ads-indipendente</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/profitto-reale/audit-google-ads-indipendente" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/profitto-reale/audit-google-ads-indipendente" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/funzionalita/profitto-reale/audit-google-ads-indipendente</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/profitto-reale/audit-google-ads-indipendente" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/profitto-reale/audit-google-ads-indipendente" />
+  </url>
+
+  <!-- Spoke T2-4: Previsione Budget Fine Mese -->
+  <url>
+    <loc>https://internetvalore.it/it/funzionalita/profitto-reale/previsione-budget-fine-mese</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/profitto-reale/previsione-budget-fine-mese" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/profitto-reale/previsione-budget-fine-mese" />
+  </url>
+  <url>
+    <loc>https://internetvalore.it/en/funzionalita/profitto-reale/previsione-budget-fine-mese</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://internetvalore.it/it/funzionalita/profitto-reale/previsione-budget-fine-mese" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetvalore.it/en/funzionalita/profitto-reale/previsione-budget-fine-mese" />
+  </url>
+
 </urlset>
