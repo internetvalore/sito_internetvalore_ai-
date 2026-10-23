@@ -1,6 +1,5 @@
 import React from 'react';
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 export default function Footer() {
   const socialLinks = [
@@ -22,47 +21,49 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-50">
-      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-center mb-4">
+    <footer className="footer-premium">
+      <div className="shell py-12">
+        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <a
             href="https://www.google.com/partners/agency?id=6948869441"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 rounded-full border border-line bg-white px-4 py-2 transition-colors duration-220 hover:bg-paper"
+            title="Google Partner Certificato"
           >
             <img
               src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg"
               alt="Badge Ufficiale Google Partner Certificato - Internet Valore S.r.l."
-              className="h-16"
+              className="h-8 w-auto"
             />
+            <span className="text-[0.8rem] font-semibold text-ink-600">Google Partner Certificato</span>
           </a>
-        </div>
-        <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
-          <div className="text-gray-500">
+
+          <div className="text-[0.875rem] text-ink-500">
             P.IVA 06767350967
           </div>
-          <div className="flex space-x-6">
+
+          <div className="flex items-center gap-5">
             {socialLinks.map((social) => (
-              <motion.a
+              <a
                 key={social.name}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-500"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                className="text-ink-400 hover:text-ink-900 transition-colors duration-220"
                 aria-label={social.name}
               >
-                <social.icon className="h-6 w-6" />
-              </motion.a>
+                <social.icon className="h-5 w-5" />
+              </a>
             ))}
           </div>
-          <div className="flex space-x-6">
+
+          <div className="flex items-center gap-5">
             <a
               href="https://www.iubenda.com/privacy-policy/77132692"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-700"
+              className="text-[0.875rem] text-ink-500 hover:text-ink-900 transition-colors duration-220"
             >
               Privacy Policy
             </a>
@@ -70,7 +71,7 @@ export default function Footer() {
               href="https://www.iubenda.com/privacy-policy/77132692/cookie-policy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-700"
+              className="text-[0.875rem] text-ink-500 hover:text-ink-900 transition-colors duration-220"
             >
               Cookie Policy
             </a>

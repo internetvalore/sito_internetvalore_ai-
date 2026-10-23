@@ -91,14 +91,14 @@ export default function TestimonialsSlider() {
   };
 
   return (
-    <div className="bg-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:text-center mb-10">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Testimonials</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+    <div className="section">
+      <div className="shell">
+        <div className="text-center mb-12 rise">
+          <h2 className="eyebrow">Testimonials</h2>
+          <p className="title-xl mt-2">
             {language === 'it' ? 'Cosa dicono i nostri clienti' : 'What our clients are saying'}
           </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+          <p className="lede measure mx-auto mt-4">
             {language === 'it' 
               ? 'Ecco alcune delle recensioni che i nostri clienti hanno condiviso sulla loro esperienza con noi.' 
               : 'These are some of the reviews our clients have shared about their experience working with us.'}
@@ -110,29 +110,25 @@ export default function TestimonialsSlider() {
           <button 
             onClick={prevSlide} 
             disabled={currentIndex === 0}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md ${
-              currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white transition-colors duration-220 ${
+              currentIndex === 0 ? 'opacity-40 cursor-not-allowed' : 'hover:bg-paper'
             }`}
             aria-label="Previous testimonial"
           >
-            <ChevronLeft className="h-6 w-6 text-blue-600" />
+            <ChevronLeft className="h-4 w-4 text-ink-600" />
           </button>
 
           {/* Slider container */}
           <div 
             ref={sliderRef}
-            className="overflow-hidden mx-10"
+            className="overflow-hidden mx-12"
           >
             <motion.div 
               className="flex"
               animate={{
                 x: -currentIndex * itemWidth
               }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 30
-              }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               style={{ width: `${featuredReviews.length * itemWidth}px` }}
             >
               {featuredReviews.map((review, index) => (
@@ -147,30 +143,30 @@ export default function TestimonialsSlider() {
                     rel="noopener noreferrer"
                     className="block h-full"
                   >
-                    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
-                      <div className="flex items-center mb-4">
+                    <div className="card card-hover h-full flex flex-col">
+                      <div className="flex items-start gap-3 mb-4">
                         <div className="flex-shrink-0">
-                          <div className="flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <div className="icon-tile">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
                           </div>
                         </div>
-                        <div className="ml-4">
-                          <h3 className="text-lg font-medium text-gray-900">{review.author}</h3>
+                        <div className="min-w-0">
+                          <h3 className="text-[1rem] font-semibold text-ink-900 leading-snug">{review.author}</h3>
                           {review.company && (
-                            <p className="text-sm text-gray-500">{review.company}</p>
+                            <p className="text-[0.85rem] text-ink-600 mt-0.5">{review.company}</p>
                           )}
-                          <div className="flex items-center mt-1">
+                          <div className="flex items-center gap-0.5 mt-1.5">
                             {[...Array(5)].map((_, i) => (
-                              <svg key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                              <svg key={i} className="h-3.5 w-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                               </svg>
                             ))}
                           </div>
                         </div>
                       </div>
-                      <p className="text-gray-500 flex-grow">"{review.body}"</p>
+                      <p className="text-[0.95rem] text-ink-600 leading-relaxed flex-grow">"{review.body}"</p>
                     </div>
                   </a>
                 </div>
@@ -182,23 +178,23 @@ export default function TestimonialsSlider() {
           <button 
             onClick={nextSlide} 
             disabled={currentIndex >= maxIndex}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md ${
-              currentIndex >= maxIndex ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
+            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white transition-colors duration-220 ${
+              currentIndex >= maxIndex ? 'opacity-40 cursor-not-allowed' : 'hover:bg-paper'
             }`}
             aria-label="Next testimonial"
           >
-            <ChevronRight className="h-6 w-6 text-blue-600" />
+            <ChevronRight className="h-4 w-4 text-ink-600" />
           </button>
         </div>
 
         {/* View all testimonials link */}
-        <div className="mt-8 text-center">
+        <div className="mt-10 text-center">
           <a 
             href={`/${language}/testimonials`}
-            className="inline-flex items-center text-blue-600 hover:text-blue-800"
+            className="btn btn-ghost btn-sm inline-flex items-center"
           >
             {language === 'it' ? 'Vedi tutte le recensioni' : 'View all testimonials'}
-            <ChevronRight className="h-4 w-4 ml-1" />
+            <ChevronRight className="h-4 w-4" />
           </a>
         </div>
       </div>

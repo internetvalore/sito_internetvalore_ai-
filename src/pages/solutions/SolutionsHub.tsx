@@ -11,15 +11,15 @@ import {
 } from 'lucide-react';
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+  hidden: { opacity: 0, y: 14 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } }
 };
 
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1 }
+    transition: { staggerChildren: 0.06 }
   }
 };
 
@@ -194,7 +194,7 @@ export default function SolutionsHub() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen pt-10 pb-20">
+    <div className="min-h-screen">
       {isIt ? (
         <MetaTags
           title="Mappa dei Profili e delle Soluzioni | Internet Valore"
@@ -222,41 +222,42 @@ export default function SolutionsHub() {
       )}
 
       {/* ─── HERO SECTION ────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8 pb-16">
+      <section className="section shell border-b border-line text-center">
         <motion.span 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="text-xs font-semibold tracking-wider text-blue-600 uppercase bg-blue-100 px-3 py-1 rounded-full"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="eyebrow inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5"
         >
           {content.hero.eyebrow}
         </motion.span>
         <motion.h1 
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1, duration: 0.5 }}
-          className="mt-4 text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight"
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          className="title-xl hero-title mt-5 max-w-4xl mx-auto"
         >
           {content.hero.title}
         </motion.h1>
         <motion.p 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="mt-4 max-w-3xl mx-auto text-xl text-gray-500"
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          className="lede measure mx-auto mt-5"
         >
           {content.hero.subtitle}
         </motion.p>
-      </div>
+      </section>
 
       {/* ─── MAPPA DEI PROFILI GRID ───────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="section shell border-t border-line">
         <h2 className="sr-only">{isIt ? 'Griglia dei Profili' : 'Profile Grid'}</h2>
         <motion.div 
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-40px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {profiles.map((profile, i) => {
             const Icon = profile.icon;
@@ -264,20 +265,19 @@ export default function SolutionsHub() {
               <motion.div
                 key={profile.id}
                 variants={fadeInUp}
-                whileHover={{ y: -6, scale: 1.02 }}
-                className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300"
+                className="card card-quiet card-hover flex flex-col h-full"
               >
-                <div className="p-8">
-                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${profile.color} text-white shadow-md mb-6`}>
-                    <Icon className="h-6 w-6" />
+                <div className="flex flex-col flex-1">
+                  <div className="icon-tile mb-5">
+                    <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{profile.title}</h3>
-                  <p className="text-gray-500 leading-relaxed text-sm">{profile.desc}</p>
+                  <h3 className="title-lg mb-2">{profile.title}</h3>
+                  <p className="text-[0.95rem] text-ink-600 leading-relaxed">{profile.desc}</p>
                 </div>
-                <div className="px-8 pb-8 pt-2">
+                <div className="mt-5 pt-5 border-t border-line">
                   <Link
                     to={profile.href}
-                    className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors"
+                    className="btn btn-sm btn-ghost text-accent-600 w-full"
                   >
                     {isIt ? 'Esplora Pain-Soluzione' : 'Explore Pain-Solution'}
                     <span className="ml-1" aria-hidden="true">→</span>
@@ -287,89 +287,89 @@ export default function SolutionsHub() {
             );
           })}
         </motion.div>
-      </div>
+      </section>
 
       {/* ─── MINIMO COMUNE SECTION ────────────────────────────────────────── */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+      <section className="section shell section-quiet border-t border-line">
         <motion.div 
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-60px' }}
+          viewport={{ once: true }}
           variants={fadeInUp}
-          className="bg-gradient-to-br from-gray-900 to-blue-950 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden"
+          className="card rounded-[24px] border border-line relative overflow-hidden"
         >
-          <div className="absolute right-0 top-0 opacity-10 pointer-events-none transform translate-x-24 -translate-y-24">
-            <Cpu className="h-96 w-96 text-white" />
+          <div className="absolute right-6 top-6 opacity-[0.06] pointer-events-none">
+            <Cpu className="h-24 w-24 text-ink-700" />
           </div>
           
-          <h2 className="text-3xl font-extrabold tracking-tight mb-8 text-center sm:text-left">
+          <h2 className="title-lg mb-8 text-center sm:text-left text-ink-900">
             {content.minimoComune.title}
           </h2>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {content.minimoComune.rules.map((rule, idx) => {
               const RuleIcon = rule.icon;
               return (
-                <div key={idx} className="flex flex-col sm:flex-row items-start space-y-3 sm:space-y-0 sm:space-x-5">
-                  <div className="flex-shrink-0 p-3 bg-white/10 rounded-xl text-blue-400">
-                    <RuleIcon className="h-6 w-6" />
+                <div key={idx} className="flex flex-col sm:flex-row items-start gap-3 sm:gap-5">
+                  <div className="icon-tile flex-shrink-0 border border-line text-accent-600">
+                    <RuleIcon className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white">{rule.title}</h3>
-                    <p className="mt-1 text-gray-300 text-sm leading-relaxed">{rule.desc}</p>
+                    <h3 className="text-[1.05rem] font-semibold text-ink-900">{rule.title}</h3>
+                    <p className="mt-1 text-[0.95rem] text-ink-600 leading-relaxed max-w-[62ch]">{rule.desc}</p>
                   </div>
                 </div>
               );
             })}
           </div>
         </motion.div>
-      </div>
+      </section>
 
-      {/* ─── REGOLE D'ONESTÀ SECTION ──────────────────────────────────────── */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-gray-100 shadow-xl">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-8 text-center">
+      {/* ─── REGOLE D'ONESTÀ SECTION ──────────────────────────────────────────── */}
+      <section className="section shell section-quiet border-t border-line">
+        <div className="card rounded-[24px]">
+          <h2 className="title-lg mb-8 text-center">
             {content.rulesOfHonesty.title}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {content.rulesOfHonesty.rules.map((rule, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-gray-50 border border-gray-100 flex flex-col justify-start">
-                <div className="h-2 w-12 bg-blue-600 rounded-full mb-4"></div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{rule.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{rule.desc}</p>
+              <div key={idx} className="card card-quiet rounded-[14px] flex flex-col">
+                <div className="h-1.5 w-10 rounded-full bg-line-strong mb-4"></div>
+                <h3 className="text-[1.05rem] font-semibold mb-2">{rule.title}</h3>
+                <p className="text-[0.95rem] text-ink-600 leading-relaxed">{rule.desc}</p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* ─── CTA FOOTER ───────────────────────────────────────────────────── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-20">
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white shadow-lg">
-          <h3 className="text-xl sm:text-2xl font-bold mb-4">
+      <section className="section shell section-quiet border-t border-line text-center">
+        <div className="card rounded-[24px]">
+          <h3 className="title-lg mb-4">
             {isIt ? 'Hai riscontrato uno di questi problemi nel tuo business?' : 'Are you facing these issues in your business?'}
           </h3>
-          <p className="text-blue-100 mb-6 text-sm max-w-xl mx-auto">
+          <p className="lede mb-6 max-w-xl mx-auto">
             {isIt 
               ? 'Mettici alla prova. Chiama il Numero Verde 800 940 213 attivo 7x24: risponde Leonardo, assistente AI digitale che raccoglie i tuoi dati per farti richiamare da un nostro consulente umano.'
               : 'Put us to the test. Call Toll-Free 800 940 213 (active 24/7): answered by Leonardo, digital AI assistant collecting your info for a human consultant callback.'}
           </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3">
             <Link
               to={`/${language}/contact`}
-              className="bg-white text-blue-600 hover:bg-gray-100 font-bold px-8 py-3 rounded-xl shadow-md transition-all text-sm w-full sm:w-auto"
+              className="btn btn-primary w-full sm:w-auto"
             >
               {isIt ? 'Contatta Leonardo per un Audit' : 'Contact Leonardo for an Audit'}
             </Link>
             <a
               href="tel:800940213"
-              className="border border-white hover:bg-white/10 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm w-full sm:w-auto flex items-center justify-center"
+              className="btn btn-ghost w-full sm:w-auto"
             >
               {isIt ? 'Chiama 800 940 213' : 'Call 800 940 213'}
             </a>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

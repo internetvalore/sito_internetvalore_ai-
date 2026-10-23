@@ -101,7 +101,7 @@ export default function InstantWebsites() {
           { name: language === 'it' ? 'Siti Web Istantanei' : 'Instant Websites', path: '/instant-websites' }
         ]}
       />
-      <div className="bg-gradient-to-b from-white to-gray-50">
+      <div className="bg-white">
         <HeroSection
           title={content.title}
           subtitle={content.subtitle}
@@ -111,40 +111,38 @@ export default function InstantWebsites() {
 
         {/* Timeline */}
         <motion.div
-          className="mt-20 relative"
+          className="section shell relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-blue-400 to-blue-600" />
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-line" />
 
-          <div className="space-y-16">
+          <div className="space-y-8">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
                 className={`relative flex items-center ${index % 2 === 0 ? 'md:justify-end' : ''}`}
-                initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.06 }}
               >
-                <div className={`flex items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                <div className={`flex items-center gap-4 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-6' : 'md:pl-6'}`}>
                   <motion.div
-                    whileHover={{ scale: 1.1, rotate: 360 }}
-                    transition={{ duration: 0.8 }}
-                    className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg"
+                    className="icon-tile rounded-full flex-shrink-0"
                   >
-                    <step.icon className="w-6 h-6 text-white" />
+                    <step.icon className="h-5 w-5" />
                   </motion.div>
-                  <div className={`${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'} bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex-grow`}>
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
-                      <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">
+                  <div className={`${index % 2 === 0 ? 'md:mr-4' : 'md:ml-4'} card card-hover flex-grow`}>
+                    <div className="flex items-center justify-between mb-2 gap-3">
+                      <h3 className="text-lg font-semibold text-ink-900">{step.title}</h3>
+                      <span className="chip">
                         Day {step.day}
                       </span>
                     </div>
-                    <p className="text-gray-600">{step.description}</p>
+                    <p className="text-[0.95rem] text-ink-600 leading-relaxed">{step.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -154,32 +152,29 @@ export default function InstantWebsites() {
 
         {/* Features */}
         <motion.div
-          className="mt-20"
-          initial={{ opacity: 0, y: 50 }}
+          className="section shell"
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
-                whileHover={{ y: -10 }}
-                initial={{ opacity: 0, y: 20 }}
+                className="card card-hover"
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.06 }}
               >
                 <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.8 }}
-                  className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-6"
+                  className="icon-tile mb-4"
                 >
-                  <feature.icon className="w-6 h-6 text-white" />
+                  <feature.icon className="h-5 w-5" />
                 </motion.div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-ink-900 mb-3">{feature.title}</h3>
+                <p className="text-[0.95rem] text-ink-600 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -187,27 +182,27 @@ export default function InstantWebsites() {
 
         {/* CTA */}
         <motion.div
-          className="mt-20"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          className="section shell"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl p-8 md:p-12 text-white text-center">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+          <div className="card text-center">
+            <h3 className="title-lg mb-4">
               {language === 'it' ? 'Pronto a iniziare?' : 'Ready to start?'}
             </h3>
-            <p className="text-lg md:text-xl mb-8 opacity-90">
+            <p className="lede measure mx-auto mb-8">
               {language === 'it'
                 ? 'Contattaci oggi per avere il tuo sito professionale in una settimana'
                 : 'Contact us today to get your professional website in a week'}
             </p>
             <Link
               to={`/${language}/contact`}
-              className="inline-flex items-center px-8 py-3 border-2 border-white text-lg font-medium rounded-full text-white hover:bg-white hover:text-blue-600 transition-colors duration-300"
+              className="btn btn-primary"
             >
               {content.cta.button}
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </motion.div>

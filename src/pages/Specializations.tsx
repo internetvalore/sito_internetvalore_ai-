@@ -11,7 +11,7 @@ const staggerContainer = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
+      staggerChildren: 0.06
     }
   }
 };
@@ -176,7 +176,7 @@ export default function Specializations() {
         description={meta.description}
         path="/specializations"
       />
-      <div className="bg-gradient-to-b from-white to-gray-50">
+      <div className="bg-white">
         <HeroSection
           title={content.title}
           subtitle={content.subtitle}
@@ -184,30 +184,27 @@ export default function Specializations() {
           imageSrc="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
         />
 
-        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div className="shell">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="mt-20"
+            className="section"
           >
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
               <motion.div
-                className="group"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                className="group card card-hover"
+                variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } }}
               >
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform">
+                <div className="p-0">
                   <div className="flex items-center">
                     <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.8 }}
-                      className="p-4 bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl shadow-lg"
+                      className="icon-tile"
                     >
-                      <Target className="h-8 w-8 text-white" />
+                      <Target className="h-5 w-5" />
                     </motion.div>
-                    <h3 className="ml-4 text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                    <h3 className="ml-4 text-lg font-semibold text-ink-900 group-hover:text-accent-600 transition-colors duration-200">
                       {sections.googleAds.title}
                     </h3>
                   </div>
@@ -215,14 +212,13 @@ export default function Specializations() {
                     {googleAdsFeatures.map((feature, index) => (
                       <motion.div
                         key={index}
-                        className="bg-white p-6 rounded-xl border border-gray-100 hover:border-blue-200 transition-colors duration-300"
-                        whileHover={{ y: -5 }}
+                        className="card card-quiet card-hover"
                       >
-                        <h4 className="text-lg font-medium text-gray-900 flex items-center">
-                          <ArrowRight className="h-5 w-5 text-blue-600 mr-2" />
+                        <h4 className="text-base font-semibold text-ink-900 flex items-center gap-2">
+                          <ArrowRight className="h-4 w-4 text-accent-600 flex-shrink-0" />
                           {feature.title}
                         </h4>
-                        <p className="mt-2 text-gray-500">
+                        <p className="mt-2 text-[0.95rem] text-ink-600 leading-relaxed">
                           {feature.description}
                         </p>
                       </motion.div>
@@ -232,20 +228,17 @@ export default function Specializations() {
               </motion.div>
 
               <motion.div
-                className="group"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                className="group card card-hover"
+                variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } }}
               >
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="p-0">
                   <div className="flex items-center">
                     <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.8 }}
-                      className="p-4 bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl shadow-lg"
+                      className="icon-tile"
                     >
-                      <Facebook className="h-8 w-8 text-white" />
+                      <Facebook className="h-5 w-5" />
                     </motion.div>
-                    <h3 className="ml-4 text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                    <h3 className="ml-4 text-lg font-semibold text-ink-900 group-hover:text-accent-600 transition-colors duration-200">
                       {sections.facebookAds.title}
                     </h3>
                   </div>
@@ -253,14 +246,13 @@ export default function Specializations() {
                     {facebookAdsFeatures.map((feature, index) => (
                       <motion.div
                         key={index}
-                        className="bg-white p-6 rounded-xl border border-gray-100 hover:border-blue-200 transition-colors duration-300"
-                        whileHover={{ y: -5 }}
+                        className="card card-quiet card-hover"
                       >
-                        <h4 className="text-lg font-medium text-gray-900 flex items-center">
-                          <ArrowRight className="h-5 w-5 text-blue-600 mr-2" />
+                        <h4 className="text-base font-semibold text-ink-900 flex items-center gap-2">
+                          <ArrowRight className="h-4 w-4 text-accent-600 flex-shrink-0" />
                           {feature.title}
                         </h4>
-                        <p className="mt-2 text-gray-500">
+                        <p className="mt-2 text-[0.95rem] text-ink-600 leading-relaxed">
                           {feature.description}
                         </p>
                       </motion.div>
@@ -270,40 +262,36 @@ export default function Specializations() {
               </motion.div>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
+            <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
               <motion.div
-                className="group"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                className="group card card-hover"
+                variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } }}
               >
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="p-0">
                   <div className="flex items-center">
                     <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.8 }}
-                      className="p-4 bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl shadow-lg"
+                      className="icon-tile"
                     >
-                      <Search className="h-8 w-8 text-white" />
+                      <Search className="h-5 w-5" />
                     </motion.div>
-                    <h3 className="ml-4 text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                    <h3 className="ml-4 text-lg font-semibold text-ink-900 group-hover:text-accent-600 transition-colors duration-200">
                       {sections.seo.title}
                     </h3>
                   </div>
                   <div className="mt-6">
-                    <p className="text-gray-500 mb-4">
+                    <p className="text-[0.95rem] text-ink-600 leading-relaxed mb-4">
                       {sections.seo.description}
                     </p>
                     <div className="space-y-4">
                       {seoFeatures.map((feature, index) => (
                         <motion.div
                           key={index}
-                          className="flex items-start bg-white p-4 rounded-xl border border-gray-100 hover:border-blue-200 transition-colors duration-300"
-                          whileHover={{ y: -5 }}
+                          className="flex items-start card card-quiet card-hover"
                         >
-                          <ArrowRight className="h-5 w-5 text-blue-600 mr-2 mt-0.5" />
+                          <ArrowRight className="h-4 w-4 text-accent-600 flex-shrink-0 mt-0.5" />
                           <div>
-                            <h4 className="font-medium text-gray-900">{feature.title}</h4>
-                            <p className="mt-1 text-sm text-gray-500">{feature.description}</p>
+                            <h4 className="text-base font-semibold text-ink-900">{feature.title}</h4>
+                            <p className="mt-1 text-[0.9rem] text-ink-600 leading-relaxed">{feature.description}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -313,38 +301,34 @@ export default function Specializations() {
               </motion.div>
 
               <motion.div
-                className="group"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                className="group card card-hover"
+                variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } }}
               >
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="p-0">
                   <div className="flex items-center">
                     <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.8 }}
-                      className="p-4 bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl shadow-lg"
+                      className="icon-tile"
                     >
-                      <BarChart2 className="h-8 w-8 text-white" />
+                      <BarChart2 className="h-5 w-5" />
                     </motion.div>
-                    <h3 className="ml-4 text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                    <h3 className="ml-4 text-lg font-semibold text-ink-900 group-hover:text-accent-600 transition-colors duration-200">
                       {sections.analytics.title}
                     </h3>
                   </div>
                   <div className="mt-6">
-                    <p className="text-gray-500 mb-4">
+                    <p className="text-[0.95rem] text-ink-600 leading-relaxed mb-4">
                       {sections.analytics.description}
                     </p>
                     <div className="space-y-4">
                       {analyticsFeatures.map((feature, index) => (
                         <motion.div
                           key={index}
-                          className="flex items-start bg-white p-4 rounded-xl border border-gray-100 hover:border-blue-200 transition-colors duration-300"
-                          whileHover={{ y: -5 }}
+                          className="flex items-start card card-quiet card-hover"
                         >
-                          <ArrowRight className="h-5 w-5 text-blue-600 mr-2 mt-0.5" />
+                          <ArrowRight className="h-4 w-4 text-accent-600 flex-shrink-0 mt-0.5" />
                           <div>
-                            <h4 className="font-medium text-gray-900">{feature.title}</h4>
-                            <p className="mt-1 text-sm text-gray-500">{feature.description}</p>
+                            <h4 className="text-base font-semibold text-ink-900">{feature.title}</h4>
+                            <p className="mt-1 text-[0.9rem] text-ink-600 leading-relaxed">{feature.description}</p>
                           </div>
                         </motion.div>
                       ))}

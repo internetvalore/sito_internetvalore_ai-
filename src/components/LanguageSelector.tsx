@@ -1,48 +1,50 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { motion } from 'framer-motion';
 
 export default function LanguageSelector() {
   const { language, setLanguage } = useLanguage();
 
+  const buttonClass = (active: boolean) =>
+    `flex items-center justify-center w-7 h-7 rounded-full overflow-hidden transition-all duration-220 border ${
+      active
+        ? 'border-[rgba(29,29,31,0.14)] bg-white shadow-sm'
+        : 'border-transparent opacity-60 hover:opacity-100 bg-transparent'
+    }`;
+
   return (
-    <div className="flex space-x-2">
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
+    <div className="flex items-center gap-1.5" role="group" aria-label="Seleziona lingua / Select language">
+      <button
+        type="button"
         onClick={() => setLanguage('it')}
-        className={`flex items-center justify-center w-8 h-8 rounded-full overflow-hidden ${
-          language === 'it' ? 'ring-2 ring-blue-500' : 'opacity-70 hover:opacity-100'
-        }`}
-        aria-label="Italiano"
+        className={buttonClass(language === 'it')}
+        aria-label="Italiano - Seleziona lingua italiano"
+        aria-pressed={language === 'it'}
       >
         <img
           src="https://flagcdn.com/w40/it.png"
           srcSet="https://flagcdn.com/w80/it.png 2x"
-          width="32"
-          height="32"
+          width="28"
+          height="28"
           alt="Bandiera Italiana - Seleziona lingua Italiano"
-          className="object-cover"
+          className="object-cover rounded-full"
         />
-      </motion.button>
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
+      </button>
+      <button
+        type="button"
         onClick={() => setLanguage('en')}
-        className={`flex items-center justify-center w-8 h-8 rounded-full overflow-hidden ${
-          language === 'en' ? 'ring-2 ring-blue-500' : 'opacity-70 hover:opacity-100'
-        }`}
-        aria-label="English"
+        className={buttonClass(language === 'en')}
+        aria-label="English - Select language English"
+        aria-pressed={language === 'en'}
       >
         <img
           src="https://flagcdn.com/w40/gb.png"
           srcSet="https://flagcdn.com/w80/gb.png 2x"
-          width="32"
-          height="32"
-          alt="British Flag - Select English language"
-          className="object-cover"
+          width="28"
+          height="28"
+          alt="Bandiera Britannica - Seleziona lingua Inglese / British flag - Select English"
+          className="object-cover rounded-full"
         />
-      </motion.button>
+      </button>
     </div>
   );
 }

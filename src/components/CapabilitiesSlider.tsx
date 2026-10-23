@@ -137,37 +137,37 @@ export default function CapabilitiesSlider() {
     return (
       <div 
         key={cardKey} 
-        className="perspective-1000 w-[280px] sm:w-[350px] h-[150px] flex-shrink-0 cursor-pointer"
+        className="relative w-[280px] sm:w-[350px] h-[150px] flex-shrink-0 cursor-pointer"
         onClick={() => handleCardClick(cardKey)}
       >
         <div 
-          className={`relative w-full h-full duration-500 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}
+          className="relative w-full h-full"
         >
           {/* Front Side */}
-          <div className="absolute inset-0 backface-hidden bg-white/[0.02] border border-white/5 hover:border-indigo-500/30 rounded-2xl p-5 flex items-center justify-between transition-colors shadow-lg">
+          <div className={`card card-hover absolute inset-0 flex items-center justify-between p-5 border border-line transition-opacity duration-220 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}>
             <div className="flex items-center gap-3">
-              <Sparkles className="w-5 h-5 text-indigo-400 flex-shrink-0" />
-              <span className="font-extrabold text-sm sm:text-lg text-white tracking-tight whitespace-normal">{item}</span>
+              <Sparkles className="w-4 h-4 text-accent-600 flex-shrink-0" />
+              <span className="text-[0.9375rem] sm:text-[1rem] font-semibold text-ink-900 tracking-[-0.018em] whitespace-normal">{item}</span>
             </div>
-            <Info className="w-4 h-4 text-slate-500 flex-shrink-0" />
+            <Info className="w-4 h-4 text-ink-500 flex-shrink-0" />
           </div>
 
           {/* Back Side (Info & Benefit) */}
-          <div className="absolute inset-0 backface-hidden rotate-y-180 bg-indigo-950/95 border border-indigo-500/40 rounded-2xl p-4 flex flex-col justify-between text-left shadow-2xl">
+          <div className={`card card-quiet card-hover absolute inset-0 z-10 flex flex-col justify-between p-4 text-left border border-line transition-opacity duration-220 ${isFlipped ? 'opacity-100' : 'opacity-0'}`}>
             <div>
-              <p className="text-[11px] font-bold text-indigo-300 uppercase tracking-widest mb-1">
+              <p className="text-[0.7rem] font-semibold text-accent-600 uppercase tracking-[0.11em] mb-1">
                 {isIt ? 'Cosa Fa' : 'What it Does'}
               </p>
-              <p className="text-xs text-slate-200 leading-snug line-clamp-2">
+              <p className="text-[0.8125rem] text-ink-600 leading-relaxed line-clamp-2">
                 {details.desc}
               </p>
             </div>
-            <div className="border-t border-indigo-500/20 pt-2">
-              <p className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest flex items-center gap-1 mb-0.5">
-                <Check className="w-3 h-3" />
+            <div className="border-t border-line pt-2">
+              <p className="text-[0.7rem] font-semibold text-ink-500 uppercase tracking-[0.11em] flex items-center gap-1.5 mb-1">
+                <Check className="w-3 h-3 flex-shrink-0" />
                 {isIt ? 'Beneficio Reale' : 'Real Benefit'}
               </p>
-              <p className="text-xs text-slate-300 leading-snug line-clamp-1">
+              <p className="text-[0.8125rem] text-ink-600 leading-relaxed line-clamp-1">
                 {details.benefit}
               </p>
             </div>
@@ -187,20 +187,20 @@ export default function CapabilitiesSlider() {
   const marquee3 = [...row3, ...row3];
 
   return (
-    <section className="bg-slate-950 py-20 border-y border-white/5 relative overflow-hidden">
+    <section className="section relative overflow-hidden border-y border-line">
       {/* Decorative glows */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 rounded-full bg-ink-900/[0.03] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-72 h-72 rounded-full bg-ink-900/[0.03] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-950/40 text-indigo-300 text-xs mb-4">
-          <Cpu className="w-3.5 h-3.5 text-indigo-400" />
+      <div className="shell relative z-10 text-center mb-12 rise">
+        <div className="chip mx-auto mb-4 inline-flex items-center gap-2 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.11em]">
+          <Cpu className="w-3.5 h-3.5 text-accent-600" />
           {isIt ? '128 TOOL DI ANALISI E AZIONE' : '128 ANALYSIS & ACTION TOOLS'}
         </div>
-        <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
+        <h2 className="title-xl">
           {isIt ? 'La Suite Tecnologica masterAnalyzer' : 'The masterAnalyzer Tech Suite'}
         </h2>
-        <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm sm:text-base">
+        <p className="mt-3 mx-auto max-w-2xl text-[0.95rem] text-ink-600 leading-relaxed">
           {isIt
             ? 'Tocca una scheda per scoprire cosa fa il singolo tool e come protegge il tuo budget pubblicitario.'
             : 'Tap any card to discover what it does and how it safeguards your advertising budget.'}
@@ -211,36 +211,36 @@ export default function CapabilitiesSlider() {
       <div className="space-y-6 sm:space-y-8 relative z-10 select-none">
         
         {/* Row 1 - Scroll Left */}
-        <div className="w-full overflow-hidden relative flex">
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-950 to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-950 to-transparent z-20 pointer-events-none" />
+        <div className="relative flex w-full overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
           
           <div 
-            className={`flex gap-4 sm:gap-6 animate-marquee-left whitespace-nowrap ${isAnyCardFlipped ? 'pause-animation' : ''}`}
+            className={`flex gap-6 whitespace-nowrap overflow-x-auto pr-6 [scrollbar-width:none] ${isAnyCardFlipped ? 'pause-animation' : ''}`}
           >
             {marquee1.map((item, idx) => renderCard(item, 1, idx))}
           </div>
         </div>
 
         {/* Row 2 - Scroll Right */}
-        <div className="w-full overflow-hidden relative flex">
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-950 to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-950 to-transparent z-20 pointer-events-none" />
+        <div className="relative flex w-full overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
           
           <div 
-            className={`flex gap-4 sm:gap-6 animate-marquee-right whitespace-nowrap ${isAnyCardFlipped ? 'pause-animation' : ''}`}
+            className={`flex gap-6 whitespace-nowrap overflow-x-auto pr-6 [scrollbar-width:none] ${isAnyCardFlipped ? 'pause-animation' : ''}`}
           >
             {marquee2.map((item, idx) => renderCard(item, 2, idx))}
           </div>
         </div>
 
         {/* Row 3 - Scroll Left */}
-        <div className="w-full overflow-hidden relative flex">
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-950 to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-950 to-transparent z-20 pointer-events-none" />
+        <div className="relative flex w-full overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
           
           <div 
-            className={`flex gap-4 sm:gap-6 animate-marquee-left whitespace-nowrap ${isAnyCardFlipped ? 'pause-animation' : ''}`}
+            className={`flex gap-6 whitespace-nowrap overflow-x-auto pr-6 [scrollbar-width:none] ${isAnyCardFlipped ? 'pause-animation' : ''}`}
           >
             {marquee3.map((item, idx) => renderCard(item, 3, idx))}
           </div>
@@ -248,45 +248,6 @@ export default function CapabilitiesSlider() {
 
       </div>
 
-      {/* Tailwind marquee animations embedded directly via styles */}
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes marquee-left {
-          0% { transform: translate3d(0, 0, 0); }
-          100% { transform: translate3d(-50%, 0, 0); }
-        }
-        @keyframes marquee-right {
-          0% { transform: translate3d(-50%, 0, 0); }
-          100% { transform: translate3d(0, 0, 0); }
-        }
-        .animate-marquee-left {
-          animation: marquee-left 35s linear infinite;
-          will-change: transform;
-        }
-        .animate-marquee-right {
-          animation: marquee-right 35s linear infinite;
-          will-change: transform;
-        }
-        /* Pause marquee when any card is clicked (flipped) or on hover */
-        .animate-marquee-left:hover,
-        .animate-marquee-right:hover,
-        .pause-animation {
-          animation-play-state: paused;
-        }
-        /* 3D Flip Utility Styles */
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-          -webkit-backface-visibility: hidden;
-        }
-        .transform-style-3d {
-          transform-style: preserve-3d;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-      `}} />
     </section>
   );
 }

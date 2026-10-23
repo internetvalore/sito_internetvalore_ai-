@@ -10,8 +10,8 @@ import {
 } from 'lucide-react';
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
+  hidden: { opacity: 0, y: 14 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } }
 };
 
 export default function TitolarePmi() {
@@ -124,7 +124,7 @@ export default function TitolarePmi() {
   const c = isIt ? itContent : enContent;
 
   return (
-    <div className="bg-gray-50 min-h-screen pt-10">
+    <div className="min-h-screen">
       <MetaTags
         title={isIt ? 'Soluzioni per Titolari PMI e Imprenditori | Internet Valore' : 'Solutions for SME Owners and Entrepreneurs | Internet Valore'}
         description={isIt
@@ -144,37 +144,37 @@ export default function TitolarePmi() {
       />
 
       {/* ─── HERO ────────────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8 pb-16">
-        <span className="text-xs font-semibold tracking-wider text-blue-600 uppercase bg-blue-100 px-3 py-1 rounded-full">
+      <section className="section shell border-b border-line text-center">
+        <span className="eyebrow inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 rise">
           {c.eyebrow}
         </span>
-        <h1 className="mt-4 text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight max-w-4xl mx-auto">
+        <h1 className="title-xl hero-title mt-5 max-w-4xl mx-auto rise rise-1">
           {c.title}
         </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500">
+        <p className="lede measure mx-auto mt-5 rise rise-2">
           {c.subtitle}
         </p>
-      </div>
+      </section>
 
       {/* ─── PAIN ACCORDION ──────────────────────────────────────────────── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center">
-            <AlertCircle className="h-6 w-6 text-red-500 mr-2" />
+      <section className="section shell section-quiet border-t border-line">
+        <div className="card rounded-[24px] max-w-3xl mx-auto">
+          <h2 className="title-lg mb-6 text-center flex items-center justify-center gap-2">
+            <AlertCircle className="h-5 w-5 text-ink-400 flex-shrink-0" />
             {c.painsTitle}
           </h2>
-          <div className="space-y-4">
+          <div>
             {c.pains.map((pain, idx) => {
               const isOpen = openPain === idx;
               return (
-                <div key={idx} className="border-b border-gray-100 pb-4">
+                <div key={idx} className="border-b border-line">
                   <button
                     id={`pain-btn-${idx}`}
                     onClick={() => setOpenPain(isOpen ? null : idx)}
-                    className="w-full flex justify-between items-center py-3 text-left font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+                    className="w-full flex justify-between items-center gap-4 py-4 text-left text-[1.05rem] font-semibold text-ink-900 transition-colors duration-220 hover:text-accent-600"
                   >
                     <span>{pain.q}</span>
-                    <ChevronDown className={`h-5 w-5 transform transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`h-4 w-4 flex-shrink-0 text-ink-400 transition-transform duration-220 ${isOpen ? 'rotate-180' : ''}`} />
                   </button>
                   <AnimatePresence>
                     {isOpen && (
@@ -182,9 +182,10 @@ export default function TitolarePmi() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden mt-2"
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
                       >
-                        <p className="text-gray-600 text-sm leading-relaxed bg-gray-50 p-4 rounded-xl">
+                        <p className="pb-5 text-[0.95rem] text-ink-600 leading-relaxed max-w-[62ch]">
                           {pain.a}
                         </p>
                       </motion.div>
@@ -195,75 +196,75 @@ export default function TitolarePmi() {
             })}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* ─── SOLUTIONS GRID ──────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
+      <section className="section shell border-t border-line">
+        <h2 className="title-lg text-center mb-10">
           {c.solutionsTitle}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {c.solutions.map((sol, idx) => {
             const Icon = sol.icon;
             return (
-              <div key={idx} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-md flex flex-col items-start hover:shadow-lg transition-shadow">
-                <div className="p-3 bg-blue-50 text-blue-600 rounded-xl mb-6">
-                  <Icon className="h-6 w-6" />
+              <div key={idx} className={`card card-hover flex flex-col items-start h-full rise rise-${idx + 1}`}>
+                <div className="icon-tile mb-5">
+                  <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{sol.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{sol.desc}</p>
+                <h3 className="title-lg mb-2">{sol.title}</h3>
+                <p className="text-[0.95rem] text-ink-600 leading-relaxed">{sol.desc}</p>
               </div>
             );
           })}
         </div>
-      </div>
+      </section>
 
       {/* ─── PLAYBOOK BLOCK ──────────────────────────────────────────────── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="bg-gray-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl">
-          <h2 className="text-2xl font-bold text-white mb-4">
+      <section className="section shell section-quiet border-t border-line">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="title-lg mb-4 text-ink-900">
             {c.playbookTitle}
           </h2>
-          <p className="text-gray-300 text-sm mb-8">
+          <p className="text-[0.95rem] text-ink-600 mb-8 leading-relaxed">
             {c.playbookDesc}
           </p>
-          <div className="space-y-6">
+          <div className="space-y-4">
             {c.playbooks.map((pb, idx) => (
-              <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-6">
-                <code className="text-blue-400 font-mono text-sm block mb-2">
+              <div key={idx} className="card card-hover border border-line p-6">
+                <code className="text-accent-600 font-mono text-sm block mb-2">
                   {pb.cmd}
                 </code>
-                <p className="text-gray-300 text-sm">
+                <p className="text-[0.95rem] text-ink-600 leading-relaxed">
                   {pb.desc}
                 </p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* ─── CTA ─────────────────────────────────────────────────────────── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pb-20">
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white shadow-lg">
-          <h3 className="text-xl sm:text-2xl font-bold mb-4">
+      <section className="section shell section-quiet border-t border-line text-center">
+        <div className="card card-quiet rounded-[24px]">
+          <h3 className="title-lg mb-4">
             {isIt ? 'Riprendi il controllo del tuo budget ads' : 'Reclaim control of your ads budget'}
           </h3>
-          <p className="text-blue-100 mb-6 text-sm max-w-xl mx-auto">
+          <p className="lede mb-6 max-w-xl mx-auto">
             {isIt 
               ? 'Connettiamo le tue sorgenti e stabiliamo la baseline t0 in 3 giorni. Nessuna promessa fittizia, solo controllo matematico.'
               : 'We connect your sources and establish the t0 baseline in 3 days. No generic promises, just mathematical control.'}
           </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3">
             <a
               href="tel:800940213"
-              className="bg-white text-blue-600 hover:bg-gray-100 font-bold px-8 py-3 rounded-xl shadow-md transition-all text-sm w-full sm:w-auto flex items-center justify-center"
+              className="btn btn-primary w-full sm:w-auto"
             >
-              <Phone className="h-4 w-4 mr-2" />
+              <Phone className="h-4 w-4 flex-shrink-0" />
               {isIt ? 'Numero Verde · 800 940 213' : 'Toll-Free · 800 940 213'}
             </a>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* ─── INTERLINKING NAV ────────────────────────────────────────────── */}
       <SolutionsNav />

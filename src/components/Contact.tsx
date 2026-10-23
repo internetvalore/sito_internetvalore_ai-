@@ -22,31 +22,32 @@ export default function Contact() {
   const operationalAddress = language === 'it' ? "Sede Operativa" : "Operational Address";
 
   return (
-    <div id="contact" className="bg-white">
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-lg mx-auto md:max-w-none md:grid md:grid-cols-2 md:gap-8">
+    <div id="contact" className="section">
+      <div className="shell">
+        <div className="max-w-lg mx-auto md:max-w-none md:grid md:grid-cols-2 md:gap-8 md:items-start">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
+            <h2 className="title-lg">
               {title}
             </h2>
-            <div className="mt-3">
-              <p className="text-lg text-gray-500">
+            <div className="mt-4">
+              <p className="lede measure">
                 {description}
               </p>
             </div>
             <motion.div 
-              className="mt-9 space-y-6"
+              className="card card-hover mt-9"
               variants={{
                 hidden: { opacity: 0 },
                 show: {
                   opacity: 1,
                   transition: {
-                    staggerChildren: 0.2
+                    staggerChildren: 0.08,
+                    delayChildren: 0.1
                   }
                 }
               }}
@@ -55,20 +56,19 @@ export default function Contact() {
               viewport={{ once: true }}
             >
               <motion.div 
-                className="flex"
+                className="flex items-start gap-3 py-3 border-b border-line last:border-b-0"
                 variants={{
-                  hidden: { opacity: 0, x: -20 },
-                  show: { opacity: 1, x: 0 }
+                  hidden: { opacity: 0, y: 12 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
                 }}
               >
-                <div className="flex-shrink-0">
-                  <Phone className="h-6 w-6 text-blue-600" />
+                <div className="icon-tile flex-shrink-0">
+                  <Phone className="h-4 w-4" />
                 </div>
-                <div className="ml-3 text-base text-gray-500">
+                <div className="text-[0.95rem] text-ink-600">
                   <motion.a 
-                    whileHover={{ scale: 1.05 }}
                     href="tel:800940213" 
-                    className="text-blue-600 hover:text-blue-800"
+                    className="text-accent-600 font-semibold hover:text-accent-700 transition-colors duration-220"
                   >
                     800 940 213
                   </motion.a>
@@ -76,25 +76,24 @@ export default function Contact() {
                 </div>
               </motion.div>
               <motion.div 
-                className="flex"
+                className="flex items-start gap-3 py-3 border-b border-line last:border-b-0"
                 variants={{
-                  hidden: { opacity: 0, x: -20 },
-                  show: { opacity: 1, x: 0 }
+                  hidden: { opacity: 0, y: 12 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
                 }}
               >
-                <div className="flex-shrink-0">
-                  <Calendar className="h-6 w-6 text-blue-600" />
+                <div className="icon-tile flex-shrink-0">
+                  <Calendar className="h-4 w-4" />
                 </div>
-                <div className="ml-3">
+                <div className="text-[0.95rem] text-ink-600">
                   <motion.a
-                    whileHover={{ scale: 1.05 }}
                     href="https://calendar.app.google/hrTJoM1BDccQw75NA"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:text-blue-800 font-medium flex items-center"
+                    className="btn btn-primary btn-sm"
                   >
                     {bookMeeting}
-                    <svg className="ml-2 w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                    <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
                       <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
                     </svg>
@@ -102,28 +101,28 @@ export default function Contact() {
                 </div>
               </motion.div>
               <motion.div 
-                className="space-y-4"
+                className="flex flex-col gap-4 pt-3"
                 variants={{
-                  hidden: { opacity: 0, x: -20 },
-                  show: { opacity: 1, x: 0 }
+                  hidden: { opacity: 0, y: 12 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
                 }}
               >
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-blue-600" />
+                <div className="flex items-start gap-3">
+                  <div className="icon-tile flex-shrink-0">
+                    <MapPin className="h-4 w-4" />
                   </div>
-                  <div className="ml-3 text-base text-gray-500">
-                    <p className="font-medium">{legalAddress}:</p>
+                  <div className="text-[0.95rem] text-ink-600">
+                    <p className="text-[0.95rem] font-semibold text-ink-900 mb-1">{legalAddress}:</p>
                     <p>Via G.B. Pergolesi 16</p>
                     <p>20900 Monza</p>
                   </div>
                 </div>
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-blue-600" />
+                <div className="flex items-start gap-3">
+                  <div className="icon-tile flex-shrink-0">
+                    <MapPin className="h-4 w-4" />
                   </div>
-                  <div className="ml-3 text-base text-gray-500">
-                    <p className="font-medium">{operationalAddress}:</p>
+                  <div className="text-[0.95rem] text-ink-600">
+                    <p className="text-[0.95rem] font-semibold text-ink-900 mb-1">{operationalAddress}:</p>
                     <p>Via Giovanni Battista Pergolesi 29</p>
                     <p>20124 Milano</p>
                   </div>
@@ -132,20 +131,17 @@ export default function Contact() {
             </motion.div>
           </motion.div>
           <motion.div 
-            className="mt-12 sm:mt-16 md:mt-0"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            className="mt-10 md:mt-0"
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ 
-              duration: 0.8,
-              type: "spring",
-              bounce: 0.4
+              duration: 0.55, ease: [0.22, 1, 0.36, 1]
             }}
           >
             <motion.div 
-              className="h-96 rounded-lg overflow-hidden shadow-xl"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
+              className="media h-96"
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.8!2d9.2139!3d45.4787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sVia%20Giovanni%20Battista%20Pergolesi%2C%2029%2C%2020124%20Milano%20MI%2C%20Italy!5e0!3m2!1sen!2sit!4v1710371245678!5m2!1sen!2sit"
@@ -156,7 +152,7 @@ export default function Contact() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Google Maps - Internet Valore"
-                className="rounded-lg"
+                className="w-full h-full"
               ></iframe>
             </motion.div>
           </motion.div>

@@ -66,8 +66,8 @@ const LandingUspPage = lazy(() => import('./pages/features/LandingUspPage'));
 const PageLoader = () => (
   <div className="min-h-[50vh] flex items-center justify-center p-8">
     <div className="flex flex-col items-center gap-3">
-      <div className="w-8 h-8 border-3 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-      <span className="text-xs font-semibold text-slate-400">Caricamento...</span>
+      <div className="w-6 h-6 border-2 border-ink-300 border-t-transparent rounded-full animate-spin"></div>
+      <span className="text-xs font-medium text-ink-500">Caricamento...</span>
     </div>
   </div>
 );
@@ -249,7 +249,7 @@ function App() {
   const isLandingPage = location.pathname.includes('/lp/');
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col">
       {location.pathname === `/${language}` && (
         <MetaTags
           title={meta.title}
@@ -265,7 +265,7 @@ function App() {
       )}
       {!isLandingPage && <Navbar />}
       <ScrollHandler />
-      <div className={`flex-grow ${isLandingPage ? '' : 'pt-16'}`}>
+      <div className="flex-grow">
         <ErrorBoundary>
           <Suspense fallback={<PageLoader />}>
             <Routes location={location}>
@@ -278,7 +278,7 @@ function App() {
                   <Suspense fallback={<div className="py-12 flex justify-center"><div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div></div>}>
                     <CapabilitiesSlider />
                   </Suspense>
-                  <Stats />
+                  <Stats tone="dark" />
                   <Services />
                   <Process />
                   <Suspense fallback={<div className="py-12 flex justify-center"><div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div></div>}>

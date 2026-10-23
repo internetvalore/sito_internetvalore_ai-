@@ -311,7 +311,7 @@ const LandingPage = () => {
   const meta = metaContent.landing[language];
 
   return (
-    <div className="bg-gradient-to-b from-white to-blue-50 landing-page-container">
+    <div className="min-h-screen font-sans">
       <MetaTags
         title={meta.title}
         description={meta.description}
@@ -324,61 +324,58 @@ const LandingPage = () => {
           { name: language === 'it' ? 'Landing Page' : 'Landing Page', path: '/landing' }
         ]}
       />
-      <header className="bg-gradient-to-r from-blue-600 to-blue-800 py-20 landing-page-header relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-pattern"></div>
-        </div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl font-extrabold text-white mb-6 leading-tight">{content.title}</h1>
-          <p className="mt-4 text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">{content.description}</p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
+      <header className="section hero-premium text-center relative z-10">
+        <div className="shell">
+          <h1 className="title-xl hero-title mb-6">{content.title}</h1>
+          <p className="lede measure mx-auto mt-4">{content.description}</p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
             <button
               onClick={() => scrollToSection(contactRef)}
-              className="bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-lg"
+              className="btn btn-primary"
             >
               {content.requestQuote}
             </button>
             <button
               onClick={() => scrollToSection(processRef)}
-              className="bg-blue-900 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-lg border border-blue-400"
+              className="btn btn-dark"
             >
               {content.learnMore}
             </button>
           </div>
-          <div className="mt-12 flex flex-wrap justify-center gap-8 landing-page-features">
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
             {content.features.map((feature, index) => (
-              <div key={index} className="flex items-center bg-blue-700 bg-opacity-30 px-6 py-3 rounded-full">
-                <div className="w-3 h-3 bg-blue-300 rounded-full mr-3"></div>
-                <span className="text-blue-100 font-medium">{feature}</span>
+              <div key={index} className="chip">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent-600"></div>
+                <span className="font-medium">{feature}</span>
               </div>
             ))}
           </div>
         </div>
       </header>
 
-      <section ref={processRef} className="py-24 landing-page-section">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">{content.processTitle}</h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">{content.processDescription}</p>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 landing-page-process-steps">
+      <section ref={processRef} className="section">
+        <div className="shell text-center">
+          <h2 className="title-xl mb-6">{content.processTitle}</h2>
+          <p className="lede measure mx-auto mt-4">{content.processDescription}</p>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {content.processSteps.map((step, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-blue-500">
-                <div className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">{index + 1}</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+              <div key={index} className="card card-hover flex flex-col h-full">
+                <div className="icon-tile w-10 h-10 rounded-full mx-auto mb-5">{index + 1}</div>
+                <h3 className="text-[1.05rem] font-semibold mb-3">{step.title}</h3>
+                <p className="text-[0.95rem] text-ink-600 flex-grow">{step.description}</p>
               </div>
             ))}
           </div>
-          <div className="mt-16 flex flex-wrap justify-center gap-6">
+          <div className="mt-12 flex flex-wrap justify-center gap-3">
             <button
               onClick={() => scrollToSection(contactRef)}
-              className="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transform hover:-translate-y-1 transition-all duration-300 text-lg"
+              className="btn btn-primary"
             >
               {content.startNow}
             </button>
             <button
               onClick={() => scrollToSection(pricingRef)}
-              className="bg-gray-100 text-gray-800 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transform hover:-translate-y-1 transition-all duration-300 text-lg"
+              className="btn btn-ghost"
             >
               {content.discoverPrices}
             </button>
@@ -386,47 +383,47 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-blue-50 to-white py-24 landing-page-section landing-page-all-inclusive">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">{content.allInclusiveTitle}</h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">{content.allInclusiveDescription}</p>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="section section-quiet">
+        <div className="shell text-center">
+          <h2 className="title-xl mb-6">{content.allInclusiveTitle}</h2>
+          <p className="lede measure mx-auto mt-4">{content.allInclusiveDescription}</p>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {content.allInclusiveItems.map((item, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-b-4 border-blue-500 flex flex-col h-full">
-                <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
+              <div key={index} className="card card-hover card-quiet flex flex-col h-full">
+                <div className="icon-tile mx-auto mb-5">
                   {getIconForItem(index)}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{item.title}</h3>
-                <p className="text-gray-600 flex-grow">{item.description}</p>
+                <h3 className="text-[1.05rem] font-semibold mb-3">{item.title}</h3>
+                <p className="text-[0.95rem] text-ink-600 flex-grow">{item.description}</p>
               </div>
             ))}
           </div>
-          <p className="mt-12 text-xl text-blue-600 font-bold bg-blue-50 py-4 px-8 rounded-full inline-block shadow-md">{content.readyInFiveDays}</p>
+          <p className="mt-12 inline-block card card-quiet px-6 py-3 text-[0.95rem] font-semibold">{content.readyInFiveDays}</p>
         </div>
       </section>
 
-      <section className="py-24 landing-page-section bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">{content.simplicityTitle}</h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">{content.simplicityDescription}</p>
-          <div className="mt-12 bg-blue-50 py-6 px-8 rounded-xl inline-block">
-            <p className="text-xl text-blue-600 font-bold">{content.noTechnicalSkillsRequired}</p>
+      <section className="section">
+        <div className="shell text-center">
+          <h2 className="title-xl mb-6">{content.simplicityTitle}</h2>
+          <p className="lede measure mx-auto mt-4">{content.simplicityDescription}</p>
+          <div className="mt-10 card card-quiet inline-block px-6 py-4">
+            <p className="text-[1.05rem] font-semibold text-accent-600">{content.noTechnicalSkillsRequired}</p>
           </div>
-          <div className="mt-16 flex justify-center">
-            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gestione Semplificata e Trasparente delle Campagne Pubblicitarie - Internet Valore" className="rounded-xl shadow-xl max-w-full h-auto" style={{ maxHeight: '400px' }} />
+          <div className="mt-12 flex justify-center">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gestione Semplificata e Trasparente delle Campagne Pubblicitarie - Internet Valore" className="media max-w-full h-auto" style={{ maxHeight: '400px' }} />
           </div>
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-white to-blue-50 py-24 landing-page-section">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">{content.updatesIncludedTitle}</h2>
-          <div className="bg-white p-8 rounded-xl shadow-lg">
-            <ul className="mt-8 space-y-6 list-none">
+      <section className="section">
+        <div className="shell">
+          <h2 className="title-xl mb-8 text-center">{content.updatesIncludedTitle}</h2>
+          <div className="card card-quiet">
+            <ul className="mt-6 space-y-5 list-none">
               {content.updatesIncludedItems.map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center mr-4 mt-1">✓</div>
-                  <p className="text-gray-700 text-lg">{item}</p>
+                <li key={index} className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full border border-line bg-white text-ink-500 flex items-center justify-center mt-1">✓</div>
+                  <p className="text-[0.95rem] text-ink-600">{item}</p>
                 </li>
               ))}
             </ul>
@@ -434,43 +431,43 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="py-24 landing-page-section bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">{content.designedToConvertTitle}</h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">{content.designedToConvertDescription}</p>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="section">
+        <div className="shell text-center">
+          <h2 className="title-xl mb-6">{content.designedToConvertTitle}</h2>
+          <p className="lede measure mx-auto mt-4">{content.designedToConvertDescription}</p>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {content.conversionItems.map((item, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-blue-500">
-                <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
+              <div key={index} className="card card-hover">
+                <div className="icon-tile mx-auto mb-5">
                   {getConversionIcon(index)}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <h3 className="text-[1.05rem] font-semibold mb-3">{item.title}</h3>
+                <p className="text-[0.95rem] text-ink-600">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section ref={pricingRef} className="py-24 landing-page-section bg-gradient-to-b from-blue-50 to-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-12">{content.pricingTitle}</h2>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section ref={pricingRef} className="section section-quiet">
+        <div className="shell text-center">
+          <h2 className="title-xl mb-10">{content.pricingTitle}</h2>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
             {content.pricingOptions.map((option, index) => (
-              <div key={index} className={`bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border-t-8 ${index === 1 ? 'border-blue-600 transform scale-105' : 'border-blue-400'}`}>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">{option.title}</h3>
-                <p className="text-3xl font-extrabold text-blue-600 mb-6">{option.price}</p>
-                <ul className="space-y-4 mb-8 text-left">
+              <div key={index} className={`card card-hover ${index === 1 ? 'border-line-strong' : ''}`}>
+                <h3 className="text-[1.15rem] font-semibold mb-3">{option.title}</h3>
+                <p className="text-[1.5rem] font-semibold text-accent-600 mb-6">{option.price}</p>
+                <ul className="space-y-3 mb-6 text-left">
                   {option.features.map((feature, i) => (
-                    <li key={i} className="flex items-start">
-                      <div className="flex-shrink-0 w-5 h-5 bg-blue-500 text-white rounded-full flex items-center justify-center mr-3 mt-1 text-xs">✓</div>
-                      <span className="text-gray-700">{feature}</span>
+                    <li key={i} className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full border border-line bg-white text-ink-500 flex items-center justify-center mt-1 text-xs">✓</div>
+                      <span className="text-ink-600">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <button
                   onClick={() => scrollToSection(contactRef)}
-                  className={`w-full ${index === 1 ? 'bg-blue-600' : 'bg-blue-500'} text-white font-bold py-3 px-6 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300`}
+                  className={`w-full btn btn-primary ${index === 1 ? '' : 'btn-ghost'}`}
                 >
                   {option.buttonText}
                 </button>
@@ -480,21 +477,21 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="bg-white py-24 landing-page-section">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-8">{content.rechargeTitle}</h2>
-          <div className="bg-blue-50 p-8 rounded-xl shadow-lg max-w-2xl mx-auto">
-            <ul className="space-y-4 text-left">
+      <section className="section">
+        <div className="shell text-center">
+          <h2 className="title-xl mb-8">{content.rechargeTitle}</h2>
+          <div className="card card-quiet max-w-2xl mx-auto">
+            <ul className="space-y-3 text-left">
               {content.rechargeItems.map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <div className="flex-shrink-0 w-5 h-5 bg-blue-500 text-white rounded-full flex items-center justify-center mr-3 mt-1 text-xs">✓</div>
-                  <span className="text-gray-700">{item}</span>
+                <li key={index} className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full border border-line bg-white text-ink-500 flex items-center justify-center mt-1 text-xs">✓</div>
+                  <span className="text-ink-600">{item}</span>
                 </li>
               ))}
             </ul>
             <button
               onClick={() => scrollToSection(contactRef)}
-              className="mt-8 bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              className="mt-8 btn btn-primary"
             >
               {content.rechargeButtonText}
             </button>
@@ -502,18 +499,18 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section ref={contactRef} className="bg-gradient-to-r from-blue-600 to-blue-800 py-20 landing-page-section landing-page-contact">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-12">{content.contactUsNow}</h2>
-          <div className="mt-8 flex flex-wrap justify-center gap-6">
-            <a href={`https://wa.me/${'+39 347 5012682'}`} className="flex items-center bg-green-500 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-green-600 transform hover:-translate-y-1 transition-all duration-300 text-lg">
-              <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <section ref={contactRef} className="section section-quiet text-center">
+        <div className="shell text-center">
+          <h2 className="title-xl mb-10">{content.contactUsNow}</h2>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <a href={`https://wa.me/${'+39 347 5012682'}`} className="btn btn-ghost">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712..227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24 24M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.652a11.882 11.882 0 005.647 1.435h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.476-8.414z" />
               </svg>
               {content.whatsappMessage}
             </a>
-            <a href={`tel:${'800 940 213'}`} className="flex items-center bg-blue-900 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-blue-950 transform hover:-translate-y-1 transition-all duration-300 text-lg">
-              <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <a href={`tel:${'800 940 213'}`} className="btn btn-dark">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2a9 9 0 00-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z" />
               </svg>
               {content.callUsNow}

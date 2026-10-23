@@ -5,26 +5,26 @@ export default function FeaturedVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section className="py-12 bg-slate-900 text-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section">
+      <div className="shell">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-8"
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-3">
+          <h2 className="title-xl mb-4 text-ink-900">
             Campagne in outsourcing per il tuo ecommerce: come lavoriamo — e le 6 domande per la tua agenzia
           </h2>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-slate-700/50 bg-black aspect-video sm:h-[500px] md:h-[600px] group cursor-pointer"
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+          className="media w-full max-w-5xl mx-auto bg-paper border border-line aspect-video sm:h-[500px] md:h-[600px] group cursor-pointer"
           onClick={() => !isPlaying && setIsPlaying(true)}
         >
           {isPlaying ? (
@@ -44,16 +44,16 @@ export default function FeaturedVideo() {
               <img
                 src="https://img.youtube.com/vi/m7g6HcARV1w/maxresdefault.jpg"
                 alt="Campagne in outsourcing per il tuo ecommerce: come lavoriamo — e le 6 domande per la tua agenzia"
-                className="w-full h-full object-cover opacity-80 group-hover:opacity-95 group-hover:scale-105 transition-all duration-300"
+                className="w-full h-full object-cover transition-opacity duration-220 group-hover:opacity-95"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-ink-900/[0.06] pointer-events-none"></div>
               <button
                 type="button"
                 aria-label="Riproduci video"
-                className="absolute z-10 w-20 h-20 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-red-600 transition-all duration-200"
+                className="btn btn-dark absolute z-10 h-14 w-14 p-0 cursor-pointer"
               >
-                <svg className="w-8 h-8 ml-1 fill-current" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 ml-0.5 fill-current" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </button>
