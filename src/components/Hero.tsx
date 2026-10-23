@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const rise = {
@@ -15,6 +15,7 @@ const rise = {
 
 export default function Hero() {
   const { language } = useLanguage();
+  const reduce = useReducedMotion();
 
   const claimCards = language === 'it'
     ? [
@@ -163,18 +164,71 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
             className="relative"
+            role="img"
+            aria-label={language === 'it'
+              ? 'Internet Valore - Marketing Digitale e Lead Generation a Milano'
+              : 'Internet Valore - Digital Marketing and Lead Generation in Milan'}
           >
-            <div className="media">
-              <img
-                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop"
-                alt={language === 'it'
-                  ? 'Internet Valore - Marketing Digitale e Lead Generation a Milano'
-                  : 'Internet Valore - Digital Marketing and Lead Generation in Milan'}
-                className="w-full h-full object-cover"
-                loading="eager"
-                decoding="async"
-              />
+            <div className="card">
+              {/* Il gap che si chiude: cio' che le piattaforme dichiarano vs il margine reale riconciliato */}
+              <svg
+                viewBox="0 0 420 240"
+                className="w-full h-auto"
+                fill="none"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <g stroke="var(--iv-line-soft)" strokeWidth="1">
+                  <line x1="24" y1="60" x2="396" y2="60" />
+                  <line x1="24" y1="120" x2="396" y2="120" />
+                  <line x1="24" y1="180" x2="396" y2="180" />
+                </g>
+
+                <motion.path
+                  d="M24 120 L150 104 L270 120 L396 150"
+                  stroke="var(--iv-ink-3)"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  initial={{ pathLength: reduce ? 1 : 0, opacity: reduce ? 1 : 0 }}
+                  animate={{ pathLength: 1, opacity: 1 }}
+                  transition={{ duration: reduce ? 0 : 0.8, ease: [0.22, 1, 0.36, 1], delay: reduce ? 0 : 0.35 }}
+                />
+
+                <motion.path
+                  d="M24 196 L150 176 L270 162 L396 150"
+                  stroke="var(--iv-accent)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  initial={{ pathLength: reduce ? 1 : 0, opacity: reduce ? 1 : 0 }}
+                  animate={{ pathLength: 1, opacity: 1 }}
+                  transition={{ duration: reduce ? 0 : 0.8, ease: [0.22, 1, 0.36, 1], delay: reduce ? 0 : 0.2 }}
+                />
+
+                {/* il gap: il cuneo tra linea dichiarata e linea reale che si richiude */}
+                {!reduce && (
+                  <motion.path
+                    d="M24 120 L150 104 L150 176 L24 196 Z"
+                    fill="var(--iv-ink-3)"
+                    initial={{ opacity: 0.12 }}
+                    animate={{ opacity: 0 }}
+                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.9 }}
+                  />
+                )}
+
+                <motion.circle
+                  cx="396"
+                  cy="150"
+                  r="4"
+                  fill="var(--iv-accent)"
+                  initial={{ opacity: reduce ? 1 : 0, scale: reduce ? 1 : 0.6 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: reduce ? 0 : 0.35, ease: [0.22, 1, 0.36, 1], delay: reduce ? 0 : 1.15 }}
+                />
+              </svg>
             </div>
+
             <figcaption className="mt-4 card">
               <p className="eyebrow mb-2">Deep Search</p>
               <p className="text-[1.05rem] font-semibold text-ink-900 leading-snug">
