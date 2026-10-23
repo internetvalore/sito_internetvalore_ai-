@@ -59,18 +59,19 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="bg-gray-50 py-24 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="section section-quiet border-t border-line">
+      <div className="shell">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-14"
         >
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          <h2 className="title-xl">
             {language === 'it' ? 'Domande Frequenti (FAQ)' : 'Frequently Asked Questions (FAQ)'}
           </h2>
-          <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto">
+          <p className="lede measure mx-auto mt-4">
             {language === 'it'
               ? 'Risposte trasparenti e approfondite sui nostri servizi di marketing digitale, tecnologia AI e gestione campagne in outsourcing.'
               : 'Transparent, in-depth answers about our digital marketing services, AI technology, and outsourced campaign management.'}
@@ -81,24 +82,24 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.08 }}
-              className="mb-4"
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: index * 0.05 }}
+              className="border-b border-line"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 aria-expanded={openIndex === index}
-                className="w-full flex justify-between items-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-200 text-left transition-all duration-200"
+                className="w-full flex items-center justify-between gap-4 py-4 text-left transition-colors duration-220"
               >
-                <span className="text-lg font-bold text-gray-900 pr-4">{faq.question}</span>
+                <span className="text-[1.05rem] font-semibold text-ink-900 leading-snug tracking-[-0.018em] pr-4">{faq.question}</span>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="flex-shrink-0"
+                  transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex-shrink-0 text-ink-400"
                 >
-                  <ChevronDown className="h-5 w-5 text-blue-600" />
+                  <ChevronDown className="h-4 w-4" />
                 </motion.div>
               </button>
               <AnimatePresence>
@@ -107,11 +108,11 @@ export default function FAQ() {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="p-6 bg-white border-x border-b border-gray-200 rounded-b-xl -mt-1 shadow-inner">
-                      <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                    <div className="pb-5">
+                      <p className="text-[0.95rem] text-ink-600 leading-relaxed max-w-[62ch]">{faq.answer}</p>
                     </div>
                   </motion.div>
                 )}

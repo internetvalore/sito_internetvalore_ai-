@@ -266,7 +266,7 @@ const GoogleAdsLandingPage = () => {
   const meta = metaContent.googleAds[language];
 
   return (
-    <div className="bg-white">
+    <div className="min-h-screen font-sans bg-white">
       <MetaTags
         title={meta.title}
         description={meta.description}
@@ -280,100 +280,94 @@ const GoogleAdsLandingPage = () => {
         ]}
       />
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className="relative hero-premium">
+        <div className="shell py-16 lg:py-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             >
               <motion.h1
-                className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+                className="title-xl hero-title mb-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
+                transition={{ delay: 0.1, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
                 {content.title}
               </motion.h1>
               <motion.p
-                className="text-xl mb-6"
+                className="lede measure mb-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
+                transition={{ delay: 0.2, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
                 {content.subtitle}
               </motion.p>
               <motion.p
-                className="mb-6"
+                className="lede measure mb-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
+                transition={{ delay: 0.3, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
                 {content.description}
               </motion.p>
               <motion.p
-                className="text-lg font-semibold mb-8"
+                className="text-[1.05rem] font-semibold measure mb-8"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
+                transition={{ delay: 0.4, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
                 {content.question}
               </motion.p>
               <motion.div
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col sm:flex-row gap-3"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 0.8 }}
+                transition={{ delay: 0.5, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
                 {/* Removed the first button here */}
                 <div className="flex gap-3">
                   <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
                     href={`https://wa.me/${content.whatsappNumber.replace(/\+/g, '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-green-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center"
+                    className="btn btn-ghost"
                   >
-                    <MessageCircle className="mr-2 h-5 w-5" />
+                    <MessageCircle className="h-4 w-4" />
                     {content.whatsappText}
                   </motion.a>
                   <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
                     href={`tel:${content.phoneNumber.replace(/\s/g, '')}`}
-                    className="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 flex items-center justify-center"
+                    className="btn btn-primary"
                   >
-                    <Phone className="mr-2 h-5 w-5" />
+                    <Phone className="h-4 w-4" />
                     {content.callText}
                   </motion.a>
                 </div>
               </motion.div>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="hidden md:block"
             >
               <img
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
                 alt="Team di Esperti Marketing Digitale e Gestione Campagne Google Ads - Internet Valore"
-                className="rounded-lg shadow-2xl w-full h-auto object-cover"
+                className="media w-full h-auto object-cover"
               />
             </motion.div>
           </div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2"
           >
             <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="bg-white rounded-full p-3 shadow-lg cursor-pointer"
+              className="icon-tile cursor-pointer"
               onClick={() => {
                 const problemsSection = document.getElementById('problems');
                 if (problemsSection) {
@@ -381,47 +375,47 @@ const GoogleAdsLandingPage = () => {
                 }
               }}
             >
-              <ChevronDown className="h-6 w-6 text-blue-600" />
+              <ChevronDown className="h-4 w-4" />
             </motion.div>
           </motion.div>
         </div>
       </div>
 
       {/* Problems Section */}
-      <div id="problems" className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="problems" className="section section-quiet">
+        <div className="shell">
           <motion.h2
-            className="text-3xl font-bold text-center mb-12 text-gray-900"
-            initial={{ opacity: 0, y: 20 }}
+            className="title-xl text-center mb-10"
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.problemTitle}
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {content.problems.map((problem, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-lg"
-                initial={{ opacity: 0, y: 20 }}
+                className="card card-hover"
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                transition={{ delay: index * 0.06, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="text-blue-600 mb-4">
-                  {React.cloneElement(problem.icon, { className: "h-10 w-10" })}
+                <div className="icon-tile mb-4">
+                  {React.cloneElement(problem.icon, { className: "h-5 w-5" })}
                 </div>
-                <p className="text-gray-700">{problem.text}</p>
+                <p className="text-[0.95rem] text-ink-600">{problem.text}</p>
               </motion.div>
             ))}
           </div>
           <motion.p
-            className="mt-10 text-center text-gray-600 max-w-3xl mx-auto"
+            className="mt-10 lede measure mx-auto text-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.problemNote}
           </motion.p>
@@ -429,23 +423,23 @@ const GoogleAdsLandingPage = () => {
       </div>
 
       {/* Philosophy Section */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="section">
+        <div className="shell">
           <motion.h2
-            className="text-3xl font-bold text-center mb-6 text-gray-900"
-            initial={{ opacity: 0, y: 20 }}
+            className="title-xl text-center mb-6"
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.philosophyTitle}
           </motion.h2>
           <motion.p
-            className="text-center text-gray-600 max-w-3xl mx-auto text-lg"
+            className="lede measure mx-auto text-center mb-6"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.philosophy}
           </motion.p>
@@ -453,51 +447,51 @@ const GoogleAdsLandingPage = () => {
       </div>
 
       {/* Services Section */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="section section-quiet">
+        <div className="shell">
           <motion.h2
-            className="text-3xl font-bold text-center mb-6 text-gray-900"
-            initial={{ opacity: 0, y: 20 }}
+            className="title-xl text-center mb-6"
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.servicesTitle}
           </motion.h2>
           <motion.p
-            className="text-center text-gray-600 max-w-3xl mx-auto mb-6"
+            className="lede measure mx-auto text-center mb-6"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.servicesIntro}
           </motion.p>
           <motion.p
-            className="text-center text-gray-800 max-w-3xl mx-auto mb-12 font-medium"
+            className="text-center text-ink-900 max-w-3xl mx-auto mb-10 font-medium"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.55, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.servicesSubtitle}
           </motion.p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {content.services.map((service, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-lg"
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="card card-hover"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                transition={{ delay: index * 0.06, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
-                <h3 className="text-xl font-bold mb-4 text-blue-700">{service.title}</h3>
+                <h3 className="text-[1.05rem] font-semibold mb-3">{service.title}</h3>
                 <ul className="space-y-2">
                   {service.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{item}</span>
+                    <li key={itemIndex} className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-accent-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-[0.95rem] text-ink-600">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -508,86 +502,86 @@ const GoogleAdsLandingPage = () => {
       </div>
 
       {/* Win-Win Proposal Section */}
-      <div className="py-16 bg-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="section section-quiet">
+        <div className="shell">
           <motion.h2
-            className="text-3xl font-bold text-center mb-6 text-gray-900"
-            initial={{ opacity: 0, y: 20 }}
+            className="title-xl text-center mb-6"
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.proposalTitle}
           </motion.h2>
           <motion.h3
-            className="text-2xl font-bold text-center mb-6 text-blue-700"
+            className="title-lg text-center mb-6"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.proposalSubtitle}
           </motion.h3>
           <motion.p
-            className="text-center text-gray-600 max-w-3xl mx-auto mb-8"
+            className="lede measure mx-auto text-center mb-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.55, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.proposal}
           </motion.p>
           <motion.div
-            className="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto mb-10"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            className="card max-w-4xl mx-auto mb-10"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.55, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="text-lg font-bold text-blue-700 mb-4">{content.proposalHighlight}</p>
+            <p className="text-[1.05rem] font-semibold text-accent-700 mb-4">{content.proposalHighlight}</p>
             <ul className="space-y-4 mb-6">
               {content.proposalPoints.map((point, index) => (
-                <li key={index} className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">{point}</span>
+                <li key={index} className="flex items-start gap-2">
+                  <CheckCircle className="h-4 w-4 text-accent-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-[0.95rem] text-ink-600">{point}</span>
                 </li>
               ))}
             </ul>
-            <p className="font-bold text-gray-800 mb-2">{content.proposalWhy}</p>
-            <p className="text-gray-700 mb-6">{content.proposalWhyAnswer}</p>
-            <p className="font-bold text-gray-800 mb-2">{content.proposalMeaning}</p>
+            <p className="font-semibold text-ink-900 mb-2">{content.proposalWhy}</p>
+            <p className="text-[0.95rem] text-ink-600 mb-6">{content.proposalWhyAnswer}</p>
+            <p className="font-semibold text-ink-900 mb-2">{content.proposalMeaning}</p>
             <ul className="space-y-2 mb-6">
               {content.proposalMeaningPoints.map((point, index) => (
-                <li key={index} className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">{point}</span>
+                <li key={index} className="flex items-start gap-2">
+                  <CheckCircle className="h-4 w-4 text-accent-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-[0.95rem] text-ink-600">{point}</span>
                 </li>
               ))}            </ul>
-            <p className="text-gray-700 mb-4">{content.proposalBest}</p>
-            <p className="text-gray-700 font-medium">{content.proposalRenewal}</p>
+            <p className="text-[0.95rem] text-ink-600 mb-4">{content.proposalBest}</p>
+            <p className="text-[0.95rem] text-ink-600 font-medium">{content.proposalRenewal}</p>
           </motion.div>
           {/* Removed the second button and its wrapping div here */}
         </div>
       </div>
 
       {/* Why Choose Us Section */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="section">
+        <div className="shell">
           <motion.h2
-            className="text-3xl font-bold text-center mb-6 text-gray-900"
-            initial={{ opacity: 0, y: 20 }}
+            className="title-xl text-center mb-6"
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.whyUsTitle}
           </motion.h2>
           <motion.h3
-            className="text-2xl font-medium text-center mb-8 text-gray-700"
+            className="title-lg text-center mb-8 text-ink-600 font-medium"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.whyUsSubtitle}
           </motion.h3>
@@ -595,13 +589,13 @@ const GoogleAdsLandingPage = () => {
             {content.whyUsPoints.map((point, index) => (
               <motion.div
                 key={index}
-                className="flex items-center text-gray-700"
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="flex items-center gap-2 text-ink-600"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                transition={{ delay: index * 0.06, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
-                <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
+                <CheckCircle className="h-4 w-4 text-accent-600 flex-shrink-0" />
                 <span>{point}</span>
               </motion.div>
             ))}
@@ -610,14 +604,14 @@ const GoogleAdsLandingPage = () => {
       </div>
 
       {/* Testimonials Section */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="section section-quiet">
+        <div className="shell">
           <motion.h2
-            className="text-3xl font-bold text-center mb-12 text-gray-900"
-            initial={{ opacity: 0, y: 20 }}
+            className="title-xl text-center mb-10"
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.testimonialsTitle}
           </motion.h2>
@@ -626,14 +620,14 @@ const GoogleAdsLandingPage = () => {
       </div>
 
       {/* FAQ Section */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="section">
+        <div className="shell">
           <motion.h2
-            className="text-3xl font-bold text-center mb-12 text-gray-900"
-            initial={{ opacity: 0, y: 20 }}
+            className="title-xl text-center mb-10"
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.faqTitle}
           </motion.h2>
@@ -641,14 +635,14 @@ const GoogleAdsLandingPage = () => {
             {content.faqs.map((faq, index) => (
               <motion.div
                 key={index}
-                className="mb-6 border-b border-gray-200 pb-6 last:border-b-0 last:pb-0"
-                initial={{ opacity: 0, y: 20 }}
+                className="mb-6 border-b border-line pb-6 last:border-b-0 last:pb-0"
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                transition={{ delay: index * 0.06, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
-                <h3 className="text-xl font-bold mb-2 text-gray-900">{faq.question}</h3>
-                <p className="text-gray-700">{faq.answer}</p>
+                <h3 className="text-[1.05rem] font-semibold mb-2">{faq.question}</h3>
+                <p className="text-[0.95rem] text-ink-600">{faq.answer}</p>
               </motion.div>
             ))}
           </div>
@@ -656,69 +650,69 @@ const GoogleAdsLandingPage = () => {
       </div>
 
       {/* Final CTA Section */}
-      <div className="py-16 bg-blue-600 text-white">
+      <div className="section text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
-            className="text-3xl font-bold mb-6"
-            initial={{ opacity: 0, y: 20 }}
+            className="title-xl mb-6"
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.finalCta}
           </motion.h2>
           <motion.p
-            className="text-xl mb-8"
+            className="lede mb-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.finalCtaSubtitle}
           </motion.p>
           <motion.div
-            className="flex flex-col sm:flex-row justify-center gap-4 mb-8"
-            initial={{ opacity: 0, y: 20 }}
+            className="flex flex-col sm:flex-row justify-center gap-3 mb-8"
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.55, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Removed buttons in the final CTA section */}
           </motion.div>
           <motion.p
-            className="text-lg mb-6"
+            className="text-[1.05rem] font-semibold mb-6"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.55, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
           >
             {content.contactUs}
           </motion.p>
           <motion.div
-            className="flex flex-col sm:flex-row justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
+            className="flex flex-col sm:flex-row justify-center gap-3"
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.55, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.015 }}
+              whileTap={{ scale: 0.99 }}
               href={`https://wa.me/${content.whatsappNumber.replace(/\+/g, '')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center"
+              className="btn btn-ghost"
             >
-              <MessageCircle className="mr-2 h-5 w-5" />
+              <MessageCircle className="h-4 w-4" />
               {content.whatsappText}: {content.whatsappNumber}
             </motion.a>
             <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.015 }}
+              whileTap={{ scale: 0.99 }}
               href={`tel:${content.phoneNumber.replace(/\s/g, '')}`}
-              className="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 flex items-center justify-center"
+              className="btn btn-primary"
             >
-              <Phone className="mr-2 h-5 w-5" />
+              <Phone className="h-4 w-4" />
               {content.callText}: {content.phoneNumber}
             </motion.a>
           </motion.div>

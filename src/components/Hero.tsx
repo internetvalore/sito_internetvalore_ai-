@@ -1,340 +1,189 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 
+const rise = {
+  hidden: { opacity: 0, y: 14 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
 export default function Hero() {
-  const { t, language } = useLanguage();
-  const [isFlipped, setIsFlipped] = useState(false);
+  const { language } = useLanguage();
 
-  const scrollToContact = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const claimCards = language === 'it'
+    ? [
+        { headline: 'Riconciliazione Carrello vs GA4.', cta: 'Ordini reali Shopify & Woo →', to: `/${language}/services/ecommerce` },
+        { headline: '1M+ righe di codice · 482 tool LLM.', cta: 'Esplora masterAnalyzer →', to: `/${language}/la-nostra-tecnologia-ai` },
+        { headline: 'POAS over ROAS. Margine Reale.', cta: 'Stop a ROAS gonfiati →', to: `/${language}/casi-e-audit` },
+      ]
+    : [
+        { headline: 'Cart vs GA4 Reconciliation.', cta: 'Real Shopify & Woo orders →', to: `/${language}/services/ecommerce` },
+        { headline: '1M+ lines of code · 482 LLM tools.', cta: 'Explore masterAnalyzer →', to: `/${language}/la-nostra-tecnologia-ai` },
+        { headline: 'POAS over ROAS. Real Margin.', cta: 'Stop vanity ROAS →', to: `/${language}/casi-e-audit` },
+      ];
 
-  // Floating animation for decorative elements
-  const floatingAnimation = {
-    y: [-10, 10],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      repeatType: "reverse" as const,
-      ease: "easeInOut"
-    }
-  };
-
-  // Text reveal animation with delay
-  const textReveal = {
-    hidden: { opacity: 0, x: 100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        delay: 0.6 // Delay text animation until after image animation
-      }
-    }
-  };
-
-  // Image animation from left with rotation
-  const imageAnimation = {
-    hidden: { opacity: 0, x: -100, rotateY: -90 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      rotateY: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        delay: 0.2 // Start image animation first
-      }
-    }
-  };
-
-  // Gradient animation for the highlight text (GPU composited opacity/scale)
-  const gradientAnimation = {
-    opacity: [0.85, 1, 0.85],
-    scale: [1, 1.02, 1],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  };
-
-  // 3D flip animation
-  const flipAnimation = {
-    rotateY: isFlipped ? 360 : 0,
-    transition: {
-      duration: 1.2,
-      type: "spring",
-      stiffness: 80,
-      damping: 15
-    }
-  };
+  const chipsIT = [
+    { label: 'Lead Generation Riconciliata', to: `/${language}/services/lead-generation` },
+    { label: 'E-commerce POAS over ROAS', to: `/${language}/services/ecommerce` },
+    { label: 'Controllo Cannibalizzazione Brand', to: `/${language}/services/ads` },
+    { label: '1M+ Righe Codice · 482 Tool LLM', to: `/${language}/la-nostra-tecnologia-ai` },
+  ];
 
   return (
-    <div className="relative bg-white overflow-hidden">
-      {/* Animated background pattern */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute -inset-[25%] w-[150%] h-[150%] bg-gradient-to-r from-blue-50 to-indigo-50 animate-gradient-x will-change-transform"></div>
-        <motion.div
-          className="absolute -top-[60px] -left-[60px] w-[calc(100%+60px)] h-[calc(100%+60px)] will-change-transform"
-          animate={{
-            x: [0, 60],
-            y: [0, 60]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234F46E5' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            opacity: 0.5
-          }}
-        />
-      </div>
+    <section className="hero-premium">
+      <div className="shell">
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center py-14 lg:py-20">
+          <motion.div initial="hidden" animate="visible">
+            <motion.p variants={rise} className="eyebrow mb-4">
+              {language === 'it'
+                ? 'Outsourcing Gestione Campagne E-commerce · Google Partner Certificato'
+                : 'Outsourced E-commerce Campaign Management · Certified Google Partner'}
+            </motion.p>
 
-      <div className="max-w-7xl mx-auto">
-        <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 bg-opacity-80 backdrop-blur-sm">
-          <motion.main
-            initial="hidden"
-            animate="visible"
-            className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28"
-          >
-            <div className="sm:text-center lg:text-left">
-              <motion.h1
-                variants={textReveal}
-                className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl"
-              >
-                <motion.span
-                  className="block text-blue-600 text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider mb-2"
-                  variants={textReveal}
-                >
-                  {language === 'it' ? 'Outsourcing Gestione Campagne E-commerce · Google Partner Certificato' : 'Outsourced E-commerce Campaign Management · Certified Google Partner'}
-                </motion.span>
-                <motion.span
-                  className="block"
-                  variants={textReveal}
-                >
-                  {language === 'it' ? 'Il tuo e-commerce vende.' : 'Your e-commerce sells.'}
-                </motion.span>
-                <motion.span
-                  className="block text-blue-600"
-                  animate={gradientAnimation}
-                  style={{
-                    background: "linear-gradient(90deg, #3B82F6, #2563EB, #3B82F6)",
-                    backgroundSize: "200% auto",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text"
-                  }}
-                >
-                  {language === 'it' ? 'Ma quanto margine ti resta a fine mese?' : 'How much real margin stays in your bank?'}
-                </motion.span>
-              </motion.h1>
-              <motion.p
-                variants={textReveal}
-                className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
-              >
+            <motion.h1 variants={rise} className="title-xl hero-title mb-5">
+              <span className="block">{language === 'it' ? 'Il tuo e-commerce vende.' : 'Your e-commerce sells.'}</span>
+              <span className="block text-accent-600">
                 {language === 'it'
-                  ? 'Orchestriamo in outsourcing le tue campagne Google Ads, Shopping, Performance Max e Meta con masterAnalyzer: oltre 1.000.000 di righe censite (775k+ Python, 482 tool LLM e 293 playbook operativi) per riconciliare gli ordini del carrello, bloccare la cannibalizzazione del brand e ottimizzare sul profitto reale (POAS) netto.'
-                  : 'We orchestrate your Google Ads, Shopping, PMax and Meta campaigns in outsourcing with masterAnalyzer: over 1,000,000 total census lines (775k+ Python, 482 LLM tools and 293 execution playbooks) reconciling cart orders, eliminating brand cannibalization, and optimizing strictly on net profit (POAS).'}
-              </motion.p>
+                  ? 'Ma quanto margine ti resta a fine mese?'
+                  : 'How much real margin stays in your bank?'}
+              </span>
+            </motion.h1>
 
-              {/* ── Platform claim cards ─────────────────────────────────── */}
-              <motion.div variants={textReveal} className="mt-8">
-                <p className="text-xs font-bold tracking-widest text-blue-500 uppercase mb-4 sm:text-center lg:text-left">
-                  {language === 'it'
-                    ? 'LA TECNOLOGIA CHE RICONCILIA I TUOI CONTI'
-                    : 'THE TECHNOLOGY THAT RECONCILES YOUR NUMBERS'}
-                </p>
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-                  {(language === 'it'
-                    ? [
-                        { headline: 'Riconciliazione Carrello vs GA4.', cta: 'Ordini reali Shopify & Woo →', to: `/${language}/services/ecommerce` },
-                        { headline: '1M+ righe di codice · 482 tool LLM.', cta: 'Esplora masterAnalyzer →', to: `/${language}/la-nostra-tecnologia-ai` },
-                        { headline: 'POAS over ROAS. Margine Reale.', cta: 'Stop a ROAS gonfiati →', to: `/${language}/casi-e-audit` },
-                      ]
-                    : [
-                        { headline: 'Cart vs GA4 Reconciliation.', cta: 'Real Shopify & Woo orders →', to: `/${language}/services/ecommerce` },
-                        { headline: '1M+ lines of code · 482 LLM tools.', cta: 'Explore masterAnalyzer →', to: `/${language}/la-nostra-tecnologia-ai` },
-                        { headline: 'POAS over ROAS. Real Margin.', cta: 'Stop vanity ROAS →', to: `/${language}/casi-e-audit` },
-                      ]
-                  ).map((card, i) => (
-                    <Link
-                      key={i}
-                      to={card.to}
-                      className="group block rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm hover:border-blue-400 hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
-                    >
-                      <p className="text-sm font-bold text-gray-900 leading-snug mb-2">{card.headline}</p>
-                      <p className="text-xs font-semibold text-blue-600 group-hover:text-blue-700 transition-colors duration-150">{card.cta}</p>
-                    </Link>
-                  ))}
-                </div>
-              </motion.div>
-              {/* ─────────────────────────────────────────────────────────── */}
+            <motion.p variants={rise} className="lede measure mb-8">
+              {language === 'it'
+                ? 'Orchestriamo in outsourcing le tue campagne Google Ads, Shopping, Performance Max e Meta con masterAnalyzer: oltre 1.000.000 di righe censite (775k+ Python, 482 tool LLM e 293 playbook operativi) per riconciliare gli ordini del carrello, bloccare la cannibalizzazione del brand e ottimizzare sul profitto reale (POAS) netto.'
+                : 'We orchestrate your Google Ads, Shopping, PMax and Meta campaigns in outsourcing with masterAnalyzer: over 1,000,000 total census lines (775k+ Python, 482 LLM tools and 293 execution playbooks) reconciling cart orders, eliminating brand cannibalization, and optimizing strictly on net profit (POAS).'}
+            </motion.p>
 
-              <motion.div
-                variants={textReveal}
-                className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
-              >
-                <div className="rounded-md shadow">
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Link
-                      to={`/${language}/casi-e-audit`}
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 md:py-4 md:text-lg md:px-10 transition-all duration-300 shadow-lg hover:shadow-xl"
-                    >
-                      {language === 'it' ? 'Richiedi Audit a Raggi X (Da 15k€/mese)' : 'Request X-Ray Audit (From €15k/mo)'}
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </motion.div>
-                </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Link
-                      to={`/${language}/services/ecommerce`}
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200 md:py-4 md:text-lg md:px-10 transition-all duration-300"
-                    >
-                      {language === 'it' ? 'Come Funziona l’Outsourcing' : 'How Outsourcing Works'}
-                    </Link>
-                  </motion.div>
-                </div>
-              </motion.div>
+            <motion.div variants={rise} className="flex flex-wrap gap-3 mb-10">
+              <Link to={`/${language}/casi-e-audit`} className="btn btn-primary">
+                {language === 'it' ? 'Richiedi Audit a Raggi X (Da 15k€/mese)' : 'Request X-Ray Audit (From €15k/mo)'}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link to={`/${language}/services/ecommerce`} className="btn btn-ghost">
+                {language === 'it' ? 'Come Funziona l’Outsourcing' : 'How Outsourcing Works'}
+              </Link>
+            </motion.div>
 
-              {/* ── Open descriptive text block for users & SEO ───────────── */}
-              <motion.div
-                variants={textReveal}
-                className="mt-8 pt-6 border-t border-gray-200"
-              >
-                <h2 className="text-xl font-bold text-gray-900 mb-2">
-                  {language === 'it'
-                    ? 'Outsourcing Gestione Campagne E-commerce & Algoritmi POAS'
-                    : 'Outsourced E-commerce Campaign Management & POAS Algorithms'}
-                </h2>
-                <p className="text-sm text-gray-600 leading-relaxed mb-3">
-                  {language === 'it' ? (
-                    <>
-                      Internet Valore affianca e-commerce e aziende B2B nella{' '}
-                      <Link to={`/${language}/services`} className="text-blue-600 font-bold underline hover:text-blue-800">
-                        gestione campagne pubblicitarie in outsourcing
-                      </Link>{' '}
-                      (Google Ads e Meta Ads) con un approccio matematico su dati reali. Grazie alla nostra{' '}
-                      <Link to={`/${language}/la-nostra-tecnologia-ai`} className="text-blue-600 font-bold underline hover:text-blue-800">
-                        tecnologia proprietaria masterAnalyzer
-                      </Link>{' '}
-                      (oltre 1.000.000 di righe censite, 775k+ Python e 482 tool AI), forniamo servizi avanzati di{' '}
-                      <Link to={`/${language}/services/lead-generation`} className="text-blue-600 font-bold underline hover:text-blue-800">
-                        lead generation riconciliata col CRM
-                      </Link>{' '}
-                      ed ottimizzazione{' '}
-                      <Link to={`/${language}/services/ecommerce`} className="text-blue-600 font-bold underline hover:text-blue-800">
-                        E-commerce sul profitto (POAS) netto
-                      </Link>. Scopri il profilo di{' '}
-                      <Link to={`/${language}/about`} className="text-blue-600 font-bold underline hover:text-blue-800">
-                        Andrea Falzin (Founder & CEO)
-                      </Link>{' '}
-                      e le{' '}
-                      <Link to={`/${language}/testimonials`} className="text-blue-600 font-bold underline hover:text-blue-800">
-                        recensioni verificate dei clienti
-                      </Link>.
-                    </>
-                  ) : (
-                    <>
-                      Internet Valore partners with e-commerce and B2B companies in{' '}
-                      <Link to={`/${language}/services`} className="text-blue-600 font-bold underline hover:text-blue-800">
-                        outsourced campaign management
-                      </Link>{' '}
-                      (Google & Meta Ads) using a mathematical real-data framework. Powered by our{' '}
-                      <Link to={`/${language}/la-nostra-tecnologia-ai`} className="text-blue-600 font-bold underline hover:text-blue-800">
-                        proprietary masterAnalyzer technology
-                      </Link>{' '}
-                      (over 1,000,000 total lines, 775k+ Python and 482 AI tools), we deliver{' '}
-                      <Link to={`/${language}/services/lead-generation`} className="text-blue-600 font-bold underline hover:text-blue-800">
-                        CRM-reconciled lead generation
-                      </Link>{' '}
-                      and{' '}
-                      <Link to={`/${language}/services/ecommerce`} className="text-blue-600 font-bold underline hover:text-blue-800">
-                        E-commerce POAS net profit optimization
-                      </Link>. Learn more about{' '}
-                      <Link to={`/${language}/about`} className="text-blue-600 font-bold underline hover:text-blue-800">
-                        Andrea Falzin (Founder & CEO)
-                      </Link>{' '}
-                      and read our{' '}
-                      <Link to={`/${language}/testimonials`} className="text-blue-600 font-bold underline hover:text-blue-800">
-                        verified client reviews
-                      </Link>.
-                    </>
-                  )}
-                </p>
-                <div className="flex flex-wrap gap-2 text-xs font-semibold text-blue-700">
-                  <Link to={`/${language}/services/lead-generation`} className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors">✓ Lead Generation Riconciliata</Link>
-                  <Link to={`/${language}/services/ecommerce`} className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors">✓ E-commerce POAS over ROAS</Link>
-                  <Link to={`/${language}/services/ads`} className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors">✓ Controllo Cannibalizzazione Brand</Link>
-                  <Link to={`/${language}/la-nostra-tecnologia-ai`} className="bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors">✓ 1M+ Righe Codice · 482 Tool LLM</Link>
-                </div>
-              </motion.div>
-              {/* ─────────────────────────────────────────────────────────── */}
+            <motion.div variants={rise}>
+              <p className="eyebrow eyebrow-quiet mb-4">
+                {language === 'it'
+                  ? 'La tecnologia che riconcilia i tuoi conti'
+                  : 'The technology that reconciles your numbers'}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {claimCards.map((card, i) => (
+                  <Link key={i} to={card.to} className="card card-hover block">
+                    <p className="text-[0.95rem] font-semibold text-ink-900 leading-snug mb-2">{card.headline}</p>
+                    <p className="text-[0.85rem] font-semibold text-accent-600">{card.cta}</p>
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div variants={rise} className="mt-10 pt-7 border-t border-line">
+              <h2 className="title-lg mb-3">
+                {language === 'it'
+                  ? 'Outsourcing Gestione Campagne E-commerce & Algoritmi POAS'
+                  : 'Outsourced E-commerce Campaign Management & POAS Algorithms'}
+              </h2>
+              <p className="lede measure mb-4">
+                {language === 'it' ? (
+                  <>
+                    Internet Valore affianca e-commerce e aziende B2B nella{' '}
+                    <Link to={`/${language}/services`} className="text-accent-700 font-medium hover:text-accent-800">
+                      gestione campagne pubblicitarie in outsourcing
+                    </Link>{' '}
+                    (Google Ads e Meta Ads) con un approccio matematico su dati reali. Grazie alla nostra{' '}
+                    <Link to={`/${language}/la-nostra-tecnologia-ai`} className="text-accent-700 font-medium hover:text-accent-800">
+                      tecnologia proprietaria masterAnalyzer
+                    </Link>{' '}
+                    (oltre 1.000.000 di righe censite, 775k+ Python e 482 tool AI), forniamo servizi avanzati di{' '}
+                    <Link to={`/${language}/services/lead-generation`} className="text-accent-700 font-medium hover:text-accent-800">
+                      lead generation riconciliata col CRM
+                    </Link>{' '}
+                    ed ottimizzazione{' '}
+                    <Link to={`/${language}/services/ecommerce`} className="text-accent-700 font-medium hover:text-accent-800">
+                      E-commerce sul profitto (POAS) netto
+                    </Link>. Scopri il profilo di{' '}
+                    <Link to={`/${language}/about`} className="text-accent-700 font-medium hover:text-accent-800">
+                      Andrea Falzin (Founder &amp; CEO)
+                    </Link>{' '}
+                    e le{' '}
+                    <Link to={`/${language}/testimonials`} className="text-accent-700 font-medium hover:text-accent-800">
+                      recensioni verificate dei clienti
+                    </Link>.
+                  </>
+                ) : (
+                  <>
+                    Internet Valore partners with e-commerce and B2B companies in{' '}
+                    <Link to={`/${language}/services`} className="text-accent-700 font-medium hover:text-accent-800">
+                      outsourced campaign management
+                    </Link>{' '}
+                    (Google &amp; Meta Ads) using a mathematical real-data framework. Powered by our{' '}
+                    <Link to={`/${language}/la-nostra-tecnologia-ai`} className="text-accent-700 font-medium hover:text-accent-800">
+                      proprietary masterAnalyzer technology
+                    </Link>{' '}
+                    (over 1,000,000 total lines, 775k+ Python and 482 AI tools), we deliver{' '}
+                    <Link to={`/${language}/services/lead-generation`} className="text-accent-700 font-medium hover:text-accent-800">
+                      CRM-reconciled lead generation
+                    </Link>{' '}
+                    and{' '}
+                    <Link to={`/${language}/services/ecommerce`} className="text-accent-700 font-medium hover:text-accent-800">
+                      E-commerce POAS net profit optimization
+                    </Link>. Learn more about{' '}
+                    <Link to={`/${language}/about`} className="text-accent-700 font-medium hover:text-accent-800">
+                      Andrea Falzin (Founder &amp; CEO)
+                    </Link>{' '}
+                    and read our{' '}
+                    <Link to={`/${language}/testimonials`} className="text-accent-700 font-medium hover:text-accent-800">
+                      verified client reviews
+                    </Link>.
+                  </>
+                )}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {chipsIT.map((chip, i) => (
+                  <Link key={i} to={chip.to} className="chip">
+                    {chip.label}
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+
+          <motion.figure
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+            className="relative"
+          >
+            <div className="media">
+              <img
+                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop"
+                alt={language === 'it'
+                  ? 'Internet Valore - Marketing Digitale e Lead Generation a Milano'
+                  : 'Internet Valore - Digital Marketing and Lead Generation in Milan'}
+                className="w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+              />
             </div>
-          </motion.main>
-
-          {/* Decorative floating elements */}
-          <div className="absolute top-0 right-0 -mr-40 w-80 h-80 opacity-30 pointer-events-none">
-            <motion.div
-              animate={floatingAnimation}
-              className="absolute w-full h-full rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 filter blur-3xl"
-            />
-          </div>
-          <div className="absolute bottom-0 left-0 -ml-20 w-60 h-60 opacity-20 pointer-events-none">
-            <motion.div
-              animate={floatingAnimation}
-              className="absolute w-full h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500 filter blur-3xl"
-            />
-          </div>
+            <figcaption className="mt-4 card">
+              <p className="eyebrow mb-2">Deep Search</p>
+              <p className="text-[1.05rem] font-semibold text-ink-900 leading-snug">
+                {language === 'it' ? 'Dati reali, conversioni reali' : 'Real data, real conversions'}
+              </p>
+            </figcaption>
+          </motion.figure>
         </div>
       </div>
-
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={imageAnimation}
-        className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 perspective-1000"
-        style={{ transformStyle: 'preserve-3d' }}
-      >
-        <div className="relative h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
-          <motion.div
-            className="absolute inset-0 cursor-pointer"
-            animate={flipAnimation}
-            onClick={() => setIsFlipped(!isFlipped)}
-            style={{ transformStyle: 'preserve-3d' }}
-          >
-            {/* Front side */}
-            <img
-              className="absolute inset-0 w-full h-full object-cover backface-hidden"
-              src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop"
-              alt={language === 'it' ? 'Internet Valore - Marketing Digitale e Lead Generation a Milano' : 'Internet Valore - Digital Marketing and Lead Generation in Milan'}
-            />
-
-            {/* Back side */}
-            <div
-              className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-600 to-indigo-800 backface-hidden flex flex-col items-center justify-center text-white text-center p-8"
-              style={{ transform: 'rotateY(180deg)' }}
-            >
-              <h2 className="text-4xl font-bold mb-4">Deep Search</h2>
-              <h3 className="text-2xl font-semibold mb-8">Dati reali, conversioni reali</h3>
-              <p className="text-lg">Tocca per tornare all'immagine</p>
-            </div>
-          </motion.div>
-          {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent lg:from-transparent pointer-events-none" />
-        </div>
-      </motion.div>
-    </div>
+    </section>
   );
 }

@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Search, PenTool, Rocket, BarChart } from 'lucide-react';
 
+const EASE = [0.22, 1, 0.36, 1];
+
 export default function Process() {
   const { language } = useLanguage();
 
@@ -42,23 +44,24 @@ export default function Process() {
   ];
 
   return (
-    <div className="bg-gray-50 py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <div className="section section-quiet">
+      <div className="shell">
+        <div className="text-center mb-12">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-extrabold text-gray-900 sm:text-4xl"
+            transition={{ duration: 0.55, ease: EASE }}
+            className="title-xl"
           >
             {language === 'it' ? 'Come Lavoriamo' : 'How We Work'}
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="mt-4 text-xl text-gray-500"
+            transition={{ duration: 0.55, ease: EASE, delay: 0.08 }}
+            className="lede measure mt-4 mx-auto"
           >
             {language === 'it' 
               ? 'Il nostro processo in quattro step per il tuo successo'
@@ -68,30 +71,28 @@ export default function Process() {
 
         <div className="relative">
           {/* Connecting line */}
-          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 transform -translate-y-1/2" />
+          <div className="absolute top-1/2 left-0 right-0 h-px bg-line -translate-y-1/2" />
 
-          <div className="relative grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="relative grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="relative bg-white p-6 rounded-2xl shadow-lg"
+                transition={{ duration: 0.55, ease: EASE, delay: index * 0.06 }}
+                className={`relative card card-hover${index % 2 ? ' card-quiet' : ''}`}
               >
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className={`flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${step.color} text-white shadow-lg`}
-                  >
-                    <step.icon className="h-6 w-6" />
-                  </motion.div>
+                <div className="flex items-center justify-between gap-3 mb-4">
+                  <p className="eyebrow">{index + 1}</p>
+                  <span className="icon-tile">
+                    <step.icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
                 </div>
 
-                <div className="pt-8 text-center">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
-                  <p className="text-gray-500">{step.description}</p>
+                <div>
+                  <h3 className="title-lg mb-3">{step.title}</h3>
+                  <p className="text-[0.95rem] text-ink-600 leading-relaxed">{step.description}</p>
                 </div>
               </motion.div>
             ))}

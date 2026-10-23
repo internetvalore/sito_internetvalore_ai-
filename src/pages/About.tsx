@@ -7,9 +7,10 @@ import { metaContent } from '../seo/metaContent';
 import HeroSection from '../components/HeroSection';
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 12 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true }
+  viewport: { once: true },
+  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
 };
 
 const staggerContainer = {
@@ -17,7 +18,7 @@ const staggerContainer = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
+      staggerChildren: 0.06
     }
   }
 };
@@ -146,7 +147,7 @@ export default function About() {
           { name: language === 'it' ? 'Chi Siamo' : 'About Us', path: '/about' }
         ]}
       />
-      <div className="bg-gradient-to-b from-white to-gray-50">
+      <div className="bg-white">
         <HeroSection
           title={content.title}
           subtitle={content.subtitle}
@@ -155,40 +156,33 @@ export default function About() {
         />
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-12"
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="section shell"
         >
-          <div className="bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl shadow-xl p-8 sm:p-10 text-white">
+          <div className="card text-center">
             <div className="max-w-3xl mx-auto text-center">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                className="inline-flex items-center justify-center p-3 bg-white/10 rounded-full mb-6"
-              >
-                <Star className="h-8 w-8 text-yellow-300" />
-              </motion.div>
-              <h3 className="text-2xl font-bold mb-4">{content.reputation.title}</h3>
-              <p className="text-lg mb-6">{content.reputation.description}</p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  className="flex items-center space-x-1"
-                >
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-6 w-6 text-yellow-300 fill-current" />
-                  ))}
-                </motion.div>
-                <span className="text-lg font-semibold">Google Verified Reviews</span>
+              <div className="icon-tile rounded-full mx-auto mb-6">
+                <Star className="h-6 w-6 text-accent-600" />
               </div>
-              <div className="bg-white/10 rounded-xl p-6">
-                <div className="flex items-center justify-center mb-4">
-                  <Search className="h-6 w-6 mr-2" />
-                  <span className="text-lg font-semibold">{content.reputation.approach.title}</span>
+              <h3 className="title-lg mb-4">{content.reputation.title}</h3>
+              <p className="lede measure mx-auto mb-6">{content.reputation.description}</p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+                <div className="flex items-center space-x-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-ink-400 fill-current" />
+                  ))}
                 </div>
-                <p className="text-base">
+                <span className="text-base font-semibold text-ink-900">Google Verified Reviews</span>
+              </div>
+              <div className="card card-quiet">
+                <div className="flex items-center justify-center mb-4 gap-2">
+                  <Search className="h-5 w-5 text-accent-600" />
+                  <span className="text-base font-semibold text-ink-900">{content.reputation.approach.title}</span>
+                </div>
+                <p className="text-[0.95rem] text-ink-600 leading-relaxed">
                   {content.reputation.approach.description}
                 </p>
               </div>
@@ -201,24 +195,22 @@ export default function About() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-20"
+          className="section shell"
         >
           <div className="max-w-3xl mx-auto">
             <motion.div
-              className="bg-white rounded-2xl shadow-xl overflow-hidden"
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.3 }}
+              className="card card-hover p-0 overflow-hidden"
             >
-              <div className="px-6 py-8 sm:p-10 bg-gradient-to-r from-blue-600 to-blue-400">
-                <div className="text-center text-white">
-                  <h3 className="text-2xl font-bold">{content.founder.title}</h3>
+              <div className="px-6 py-8 sm:p-10 bg-paper">
+                <div className="text-center">
+                  <h3 className="title-lg">{content.founder.title}</h3>
                   <div className="mt-4">
                     <motion.div
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
+                      initial={{ opacity: 0, y: 12 }}
+                      whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                      className="inline-block rounded-full p-1 bg-white/10 backdrop-blur-sm"
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                      className="media inline-flex rounded-full"
                     >
                       <img
                         className="h-32 w-32 rounded-full object-cover"
@@ -231,22 +223,20 @@ export default function About() {
               </div>
               <div className="px-6 py-8 sm:p-10">
                 <div className="space-y-4 text-center">
-                  <h4 className="text-xl font-semibold text-gray-900">Andrea Falzin</h4>
-                  <p className="text-gray-600 font-medium">
+                  <h4 className="text-xl font-semibold text-ink-900">Andrea Falzin</h4>
+                  <p className="text-[0.95rem] text-ink-600 font-medium leading-relaxed">
                     {content.founder.subtitle}
                   </p>
-                  <p className="text-gray-600">
+                  <p className="text-[0.95rem] text-ink-600 leading-relaxed">
                     {content.founder.description}
                   </p>
                   <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
                     href="https://www.linkedin.com/in/falzin/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+                    className="btn btn-primary btn-sm"
                   >
-                    <Linkedin className="h-5 w-5 mr-2" />
+                    <Linkedin className="h-4 w-4" />
                     {content.founder.linkedin}
                   </motion.a>
                 </div>
@@ -260,33 +250,28 @@ export default function About() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-20"
+          className="section shell"
         >
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
                 variants={{
-                  hidden: { opacity: 0, y: 20 },
+                  hidden: { opacity: 0, y: 12 },
                   show: { opacity: 1, y: 0 }
                 }}
-                whileHover={{ y: -10 }}
-                className="relative group"
+                className="card card-quiet card-hover relative group"
               >
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <motion.div
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.8 }}
-                    className="inline-flex items-center justify-center p-3 bg-blue-600 rounded-xl shadow-lg mb-4"
-                  >
-                    {index === 0 && <Briefcase className="h-6 w-6 text-white" />}
-                    {index === 1 && <Award className="h-6 w-6 text-white" />}
-                    {index === 2 && <ChartBar className="h-6 w-6 text-white" />}
-                  </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
+                <div className="p-0">
+                  <div className="icon-tile mb-4">
+                    {index === 0 && <Briefcase className="h-5 w-5" />}
+                    {index === 1 && <Award className="h-5 w-5" />}
+                    {index === 2 && <ChartBar className="h-5 w-5" />}
+                  </div>
+                  <h3 className="text-lg font-semibold text-ink-900 transition-colors duration-200">
                     {feature.title}
                   </h3>
-                  <p className="mt-4 text-gray-500">
+                  <p className="mt-3 text-[0.95rem] text-ink-600 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -296,37 +281,32 @@ export default function About() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-20"
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="section shell"
         >
-          <div className="bg-white rounded-2xl shadow-xl p-8 sm:p-10">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">{content.methodology.title}</h3>
-            <div className="space-y-8">
+          <div className="card p-0">
+            <h3 className="title-lg text-center mb-8">{content.methodology.title}</h3>
+            <div className="space-y-6">
               {methodologySteps.map((step, index) => (
                 <motion.div
                   key={index}
                   className="flex items-start"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  whileHover={{ x: 10 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.06 }}
                 >
-                  <motion.div
-                    className="flex-shrink-0"
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-blue-600 text-white text-xl font-bold shadow-lg">
+                  <div className="flex-shrink-0">
+                    <div className="icon-tile rounded-full text-base font-semibold">
                       {index + 1}
                     </div>
-                  </motion.div>
-                  <div className="ml-6">
-                    <h4 className="text-xl font-semibold text-gray-900">{step.title}</h4>
-                    <p className="mt-2 text-gray-500">{step.description}</p>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-lg font-semibold text-ink-900">{step.title}</h4>
+                    <p className="mt-2 text-[0.95rem] text-ink-600 leading-relaxed">{step.description}</p>
                   </div>
                 </motion.div>
               ))}

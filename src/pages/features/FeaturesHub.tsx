@@ -40,28 +40,25 @@ export default function FeaturesHub() {
         ]}
       />
 
-      <div className="bg-slate-950 text-white min-h-screen font-sans selection:bg-indigo-500 selection:text-white">
-        {/* Glow Background */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="min-h-screen font-sans">
 
         {/* ── Header Pillar ──────────────────────────────────────────────── */}
-        <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 text-center relative z-10">
+        <header className="shell hero-premium py-20 lg:py-24 text-center relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: -15 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-950/40 text-indigo-300 text-xs font-mono mb-6 backdrop-blur-md"
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="eyebrow inline-flex items-center gap-2 px-3 py-1 rounded-full border border-line bg-white mb-6"
           >
-            <Cpu className="w-3.5 h-3.5 text-indigo-400" />
+            <Cpu className="w-3.5 h-3.5" />
             {isIt ? 'ARCHITETTURA CAPACITÀ MASTERANALYZER' : 'MASTERANALYZER CAPABILITY ARCHITECTURE'}
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-purple-400"
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            className="title-xl hero-title"
           >
             {isIt ? 'Le Funzionalità che Proteggono il Tuo Margine' : 'The Capabilities Protecting Your Margin'}
           </motion.h1>
@@ -69,83 +66,83 @@ export default function FeaturesHub() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed"
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            className="lede measure mx-auto mt-6"
           >
             {isIt
               ? 'Non vendiamo software in licenza: masterAnalyzer è la nostra infrastruttura proprietaria di oltre 1.000.000 di righe censite e 482 tool con cui gestiamo in outsourcing le campagne Google Ads e Meta per e-commerce e aziende qualificate.'
               : 'We do not sell software licenses: masterAnalyzer is our proprietary infrastructure of over 1,000,000 lines and 482 tools used to manage outsourced Google Ads & Meta campaigns for qualified brands.'}
           </motion.p>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-3 text-xs font-mono text-slate-400">
-            <span className="px-3 py-1.5 rounded-lg bg-white/[0.02] border border-white/5">✓ 1.004.600+ Righe Censite</span>
-            <span className="px-3 py-1.5 rounded-lg bg-white/[0.02] border border-white/5">✓ 482 Tool LLM Specializzati</span>
-            <span className="px-3 py-1.5 rounded-lg bg-white/[0.02] border border-white/5">✓ 293 Playbook Operativi</span>
-            <span className="px-3 py-1.5 rounded-lg bg-white/[0.02] border border-white/5">✓ 16.364 Test di Regressione</span>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <span className="chip">✓ 1.004.600+ Righe Censite</span>
+            <span className="chip">✓ 482 Tool LLM Specializzati</span>
+            <span className="chip">✓ 293 Playbook Operativi</span>
+            <span className="chip">✓ 16.364 Test di Regressione</span>
           </div>
         </header>
 
         {/* ── Clusters Hubs Grid ─────────────────────────────────────────── */}
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 relative z-10">
-          <div className="grid md:grid-cols-2 gap-8">
+        <main className="shell pb-20 lg:pb-24 relative z-10">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {themes.map((theme) => (
               <motion.div
                 key={theme.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-950 border border-white/10 rounded-3xl p-8 hover:border-indigo-500/40 transition-all duration-300 flex flex-col justify-between group shadow-xl"
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                className="card card-hover flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between gap-4 mb-4">
-                    <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest bg-indigo-950/60 px-2.5 py-1 rounded-md border border-indigo-500/30">
+                    <span className="eyebrow">
                       Cluster {theme.id}
                     </span>
-                    <span className="text-xs text-slate-500 font-mono">
+                    <span className="text-xs text-ink-500">
                       {theme.spokes.length} {isIt ? 'Capacità Dedicate' : 'Spokes'}
                     </span>
                   </div>
 
-                  <h2 className="text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors">
+                  <h2 className="title-lg transition-colors">
                     <Link to={`/${language}/funzionalita/${theme.id}`}>
                       {theme.title[language]}
                     </Link>
                   </h2>
 
-                  <p className="mt-3 text-sm text-slate-400 leading-relaxed">
+                  <p className="mt-3 text-[0.95rem] text-ink-600 leading-relaxed">
                     {theme.intro[language]}
                   </p>
 
                   <div className="mt-6 space-y-2.5">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                    <p className="eyebrow eyebrow-quiet">
                       {isIt ? 'Capacità & Soluzioni Analitiche:' : 'Key Capabilities:'}
                     </p>
                     {theme.spokes.map((spoke) => (
                       <Link
                         key={spoke.slug}
                         to={`/${language}/funzionalita/${theme.id}/${spoke.slug}`}
-                        className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.05] transition-all group/item text-sm"
+                        className="flex items-center justify-between p-3 rounded-xl bg-paper border border-line-soft hover:border-line transition-colors group/item text-[0.95rem]"
                       >
-                        <span className="text-slate-300 group-hover/item:text-white font-medium">
+                        <span className="text-ink-900 font-medium">
                           {spoke.h1[language].split(':')[0]}
                         </span>
-                        <ArrowRight className="w-4 h-4 text-slate-500 group-hover/item:text-indigo-400 group-hover/item:translate-x-1 transition-all flex-shrink-0" />
+                        <ArrowRight className="w-4 h-4 text-ink-500 group-hover/item:text-accent-600 transition-colors flex-shrink-0" />
                       </Link>
                     ))}
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+                <div className="mt-8 pt-6 hairline flex items-center justify-between">
                   <Link
                     to={`/${language}/funzionalita/${theme.id}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors"
+                    className="inline-flex items-center gap-2 text-[0.95rem] font-semibold text-accent-600 hover:text-accent-700 transition-colors"
                   >
                     {isIt ? 'Esplora il cluster tematico' : 'Explore thematic cluster'} →
                   </Link>
                   <Link
                     to={`/${language}/casi-e-audit?tema=${theme.id}`}
-                    className="text-xs font-medium text-slate-400 hover:text-white transition-colors"
+                    className="text-xs font-medium text-ink-600 hover:text-ink-900 transition-colors"
                   >
                     {isIt ? 'Richiedi audit dedicato' : 'Request dedicated audit'}
                   </Link>
@@ -160,15 +157,15 @@ export default function FeaturesHub() {
           </div>
 
           {/* ── Bottom Section: Protected Access Reminder ─────────────────── */}
-          <div className="mt-16 bg-indigo-950/20 border border-indigo-500/20 rounded-3xl p-8 text-center backdrop-blur-md">
-            <div className="inline-flex items-center gap-2 text-indigo-300 text-xs font-mono mb-3">
+          <div className="mt-16 card card-quiet text-center">
+            <div className="eyebrow inline-flex items-center gap-2 mb-3">
               <Lock className="w-3.5 h-3.5" />
               {isIt ? 'ACCESSO QUALIFICATO & PROTEZIONE COMPETITIVA' : 'QUALIFIED ACCESS & COMPETITIVE PROTECTION'}
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">
+            <h3 className="title-lg">
               {isIt ? 'Vuoi verificare queste capacità sul tuo account?' : 'Want to verify these capabilities on your account?'}
             </h3>
-            <p className="text-sm text-slate-400 max-w-2xl mx-auto mt-2 leading-relaxed">
+            <p className="lede measure mx-auto mt-2">
               {isIt
                 ? 'Eseguiamo l\'audit a Raggi X in sola lettura per e-commerce e brand con spesa pubblicitaria superiore a 15.000€/mese, con accordo reciproco di riservatezza (NDA).'
                 : 'We execute read-only X-Ray audits for brands spending over €15,000/mo, governed by a mutual non-disclosure agreement (NDA).'}
@@ -176,7 +173,7 @@ export default function FeaturesHub() {
             <div className="mt-6">
               <Link
                 to={`/${language}/casi-e-audit`}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-bold text-sm text-white shadow-lg shadow-indigo-600/20 transition-all active:scale-95"
+                className="btn btn-primary"
               >
                 {isIt ? 'Accedi al Dossier di Audit Qualificato' : 'Access Qualified Audit Dossier'}
                 <ArrowRight className="w-4 h-4" />

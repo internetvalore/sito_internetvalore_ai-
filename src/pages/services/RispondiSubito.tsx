@@ -134,7 +134,7 @@ export default function RispondiSubito() {
           { name: 'RispondiSubito', path: '/services/rispondi-subito' }
         ]}
       />
-      <div className="bg-gradient-to-b from-white to-gray-50">
+      <div className="bg-white">
         <HeroSection
           title={content.title}
           subtitle={content.subtitle}
@@ -144,75 +144,75 @@ export default function RispondiSubito() {
 
         {/* Test Service CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-12 bg-blue-50 rounded-xl p-8 text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="section shell text-center"
         >
-          <h2 className="text-2xl font-bold text-blue-900 mb-4">{content.testCta.title}</h2>
-          <p className="text-lg text-blue-700 mb-6">{content.testCta.description}</p>
+          <h2 className="title-lg mb-4">{content.testCta.title}</h2>
+          <p className="lede measure mx-auto mb-6">{content.testCta.description}</p>
           <motion.a
             href="tel:800940213"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300 shadow-lg"
+            className="btn btn-primary"
           >
-            <Phone className="h-6 w-6 mr-2" />
+            <Phone className="h-4 w-4" />
             {content.testCta.button}
           </motion.a>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="mt-20">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              {content.features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="relative bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-                >
-                  <div className="flex items-center">
-                    <div className="ml-4">
-                      <h2 className="text-lg font-medium text-gray-900">{feature.title}</h2>
-                      <p className="mt-2 text-base text-gray-500">{feature.description}</p>
-                    </div>
+        <div className="shell">
+          <div className="section grid grid-cols-1 gap-6 md:grid-cols-2">
+            {content.features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.06 }}
+                className="card card-hover relative"
+              >
+                <div className="flex items-start">
+                  <div className="flex-1">
+                    <h2 className="text-lg font-semibold text-ink-900">{feature.title}</h2>
+                    <p className="mt-2 text-[0.95rem] text-ink-600 leading-relaxed">{feature.description}</p>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-20"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="section"
           >
-            <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
+            <h2 className="title-lg text-center mb-10">
               {content.process.title}
             </h2>
             <div className="relative">
-              <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                <div className="w-full border-t border-gray-300" />
+              <div className="absolute inset-0 hidden md:flex items-center" aria-hidden="true">
+                <div className="w-full hairline" />
               </div>
-              <div className="relative flex justify-between">
+              <div className="relative grid grid-cols-1 gap-4 md:grid-cols-4">
                 {content.process.steps.map((step, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                    className="bg-white px-4"
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.06 }}
+                    className="card card-quiet card-hover"
                   >
                     <div className="relative">
-                      <div className="h-12 w-12 rounded-full bg-blue-600 flex items-center justify-center text-white text-lg font-bold">
+                      <div className="icon-tile rounded-full text-lg font-semibold">
                         {index + 1}
                       </div>
                       <div className="mt-4">
-                        <h3 className="text-lg font-medium text-gray-900">{step.title}</h3>
-                        <p className="mt-2 text-sm text-gray-500">{step.description}</p>
+                        <h3 className="text-base font-semibold text-ink-900">{step.title}</h3>
+                        <p className="mt-2 text-[0.9rem] text-ink-600 leading-relaxed">{step.description}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -222,26 +222,27 @@ export default function RispondiSubito() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-20"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="section"
           >
-            <div className="bg-blue-600 rounded-lg shadow-xl overflow-hidden">
+            <div className="card overflow-hidden">
               <div className="px-6 py-12 max-w-xl mx-auto sm:px-10 sm:py-16 lg:max-w-screen-xl lg:px-8">
                 <div className="max-w-3xl mx-auto text-center">
-                  <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+                  <h2 className="title-lg">
                     {content.cta.title}
                   </h2>
-                  <p className="mt-4 text-lg leading-6 text-blue-100">
+                  <p className="mt-4 lede measure mx-auto">
                     {content.cta.description}
                   </p>
                   <Link
                     to={`/${language}/contact`}
-                    className="mt-8 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 transition-colors duration-300"
+                    className="mt-8 btn btn-primary"
                   >
                     {content.cta.button}
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
               </div>
@@ -249,22 +250,22 @@ export default function RispondiSubito() {
           </motion.div>
 
           {/* Cross-linking to related solutions */}
-          <div className="mt-20 pb-8">
-            <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+          <div className="section pb-8">
+            <h2 className="title-lg text-center mb-8">
               {language === 'it' ? 'Soluzioni per il tuo ruolo' : 'Solutions for your role'}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Link to={`/${language}/solutions/titolare-pmi`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
-                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{language === 'it' ? 'Titolare PMI' : 'SME Owner'}</h3>
-                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Controllo budget e profitto reale' : 'Budget control and real profit'}</p>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              <Link to={`/${language}/solutions/titolare-pmi`} className="card card-hover block group">
+                <h3 className="font-semibold text-ink-900 group-hover:text-accent-600 transition-colors">{language === 'it' ? 'Titolare PMI' : 'SME Owner'}</h3>
+                <p className="text-[0.9rem] text-ink-600 mt-2">{language === 'it' ? 'Controllo budget e profitto reale' : 'Budget control and real profit'}</p>
               </Link>
-              <Link to={`/${language}/services/lead-generation`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
-                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Lead Generation</h3>
-                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Deep Search e saturazione nicchie' : 'Deep Search and niche saturation'}</p>
+              <Link to={`/${language}/services/lead-generation`} className="card card-hover block group">
+                <h3 className="font-semibold text-ink-900 group-hover:text-accent-600 transition-colors">Lead Generation</h3>
+                <p className="text-[0.9rem] text-ink-600 mt-2">{language === 'it' ? 'Deep Search e saturazione nicchie' : 'Deep Search and niche saturation'}</p>
               </Link>
-              <Link to={`/${language}/services/analytics`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group">
-                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Analytics</h3>
-                <p className="text-sm text-gray-500 mt-2">{language === 'it' ? 'Riconciliazione eventi e scomposizione LMDI' : 'Event reconciliation and LMDI decomposition'}</p>
+              <Link to={`/${language}/services/analytics`} className="card card-hover block group">
+                <h3 className="font-semibold text-ink-900 group-hover:text-accent-600 transition-colors">Analytics</h3>
+                <p className="text-[0.9rem] text-ink-600 mt-2">{language === 'it' ? 'Riconciliazione eventi e scomposizione LMDI' : 'Event reconciliation and LMDI decomposition'}</p>
               </Link>
             </div>
           </div>

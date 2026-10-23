@@ -11,15 +11,15 @@ import {
 } from 'lucide-react';
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+  hidden: { opacity: 0, y: 12 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } }
 };
 
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.08 }
+    transition: { staggerChildren: 0.06, transitionChildren: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } }
   }
 };
 
@@ -45,7 +45,7 @@ export default function Manifesto() {
   const currentMeta = metaContent.manifesto[language];
 
   return (
-    <div className="bg-gray-50 min-h-screen pt-24 pb-16">
+    <div className="section-quiet min-h-screen font-sans pt-24 pb-16">
       <MetaTags 
         title={currentMeta.title}
         description={currentMeta.description}
@@ -57,29 +57,29 @@ export default function Manifesto() {
       />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.15),transparent_40%)]" />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <section className="section hero-premium relative text-center border-b border-line">
+        <div className="shell relative z-10 text-center">
           <motion.span 
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold tracking-wider uppercase mb-6 border border-blue-500/30"
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="eyebrow inline-block mb-6"
           >
             {isIt ? 'IL MANIFESTO DI METODO' : 'OUR METHOD MANIFESTO'}
           </motion.span>
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
+            transition={{ delay: 0.1, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="title-xl hero-title mb-6 text-ink-900"
           >
             {isIt ? 'Prima gli occhi, poi le gambe' : 'Eyes first, then legs'}
           </motion.h1>
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="max-w-3xl mx-auto text-lg sm:text-xl text-slate-300 leading-relaxed"
+            transition={{ delay: 0.2, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-3xl mx-auto text-[1.05rem] leading-relaxed text-ink-600"
           >
             {isIt 
               ? 'La misura viene prima delle decisioni. 35 risposte concrete alle inefficienze più comuni delle campagne digitali, raccontate una capacità alla volta.'
@@ -89,19 +89,19 @@ export default function Manifesto() {
       </section>
 
       {/* Manifesto Text */}
-      <section className="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="shell section">
         <motion.div 
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="bg-white rounded-2xl shadow-xl p-8 sm:p-12 border border-gray-100"
+          className="card"
         >
-          <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-slate-900 mb-8 border-b pb-4">
+          <motion.h2 variants={fadeInUp} className="title-xl mb-8 border-b border-line pb-4">
             {isIt ? 'La nostra promessa di metodo' : 'Our promise of method'}
           </motion.h2>
 
-          <div className="space-y-8 text-slate-700 leading-relaxed text-base sm:text-lg">
+          <div className="space-y-6 text-ink-600 leading-relaxed text-[0.95rem]">
             <motion.p variants={fadeInUp}>
               {isIt 
                 ? "C'è un momento che ogni imprenditore conosce: guardi i report della pubblicità e i numeri non tornano. Una piattaforma dice una cosa, l'altra ne dice un'altra, e in mezzo ci sono i tuoi soldi. Questa sezione raccoglie la nostra promessa di metodo, e da qui puoi accedere alla spiegazione di ciascuna delle 35 capacità della nostra suite."
@@ -109,12 +109,12 @@ export default function Manifesto() {
             </motion.p>
 
             {/* The 5 Pillars */}
-            <div className="grid gap-6 mt-12">
-              <motion.div variants={fadeInUp} className="flex gap-4 p-5 rounded-xl bg-slate-50 border border-slate-100">
-                <div className="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 font-bold text-xl">1</div>
+            <div className="grid gap-4 mt-10">
+              <motion.div variants={fadeInUp} className="card card-quiet flex gap-4">
+                <div className="icon-tile shrink-0">1</div>
                 <div>
-                  <h3 className="font-bold text-slate-900 text-lg mb-1">{isIt ? 'La misura prima delle decisioni' : 'Measurement before decisions'}</h3>
-                  <p className="text-slate-600 text-sm">
+                  <h3 className="text-[1.05rem] font-semibold mb-1">{isIt ? 'La misura prima delle decisioni' : 'Measurement before decisions'}</h3>
+                  <p className="text-sm text-ink-600">
                     {isIt 
                       ? 'Prima di giudicare una campagna o decidere un budget, verifichiamo che i dati su cui stiamo decidendo siano sani. Ripariamo la vista prima di muovere i capitali.'
                       : 'Before judging a campaign or deciding on a budget, we verify that the data we are deciding on is healthy. We repair our sight before moving capital.'}
@@ -122,11 +122,11 @@ export default function Manifesto() {
                 </div>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="flex gap-4 p-5 rounded-xl bg-slate-50 border border-slate-100">
-                <div className="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 font-bold text-xl">2</div>
+              <motion.div variants={fadeInUp} className="card card-quiet flex gap-4">
+                <div className="icon-tile shrink-0">2</div>
                 <div>
-                  <h3 className="font-bold text-slate-900 text-lg mb-1">{isIt ? 'Parliamo di soldi veri' : 'We talk about real money'}</h3>
-                  <p className="text-slate-600 text-sm">
+                  <h3 className="text-[1.05rem] font-semibold mb-1">{isIt ? 'Parliamo di soldi veri' : 'We talk about real money'}</h3>
+                  <p className="text-sm text-ink-600">
                     {isIt 
                       ? 'Il fatturato lordo non paga gli stipendi, li paga il margine reale. Analizziamo profitto vero, resi e rimborsi inclusi, escludendo le metriche di pura vanità.'
                       : 'Gross turnover does not pay salaries, real margin does. We analyze true profit, returns and refunds included, excluding pure vanity metrics.'}
@@ -134,11 +134,11 @@ export default function Manifesto() {
                 </div>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="flex gap-4 p-5 rounded-xl bg-slate-50 border border-slate-100">
-                <div className="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 font-bold text-xl">3</div>
+              <motion.div variants={fadeInUp} className="card card-quiet flex gap-4">
+                <div className="icon-tile shrink-0">3</div>
                 <div>
-                  <h3 className="font-bold text-slate-900 text-lg mb-1">{isIt ? 'Spiegazioni matematiche, non scuse' : 'Mathematical explanations, not excuses'}</h3>
-                  <p className="text-slate-600 text-sm">
+                  <h3 className="text-[1.05rem] font-semibold mb-1">{isIt ? 'Spiegazioni matematiche, non scuse' : 'Mathematical explanations, not excuses'}</h3>
+                  <p className="text-sm text-ink-600">
                     {isIt 
                       ? 'Se le vendite calano, scomponiamo l’effetto matematicamente: quanto pesa il traffico, quanto lo scontrino medio, quanto il prezzo del catalogo, senza alzate di spalle.'
                       : 'If sales drop, we break down the effect mathematically: how much traffic weighs, how much the average receipt, how much the catalog price, without excuses.'}
@@ -146,11 +146,11 @@ export default function Manifesto() {
                 </div>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="flex gap-4 p-5 rounded-xl bg-slate-50 border border-slate-100">
-                <div className="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 font-bold text-xl">4</div>
+              <motion.div variants={fadeInUp} className="card card-quiet flex gap-4">
+                <div className="icon-tile shrink-0">4</div>
                 <div>
-                  <h3 className="font-bold text-slate-900 text-lg mb-1">{isIt ? 'Prove incrementali, non promesse' : 'Incremental proofs, not promises'}</h3>
-                  <p className="text-slate-600 text-sm">
+                  <h3 className="text-[1.05rem] font-semibold mb-1">{isIt ? 'Prove incrementali, non promesse' : 'Incremental proofs, not promises'}</h3>
+                  <p className="text-sm text-ink-600">
                     {isIt 
                       ? 'Misuriamo il valore effettivo della pubblicità anche senza cookie tramite esperimenti geografici controllati (controfattuali) e modelli econometrici trasparenti.'
                       : 'We measure the actual value of advertising even without cookies through controlled geographic experiments (counterfactuals) and transparent econometric models.'}
@@ -158,11 +158,11 @@ export default function Manifesto() {
                 </div>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="flex gap-4 p-5 rounded-xl bg-slate-50 border border-slate-100">
-                <div className="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 font-bold text-xl">5</div>
+              <motion.div variants={fadeInUp} className="card card-quiet flex gap-4">
+                <div className="icon-tile shrink-0">5</div>
                 <div>
-                  <h3 className="font-bold text-slate-900 text-lg mb-1">{isIt ? 'Niente si muove senza la tua firma' : 'Nothing moves without your signature'}</h3>
-                  <p className="text-slate-600 text-sm">
+                  <h3 className="text-[1.05rem] font-semibold mb-1">{isIt ? 'Niente si muove senza la tua firma' : 'Nothing moves without your signature'}</h3>
+                  <p className="text-sm text-ink-600">
                     {isIt 
                       ? 'Ogni manovra viene preparata in staging e richiede la tua validazione. Le campagne nascono sempre in pausa e non ci sono modifiche a sorpresa.'
                       : 'Every maneuver is prepared in staging and requires your validation. Campaigns always start in pause, and there are no surprise edits.'}
@@ -171,7 +171,7 @@ export default function Manifesto() {
               </motion.div>
             </div>
 
-            <motion.p variants={fadeInUp} className="mt-8 pt-6 border-t text-slate-600 text-sm italic">
+            <motion.p variants={fadeInUp} className="mt-8 pt-6 border-t border-line text-sm text-ink-600 italic">
               {isIt 
                 ? "Ogni scheda video qui sotto racconta una capacità in meno di due minuti: il dolore che conosci, la soluzione della suite, e una domanda-firma da fare alla tua agenzia per verificare se sanno operare a questo livello."
                 : "Each video tab below explains a capability in less than two minutes: the pain you know, the suite's solution, and a signature question to ask your agency to verify if they can operate at this level."}
@@ -181,11 +181,11 @@ export default function Manifesto() {
       </section>
 
       {/* Video Collection Index */}
-      <section className="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-slate-900 mb-4 text-center">
+      <section className="shell section">
+        <h2 className="title-xl text-center mb-4">
           {isIt ? 'L’Indice delle 35 Capacità della Suite' : 'Index of the 35 Suite Capabilities'}
         </h2>
-        <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="lede text-center mb-10 max-w-2xl mx-auto">
           {isIt 
             ? 'Seleziona un tema per esplorare i video-spot, le schede di copywriting PAR (Pain-Agitate-Relief) ed i materiali di inbound.'
             : 'Select a theme to explore the video-spots, the PAR (Pain-Agitate-Relief) copywriting sheets, and the inbound materials.'}
@@ -199,44 +199,44 @@ export default function Manifesto() {
             return (
               <motion.div 
                 key={themeName}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: themeIdx * 0.05 }}
-                className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden"
+                transition={{ delay: themeIdx * 0.04, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                className="card card-hover overflow-hidden"
               >
-                <div className="bg-slate-900 text-white p-6 flex items-center gap-4">
-                  <div className="p-3 rounded-lg bg-blue-500/20 text-blue-400">
-                    <IconComponent className="w-6 h-6" />
+                <div className="card-quiet flex gap-4 p-5">
+                  <div className="icon-tile shrink-0">
+                    <IconComponent className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs uppercase text-slate-400 font-bold tracking-wider">
+                    <span className="eyebrow eyebrow-quiet">
                       {isIt ? `TEMA ${themeIdx + 1}` : `THEME ${themeIdx + 1}`}
                     </span>
-                    <h3 className="text-xl font-bold">{isIt ? themeName : themeName}</h3>
+                    <h3 className="text-[1.05rem] font-semibold">{isIt ? themeName : themeName}</h3>
                   </div>
                 </div>
 
-                <div className="divide-y divide-gray-100">
+                <div className="divide-y divide-line">
                   {themeVideos.map((video) => (
                     <Link 
                       key={video.id}
                       to={`/${language}/video/${video.id}`}
-                      className="group flex items-center justify-between p-5 hover:bg-slate-50 transition-colors"
+                      className="group flex items-center justify-between p-5 hover:bg-paper transition-colors"
                     >
                       <div className="flex items-center gap-4">
-                        <PlayCircle className="w-6 h-6 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                        <PlayCircle className="w-5 h-5 text-ink-500 group-hover:text-accent-600 transition-colors" />
                         <div>
-                          <h4 className="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                          <h4 className="font-semibold text-ink-900 transition-colors">
                             {video.title}
                           </h4>
-                          <p className="text-xs text-slate-500 mt-0.5">
+                          <p className="text-xs text-ink-600 mt-0.5">
                             <span className="font-semibold">{isIt ? 'Pain SEO: ' : 'SEO Pain: '}</span>
                             {video.seoPain}
                           </p>
                         </div>
                       </div>
-                      <div className="flex items-center gap-2 text-blue-600 font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="flex items-center gap-2 text-accent-600 font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity">
                         <span>{isIt ? 'Leggi la scheda' : 'View sheet'}</span>
                         <ArrowRight className="w-4 h-4" />
                       </div>

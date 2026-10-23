@@ -41,18 +41,19 @@ export default function FacebookFeed() {
   }, []);
 
   return (
-    <div className="bg-white py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="section">
+      <div className="shell">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-10"
         >
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          <h2 className="title-xl mb-4">
             {language === 'it' ? 'Seguici su Facebook' : 'Follow us on Facebook'}
           </h2>
-          <p className="mt-4 text-xl text-gray-500">
+          <p className="lede">
             {language === 'it' 
               ? 'Resta aggiornato sulle ultime novità e consigli di marketing digitale'
               : 'Stay updated with the latest digital marketing news and tips'}
@@ -60,13 +61,13 @@ export default function FacebookFeed() {
         </motion.div>
         
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           className="flex justify-center"
         >
-          <div className="w-full max-w-3xl rounded-xl shadow-lg overflow-hidden bg-white">
+          <div className="card p-0 overflow-hidden w-full max-w-3xl">
             <div 
               className="elfsight-app-8890b5cd-b1e1-4c98-bc99-c9a8a5cdebd6"
               style={{ 

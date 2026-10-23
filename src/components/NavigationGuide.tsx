@@ -87,31 +87,29 @@ export default function NavigationGuide() {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-50 flex flex-col space-y-4">
+    <div className="fixed bottom-6 right-6 z-50 flex flex-wrap items-center gap-2 rounded-full border border-line bg-white/80 backdrop-blur-xl px-2 py-2">
       <motion.a
         href="tel:800931785"
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 100 }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-700 transition-colors duration-300"
+        exit={{ opacity: 0, y: 14 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="btn btn-ghost btn-sm"
       >
-        <Phone className="h-5 w-5" />
+        <Phone className="h-4 w-4 flex-shrink-0" />
         <span>{language === 'it' ? 'Chiama Ora' : 'Call Now'}</span>
       </motion.a>
 
       <motion.button
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 100 }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        exit={{ opacity: 0, y: 14 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         onClick={handleNext}
-        className="flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300"
+        className="btn btn-primary btn-sm"
       >
         <span>{language === 'it' ? currentStep.messageIt : currentStep.messageEn}</span>
-        <ArrowRight className="h-5 w-5" />
+        <ArrowRight className="h-4 w-4 flex-shrink-0" />
       </motion.button>
     </div>
   );

@@ -534,28 +534,26 @@ export default function AIPlatform() {
         }}
       />
 
-      <div className="bg-slate-950 text-white min-h-screen font-sans selection:bg-indigo-500 selection:text-white overflow-hidden">
+      <div className="min-h-screen font-sans section-dark">
         {/* Decorative background glows */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* ─── HERO SECTION ────────────────────────────────────────────────── */}
-        <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 text-center relative z-10">
+        <header className="shell py-16 lg:py-24 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-950/40 text-indigo-300 text-sm mb-6 backdrop-blur-md"
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="chip mb-6"
           >
-            <Sparkles className="w-4 h-4 text-indigo-400" />
+            <Sparkles className="w-4 h-4 text-accent-600" />
             {isIt ? 'LA NOSTRA TECNOLOGIA DI GESTIONE' : 'OUR GESTION TECHNOLOGY'}
           </motion.div>
           
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-purple-400"
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="title-xl hero-title"
           >
             {isIt ? 'La Tecnologia AI Dietro la nostra Gestione' : 'The AI Technology Powering Our Services'}
           </motion.h1>
@@ -563,8 +561,8 @@ export default function AIPlatform() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed"
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="lede measure mx-auto mt-4"
           >
             {isIt 
               ? 'Non vendiamo software. La nostra suite proprietaria (masterAnalyzer / Leonardo) è la struttura tecnologica esclusiva che utilizziamo per gestire le vostre campagne in outsourcing. Massima trasparenza, zero sprechi, ottimizzazione sul profitto (POAS) ed eventi reali.' 
@@ -573,28 +571,28 @@ export default function AIPlatform() {
         </header>
 
         {/* ─── CENSIMENTO DIMENSIONALE & ARCHITETTURA SECTION ─────────────── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
-          <div className="bg-gradient-to-b from-indigo-950/40 via-slate-900/60 to-slate-950 border border-indigo-500/20 rounded-3xl p-6 sm:p-10 backdrop-blur-xl shadow-2xl">
+        <section className="shell section relative z-10">
+          <div className="card card-dark">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 border-b border-white/10">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-950/40 text-emerald-300 text-xs font-mono mb-3">
-                  <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                <div className="chip mb-3">
+                  <CheckCircle className="w-3.5 h-3.5 text-accent-600" />
                   {isIt ? '13ª BATTUTA DI RILEVAMENTO · MISURA ESEGUITA, NON STIMATA' : '13TH CENSUS CYCLE · MEASURED, NOT ESTIMATED'}
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+                <h2 className="title-lg">
                   {isIt ? 'Censimento Dimensionale di masterAnalyzer' : 'Dimensional Census of masterAnalyzer'}
                 </h2>
-                <p className="text-sm text-slate-400 mt-1">
+                <p className="text-sm text-ink-400 mt-1">
                   {isIt 
                     ? 'Misura verificata su ramo main (2.965 commit progressivi di ingegneria proprietaria)' 
                     : 'Verified census on main branch (2,965 progressive commits of proprietary software engineering)'}
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-3">
-                <div className="px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/10 font-mono text-xs text-indigo-300">
+                <div className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-ink-200">
                   {isIt ? 'Massa Totale: 1.004.600+ righe' : 'Total Mass: 1,004,600+ lines'}
                 </div>
-                <div className="px-3 py-1.5 rounded-lg bg-indigo-950/60 border border-indigo-500/30 font-mono text-xs text-indigo-200">
+                <div className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-ink-300">
                   {isIt ? 'Compressione: 126×' : 'Compression: 126×'}
                 </div>
               </div>
@@ -602,98 +600,98 @@ export default function AIPlatform() {
 
             {/* 6 Key Architectural Metrics Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 pt-8 pb-8 border-b border-white/10 text-center">
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                <div className="text-2xl sm:text-3xl font-black text-indigo-400 font-mono">775.752</div>
-                <div className="text-xs font-bold text-white mt-1">{isIt ? 'Righe Python' : 'Python Lines'}</div>
-                <div className="text-[11px] text-slate-400 mt-0.5">{isIt ? '1.964 file · 523k puro codice' : '1,964 files · 523k pure code'}</div>
+              <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                <div className="stat-figure text-accent-600">775.752</div>
+                <div className="text-xs font-semibold mt-1">{isIt ? 'Righe Python' : 'Python Lines'}</div>
+                <div className="text-[11px] text-ink-400 mt-0.5">{isIt ? '1.964 file · 523k puro codice' : '1,964 files · 523k pure code'}</div>
               </div>
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                <div className="text-2xl sm:text-3xl font-black text-purple-400 font-mono">482</div>
-                <div className="text-xs font-bold text-white mt-1">{isIt ? 'Tool LLM' : 'LLM Tools'}</div>
-                <div className="text-[11px] text-slate-400 mt-0.5">{isIt ? '18 famiglie specializzate' : '18 specialized families'}</div>
+              <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                <div className="stat-figure text-ink-400">482</div>
+                <div className="text-xs font-semibold mt-1">{isIt ? 'Tool LLM' : 'LLM Tools'}</div>
+                <div className="text-[11px] text-ink-400 mt-0.5">{isIt ? '18 famiglie specializzate' : '18 specialized families'}</div>
               </div>
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                <div className="text-2xl sm:text-3xl font-black text-blue-400 font-mono">293</div>
-                <div className="text-xs font-bold text-white mt-1">{isIt ? 'Playbook Operativi' : 'Execution Playbooks'}</div>
-                <div className="text-[11px] text-slate-400 mt-0.5">{isIt ? '10 categorie · 93,5% one-click' : '10 categories · 93.5% one-click'}</div>
+              <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                <div className="stat-figure text-accent-600">293</div>
+                <div className="text-xs font-semibold mt-1">{isIt ? 'Playbook Operativi' : 'Execution Playbooks'}</div>
+                <div className="text-[11px] text-ink-400 mt-0.5">{isIt ? '10 categorie · 93,5% one-click' : '10 categories · 93.5% one-click'}</div>
               </div>
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                <div className="text-2xl sm:text-3xl font-black text-cyan-400 font-mono">1.533</div>
-                <div className="text-xs font-bold text-white mt-1">{isIt ? 'Anelli di Catena' : 'Chain Links'}</div>
-                <div className="text-[11px] text-slate-400 mt-0.5">{isIt ? '370 tappe analitiche distinte' : '370 distinct analytical steps'}</div>
+              <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                <div className="stat-figure text-ink-400">1.533</div>
+                <div className="text-xs font-semibold mt-1">{isIt ? 'Anelli di Catena' : 'Chain Links'}</div>
+                <div className="text-[11px] text-ink-400 mt-0.5">{isIt ? '370 tappe analitiche distinte' : '370 distinct analytical steps'}</div>
               </div>
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                <div className="text-2xl sm:text-3xl font-black text-emerald-400 font-mono">16.364</div>
-                <div className="text-xs font-bold text-white mt-1">{isIt ? 'Test Automatici' : 'Automated Tests'}</div>
-                <div className="text-[11px] text-slate-400 mt-0.5">{isIt ? '931 file · 300k righe test' : '931 files · 300k test lines'}</div>
+              <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                <div className="stat-figure text-accent-600">16.364</div>
+                <div className="text-xs font-semibold mt-1">{isIt ? 'Test Automatici' : 'Automated Tests'}</div>
+                <div className="text-[11px] text-ink-400 mt-0.5">{isIt ? '931 file · 300k righe test' : '931 files · 300k test lines'}</div>
               </div>
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                <div className="text-2xl sm:text-3xl font-black text-amber-400 font-mono">34,9</div>
-                <div className="text-xs font-bold text-white mt-1">{isIt ? 'Anni-Uomo Eq.' : 'Person-Years Eq.'}</div>
-                <div className="text-[11px] text-slate-400 mt-0.5">{isIt ? 'Sforzo modellato (126×)' : 'Modeled effort (126×)'}</div>
+              <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                <div className="stat-figure text-ink-400">34,9</div>
+                <div className="text-xs font-semibold mt-1">{isIt ? 'Anni-Uomo Eq.' : 'Person-Years Eq.'}</div>
+                <div className="text-[11px] text-ink-400 mt-0.5">{isIt ? 'Sforzo modellato (126×)' : 'Modeled effort (126×)'}</div>
               </div>
             </div>
 
             {/* Deep Breakdown Rows: Tool Families & Data Schema */}
             <div className="grid md:grid-cols-2 gap-6 pt-6 text-sm">
-              <div className="p-5 rounded-2xl bg-slate-900/40 border border-white/5">
+              <div className="card card-dark">
                 <div className="flex items-center gap-2 mb-3">
-                  <Cpu className="w-4 h-4 text-indigo-400" />
-                  <h3 className="font-bold text-white text-sm">
+                  <Cpu className="w-4 h-4 text-accent-600" />
+                  <h3 className="font-semibold text-sm">
                     {isIt ? 'Mappatura Tool LLM per Canale Pubblicitario' : 'LLM Tool Distribution by Advertising Channel'}
                   </h3>
                 </div>
-                <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                <p className="text-xs text-ink-400 leading-relaxed mb-4">
                   {isIt
                     ? '482 tool specializzati interrogabili direttamente dai nostri operatori in chat per audit istantanei e calcoli algebrici:'
                     : '482 specialized tools accessible via operator chat for real-time audits and algebraic reconciliations:'}
                 </p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs font-mono">
-                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5">
-                    <span className="text-indigo-300 font-bold">167</span> <span className="text-slate-400">Google Ads</span>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+                  <div className="p-2.5 rounded-lg bg-white/5 border border-white/10">
+                    <span className="text-ink-200 font-semibold">167</span> <span className="text-ink-400">Google Ads</span>
                   </div>
-                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5">
-                    <span className="text-indigo-300 font-bold">123</span> <span className="text-slate-400">GA4 Analytics</span>
+                  <div className="p-2.5 rounded-lg bg-white/5 border border-white/10">
+                    <span className="text-ink-200 font-semibold">123</span> <span className="text-ink-400">GA4 Analytics</span>
                   </div>
-                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5">
-                    <span className="text-indigo-300 font-bold">105</span> <span className="text-slate-400">Meta Ads</span>
+                  <div className="p-2.5 rounded-lg bg-white/5 border border-white/10">
+                    <span className="text-ink-200 font-semibold">105</span> <span className="text-ink-400">Meta Ads</span>
                   </div>
-                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5">
-                    <span className="text-indigo-300 font-bold">80</span> <span className="text-slate-400">Search Console</span>
+                  <div className="p-2.5 rounded-lg bg-white/5 border border-white/10">
+                    <span className="text-ink-200 font-semibold">80</span> <span className="text-ink-400">Search Console</span>
                   </div>
-                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5">
-                    <span className="text-indigo-300 font-bold">23</span> <span className="text-slate-400">Merchant Center</span>
+                  <div className="p-2.5 rounded-lg bg-white/5 border border-white/10">
+                    <span className="text-ink-200 font-semibold">23</span> <span className="text-ink-400">Merchant Center</span>
                   </div>
-                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5">
-                    <span className="text-indigo-300 font-bold">29</span> <span className="text-slate-400">Chat-Scoped</span>
+                  <div className="p-2.5 rounded-lg bg-white/5 border border-white/10">
+                    <span className="text-ink-200 font-semibold">29</span> <span className="text-ink-400">Chat-Scoped</span>
                   </div>
                 </div>
               </div>
 
-              <div className="p-5 rounded-2xl bg-slate-900/40 border border-white/5">
+              <div className="card card-dark">
                 <div className="flex items-center gap-2 mb-3">
-                  <Database className="w-4 h-4 text-emerald-400" />
-                  <h3 className="font-bold text-white text-sm">
+                  <Database className="w-4 h-4 text-accent-600" />
+                  <h3 className="font-semibold text-sm">
                     {isIt ? 'Infrastruttura SQL, Test & Documentazione' : 'SQL Architecture, Testing & Documentation'}
                   </h3>
                 </div>
-                <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                <p className="text-xs text-ink-400 leading-relaxed mb-4">
                   {isIt
                     ? 'Struttura ingegneristica verificata per garantire isolamento cliente, zero allucinazioni e replicabilità scientifica:'
                     : 'Audited engineering framework ensuring client isolation, zero hallucinations, and scientific repeatability:'}
                 </p>
                 <div className="space-y-2 text-xs">
-                  <div className="flex justify-between items-center p-2 rounded-lg bg-white/[0.02] border border-white/5">
-                    <span className="text-slate-300">{isIt ? 'Schema Dati Relazionale SQL' : 'Relational SQL Data Schema'}</span>
-                    <span className="font-mono text-emerald-400 font-bold">{isIt ? '188 tabelle · 144 indici' : '188 tables · 144 indices'}</span>
+                  <div className="flex justify-between items-center p-2 rounded-lg bg-white/5 border border-white/10">
+                    <span className="text-ink-300">{isIt ? 'Schema Dati Relazionale SQL' : 'Relational SQL Data Schema'}</span>
+                    <span className="text-accent-600 font-semibold">{isIt ? '188 tabelle · 144 indici' : '188 tables · 144 indices'}</span>
                   </div>
-                  <div className="flex justify-between items-center p-2 rounded-lg bg-white/[0.02] border border-white/5">
-                    <span className="text-slate-300">{isIt ? 'Batteria di Test di Regressione' : 'Automated Regression Tests'}</span>
-                    <span className="font-mono text-emerald-400 font-bold">{isIt ? '16.364 asserzioni (300k righe)' : '16,364 assertions (300k lines)'}</span>
+                  <div className="flex justify-between items-center p-2 rounded-lg bg-white/5 border border-white/10">
+                    <span className="text-ink-300">{isIt ? 'Batteria di Test di Regressione' : 'Automated Regression Tests'}</span>
+                    <span className="text-accent-600 font-semibold">{isIt ? '16.364 asserzioni (300k righe)' : '16,364 assertions (300k lines)'}</span>
                   </div>
-                  <div className="flex justify-between items-center p-2 rounded-lg bg-white/[0.02] border border-white/5">
-                    <span className="text-slate-300">{isIt ? 'Documentazione Tecnica e Docstring' : 'Technical Docs & Engine Docstrings'}</span>
-                    <span className="font-mono text-emerald-400 font-bold">{isIt ? '281.517 righe di specifica' : '281,517 specification lines'}</span>
+                  <div className="flex justify-between items-center p-2 rounded-lg bg-white/5 border border-white/10">
+                    <span className="text-ink-300">{isIt ? 'Documentazione Tecnica e Docstring' : 'Technical Docs & Engine Docstrings'}</span>
+                    <span className="text-accent-600 font-semibold">{isIt ? '281.517 righe di specifica' : '281,517 specification lines'}</span>
                   </div>
                 </div>
               </div>
@@ -702,91 +700,91 @@ export default function AIPlatform() {
         </section>
 
         {/* ─── CHALLENGE THE PROVIDER SECTION (Sfida il fornitore) ─────────── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 border-t border-white/5">
+        <section className="shell section border-t border-white/10 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold">{isIt ? 'Metti alla prova chi gestisce oggi le tue campagne' : 'Challenge Your Current Provider'}</h2>
-            <p className="text-slate-400 mt-2">
+            <h2 className="title-xl">{isIt ? 'Metti alla prova chi gestisce oggi le tue campagne' : 'Challenge Your Current Provider'}</h2>
+            <p className="text-ink-400 mt-2">
               {isIt 
                 ? 'Confronta la nostra gestione basata su masterAnalyzer con quella di un fornitore tradizionale.' 
                 : 'Compare our technology-driven outsourcing service against standard traditional management.'}
             </p>
           </div>
 
-          <div className="overflow-x-auto bg-slate-900/50 border border-white/5 rounded-2xl">
+          <div className="card card-dark overflow-x-auto">
             <table className="w-full text-left text-sm border-collapse min-w-[700px]">
               <thead>
-                <tr className="border-b border-white/10 bg-white/[0.02] text-slate-300">
+                <tr className="border-b border-white/10 bg-white/5 text-ink-300">
                   <th className="p-5 font-semibold">{isIt ? 'Cosa gestiamo con masterAnalyzer' : 'How we manage with masterAnalyzer'}</th>
-                  <th className="p-5 font-semibold text-slate-400">{isIt ? 'Cosa fa un fornitore tradizionale' : 'What a traditional agency does'}</th>
-                  <th className="p-5 font-semibold text-rose-400 flex items-center gap-2">
+                  <th className="p-5 font-semibold text-ink-400">{isIt ? 'Cosa fa un fornitore tradizionale' : 'What a traditional agency does'}</th>
+                  <th className="p-5 font-semibold text-ink-400 flex items-center gap-2">
                     <ThumbsDown className="w-4 h-4" />
                     {isIt ? 'Cosa ti perdi (Il Pain)' : 'What you lose (The Pain)'}
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5 text-slate-300">
+              <tbody className="divide-y divide-white/10 text-ink-300">
                 <tr>
-                  <td className="p-5 font-medium text-white flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-indigo-400 mt-0.5 flex-shrink-0" />
+                  <td className="p-5 font-semibold flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <strong>{isIt ? 'Riconciliazione Dati Reali' : 'Real-Data Reconciliation'}</strong>
-                      <p className="text-xs text-slate-400 mt-1">{isIt ? 'Confronto degli ordini reali Shopify o lead CRM con GA4/Ads per calcolare il vero ritorno.' : 'Cross-references Shopify sales or CRM leads with GA4/Ads to isolate real return.'}</p>
+                      <p className="text-xs text-ink-400 mt-1">{isIt ? 'Confronto degli ordini reali Shopify o lead CRM con GA4/Ads per calcolare il vero ritorno.' : 'Cross-references Shopify sales or CRM leads with GA4/Ads to isolate real return.'}</p>
                     </div>
                   </td>
-                  <td className="p-5 text-slate-400">
+                  <td className="p-5 text-ink-400">
                     {isIt ? 'Ottimizza le campagne guardando solo le dashboard standard di Google e Facebook.' : 'Optimizes campaigns looking exclusively at Google/Facebook native dashboards.'}
                   </td>
-                  <td className="p-5 text-rose-300 bg-rose-950/5">
+                  <td className="p-5 text-ink-300 bg-white/5">
                     <strong>{isIt ? 'Spreco di budget e decisioni cieche' : 'Wasted spend and blind decisions'}</strong>
-                    <p className="text-xs text-rose-400 mt-1">{isIt ? 'Sotto-tracciamento del 20-50% degli ordini reali, che ti spinge a spegnere campagne sane scambiandole per inefficienti.' : 'Standard pixels miss 20-50% of real orders, leading you to kill highly profitable campaigns.'}</p>
+                    <p className="text-xs text-ink-400 mt-1">{isIt ? 'Sotto-tracciamento del 20-50% degli ordini reali, che ti spinge a spegnere campagne sane scambiandole per inefficienti.' : 'Standard pixels miss 20-50% of real orders, leading you to kill highly profitable campaigns.'}</p>
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-5 font-medium text-white flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-indigo-400 mt-0.5 flex-shrink-0" />
+                  <td className="p-5 font-semibold flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <strong>{isIt ? 'Creative Studio & Giudice Avversariale' : 'Creative Studio & Adversarial Judge'}</strong>
-                      <p className="text-xs text-slate-400 mt-1">{isIt ? 'Generazione di concept ancorati ai Maslow needs e ferite psicologiche con un arbitro anti-manipolazione e anti-kitsch.' : 'Concept generation anchored to Maslow needs and psychological wounds with anti-kitsch safety filters.'}</p>
+                      <p className="text-xs text-ink-400 mt-1">{isIt ? 'Generazione di concept ancorati ai Maslow needs e ferite psicologiche con un arbitro anti-manipolazione e anti-kitsch.' : 'Concept generation anchored to Maslow needs and psychological wounds with anti-kitsch safety filters.'}</p>
                     </div>
                   </td>
-                  <td className="p-5 text-slate-400">
+                  <td className="p-5 text-ink-400">
                     {isIt ? 'Scrive copy "a sentimento" o genera immagini stock generiche o con prompt ChatGPT standard.' : 'Writes copy by feel and generates standard generic stock images or basic ChatGPT outputs.'}
                   </td>
-                  <td className="p-5 text-rose-300 bg-rose-950/5">
+                  <td className="p-5 text-ink-300 bg-white/5">
                     <strong>{isIt ? 'Ad Fatigue rapido e conversioni basse' : 'Rapid Ad Fatigue and low conversion rates'}</strong>
-                    <p className="text-xs text-rose-400 mt-1">{isIt ? 'Annunci indistinti che si confondono con la concorrenza, basati su cliché visivi che la gente ignora.' : 'Plain ads that blend with competitors, using worn-out visual clichés that people instantly scroll past.'}</p>
+                    <p className="text-xs text-ink-400 mt-1">{isIt ? 'Annunci indistinti che si confondono con la concorrenza, basati su cliché visivi che la gente ignora.' : 'Plain ads that blend with competitors, using worn-out visual clichés that people instantly scroll past.'}</p>
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-5 font-medium text-white flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-indigo-400 mt-0.5 flex-shrink-0" />
+                  <td className="p-5 font-semibold flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <strong>{isIt ? 'Rilevamento e Blocco Cannibalizzazione' : 'Anti-Cannibalization Control'}</strong>
-                      <p className="text-xs text-slate-400 mt-1">{isIt ? 'Spegnimento o negativizzazione delle keyword Ads brand dove l\'organico SEO è già stabilmente in posizione 1.' : 'Excludes or pauses branded keywords where you already hold the absolute #1 organic spot.'}</p>
+                      <p className="text-xs text-ink-400 mt-1">{isIt ? 'Spegnimento o negativizzazione delle keyword Ads brand dove l\'organico SEO è già stabilmente in posizione 1.' : 'Excludes or pauses branded keywords where you already hold the absolute #1 organic spot.'}</p>
                     </div>
                   </td>
-                  <td className="p-5 text-slate-400">
+                  <td className="p-5 text-ink-400">
                     {isIt ? 'Paga volentieri per click sul brand per gonfiare artificialmente il ROAS del suo operato.' : 'Happy to pay for brand clicks to artificially inflate their reported ROAS.'}
                   </td>
-                  <td className="p-5 text-rose-300 bg-rose-950/5">
+                  <td className="p-5 text-ink-300 bg-white/5">
                     <strong>{isIt ? 'Stai pagando per click che avresti gratis' : 'Paying for clicks you would get for free'}</strong>
-                    <p className="text-xs text-rose-400 mt-1">{isIt ? 'Fino al 30% del budget speso per ricomprare utenti che stavano già cliccando sul tuo risultato organico.' : 'Up to 30% of your search budget wasted rebuying users who were already looking for you.'}</p>
+                    <p className="text-xs text-ink-400 mt-1">{isIt ? 'Fino al 30% del budget speso per ricomprare utenti che stavano già cliccando sul tuo risultato organico.' : 'Up to 30% of your search budget wasted rebuying users who were already looking for you.'}</p>
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-5 font-medium text-white flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-indigo-400 mt-0.5 flex-shrink-0" />
+                  <td className="p-5 font-semibold flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <strong>{isIt ? 'Lead Generation Riconciliata (CRM)' : 'CRM Reconciled Lead Gen'}</strong>
-                      <p className="text-xs text-slate-400 mt-1">{isIt ? 'Riconciliazione dei contatti CRM per escludere spam o doppioni prima di inviarli all\'algoritmo Ads.' : 'Cleans CRM leads to exclude duplicate or spam form fills before reporting to the algorithm.'}</p>
+                      <p className="text-xs text-ink-400 mt-1">{isIt ? 'Riconciliazione dei contatti CRM per escludere spam o doppioni prima di inviarli all\'algoritmo Ads.' : 'Cleans CRM leads to exclude duplicate or spam form fills before reporting to the algorithm.'}</p>
                     </div>
                   </td>
-                  <td className="p-5 text-slate-400">
+                  <td className="p-5 text-ink-400">
                     {isIt ? 'Ottimizza su ogni click del form di contatto, contando lead non qualificati o bot.' : 'Optimizes for every contact form submission, counting junk leads and bots alike.'}
                   </td>
-                  <td className="p-5 text-rose-300 bg-rose-950/5">
+                  <td className="p-5 text-ink-300 bg-white/5">
                     <strong>{isIt ? 'Algoritmi addestrati sullo spam' : 'Algorithms trained on spam data'}</strong>
-                    <p className="text-xs text-rose-400 mt-1">{isIt ? 'Gli Smart Bidding ottimizzano per trovare "più spam" invece di contatti pronti all\'acquisto.' : 'Google/Meta bid optimization starts seeking more junk instead of actual buying prospects.'}</p>
+                    <p className="text-xs text-ink-400 mt-1">{isIt ? 'Gli Smart Bidding ottimizzano per trovare "più spam" invece di contatti pronti all\'acquisto.' : 'Google/Meta bid optimization starts seeking more junk instead of actual buying prospects.'}</p>
                   </td>
                 </tr>
               </tbody>
@@ -795,17 +793,17 @@ export default function AIPlatform() {
         </section>
 
         {/* ─── PROFILE INTERACTIVE SELECTOR ────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 border-t border-white/5">
+        <section className="shell section border-t border-white/10 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold">{isIt ? 'Come Lavoriamo: Flussi Operativi per Profilo' : 'How We Work: Workflows by Profile'}</h2>
-            <p className="text-slate-400 mt-2">
+            <h2 className="title-xl">{isIt ? 'Come Lavoriamo: Flussi Operativi per Profilo' : 'How We Work: Workflows by Profile'}</h2>
+            <p className="text-ink-400 mt-2">
               {isIt 
                 ? 'I nostri specialisti utilizzano la suite per eseguire attività precise. Seleziona il ruolo.' 
                 : 'Our specialists leverage the suite to execute high-precision workflows. Select a role.'}
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-8 items-start">
+          <div className="grid lg:grid-cols-2 gap-6 items-start">
             {/* Sidebar Buttons */}
             <div className="lg:col-span-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-2">
               {profiles.map((prof, idx) => {
@@ -815,13 +813,13 @@ export default function AIPlatform() {
                   <button
                     key={prof.id}
                     onClick={() => { setSelectedProfile(idx); setActiveStep(0); }}
-                    className={`flex items-center gap-3 p-4 rounded-xl text-left border transition-all duration-300 ${
+                    className={`card card-dark flex items-center gap-3 text-left transition-colors ${
                       isSelected 
-                        ? 'bg-indigo-600 border-indigo-500 shadow-lg shadow-indigo-600/20 text-white translate-x-1' 
-                        : 'bg-white/[0.02] border-white/5 hover:border-white/20 text-slate-300 hover:bg-white/[0.05]'
+                        ? 'bg-indigo-600 border-accent-600 text-ink-100' 
+                        : 'bg-white/5 border-white/10 hover:border-white/20 text-ink-300 hover:bg-white/5'
                     }`}
                   >
-                    <Icon className={`w-5 h-5 flex-shrink-0 ${isSelected ? 'text-white' : 'text-indigo-400'}`} />
+                    <Icon className={`w-5 h-5 flex-shrink-0 ${isSelected ? 'text-ink-100' : 'text-accent-600'}`} />
                     <span className="font-semibold text-sm truncate">{prof.title}</span>
                   </button>
                 );
@@ -829,8 +827,7 @@ export default function AIPlatform() {
             </div>
 
             {/* Profile Detail Content */}
-            <div className="lg:col-span-8 bg-white/[0.02] border border-white/5 rounded-2xl p-6 sm:p-8 backdrop-blur-md relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
+              <div className="card card-dark lg:col-span-8 relative">
               
               <AnimatePresence mode="wait">
                 <motion.div
@@ -838,31 +835,31 @@ export default function AIPlatform() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 rounded-lg bg-indigo-950/50 border border-indigo-500/30 text-indigo-400">
+                    <div className="icon-tile">
                       {React.createElement(currentProfile.icon, { className: 'w-6 h-6' })}
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white">{currentProfile.title}</h3>
-                      <p className="text-sm text-indigo-300">{currentProfile.tagline}</p>
+                      <h3 className="text-[1.05rem] font-semibold">{currentProfile.title}</h3>
+                      <p className="text-sm text-ink-200">{currentProfile.tagline}</p>
                     </div>
                   </div>
 
-                  <blockquote className="border-l-2 border-indigo-500 bg-indigo-950/20 p-4 rounded-r-lg text-slate-300 italic text-sm mb-8 my-6">
+                  <blockquote className="border-l border-accent-600 bg-white/5 p-4 rounded-r-md text-ink-300 italic text-sm mb-8 my-6">
                     {currentProfile.phrase}
                   </blockquote>
 
                   {/* Tools Box */}
                   <div className="mb-8">
-                    <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-3">
+                    <h4 className="text-sm font-semibold uppercase tracking-wider text-ink-400 mb-3">
                       {isIt ? 'La nostra cassetta degli attrezzi per questo profilo' : 'Internal tools for this profile'}
                     </h4>
                     <div className="grid sm:grid-cols-2 gap-3">
                       {currentProfile.tools.map((tool, i) => (
-                        <div key={i} className="flex items-start gap-2 text-sm text-slate-300">
-                          <CheckCircle className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+                        <div key={i} className="flex items-start gap-2 text-sm text-ink-300">
+                          <CheckCircle className="w-4 h-4 text-accent-600 mt-0.5 flex-shrink-0" />
                           <span>{tool}</span>
                         </div>
                       ))}
@@ -871,7 +868,7 @@ export default function AIPlatform() {
 
                   {/* Operational Paths */}
                   <div className="mb-8">
-                    <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-4">
+                    <h4 className="text-sm font-semibold uppercase tracking-wider text-ink-400 mb-4">
                       {isIt ? 'Flussi operativi passo-passo' : 'Step-by-step workflows'}
                     </h4>
                     
@@ -881,10 +878,10 @@ export default function AIPlatform() {
                         <button
                           key={i}
                           onClick={() => setActiveStep(i)}
-                          className={`pb-2 text-sm font-medium whitespace-nowrap border-b-2 transition-all ${
+                          className={`pb-2 text-sm font-semibold whitespace-nowrap border-b transition-colors ${
                             activeStep === i 
-                              ? 'border-indigo-500 text-indigo-400' 
-                              : 'border-transparent text-slate-400 hover:text-slate-200'
+                              ? 'border-accent-600 text-accent-600' 
+                              : 'border-transparent text-ink-400 hover:text-slate-200'
                           }`}
                         >
                           {path.name}
@@ -893,13 +890,13 @@ export default function AIPlatform() {
                     </div>
 
                     {/* Active Path Steps */}
-                    <div className="space-y-4 bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                    <div className="card card-dark">
                       {currentProfile.paths[activeStep]?.steps.map((step, idx) => (
                         <div key={idx} className="flex items-start gap-3 text-sm">
-                          <span className="flex items-center justify-center w-5 h-5 rounded-full bg-indigo-950 border border-indigo-500/50 text-indigo-300 text-xs font-bold mt-0.5 flex-shrink-0">
+                          <span className="flex items-center justify-center w-5 h-5 rounded-full bg-white/5 border border-accent-600/50 text-ink-200 text-xs font-semibold mt-0.5 flex-shrink-0">
                             {idx + 1}
                           </span>
-                          <span className="text-slate-300 leading-relaxed">{step}</span>
+                          <span className="text-ink-300 leading-relaxed">{step}</span>
                         </div>
                       ))}
                     </div>
@@ -907,13 +904,13 @@ export default function AIPlatform() {
 
                   {/* Guardrails */}
                   <div>
-                    <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-3">
+                    <h4 className="text-sm font-semibold uppercase tracking-wider text-ink-400 mb-3">
                       {isIt ? 'Guard-rail di sicurezza (Cosa blocchiamo)' : 'Safety Guardrails'}
                     </h4>
                     <div className="space-y-2">
                       {currentProfile.guardrails.map((guard, i) => (
-                        <div key={i} className="flex items-start gap-2.5 text-sm bg-amber-950/20 border border-amber-500/20 p-3 rounded-lg text-amber-200/90">
-                          <AlertTriangle className="w-4.5 h-4.5 text-amber-500 mt-0.5 flex-shrink-0" />
+                        <div key={i} className="card card-dark flex items-start gap-2.5 text-sm text-ink-300">
+                          <AlertTriangle className="w-4 h-4 text-ink-400 mt-0.5 flex-shrink-0" />
                           <span>{guard}</span>
                         </div>
                       ))}
@@ -927,23 +924,23 @@ export default function AIPlatform() {
         </section>
 
         {/* ─── CREATIVE STUDIO & ADVERSARIAL JUDGE ─────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 border-t border-white/5 bg-slate-950">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
+        <section className="shell section border-t border-white/10 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-6 items-center">
             {/* Text side */}
             <div className="lg:col-span-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-950/40 text-indigo-300 text-xs mb-4">
-                <Zap className="w-3.5 h-3.5 text-indigo-400" />
+              <div className="chip mb-4">
+                <Zap className="w-3.5 h-3.5 text-accent-600" />
                 {isIt ? 'CREATIVE STUDIO & PERSUASIONE' : 'CREATIVE STUDIO & PERSUASION'}
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+              <h2 className="title-xl tracking-tight">
                 {isIt ? 'La Filiera di Creazione & Giudice Avversariale' : 'Creative Generation & Adversarial Judge'}
               </h2>
-              <p className="text-slate-400 mt-6 leading-relaxed">
+              <p className="text-ink-400 mt-6 leading-relaxed">
                 {isIt
                   ? 'Il nostro motore creativo trasforma la landing page in concept basandosi sulla mappa psicologica delle ferite e dei bisogni di Maslow del target.'
                   : 'Our creative engine crawls the landing page, converting claims into conceptual angles rooted in psychological wounds and Maslow needs.'}
               </p>
-              <p className="text-slate-400 mt-4 leading-relaxed">
+              <p className="text-ink-400 mt-4 leading-relaxed">
                 {isIt
                   ? 'Prima di proporre qualsiasi campagna all\'account manager (in stato PAUSA), un modulo indipendente fa da "avvocato dell\'avversario", applicando regole rigide per escludere testi pixelati, clichè da stock o ganci manipolatori.'
                   : 'Before staging any campaign (strictly as PAUSED), an independent Adversarial module acts as a validator, applying strict rules to drop pixelated text overlays, visual stock clichés, or manipulative claims.'}
@@ -951,26 +948,26 @@ export default function AIPlatform() {
             </div>
 
             {/* Interactive Simulation side */}
-            <div className="lg:col-span-7 bg-slate-900 border border-white/5 rounded-2xl p-6 relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-2 text-xs text-indigo-400/50 uppercase tracking-widest font-mono">
+              <div className="card card-dark lg:col-span-7 relative">
+              <div className="absolute top-0 right-0 p-2 text-xs text-accent-600/50 uppercase tracking-widest">
                 {isIt ? 'simulatore_api' : 'api_simulator'}
               </div>
               
-              <h3 className="font-mono text-sm text-slate-300 mb-4 flex items-center gap-2">
-                <Terminal className="w-4 h-4 text-indigo-400" />
+              <h3 className="text-sm text-ink-300 mb-4 flex items-center gap-2">
+                <Terminal className="w-4 h-4 text-accent-600" />
                 POST /api/v1/creative/generate-campaign
               </h3>
 
               {/* Simulation Box */}
-              <div className="bg-slate-950 rounded-xl p-4 border border-white/10 font-mono text-xs text-slate-300 min-h-64 flex flex-col justify-between mb-4">
+              <div className="bg-black/20 rounded-xl p-4 border border-white/10 text-xs text-ink-300 min-h-64 flex flex-col justify-between mb-4">
                 <div className="space-y-2 overflow-y-auto max-h-56 scrollbar-thin">
                   {simulationLogs.length === 0 ? (
-                    <div className="text-slate-500 italic py-12 text-center">
+                    <div className="text-ink-500 italic py-12 text-center">
                       {isIt ? 'Clicca "Avvia Simulazione" per far girare la filiera creativa.' : 'Click "Run Simulation" to execute the creative generation API.'}
                     </div>
                   ) : (
                     simulationLogs.map((log, i) => (
-                      <div key={i} className={log.startsWith('[SYSTEM]') ? 'text-indigo-400 font-semibold' : 'text-slate-300 pl-4'}>
+                      <div key={i} className={log.startsWith('[SYSTEM]') ? 'text-accent-600 font-semibold' : 'text-ink-300 pl-4'}>
                         {log}
                       </div>
                     ))
@@ -978,17 +975,17 @@ export default function AIPlatform() {
                 </div>
 
                 {simulationRunning && (
-                  <div className="flex items-center gap-2 mt-4 text-indigo-400 animate-pulse">
-                    <HelpCircle className="w-4 h-4 animate-spin" />
+                  <div className="flex items-center gap-2 mt-4 text-accent-600">
+                    <HelpCircle className="w-4 h-4" />
                     <span>{isIt ? 'Elaborazione step...' : 'Processing step...'}</span>
                   </div>
                 )}
               </div>
 
               {/* Steps indicators */}
-              <div className="grid grid-cols-5 gap-1 mb-6 text-center text-[10px] font-mono text-slate-500">
+              <div className="grid grid-cols-5 gap-1 mb-6 text-center text-[10px] text-ink-500">
                 {simulationSteps.map((step, idx) => (
-                  <div key={idx} className={`p-1 rounded ${idx === simStep && simulationRunning ? 'bg-indigo-950 text-indigo-300 font-bold border border-indigo-500/30' : ''}`}>
+                  <div key={idx} className={`p-1 rounded ${idx === simStep && simulationRunning ? 'bg-white/5text-ink-200 font-semibold border border-white/10' : ''}`}>
                     Step {idx + 1}
                   </div>
                 ))}
@@ -998,16 +995,16 @@ export default function AIPlatform() {
                 <button
                   disabled={simulationRunning}
                   onClick={startSimulation}
-                  className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all ${
+                  className={`btn btn-sm flex items-center justify-center gap-2 ${
                     simulationRunning 
-                      ? 'bg-slate-800 text-slate-600 cursor-not-allowed' 
-                      : 'bg-indigo-600 text-white hover:bg-indigo-500 active:scale-95 shadow-md shadow-indigo-600/10'
+                      ? 'cursor-not-allowed opacity-60' 
+                      : 'cursor-pointer'
                   }`}
                 >
                   <Play className="w-4 h-4" />
                   {isIt ? 'Avvia Simulazione API' : 'Run API Simulation'}
                 </button>
-                <span className="text-xs text-slate-500">
+                <span className="text-xs text-ink-500">
                   {isIt ? 'Output finale: Campagna Meta in PAUSA' : 'Final output: Staged Meta Campaign (PAUSED)'}
                 </span>
               </div>
@@ -1015,58 +1012,58 @@ export default function AIPlatform() {
           </div>
 
           {/* Adversarial Criteria Table */}
-          <div className="mt-16 bg-white/[0.02] border border-white/5 rounded-2xl p-6 sm:p-8">
-            <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <Shield className="w-5 h-5 text-purple-400" />
+          <div className="mt-12 card card-dark">
+            <h3 className="title-lg mb-6 flex items-center gap-2">
+              <Shield className="w-5 h-5 text-ink-400" />
               {isIt ? 'La Rubrica del Giudice Avversariale (Criteri di Scarto)' : 'Adversarial Judge Guidelines (Filter Criteria)'}
             </h3>
             
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm border-collapse">
                 <thead>
-                  <tr className="border-b border-white/10 text-slate-400 uppercase text-xs tracking-wider">
+                  <tr className="border-b border-white/10 text-ink-400 uppercase text-xs tracking-wider">
                     <th className="pb-3 pr-4">{isIt ? 'Famiglia' : 'Category'}</th>
                     <th className="pb-3 px-4">{isIt ? 'Criterio' : 'Rule'}</th>
                     <th className="pb-3 px-4">{isIt ? 'Trigger di Scarto (Cosa blocchiamo)' : 'Rejection Trigger (What we block)'}</th>
                     <th className="pb-3 pl-4">{isIt ? 'Fonte' : 'Source'}</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/5 text-slate-300">
+                <tbody className="divide-y divide-white/10 text-ink-300">
                   <tr>
-                    <td className="py-4 pr-4 font-semibold text-indigo-400 text-xs uppercase tracking-wider">A. {isIt ? 'Etica / Persuasione' : 'Ethics & Trust'}</td>
-                    <td className="py-4 px-4 font-medium text-white">{isIt ? 'Test del Beneficiario' : 'Beneficiary Test'}</td>
-                    <td className="py-4 px-4 text-slate-400">{isIt ? 'L\'unico a trarre beneficio è l\'inserzionista; la promessa non corrisponde a un valore reale per l\'utente.' : 'The advertiser is the sole beneficiary; the hook fails to deliver true value to the user.'}</td>
-                    <td className="py-4 pl-4 text-xs font-mono text-slate-500">Cialdini/HCE</td>
+                    <td className="py-4 pr-4 font-semibold text-accent-600 text-xs uppercase tracking-wider">A. {isIt ? 'Etica / Persuasione' : 'Ethics & Trust'}</td>
+                    <td className="py-4 px-4 font-semibold">{isIt ? 'Test del Beneficiario' : 'Beneficiary Test'}</td>
+                    <td className="py-4 px-4 text-ink-400">{isIt ? 'L\'unico a trarre beneficio è l\'inserzionista; la promessa non corrisponde a un valore reale per l\'utente.' : 'The advertiser is the sole beneficiary; the hook fails to deliver true value to the user.'}</td>
+                    <td className="py-4 pl-4 text-xs text-ink-500">Cialdini/HCE</td>
                   </tr>
                   <tr>
-                    <td className="py-4 pr-4 font-semibold text-indigo-400 text-xs uppercase tracking-wider">A. {isIt ? 'Etica / Persuasione' : 'Ethics & Trust'}</td>
-                    <td className="py-4 px-4 font-medium text-white">{isIt ? 'Falsa Scarsità' : 'Fake Urgency'}</td>
-                    <td className="py-4 px-4 text-slate-400">{isIt ? 'Countdown, finti stock o limitazioni temporali non reali ed inventati.' : 'Countdown timers or limited stock claims that are not backed by real backend inventory.'}</td>
-                    <td className="py-4 pl-4 text-xs font-mono text-slate-500">Ipnotica</td>
+                    <td className="py-4 pr-4 font-semibold text-accent-600 text-xs uppercase tracking-wider">A. {isIt ? 'Etica / Persuasione' : 'Ethics & Trust'}</td>
+                    <td className="py-4 px-4 font-semibold">{isIt ? 'Falsa Scarsità' : 'Fake Urgency'}</td>
+                    <td className="py-4 px-4 text-ink-400">{isIt ? 'Countdown, finti stock o limitazioni temporali non reali ed inventati.' : 'Countdown timers or limited stock claims that are not backed by real backend inventory.'}</td>
+                    <td className="py-4 pl-4 text-xs text-ink-500">Ipnotica</td>
                   </tr>
                   <tr>
-                    <td className="py-4 pr-4 font-semibold text-indigo-400 text-xs uppercase tracking-wider">B. {isIt ? 'Efficacia Creativa' : 'Creative Quality'}</td>
-                    <td className="py-4 px-4 font-medium text-white">{isIt ? 'Telling vs Showing' : 'Telling vs Showing'}</td>
-                    <td className="py-4 px-4 text-slate-400">{isIt ? 'Dichiarare l\'emozione ("Ti senti solo?") invece di mostrarla con una scena o un trigger osservabile.' : 'Declaring the emotion ("Are you stressed?") rather than showing a physical cue (bills, clock).'}</td>
-                    <td className="py-4 pl-4 text-xs font-mono text-slate-500">Ackerman/Puglisi</td>
+                    <td className="py-4 pr-4 font-semibold text-accent-600 text-xs uppercase tracking-wider">B. {isIt ? 'Efficacia Creativa' : 'Creative Quality'}</td>
+                    <td className="py-4 px-4 font-semibold">{isIt ? 'Telling vs Showing' : 'Telling vs Showing'}</td>
+                    <td className="py-4 px-4 text-ink-400">{isIt ? 'Dichiarare l\'emozione ("Ti senti solo?") invece di mostrarla con una scena o un trigger osservabile.' : 'Declaring the emotion ("Are you stressed?") rather than showing a physical cue (bills, clock).'}</td>
+                    <td className="py-4 pl-4 text-xs text-ink-500">Ackerman/Puglisi</td>
                   </tr>
                   <tr>
-                    <td className="py-4 pr-4 font-semibold text-indigo-400 text-xs uppercase tracking-wider">B. {isIt ? 'Efficacia Creativa' : 'Creative Quality'}</td>
-                    <td className="py-4 px-4 font-medium text-white">{isIt ? 'Cliché Visivo' : 'Stock Visual Clichés'}</td>
-                    <td className="py-4 px-4 text-slate-400">{isIt ? 'Immagini stock patinate, sorrisi esagerati da orecchio a orecchio, o grafiche slegate dal brand.' : 'Glossy, unnatural model smiles, generic business stock visual tropes, or unanchored illustrations.'}</td>
-                    <td className="py-4 pl-4 text-xs font-mono text-slate-500">Mind Marketing</td>
+                    <td className="py-4 pr-4 font-semibold text-accent-600 text-xs uppercase tracking-wider">B. {isIt ? 'Efficacia Creativa' : 'Creative Quality'}</td>
+                    <td className="py-4 px-4 font-semibold">{isIt ? 'Cliché Visivo' : 'Stock Visual Clichés'}</td>
+                    <td className="py-4 px-4 text-ink-400">{isIt ? 'Immagini stock patinate, sorrisi esagerati da orecchio a orecchio, o grafiche slegate dal brand.' : 'Glossy, unnatural model smiles, generic business stock visual tropes, or unanchored illustrations.'}</td>
+                    <td className="py-4 pl-4 text-xs text-ink-500">Mind Marketing</td>
                   </tr>
                   <tr>
-                    <td className="py-4 pr-4 font-semibold text-indigo-400 text-xs uppercase tracking-wider">C. {isIt ? 'Coerenza / Policy' : 'Decorum & Policy'}</td>
-                    <td className="py-4 px-4 font-medium text-white">{isIt ? 'Leggibilità Rotta' : 'Readability Check'}</td>
-                    <td className="py-4 px-4 text-slate-400">{isIt ? 'Headline troppo lunghe (>3 parole complesse), testi ruotati o all-caps gridato.' : 'Headlines too long (>3 heavy content words), text rotated too much, or aggressive all-caps screaming.'}</td>
-                    <td className="py-4 pl-4 text-xs font-mono text-slate-500">Dehaene</td>
+                    <td className="py-4 pr-4 font-semibold text-accent-600 text-xs uppercase tracking-wider">C. {isIt ? 'Coerenza / Policy' : 'Decorum & Policy'}</td>
+                    <td className="py-4 px-4 font-semibold">{isIt ? 'Leggibilità Rotta' : 'Readability Check'}</td>
+                    <td className="py-4 px-4 text-ink-400">{isIt ? 'Headline troppo lunghe (>3 parole complesse), testi ruotati o all-caps gridato.' : 'Headlines too long (>3 heavy content words), text rotated too much, or aggressive all-caps screaming.'}</td>
+                    <td className="py-4 pl-4 text-xs text-ink-500">Dehaene</td>
                   </tr>
                   <tr>
-                    <td className="py-4 pr-4 font-semibold text-indigo-400 text-xs uppercase tracking-wider">C. {isIt ? 'Coerenza / Policy' : 'Decorum & Policy'}</td>
-                    <td className="py-4 px-4 font-medium text-white">{isIt ? 'Policy Meta Evocate' : 'Meta Policy Flags'}</td>
-                    <td className="py-4 px-4 text-slate-400">{isIt ? 'Riferimenti ad attributi personali fisici o psicologici ("hai questo disturbo?"), prima/dopo ingannevoli.' : 'Implicitly targeting personal attributes ("do you have anxiety?"), deceptive before/afters, or shock value.'}</td>
-                    <td className="py-4 pl-4 text-xs font-mono text-slate-500">Facebook Policy</td>
+                    <td className="py-4 pr-4 font-semibold text-accent-600 text-xs uppercase tracking-wider">C. {isIt ? 'Coerenza / Policy' : 'Decorum & Policy'}</td>
+                    <td className="py-4 px-4 font-semibold">{isIt ? 'Policy Meta Evocate' : 'Meta Policy Flags'}</td>
+                    <td className="py-4 px-4 text-ink-400">{isIt ? 'Riferimenti ad attributi personali fisici o psicologici ("hai questo disturbo?"), prima/dopo ingannevoli.' : 'Implicitly targeting personal attributes ("do you have anxiety?"), deceptive before/afters, or shock value.'}</td>
+                    <td className="py-4 pl-4 text-xs text-ink-500">Facebook Policy</td>
                   </tr>
                 </tbody>
               </table>
@@ -1075,10 +1072,10 @@ export default function AIPlatform() {
         </section>
 
         {/* ─── IL MINIMO COMUNE (5 COSE DA SAPERE) ─────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 border-t border-white/5">
+        <section className="shell section border-t border-white/10 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold">{isIt ? 'I 5 Principi di Affidabilità' : 'The 5 Core Principles'}</h2>
-            <p className="text-slate-400 mt-2">
+            <h2 className="title-xl">{isIt ? 'I 5 Principi di Affidabilità' : 'The 5 Core Principles'}</h2>
+            <p className="text-ink-400 mt-2">
               {isIt 
                 ? 'I cinque capisaldi che governano il nostro sistema di gestione e garantiscono trasparenza.' 
                 : 'The five core tenets governing our management engine and guaranteeing transparency.'}
@@ -1086,46 +1083,46 @@ export default function AIPlatform() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-            <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.01] hover:border-indigo-500/20 hover:bg-white/[0.03] transition-all">
-              <span className="text-2xl font-bold text-indigo-400">1</span>
-              <h3 className="font-semibold text-lg mt-3">{isIt ? 'Come si Avvia' : 'Safe Bootup'}</h3>
-              <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+            <div className="card card-dark">
+              <span className="stat-figure text-accent-600">1</span>
+              <h3 className="text-[1.05rem] font-semibold mt-3">{isIt ? 'Come si Avvia' : 'Safe Bootup'}</h3>
+              <p className="text-xs text-ink-400 mt-2 leading-relaxed">
                 {isIt 
                   ? 'Due processi separati: API (porta :8000) e UI (porta :8501). Se una pagina è grigia, è capability-gated: mancano gli accessi.' 
                   : 'Two isolated processes: API (:8000) and Streamlit UI (:8501). Greyed-out pages are capability-gated.'}
               </p>
             </div>
-            <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.01] hover:border-indigo-500/20 hover:bg-white/[0.03] transition-all">
-              <span className="text-2xl font-bold text-indigo-400">2</span>
-              <h3 className="font-semibold text-lg mt-3">{isIt ? 'Selettore Cliente' : 'Client Isolator'}</h3>
-              <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+            <div className="card card-dark">
+              <span className="stat-figure text-accent-600">2</span>
+              <h3 className="text-[1.05rem] font-semibold mt-3">{isIt ? 'Selettore Cliente' : 'Client Isolator'}</h3>
+              <p className="text-xs text-ink-400 mt-2 leading-relaxed">
                 {isIt 
                   ? 'Il selettore in sidebar isola ogni account. Al cambio cliente la chat recupera la cronologia dedicata e la coda azioni si azzera.' 
                   : 'The client selector isolates each account. Switching clients dynamically recovers history and resets queues.'}
               </p>
             </div>
-            <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.01] hover:border-indigo-500/20 hover:bg-white/[0.03] transition-all">
-              <span className="text-2xl font-bold text-indigo-400">3</span>
-              <h3 className="font-semibold text-lg mt-3">{isIt ? 'Chat Scoped' : 'Scoped Chats'}</h3>
-              <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+            <div className="card card-dark">
+              <span className="stat-figure text-accent-600">3</span>
+              <h3 className="text-[1.05rem] font-semibold mt-3">{isIt ? 'Chat Scoped' : 'Scoped Chats'}</h3>
+              <p className="text-xs text-ink-400 mt-2 leading-relaxed">
                 {isIt 
                   ? 'Quattro chat a disposizione: Globale (cross-source) e tre specifiche (GA4, Google Ads, Meta) che vedono solo la loro sorgente.' 
                   : 'Four AI chats: Global (cross-source) and three isolated scopes (GA4, GAds, Meta) restricted to their own data.'}
               </p>
             </div>
-            <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.01] hover:border-indigo-500/20 hover:bg-white/[0.03] transition-all">
-              <span className="text-2xl font-bold text-indigo-400">4</span>
-              <h3 className="font-semibold text-lg mt-3">{isIt ? 'Niente Scrive Solo' : 'No Auto-Write'}</h3>
-              <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+            <div className="card card-dark">
+              <span className="stat-figure text-accent-600">4</span>
+              <h3 className="text-[1.05rem] font-semibold mt-3">{isIt ? 'Niente Scrive Solo' : 'No Auto-Write'}</h3>
+              <p className="text-xs text-ink-400 mt-2 leading-relaxed">
                 {isIt 
                   ? 'Ciclo blindato: proponi → valida (dry-run) → checkbox → applica. Le nuove campagne nascono SEMPRE in PAUSA.' 
                   : 'Ironclad loop: stage → dry-run validation → checkbox → apply. New campaigns are staged as PAUSED.'}
               </p>
             </div>
-            <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.01] hover:border-indigo-500/20 hover:bg-white/[0.03] transition-all">
-              <span className="text-2xl font-bold text-indigo-400">5</span>
-              <h3 className="font-semibold text-lg mt-3">{isIt ? 'Job Asincroni' : 'Background Jobs'}</h3>
-              <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+            <div className="card card-dark">
+              <span className="stat-figure text-accent-600">5</span>
+              <h3 className="text-[1.05rem] font-semibold mt-3">{isIt ? 'Job Asincroni' : 'Background Jobs'}</h3>
+              <p className="text-xs text-ink-400 mt-2 leading-relaxed">
                 {isIt 
                   ? 'I compiti lunghi (takeover, Raggi X, batch creativi) girano in background con barra %, ETA e storico consultabile.' 
                   : 'Heavy scripts (takeover, X-Ray, creative batches) run in the background with progress bars, ETA, and history.'}
@@ -1135,12 +1132,12 @@ export default function AIPlatform() {
         </section>
 
         {/* ─── LE TRE REGOLE D'ONESTÀ ──────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 border-t border-white/5 bg-slate-900/40 rounded-3xl mb-16">
+        <section className="shell section border-t border-white/10 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 to-purple-400">
+            <h2 className="title-xl">
               {isIt ? 'Le Tre Regole d\'Onestà' : 'The Three Rules of Honesty'}
             </h2>
-            <p className="text-slate-400 mt-2">
+            <p className="text-ink-400 mt-2">
               {isIt 
                 ? 'I principi etici integrati direttamente nel codice per garantire l\'integrità delle decisioni analitiche.' 
                 : 'The ethical principles compiled directly into our logic to protect analytical decision integrity.'}
@@ -1149,10 +1146,10 @@ export default function AIPlatform() {
 
           <div className="grid md:grid-cols-3 gap-8 px-6 sm:px-8">
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-indigo-950/80 border border-indigo-500/30 flex items-center justify-center text-indigo-400 font-mono font-bold">I</div>
+              <div className="flex-shrink-0 icon-tile">I</div>
               <div>
-                <h3 className="font-bold text-lg text-white">{isIt ? 'No dati → No verdetti' : 'No Data → No Verdicts'}</h3>
-                <p className="text-sm text-slate-400 mt-2 leading-relaxed">
+                <h3 className="text-[1.05rem] font-semibold">{isIt ? 'No dati → No verdetti' : 'No Data → No Verdicts'}</h3>
+                <p className="text-sm text-ink-400 mt-2 leading-relaxed">
                   {isIt
                     ? 'In assenza di misure solide (es. sotto il 50% di copertura ordini o lead CRM), il sistema si rifiuta di formulare valutazioni in denaro, degradando a qualitativo.'
                     : 'Without solid measurements (e.g., <50% of backend orders or CRM leads), the system halts monetary verdicts, falling back to qualitative statements.'}
@@ -1160,10 +1157,10 @@ export default function AIPlatform() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-indigo-950/80 border border-indigo-500/30 flex items-center justify-center text-indigo-400 font-mono font-bold">II</div>
+              <div className="flex-shrink-0 icon-tile">II</div>
               <div>
-                <h3 className="font-bold text-lg text-white">{isIt ? 'Spreco Type-Aware & Metrica' : 'Type-Aware Waste Check'}</h3>
-                <p className="text-sm text-slate-400 mt-2 leading-relaxed">
+                <h3 className="text-[1.05rem] font-semibold">{isIt ? 'Spreco Type-Aware & Metrica' : 'Type-Aware Waste Check'}</h3>
+                <p className="text-sm text-ink-400 mt-2 leading-relaxed">
                   {isIt
                     ? 'Una campagna upper-funnel non è considerata "spreco" solo perché ha zero conversioni dirette. La metrica si allinea alla modalità (CPL/CPA su lead-gen, POAS su e-commerce).'
                     : 'Upper-funnel campaigns are not classified as "waste" simply because direct conversions are zero. Performance metrics automatically align with the model (CPL/CPA or POAS).'}
@@ -1171,10 +1168,10 @@ export default function AIPlatform() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-indigo-950/80 border border-indigo-500/30 flex items-center justify-center text-indigo-400 font-mono font-bold">III</div>
+              <div className="flex-shrink-0 icon-tile">III</div>
               <div>
-                <h3 className="font-bold text-lg text-white">{isIt ? 'Ancoraggio all\'Artefatto' : 'Artifact Anchoring'}</h3>
-                <p className="text-sm text-slate-400 mt-2 leading-relaxed">
+                <h3 className="text-[1.05rem] font-semibold">{isIt ? 'Ancoraggio all\'Artefatto' : 'Artifact Anchoring'}</h3>
+                <p className="text-sm text-ink-400 mt-2 leading-relaxed">
                   {isIt
                     ? 'Ogni variazione di rendimento deve essere agganciata a modifiche reali dell\'artefatto (annuncio, hash della landing, versione del copy) evitando giustificazioni qualitative generiche.'
                     : 'Every change in metrics must hook directly to the specific artifact version (exact ad asset, landing markdown version, copy hash).'}
@@ -1185,11 +1182,11 @@ export default function AIPlatform() {
         </section>
 
         {/* ─── CALL TO ACTION ─────────────────────────────────────────────── */}
-        <section className="max-w-4xl mx-auto px-4 text-center py-16 relative z-10 border-t border-white/5 mb-24">
-          <h2 className="text-3xl sm:text-4xl font-extrabold mb-6">
+        <section className="max-w-4xl mx-auto px-4 text-center py-16 relative z-10 border-t border-white/10 mb-24">
+          <h2 className="title-xl mb-6">
             {isIt ? 'Vuoi saperne di più sulla nostra gestione?' : 'Interested in Our Management Approach?'}
           </h2>
-          <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+          <p className="text-ink-400 text-lg mb-8 leading-relaxed">
             {isIt
               ? 'Prenota una sessione di audit. Analizziamo i tuoi canali di acquisizione (E-commerce o Lead Gen) ed evidenziamo dove l\'attuale fornitore sta lasciando margini e budget sul tavolo.'
               : 'Book an audit session. We will review your acquisition channels (E-commerce or Lead Gen) and pinpoint exactly where your current provider is leaking budget.'}
@@ -1199,7 +1196,7 @@ export default function AIPlatform() {
               href={BOOKING_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-bold transition-all text-white active:scale-95 shadow-lg shadow-indigo-600/10"
+              className="btn btn-primary"
             >
               {isIt ? 'Prenota un Audit gratuito' : 'Book a Free Audit'}
             </a>
@@ -1207,7 +1204,7 @@ export default function AIPlatform() {
               href={WA_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-white/[0.04] border border-white/10 hover:bg-white/[0.08] rounded-xl font-bold transition-all text-slate-200 active:scale-95"
+              className="btn btn-ghost"
             >
               {isIt ? 'Messaggia l\'agenzia su WhatsApp' : 'Message the agency on WhatsApp'}
             </a>

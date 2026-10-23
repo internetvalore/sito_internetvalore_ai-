@@ -15,8 +15,8 @@ import QualifiedDossierSection from '../../components/QualifiedDossierSection';
 
 // ─── Fade-in on scroll ────────────────────────────────────────────────────────
 const fadeInUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } }
+  hidden: { opacity: 0, y: 14 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } }
 };
 
 function Section({ children, className = '' }: { children: React.ReactNode; className?: string }) {
@@ -43,12 +43,12 @@ function AccordionItem({ question, answer, index, openIndex, setOpenIndex }: {
     <div className="mb-4">
       <button
         onClick={() => setOpenIndex(isOpen ? null : index)}
-        className="w-full flex justify-between items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 text-left"
+        className="card card-hover w-full flex justify-between items-center text-left"
         aria-expanded={isOpen}
       >
-        <span className="text-base font-semibold text-gray-900 pr-4">{question}</span>
-        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
-          <ChevronDown className="h-5 w-5 text-gray-500 flex-shrink-0" />
+        <span className="text-base font-semibold text-ink-900 pr-4">{question}</span>
+        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}>
+          <ChevronDown className="h-5 w-5 text-ink-500 flex-shrink-0" />
         </motion.div>
       </button>
       <AnimatePresence>
@@ -57,11 +57,11 @@ function AccordionItem({ question, answer, index, openIndex, setOpenIndex }: {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <div className="p-6 bg-white border-t border-gray-100 rounded-b-lg">
-              <p className="text-gray-600 leading-relaxed">{answer}</p>
+            <div className="pt-5 hairline">
+              <p className="text-base text-ink-600 leading-relaxed">{answer}</p>
             </div>
           </motion.div>
         )}
@@ -313,42 +313,42 @@ export default function Ecommerce() {
         faq={c.faq.items.map(item => ({ question: item.q, answer: item.a }))}
       />
 
-      <div className="bg-gradient-to-b from-white to-gray-50">
+      <div className="bg-white">
 
         {/* ══ 1. HERO ══════════════════════════════════════════════════════════ */}
-        <div className="relative bg-white overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-gray-50" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div className="relative hero-premium overflow-hidden">
+          <div className="absolute inset-0 bg-paper-soft" />
+          <div className="relative shell py-14 lg:py-20">
             <motion.div
-              initial={{ opacity: 0, y: 28 }}
+              initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease: 'easeOut' }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               className="max-w-2xl"
             >
-              <p className="text-xs font-bold tracking-widest text-blue-600 uppercase mb-4">
+              <p className="eyebrow mb-4">
                 {c.hero.eyebrow}
               </p>
-              <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl lg:text-6xl leading-tight mb-6">
+              <h1 className="title-xl hero-title mb-5">
                 {c.hero.h1}
               </h1>
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              <p className="lede measure mb-8">
                 {c.hero.sub}
               </p>
 
               {/* CTA buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-6">
                 <a
                   href={BOOKING_HREF}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200 shadow-md"
+                  className="btn btn-primary"
                 >
                   {c.hero.btnPrimary}
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="h-4 w-4" />
                 </a>
                 <a
                   href="tel:800940213"
-                  className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold rounded-lg text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
+                  className="btn btn-ghost"
                 >
                   {c.hero.btnPhone}
                 </a>
@@ -357,14 +357,14 @@ export default function Ecommerce() {
                 href={WA_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-sm font-medium text-green-700 hover:text-green-800 transition-colors duration-200"
+                className="btn btn-ghost btn-sm"
               >
-                <MessageCircle className="mr-1.5 h-4 w-4" />
+                <MessageCircle className="h-4 w-4" />
                 {c.hero.btnWa}
               </a>
 
               {/* Trust line */}
-              <p className="mt-6 text-xs text-gray-400 font-medium tracking-wide">
+              <p className="mt-6 text-xs text-ink-500 font-medium">
                 {c.hero.trust}
               </p>
             </motion.div>
@@ -372,30 +372,30 @@ export default function Ecommerce() {
 
           {/* Hero image */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-            className="hidden lg:block absolute right-0 inset-y-0 w-5/12"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+            className="hidden lg:block absolute right-0 inset-y-0 w-5/12 media rounded-none border-0"
           >
             <img
               src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt="Analisi Performance E-commerce e Tracciamento POAS - Internet Valore"
               className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent" />
+            <div className="absolute inset-0 bg-white/25 pointer-events-none" />
           </motion.div>
         </div>
 
         {/* ══ 2. TI SUONA FAMILIARE? ══════════════════════════════════════════ */}
-        <Section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <Section className="section shell">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">
+            <p className="eyebrow mb-3">
               {c.familiar.eyebrow}
             </p>
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-4">
+            <h2 className="title-lg mb-4">
               {c.familiar.h2}
             </h2>
-            <p className="text-base text-gray-500 max-w-xl mx-auto">
+            <p className="lede measure mx-auto">
               {c.familiar.sub}
             </p>
           </div>
@@ -404,49 +404,49 @@ export default function Ecommerce() {
             {c.familiar.cards.map((card, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex items-start gap-4 bg-white rounded-xl p-6 shadow-md border-l-4 border-blue-200 hover:shadow-lg transition-shadow duration-200"
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.06 }}
+                className="card card-hover flex items-start gap-4"
               >
-                <div className="flex-shrink-0 h-10 w-10 rounded-lg bg-blue-50 flex items-center justify-center">
-                  <card.icon className="h-5 w-5 text-blue-500" />
+                <div className="icon-tile">
+                  <card.icon className="h-5 w-5" />
                 </div>
-                <p className="text-gray-700 font-medium leading-relaxed italic">{card.quote}</p>
+                <p className="text-[0.95rem] text-ink-600 font-medium leading-relaxed italic">{card.quote}</p>
               </motion.div>
             ))}
           </div>
         </Section>
 
         {/* ══ 3. COSA CAMBIA ══════════════════════════════════════════════════ */}
-        <div className="bg-white py-20">
-          <Section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="section section-quiet">
+          <Section className="shell">
             <div className="text-center mb-12">
-              <p className="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">
+              <p className="eyebrow mb-3">
                 {c.after.eyebrow}
               </p>
-              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              <h2 className="title-lg">
                 {c.after.h2}
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               {c.after.blocks.map((block, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: (i % 2) * 0.1 }}
-                  className="flex items-start gap-5 p-6 rounded-xl border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all duration-200"
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: (i % 2) * 0.08 }}
+                  className="card card-hover flex items-start gap-4"
                 >
-                  <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
-                    <block.icon className="h-6 w-6 text-white" />
+                  <div className="icon-tile">
+                    <block.icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-gray-900 mb-1">{block.title}</h3>
-                    <p className="text-sm text-gray-500 leading-relaxed">{block.body}</p>
+                    <h3 className="text-base font-semibold text-ink-900 mb-1">{block.title}</h3>
+                    <p className="text-[0.95rem] text-ink-600 leading-relaxed">{block.body}</p>
                   </div>
                 </motion.div>
               ))}
@@ -455,20 +455,20 @@ export default function Ecommerce() {
         </div>
 
         {/* ══ 4. SOTTO IL COFANO ══════════════════════════════════════════════ */}
-        <div className="bg-gray-900 py-20">
-          <Section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="section section-quiet">
+          <Section className="shell">
             {/* Header */}
             <div className="text-center mb-14">
-              <p className="text-xs font-bold tracking-widest text-blue-400 uppercase mb-4">
+              <p className="eyebrow mb-4">
                 {c.hood.eyebrow}
               </p>
-              <h2 className="text-3xl font-extrabold text-white sm:text-4xl max-w-3xl mx-auto leading-tight mb-6">
+              <h2 className="title-lg measure mx-auto mb-6 text-ink-900">
                 {c.hood.h2}
               </h2>
-              <p className="text-gray-400 text-base leading-relaxed max-w-2xl mx-auto mb-8">
+              <p className="lede measure mx-auto mb-8">
                 {c.hood.body}
               </p>
-              <p className="text-lg font-bold text-blue-400 tracking-wide">
+              <p className="text-lg font-semibold text-accent-600">
                 {c.hood.tricolon}
               </p>
             </div>
@@ -478,16 +478,16 @@ export default function Ecommerce() {
               {c.hood.tiles.map((tile, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: i * 0.07 }}
-                  className="bg-gray-800 rounded-xl p-5 text-center border border-gray-700 hover:border-blue-500 transition-colors duration-200"
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.05 }}
+                  className="card card-hover border border-line text-center"
                 >
-                  <p className="text-2xl sm:text-3xl font-extrabold text-white mb-2 leading-none">
+                  <p className="text-2xl font-semibold mb-2 leading-none text-ink-900">
                     {tile.value}
                   </p>
-                  <p className="text-xs text-gray-400 leading-snug">{tile.label}</p>
+                  <p className="text-xs text-ink-600 leading-snug">{tile.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -496,12 +496,12 @@ export default function Ecommerce() {
             <div className="mt-12 text-center">
               <Link
                 to={`/${language}/la-nostra-tecnologia-ai`}
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-500 transition-colors duration-200 shadow-md"
+                className="btn btn-primary"
               >
                 {language === 'it' 
                   ? 'Scopri la nostra Tecnologia AI per la gestione delle campagne' 
                   : 'Discover our AI Technology for campaign management'}
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </Section>
@@ -512,37 +512,37 @@ export default function Ecommerce() {
         <TestimonialsSlider />
 
         {/* ══ 6. PERCHÉ FIDARTI ═══════════════════════════════════════════════ */}
-        <Section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <Section className="section shell">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">
+            <p className="eyebrow mb-3">
               {c.trust.eyebrow}
             </p>
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="title-lg">
               {c.trust.h2}
             </h2>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-5">
+          <div className="max-w-3xl mx-auto space-y-4">
             {c.trust.points.map((point, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.1 }}
-                className="flex items-start gap-4 bg-white rounded-xl p-6 shadow-md"
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
+                className="card card-quiet card-hover flex items-start gap-4"
               >
-                <point.icon className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700 leading-relaxed">{point.text}</p>
+                <point.icon className="h-5 w-5 text-accent-600 flex-shrink-0 mt-0.5" />
+                <p className="text-[0.95rem] text-ink-600 leading-relaxed">{point.text}</p>
               </motion.div>
             ))}
           </div>
 
           {/* Google Partner badge */}
           <div className="mt-10 flex justify-center">
-            <div className="inline-flex items-center gap-3 px-5 py-3 bg-white rounded-full shadow-md border border-gray-100">
-              <Award className="h-6 w-6 text-blue-600" />
-              <span className="text-sm font-semibold text-gray-700">{c.trust.badge}</span>
+            <div className="chip">
+              <Award className="h-4 w-4 text-accent-600" />
+              <span className="text-sm font-semibold text-ink-600">{c.trust.badge}</span>
             </div>
           </div>
         </Section>
@@ -551,9 +551,9 @@ export default function Ecommerce() {
         <QualifiedDossierSection />
 
         {/* ══ FAQ ══════════════════════════════════════════════════════════════ */}
-        <div className="bg-gray-50 py-20">
-          <Section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-10">
+        <div className="section section-quiet">
+          <Section className="shell measure">
+            <h2 className="title-lg text-center mb-10">
               {c.faq.h2}
             </h2>
             {c.faq.items.map((item, i) => (
@@ -570,19 +570,19 @@ export default function Ecommerce() {
         </div>
 
         {/* ══ 6. CTA FINALE ═══════════════════════════════════════════════════ */}
-        <Section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <Section className="section shell">
           <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-blue-600 rounded-2xl shadow-xl overflow-hidden"
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="card"
           >
             <div className="px-8 py-16 sm:px-16 max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-extrabold text-white sm:text-4xl mb-4">
+              <h2 className="title-lg mb-4">
                 {c.cta.h2}
               </h2>
-              <p className="text-blue-100 text-base leading-relaxed mb-10 max-w-xl mx-auto">
+              <p className="lede measure mx-auto mb-10">
                 {c.cta.body}
               </p>
 
@@ -591,28 +591,28 @@ export default function Ecommerce() {
                 href={BOOKING_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-lg text-blue-600 bg-white hover:bg-blue-50 transition-colors duration-200 shadow-md mb-6"
+                className="btn btn-primary mb-6"
               >
                 {c.cta.btnPrimary}
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="h-4 w-4" />
               </a>
 
               {/* Secondarie, meno evidenti */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-2">
                 <a
                   href="tel:800940213"
-                  className="text-sm font-semibold text-white hover:text-blue-200 transition-colors duration-200"
+                  className="text-sm font-semibold text-ink-600 hover:text-ink-900 transition-colors duration-200"
                 >
                   {c.cta.btnPhone}
                 </a>
-                <span className="hidden sm:inline text-blue-400">·</span>
+                <span className="hidden sm:inline text-ink-300">·</span>
                 <a
                   href={WA_HREF}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm font-semibold text-white hover:text-blue-200 transition-colors duration-200"
+                  className="inline-flex items-center text-sm font-semibold text-ink-600 hover:text-ink-900 transition-colors duration-200"
                 >
-                  <MessageCircle className="mr-1.5 h-4 w-4" />
+                  <MessageCircle className="h-4 w-4" />
                   {c.cta.btnWa}
                 </a>
               </div>

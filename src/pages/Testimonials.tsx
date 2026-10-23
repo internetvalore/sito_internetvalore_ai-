@@ -187,9 +187,9 @@ export default function Testimonials() {
   };
 
   const initialStack = reviews.map((_, i) => ({
-    x: i % 2 === 0 ? -100 : 100,
-    y: -10 * (reviews.length - i),
-    scale: 1 - (0.05 * (reviews.length - i)),
+    x: 0,
+    y: 12,
+    scale: 1,
     zIndex: i
   }));
 
@@ -207,7 +207,7 @@ export default function Testimonials() {
           { name: language === 'it' ? 'Testimonianze' : 'Testimonials', path: '/testimonials' }
         ]}
       />
-      <div className="bg-gradient-to-b from-white to-gray-50">
+      <div className="bg-white">
         <HeroSection
           title={content.title}
           subtitle={content.subtitle}
@@ -216,22 +216,24 @@ export default function Testimonials() {
         />
 
         {/* Rating Banner */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+        <div className="section shell">
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-blue-600 text-white rounded-2xl p-6 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="card card-hover flex flex-col md:flex-row items-center justify-between gap-4"
           >
             <div className="flex items-center gap-3">
-              <div className="flex text-yellow-300">
+              <div className="flex text-ink-400">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-6 w-6 fill-current" />
+                  <Star key={i} className="h-5 w-5 fill-current" />
                 ))}
               </div>
               <div>
-                <h2 className="text-xl font-black">{content.ratingBadge}</h2>
-                <p className="text-blue-100 text-sm flex items-center gap-1 mt-0.5">
-                  <CheckCircle className="h-4 w-4 text-emerald-300" />
+                <h2 className="text-lg font-semibold text-ink-900">{content.ratingBadge}</h2>
+                <p className="text-[0.9rem] text-ink-600 flex items-center gap-1 mt-0.5">
+                  <CheckCircle className="h-4 w-4 text-accent-600" />
                   Recensioni 100% autentiche da account trasparenti Google Business Profile
                 </p>
               </div>
@@ -240,7 +242,7 @@ export default function Testimonials() {
               href={GOOGLE_REVIEWS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-6 py-3 rounded-xl shadow hover:bg-blue-50 transition-colors duration-200 text-sm whitespace-nowrap"
+              className="btn btn-primary btn-sm whitespace-nowrap"
             >
               {content.viewAllGoogle}
               <ExternalLink className="h-4 w-4" />
@@ -249,11 +251,11 @@ export default function Testimonials() {
         </div>
 
         {/* Reviews Grid */}
-        <div className="py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="section">
+          <div className="shell">
             <div
               ref={containerRef}
-              className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="relative grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
             >
               {reviews.map((review, index) => {
                 const progress = useTransform(
@@ -291,57 +293,51 @@ export default function Testimonials() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
-                    className="transform-gpu"
+                    className="block h-full"
                   >
                     <motion.div
-                      className="h-full bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 flex flex-col justify-between"
-                      initial={{ opacity: 0, rotateY: 45 }}
-                      animate={{ opacity: 1, rotateY: 0 }}
+                      className="card card-hover h-full flex flex-col justify-between"
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{
-                        duration: 0.8,
-                        delay: index * 0.05,
-                        type: "spring",
-                        stiffness: 100
+                        duration: 0.5,
+                        ease: [0.22, 1, 0.36, 1],
+                        delay: index * 0.04
                       }}
                     >
                       <div>
-                        <div className="flex items-center mb-4">
+                        <div className="flex items-start mb-4">
                           <div className="flex-shrink-0">
-                            <motion.div
-                              whileHover={{ rotate: 360 }}
-                              transition={{ duration: 0.8 }}
-                              className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-full flex items-center justify-center shadow-md"
-                            >
-                              <Star className="h-6 w-6 text-white fill-current" />
-                            </motion.div>
+                            <div className="icon-tile rounded-full">
+                              <Star className="h-5 w-5 fill-current" />
+                            </div>
                           </div>
                           <div className="ml-4">
-                            <h3 className="text-lg font-bold text-gray-900">{review.author}</h3>
+                            <h3 className="text-base font-semibold text-ink-900">{review.author}</h3>
                             {review.company && (
-                              <p className="text-xs font-semibold text-blue-600">{review.company}</p>
+                              <p className="text-[0.8rem] font-semibold text-accent-600 mt-1">{review.company}</p>
                             )}
                             <div className="flex items-center mt-1">
                               {[...Array(review.rating)].map((_, i) => (
                                 <Star
                                   key={i}
-                                  className="h-4 w-4 text-yellow-400 fill-current"
+                                  className="h-4 w-4 text-ink-400 fill-current"
                                 />
                               ))}
                             </div>
                           </div>
                         </div>
                         <div className="relative">
-                          <div className="absolute -left-2 -top-2 text-4xl text-blue-200 opacity-50">"</div>
-                          <p className="relative text-gray-700 z-10 pl-4 text-sm leading-relaxed">
+                          <div className="absolute -left-2 -top-2 text-3xl text-ink-300">"</div>
+                          <p className="relative text-ink-600 z-10 pl-4 text-[0.95rem] leading-relaxed">
                             {review.body}
                           </p>
-                          <div className="absolute -bottom-4 -right-2 text-4xl text-blue-200 opacity-50 transform rotate-180">"</div>
+                          <div className="absolute -bottom-4 -right-2 text-3xl text-ink-300 transform rotate-180">"</div>
                         </div>
                       </div>
-                      <div className="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center text-xs text-gray-400">
+                      <div className="mt-4 pt-3 hairline flex justify-between items-center text-xs text-ink-500">
                         <span>Recensione Google Verificata</span>
-                        <ExternalLink className="h-3.5 w-3.5 text-blue-500" />
+                        <ExternalLink className="h-3.5 w-3.5 text-accent-600" />
                       </div>
                     </motion.div>
                   </motion.a>
@@ -355,18 +351,19 @@ export default function Testimonials() {
         <QualifiedDossierSection />
 
         {/* Testimonials FAQ Section */}
-        <section id="testimonials-faq" className="bg-white py-20 border-t border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="testimonials-faq" className="section hairline">
+          <div className="shell">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="text-center mb-14"
             >
-              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              <h2 className="title-lg">
                 {content.faqTitle}
               </h2>
-              <p className="mt-4 text-lg text-gray-500 max-w-3xl mx-auto">
+              <p className="mt-4 lede measure mx-auto">
                 {content.faqSubtitle}
               </p>
             </motion.div>
@@ -375,24 +372,24 @@ export default function Testimonials() {
               {testimonialsFaqs.map((faq, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.08 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.05 }}
                   className="mb-4"
                 >
                   <button
                     onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
                     aria-expanded={openFaqIndex === index}
-                    className="w-full flex justify-between items-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 border border-gray-200 text-left transition-all duration-200"
+                    className="card card-hover w-full flex justify-between items-center text-left"
                   >
-                    <span className="text-lg font-bold text-gray-900 pr-4">{faq.question}</span>
+                    <span className="text-base font-semibold text-ink-900 pr-4">{faq.question}</span>
                     <motion.div
                       animate={{ rotate: openFaqIndex === index ? 180 : 0 }}
-                      transition={{ duration: 0.2 }}
+                      transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
                       className="flex-shrink-0"
                     >
-                      <ChevronDown className="h-5 w-5 text-blue-600" />
+                      <ChevronDown className="h-5 w-5 text-ink-500" />
                     </motion.div>
                   </button>
                   <AnimatePresence>
@@ -401,11 +398,11 @@ export default function Testimonials() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.2 }}
+                        transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="p-6 bg-white border-x border-b border-gray-200 rounded-b-xl -mt-1 shadow-inner">
-                          <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                        <div className="pt-5 hairline">
+                          <p className="text-[0.95rem] text-ink-600 leading-relaxed">{faq.answer}</p>
                         </div>
                       </motion.div>
                     )}

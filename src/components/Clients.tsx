@@ -74,18 +74,19 @@ export default function Clients() {
   };
 
   return (
-    <div className="bg-white py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="section">
+      <div className="shell">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-14"
         >
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          <h2 className="title-xl mb-4">
             {language === 'it' ? 'I Nostri Clienti' : 'Our Clients'}
           </h2>
-          <p className="mt-4 text-xl text-gray-500">
+          <p className="lede">
             {language === 'it' 
               ? 'Alcuni dei nostri clienti di successo'
               : 'Some of our successful clients'}
@@ -97,25 +98,24 @@ export default function Clients() {
           <button 
             onClick={prevSlide} 
             disabled={currentIndex === 0}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md ${
-              currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center rounded-full border border-line bg-white transition-colors duration-220 cursor-pointer ${
+              currentIndex === 0 ? 'opacity-40 cursor-not-allowed' : 'hover:bg-paper'
             }`}
             aria-label="Previous example"
           >
-            <ChevronLeft className="h-6 w-6 text-blue-600" />
+            <ChevronLeft className="h-5 w-5 text-accent-600" />
           </button>
 
           {/* Examples slider */}
           <div className="overflow-hidden mx-10">
             <motion.div 
-              className="flex gap-4"
+              className="flex gap-6"
               animate={{
                 x: -currentIndex * (100 / itemsPerView) + '%'
               }}
               transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 30
+                duration: 0.45,
+                ease: [0.22, 1, 0.36, 1]
               }}
             >
               {clients.map((client, index) => (
@@ -123,11 +123,11 @@ export default function Clients() {
                   key={index} 
                   className="w-full md:w-1/3 flex-shrink-0 px-2"
                 >
-                  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full">
+                  <div className="card card-hover p-0 overflow-hidden h-full">
                     {client.textOnly ? (
                       // Text-only card
-                      <div className="p-8 flex items-center justify-center h-full">
-                        <h3 className="text-2xl font-bold text-gray-900 text-center">{client.title}</h3>
+                      <div className="p-6 flex items-center justify-center h-full min-h-[170px]">
+                        <h3 className="text-[1.2rem] font-semibold text-ink-900 text-center">{client.title}</h3>
                       </div>
                     ) : (
                       // Image card with link
@@ -142,12 +142,12 @@ export default function Clients() {
                           alt={language === 'it' ? `Caso di Successo Cliente Internet Valore - ${client.title}` : `Internet Valore Client Success Story - ${client.title}`} 
                           className="w-full h-48 object-cover"
                         />
-                        <div className="p-4">
-                          <h3 className="text-lg font-medium text-gray-900 mb-2">{client.title}</h3>
+                        <div className="p-5">
+                          <h3 className="text-[1.05rem] font-semibold text-ink-900 mb-2">{client.title}</h3>
                           <div className="flex justify-between items-center">
-                            <span className="text-blue-600 inline-flex items-center">
+                            <span className="text-accent-600 inline-flex items-center gap-1.5 font-semibold">
                               {language === 'it' ? 'Visita il sito' : 'Visit site'}
-                              <ArrowRight className="ml-1 h-4 w-4" />
+                              <ArrowRight className="h-4 w-4" />
                             </span>
                           </div>
                         </div>
@@ -163,12 +163,12 @@ export default function Clients() {
           <button 
             onClick={nextSlide} 
             disabled={currentIndex >= maxIndex}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md ${
-              currentIndex >= maxIndex ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
+            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center rounded-full border border-line bg-white transition-colors duration-220 cursor-pointer ${
+              currentIndex >= maxIndex ? 'opacity-40 cursor-not-allowed' : 'hover:bg-paper'
             }`}
             aria-label="Next example"
           >
-            <ChevronRight className="h-6 w-6 text-blue-600" />
+            <ChevronRight className="h-5 w-5 text-accent-600" />
           </button>
         </div>
       </div>
