@@ -209,9 +209,9 @@ export const CORE_SERVICES_IT: SchemaServiceItem[] = [
   },
   {
     id: "https://internetvalore.it/#service-ecommerce",
-    name: "E-commerce Marketing & POAS",
-    serviceType: "E-commerce Marketing",
-    description: "Promozione e-commerce orientata al profitto netto reale (POAS) con riconciliazione ordini Shopify vs GA4.",
+    name: "Campagne Ads E-commerce & POAS",
+    serviceType: "Campagne Ads E-commerce",
+    description: "Gestione campagne ads e-commerce su Google Ads e Facebook Ads orientata al profitto netto reale (POAS) con riconciliazione ordini Shopify vs GA4.",
     url: "https://internetvalore.it/it/services/ecommerce",
     priceRange: "€1500 - €7000"
   },
@@ -318,6 +318,10 @@ export const CORE_SERVICES_EN: SchemaServiceItem[] = [
 
 export const HOMEPAGE_FAQS: SchemaFAQItem[] = [
   {
+    question: "Come gestite le campagne ads per e-commerce?",
+    answer: "Gestiamo in outsourcing le campagne ads e-commerce su Google Ads (Search, Shopping e Performance Max) e Facebook Ads (Meta) partendo dal dato reale: riconciliamo gli ordini del carrello (Shopify/WooCommerce) con GA4, blocchiamo la cannibalizzazione del brand e ottimizziamo sul profitto netto (POAS) anziché sul ROAS. Ogni modifica passa da staging e dalla tua approvazione."
+  },
+  {
     question: "Cos'è la Lead Generation Riconciliata con il CRM?",
     answer: "È la nostra strategia avanzata di acquisizione contatti che integra il tuo CRM con masterAnalyzer. Prima di addestrare gli algoritmi di Smart Bidding di Google Ads e Meta Ads, filtriamo bot, spam e lead fasulli, ottimizzando le campagne solo sui contatti reali e qualificati."
   },
@@ -344,6 +348,10 @@ export const HOMEPAGE_FAQS: SchemaFAQItem[] = [
 ];
 
 export const HOMEPAGE_FAQS_EN: SchemaFAQItem[] = [
+  {
+    question: "How do you manage ad campaigns for e-commerce?",
+    answer: "We manage e-commerce ad campaigns in outsourcing on Google Ads (Search, Shopping and Performance Max) and Facebook Ads (Meta), starting from real data: we reconcile cart orders (Shopify/WooCommerce) with GA4, block brand cannibalization and optimize on net profit (POAS) rather than ROAS. Every change goes through staging and your approval."
+  },
   {
     question: "What is CRM-Reconciled Lead Generation?",
     answer: "It is our advanced lead acquisition strategy integrating your CRM with masterAnalyzer. Before training Google Ads and Meta Ads Smart Bidding algorithms, we filter out bots, spam, and fake leads, optimizing campaigns exclusively on real, qualified contacts."

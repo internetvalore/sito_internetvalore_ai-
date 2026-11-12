@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   TrendingUp, BarChart2, Eye, DollarSign, Database, AlertCircle,
   ShoppingBag, CheckCircle, ShieldCheck, ArrowRight, ChevronDown,
-  Award, MessageCircle
+  Award, MessageCircle, Search, Target, Sparkles
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -77,21 +77,21 @@ function getContent(language: string) {
   return {
     meta: {
       title: it
-        ? 'Promozione E-commerce sul dato vero | Internet Valore'
+        ? 'Campagne Ads E-commerce sul dato vero | Internet Valore'
         : 'E-commerce Promotion on Real Data | Internet Valore',
       description: it
-        ? 'Scopri quanti ordini il tuo tracciamento non vede e dove lasci margine. Ottimizziamo Google Ads e Meta sul profitto reale (POAS), con ogni mossa approvata da te.'
+        ? 'Campagne ads e-commerce su Google Ads e Facebook Ads ottimizzate sul profitto reale (POAS). Scopri quanti ordini il tuo tracciamento non vede. Analisi gratuita.'
         : 'Find out how many orders your tracking doesn\'t see and where you leave margin. We optimise Google Ads and Meta on real profit (POAS), with every move approved by you.',
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     },
 
     hero: {
-      eyebrow: it ? 'PROMOZIONE E-COMMERCE' : 'E-COMMERCE PROMOTION',
+      eyebrow: it ? 'CAMPAGNE ADS E-COMMERCE' : 'E-COMMERCE PROMOTION',
       h1: it
         ? 'Il tuo e-commerce vende. Ma quanto, davvero?'
         : 'Your e-commerce sells. But how much, really?',
       sub: it
-        ? 'Quasi tutti i negozi online vedono solo una parte degli ordini che incassano — e finiscono per tagliare campagne sane su numeri bucati. Noi partiamo da qui: ti diciamo quanti ordini il tuo tracciamento non vede e dove stai lasciando margine. Poi agiamo, con te, solo sul dato vero.'
+        ? 'Quasi tutti i negozi online vedono solo una parte degli ordini che incassano — e finiscono per tagliare campagne sane su numeri bucati. Noi partiamo da qui: ti diciamo quanti ordini il tuo tracciamento non vede e dove stai lasciando margine. Poi gestiamo con te le campagne ads del tuo e-commerce — Google Ads e Facebook Ads — solo sul dato vero.'
         : 'Almost every online store sees only part of the orders it earns — and ends up cutting healthy campaigns on broken numbers. We start here: we tell you how many orders your tracking doesn\'t see and where you\'re leaving margin on the table. Then we act, with you, only on real data.',
       btnPrimary: it ? 'Prenota l\'analisi gratuita del tuo e-commerce' : 'Book your free e-commerce analysis',
       btnPhone: it ? 'Numero Verde 800 940 213 (7x24 risponde Leonardo AI per farti richiamare da un consulente umano)' : 'Toll-Free 800 940 213 (24/7 answered by Leonardo AI to get a human consultant callback)',
@@ -172,6 +172,62 @@ function getContent(language: string) {
       ],
     },
 
+    channels: {
+      eyebrow: it ? 'GOOGLE ADS E FACEBOOK ADS' : 'GOOGLE ADS & FACEBOOK ADS',
+      h2: it
+        ? 'Campagne ads e-commerce: Google Ads e Facebook Ads, gestite sul profitto reale.'
+        : 'E-commerce ad campaigns: Google Ads and Facebook Ads, managed on real profit.',
+      sub: it
+        ? 'Gestiamo in outsourcing le campagne ads del tuo e-commerce sui canali su cui lavoriamo ogni giorno — Google Ads e Facebook Ads (Meta) — con una regola sola: si ottimizza sul margine che ti resta (POAS), non sul fatturato che le piattaforme dichiarano.'
+        : 'We manage your e-commerce ad campaigns in outsourcing on the channels we work on every day — Google Ads and Facebook Ads (Meta) — with a single rule: we optimise on the margin you keep (POAS), not on the revenue the platforms report.',
+      cards: it ? [
+        {
+          icon: ShoppingBag,
+          title: 'Google Shopping e Merchant Center',
+          body: 'Leggiamo il catalogo prodotto per prodotto: quali articoli assorbono budget senza lasciare margine, quali best seller restano invisibili e dove a frenare le vendite è il prezzo, non il budget.',
+        },
+        {
+          icon: Target,
+          title: 'Performance Max',
+          body: 'Separiamo chi ti cercava già per nome dai clienti davvero nuovi: il ritorno della campagna non viene gonfiato dal traffico brand che avresti incassato comunque.',
+        },
+        {
+          icon: Search,
+          title: 'Google Ads Search',
+          body: 'Mappiamo query e intenti di ricerca escludendo la cannibalizzazione del brand. Ogni modifica strutturale passa da staging e dry-run prima di andare online.',
+        },
+        {
+          icon: Sparkles,
+          title: 'Facebook Ads e Instagram Ads (Meta)',
+          body: 'Rinnoviamo le creatività con metodo per prevenire l\'ad fatigue e riconciliamo il ROAS dichiarato da Meta con GA4 e con gli ordini reali del carrello.',
+        },
+      ] : [
+        {
+          icon: ShoppingBag,
+          title: 'Google Shopping & Merchant Center',
+          body: 'We read the catalogue product by product: which items absorb budget without leaving margin, which best sellers stay invisible, and where price — not budget — is holding sales back.',
+        },
+        {
+          icon: Target,
+          title: 'Performance Max',
+          body: 'We separate people who were already searching for you by name from genuinely new customers: campaign return is not inflated by brand traffic you would have earned anyway.',
+        },
+        {
+          icon: Search,
+          title: 'Google Ads Search',
+          body: 'We map queries and search intent while excluding brand cannibalization. Every structural change goes through staging and dry-run before going live.',
+        },
+        {
+          icon: Sparkles,
+          title: 'Facebook Ads & Instagram Ads (Meta)',
+          body: 'We refresh creatives methodically to prevent ad fatigue and reconcile the ROAS reported by Meta with GA4 and real cart orders.',
+        },
+      ],
+      link: it
+        ? 'Approfondisci la gestione Google Ads e Facebook Ads'
+        : 'Learn more about Google Ads and Facebook Ads management',
+    },
+
     trust: {
       eyebrow: it ? 'PERCHÉ FIDARTI' : 'WHY TRUST US',
       h2: it ? 'Tre impegni concreti, non promesse.' : 'Three concrete commitments, not promises.',
@@ -209,6 +265,10 @@ function getContent(language: string) {
       h2: it ? 'Domande frequenti' : 'Frequently asked questions',
       items: it ? [
         {
+          q: 'Su quali canali gestite le campagne ads e-commerce?',
+          a: 'Principalmente Google Ads (Search, Shopping con Merchant Center e Performance Max) e Facebook Ads, cioè le campagne Meta su Facebook e Instagram. La misurazione è la stessa per tutti i canali: ordini reali del carrello riconciliati con GA4 e ottimizzazione sul profitto (POAS).',
+        },
+        {
           q: 'Funziona con Shopify / WooCommerce / il mio gestionale?',
           a: 'Sì. Ci integriamo con le piattaforme e i gestionali più diffusi — Shopify, WooCommerce e i principali ERP. Nella fase iniziale stabiliamo insieme quali dati possiamo collegare e come, così sai esattamente da dove partiamo.',
         },
@@ -229,6 +289,10 @@ function getContent(language: string) {
           a: 'Partiamo dalla copertura del tracciamento — quanti ordini reali i tuoi strumenti vedono — e ragioniamo in profitto (POAS), non solo fatturato. Ogni report dice cosa è stato fatto, perché e se ha funzionato, con i numeri a supporto.',
         },
       ] : [
+        {
+          q: 'Which channels do you run e-commerce ad campaigns on?',
+          a: 'Mainly Google Ads (Search, Shopping with Merchant Center and Performance Max) and Facebook Ads, i.e. Meta campaigns on Facebook and Instagram. Measurement is the same across all channels: real cart orders reconciled with GA4 and optimisation on profit (POAS).',
+        },
         {
           q: 'Does it work with Shopify / WooCommerce / my backend?',
           a: 'Yes. We integrate with the most widely used platforms and backends — Shopify, WooCommerce and major ERPs. In the initial phase we agree together which data to connect and how, so you know exactly where we\'re starting from.',
@@ -300,15 +364,15 @@ export default function Ecommerce() {
         description={c.meta.description}
         path="/services/ecommerce"
         image={c.meta.image}
-        serviceType={language === 'it' ? 'E-commerce Marketing' : 'E-commerce Marketing'}
+        serviceType={language === 'it' ? 'Campagne Ads E-commerce' : 'E-commerce Marketing'}
         serviceDescription={language === 'it'
-          ? 'Promozione e-commerce basata sul dato reale: tracciamento ordini riconciliato, ottimizzazione Google Ads e Meta sul profitto vero (POAS), con ogni modifica approvata dal cliente.'
+          ? 'Gestione campagne ads e-commerce (Google Ads, Shopping, Performance Max e Facebook Ads) basata sul dato reale: tracciamento ordini riconciliato e ottimizzazione sul profitto vero (POAS), con ogni modifica approvata dal cliente.'
           : 'E-commerce promotion based on real data: reconciled order tracking, Google Ads and Meta optimization on true profit (POAS), with every change client-approved.'}
         priceRange="€1500 - €7000"
         breadcrumbs={[
           { name: 'Home', path: '/' },
           { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },
-          { name: 'E-commerce', path: '/services/ecommerce' }
+          { name: language === 'it' ? 'Campagne Ads E-commerce' : 'E-commerce', path: '/services/ecommerce' }
         ]}
         faq={c.faq.items.map(item => ({ question: item.q, answer: item.a }))}
       />
@@ -379,7 +443,9 @@ export default function Ecommerce() {
           >
             <img
               src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              alt="Analisi Performance E-commerce e Tracciamento POAS - Internet Valore"
+              alt={language === 'it'
+                ? 'Campagne ads e-commerce: analisi performance e tracciamento POAS - Internet Valore'
+                : 'E-commerce performance analysis and POAS tracking - Internet Valore'}
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-white/25 pointer-events-none" />
@@ -453,6 +519,49 @@ export default function Ecommerce() {
             </div>
           </Section>
         </div>
+
+        {/* ══ 3b. CANALI: CAMPAGNE ADS E-COMMERCE (GOOGLE ADS + FACEBOOK ADS) ══ */}
+        <Section className="section shell">
+          <div className="text-center mb-12">
+            <p className="eyebrow mb-3">
+              {c.channels.eyebrow}
+            </p>
+            <h2 className="title-lg mb-4">
+              {c.channels.h2}
+            </h2>
+            <p className="lede measure mx-auto">
+              {c.channels.sub}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {c.channels.cards.map((card, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: (i % 2) * 0.08 }}
+                className="card card-hover flex items-start gap-4"
+              >
+                <div className="icon-tile">
+                  <card.icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-ink-900 mb-1">{card.title}</h3>
+                  <p className="text-[0.95rem] text-ink-600 leading-relaxed">{card.body}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link to={`/${language}/services/ads`} className="btn btn-ghost">
+              {c.channels.link}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </Section>
 
         {/* ══ 4. SOTTO IL COFANO ══════════════════════════════════════════════ */}
         <div className="section section-quiet">

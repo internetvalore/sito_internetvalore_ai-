@@ -249,6 +249,25 @@ export default function Ads() {
                 <p className="text-[0.9rem] text-ink-600 mt-2">{language === 'it' ? 'Controllo budget e approval_mode a doppia firma' : 'Budget control and double-signature approval_mode'}</p>
               </Link>
             </div>
+            <p className="lede measure mx-auto text-center mt-8">
+              {language === 'it' ? (
+                <>
+                  Hai un negozio online? Scopri come gestiamo le{' '}
+                  <Link to={`/${language}/services/ecommerce`} className="text-accent-700 font-medium hover:text-accent-800">
+                    campagne ads e-commerce
+                  </Link>{' '}
+                  su Google Ads e Facebook Ads, ottimizzate sul profitto reale (POAS).
+                </>
+              ) : (
+                <>
+                  Running an online store? See how we manage{' '}
+                  <Link to={`/${language}/services/ecommerce`} className="text-accent-700 font-medium hover:text-accent-800">
+                    e-commerce ad campaigns
+                  </Link>{' '}
+                  on Google Ads and Facebook Ads, optimised on real profit (POAS).
+                </>
+              )}
+            </p>
           </div>
         </div>
       </div>

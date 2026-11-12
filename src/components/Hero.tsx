@@ -31,7 +31,7 @@ export default function Hero() {
 
   const chipsIT = [
     { label: 'Lead Generation Riconciliata', to: `/${language}/services/lead-generation` },
-    { label: 'E-commerce POAS over ROAS', to: `/${language}/services/ecommerce` },
+    { label: 'Campagne Ads E-commerce (POAS)', to: `/${language}/services/ecommerce` },
     { label: 'Controllo Cannibalizzazione Brand', to: `/${language}/services/ads` },
     { label: '1M+ Righe Codice · 482 Tool LLM', to: `/${language}/la-nostra-tecnologia-ai` },
   ];
@@ -43,7 +43,7 @@ export default function Hero() {
           <motion.div initial="hidden" animate="visible">
             <motion.p variants={rise} className="eyebrow mb-4">
               {language === 'it'
-                ? 'Outsourcing Gestione Campagne E-commerce · Google Partner Certificato'
+                ? 'Outsourcing Campagne Ads E-commerce · Google Partner Certificato'
                 : 'Outsourced E-commerce Campaign Management · Certified Google Partner'}
             </motion.p>
 
@@ -58,7 +58,7 @@ export default function Hero() {
 
             <motion.p variants={rise} className="lede measure mb-8">
               {language === 'it'
-                ? 'Orchestriamo in outsourcing le tue campagne Google Ads, Shopping, Performance Max e Meta con masterAnalyzer: oltre 1.000.000 di righe censite (775k+ Python, 482 tool LLM e 293 playbook operativi) per riconciliare gli ordini del carrello, bloccare la cannibalizzazione del brand e ottimizzare sul profitto reale (POAS) netto.'
+                ? 'Orchestriamo in outsourcing le campagne ads del tuo e-commerce — Google Ads, Shopping, Performance Max e Facebook Ads (Meta) — con masterAnalyzer: oltre 1.000.000 di righe censite (775k+ Python, 482 tool LLM e 293 playbook operativi) per riconciliare gli ordini del carrello, bloccare la cannibalizzazione del brand e ottimizzare sul profitto reale (POAS) netto.'
                 : 'We orchestrate your Google Ads, Shopping, PMax and Meta campaigns in outsourcing with masterAnalyzer: over 1,000,000 total census lines (775k+ Python, 482 LLM tools and 293 execution playbooks) reconciling cart orders, eliminating brand cannibalization, and optimizing strictly on net profit (POAS).'}
             </motion.p>
 
@@ -91,7 +91,7 @@ export default function Hero() {
             <motion.div variants={rise} className="mt-10 pt-7 border-t border-line">
               <h2 className="title-lg mb-3">
                 {language === 'it'
-                  ? 'Outsourcing Gestione Campagne E-commerce & Algoritmi POAS'
+                  ? 'Campagne Ads E-commerce su Google Ads e Facebook Ads, Ottimizzate sul POAS'
                   : 'Outsourced E-commerce Campaign Management & POAS Algorithms'}
               </h2>
               <p className="lede measure mb-4">
@@ -101,7 +101,7 @@ export default function Hero() {
                     <Link to={`/${language}/services`} className="text-accent-700 font-medium hover:text-accent-800">
                       gestione campagne pubblicitarie in outsourcing
                     </Link>{' '}
-                    (Google Ads e Meta Ads) con un approccio matematico su dati reali. Grazie alla nostra{' '}
+                    (Google Ads e Facebook Ads) con un approccio matematico su dati reali. Grazie alla nostra{' '}
                     <Link to={`/${language}/la-nostra-tecnologia-ai`} className="text-accent-700 font-medium hover:text-accent-800">
                       tecnologia proprietaria masterAnalyzer
                     </Link>{' '}
@@ -109,9 +109,9 @@ export default function Hero() {
                     <Link to={`/${language}/services/lead-generation`} className="text-accent-700 font-medium hover:text-accent-800">
                       lead generation riconciliata col CRM
                     </Link>{' '}
-                    ed ottimizzazione{' '}
+                    e{' '}
                     <Link to={`/${language}/services/ecommerce`} className="text-accent-700 font-medium hover:text-accent-800">
-                      E-commerce sul profitto (POAS) netto
+                      campagne ads e-commerce ottimizzate sul profitto (POAS) netto
                     </Link>. Scopri il profilo di{' '}
                     <Link to={`/${language}/about`} className="text-accent-700 font-medium hover:text-accent-800">
                       Andrea Falzin (Founder &amp; CEO)

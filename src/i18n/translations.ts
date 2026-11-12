@@ -8,14 +8,14 @@ export const translations = {
       about: 'Chi Siamo',
       call: 'Chiama Ora',
       contact: 'Contattaci',
-      tagline: 'Outsourcing Campagne E-commerce sul Margine Reale (POAS)',
+      tagline: 'Outsourcing Campagne Ads E-commerce sul Margine Reale (POAS)',
       instantWebsites: 'Siti Istantanei',
       ecommercePlatform: 'La Nostra AI',
       testimonials: 'Casi & Audit (Riservati)',
       callUs: 'Chiamaci Ora'
     },
     hero: {
-      title: 'Outsourcing Campagne E-commerce sul Margine Reale (POAS)',
+      title: 'Outsourcing Campagne Ads E-commerce sul Margine Reale (POAS)',
       highlight: 'Eliminiamo gli sprechi delle agenzie tradizionali ottimizzando solo sul profitto effettivo.',
       description: 'Non siamo una SaaS e non ottimizziamo il fatturato lordo a sentimento. Gestiamo le tue campagne Google Ads, Shopping, PMax e Meta integrando la nostra tecnologia masterAnalyzer da oltre 1.000.000 di righe censite (775k+ Python, 482 tool LLM e 293 playbook operativi) per riconciliare gli ordini reali del carrello, bloccare la cannibalizzazione del brand ed ottimizzare solo sul profitto netto (POAS).',
       cta: {
@@ -43,7 +43,7 @@ export const translations = {
     },
     services: {
       title: 'Le Nostre Specializzazioni',
-      subtitle: 'Outsourcing Campagne E-commerce & Performance',
+      subtitle: 'Outsourcing Campagne Ads E-commerce & Performance',
       description: 'Ogni canale pubblicitario è orchestrato da masterAnalyzer per proteggere il margine reale (POAS), riconciliare il carrello ed eliminare la cannibalizzazione del brand.',
       available247: 'Numero Verde 800 940 213 attivo 7x24: risponde Leonardo, il nostro assistente AI digitale, che raccoglie tutte le informazioni per farti richiamare da un nostro consulente umano.',
       sections: {
@@ -58,8 +58,8 @@ export const translations = {
           ]
         },
         ecommerce: {
-          title: 'E-commerce Performance (POAS)',
-          description: 'Massimizziamo il profitto reale del tuo e-commerce, tracciando gli ordini reali Shopify contro GA4 ed ottimizzando per margine.',
+          title: 'Campagne Ads E-commerce (POAS)',
+          description: 'Gestiamo le campagne ads del tuo e-commerce su Google Ads e Facebook Ads massimizzando il profitto reale: ordini Shopify riconciliati contro GA4 e ottimizzazione per margine.',
           features: [
             'Ottimizzazione sul profitto (POAS)',
             'Riconciliazione ordini Shopify vs GA4',

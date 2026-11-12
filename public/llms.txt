@@ -1,6 +1,6 @@
 # Internet Valore
 
-> Agenzia di marketing digitale con sede a Milano specializzata in lead generation, e-commerce performance marketing, gestione Google Ads e Meta Ads, analytics avanzata e tecnologia AI proprietaria (masterAnalyzer). Serviamo PMI italiane e svizzere (Canton Ticino) con un approccio basato sul dato reale e sul profitto (POAS - Profit on Ad Spend), non sul semplice fatturato.
+> Agenzia di marketing digitale con sede a Milano specializzata in outsourcing di campagne ads e-commerce (Google Ads e Facebook Ads), lead generation, gestione Google Ads e Meta Ads, analytics avanzata e tecnologia AI proprietaria (masterAnalyzer). Serviamo PMI italiane e svizzere (Canton Ticino) con un approccio basato sul dato reale e sul profitto (POAS - Profit on Ad Spend), non sul semplice fatturato.
 
 ## Informazioni Aziendali
 
@@ -19,9 +19,9 @@
 URL: https://internetvalore.it/it/services/lead-generation
 Descrizione: Strategie avanzate di lead generation con Deep Search guidata dall'IA per predire la domanda e saturare nicchie di mercato. Integrazione WhatsApp CRM e IA conversazionale (Leonardo).
 
-### E-commerce Performance Marketing
+### Campagne Ads E-commerce (Google Ads e Facebook Ads)
 URL: https://internetvalore.it/it/services/ecommerce
-Descrizione: Promozione e-commerce basata sul dato reale. Riconciliazione ordini Shopify/WooCommerce vs GA4, ottimizzazione su POAS (Profit on Ad Spend) reale, eliminazione sprechi con audit Raggi X. Piattaforma proprietaria con 1.004.600+ righe di codice censite (775k+ Python), 482 tool LLM e 293 playbook operativi.
+Descrizione: Gestione in outsourcing di campagne ads e-commerce su Google Ads (Search, Shopping con Merchant Center, Performance Max) e Facebook Ads / Instagram Ads (Meta), basata sul dato reale. Riconciliazione ordini Shopify/WooCommerce vs GA4, ottimizzazione su POAS (Profit on Ad Spend) reale, eliminazione sprechi con audit Raggi X. Piattaforma proprietaria con 1.004.600+ righe di codice censite (775k+ Python), 482 tool LLM e 293 playbook operativi.
 
 ### Gestione Google & Meta Ads
 URL: https://internetvalore.it/it/services/ads

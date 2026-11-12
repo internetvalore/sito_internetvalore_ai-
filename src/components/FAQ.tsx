@@ -10,6 +10,14 @@ export default function FAQ() {
   const faqs = [
     {
       question: language === 'it'
+        ? 'Come gestite le campagne ads per e-commerce?'
+        : 'How do you manage ad campaigns for e-commerce?',
+      answer: language === 'it'
+        ? 'Gestiamo in outsourcing le campagne ads e-commerce su Google Ads (Search, Shopping e Performance Max) e Facebook Ads (Meta) partendo dal dato reale: riconciliamo gli ordini del carrello (Shopify/WooCommerce) con GA4, blocchiamo la cannibalizzazione del brand e ottimizziamo sul profitto netto (POAS) anziché sul ROAS. Ogni modifica passa da staging e dalla tua approvazione.'
+        : 'We manage e-commerce ad campaigns in outsourcing on Google Ads (Search, Shopping and Performance Max) and Facebook Ads (Meta), starting from real data: we reconcile cart orders (Shopify/WooCommerce) with GA4, block brand cannibalization and optimize on net profit (POAS) rather than ROAS. Every change goes through staging and your approval.'
+    },
+    {
+      question: language === 'it'
         ? 'Cos\'è la Lead Generation Riconciliata con il CRM?'
         : 'What is CRM-Reconciled Lead Generation?',
       answer: language === 'it'

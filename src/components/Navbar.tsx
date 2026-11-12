@@ -15,7 +15,7 @@ export default function Navbar() {
 
   const services = [
     {
-      name: language === 'it' ? 'Outsourcing Campagne E-commerce' : 'E-commerce Campaign Outsourcing',
+      name: language === 'it' ? 'Outsourcing Campagne Ads E-commerce' : 'E-commerce Campaign Outsourcing',
       description: language === 'it' ? 'Ottimizzazione sul margine reale (POAS), riconciliazione carrello e zero cannibalizzazione.' : 'Real margin optimization (POAS), cart reconciliation and zero brand cannibalization.',
       href: `/${language}/services/ecommerce`,
       isPrimary: true
@@ -76,7 +76,7 @@ export default function Navbar() {
                     Internet Valore
                   </span>
                   <span className="block text-[0.78rem] text-ink-500 leading-tight mt-0.5">
-                    {language === 'it' ? 'Outsourcing Campagne E-commerce sul Margine Reale (POAS)' : 'E-commerce Campaign Outsourcing on Real Margin (POAS)'}
+                    {language === 'it' ? 'Outsourcing Campagne Ads E-commerce sul Margine Reale (POAS)' : 'E-commerce Campaign Outsourcing on Real Margin (POAS)'}
                   </span>
                 </span>
               </Link>
@@ -212,7 +212,7 @@ export default function Navbar() {
                   <div>
                     <p className="text-[0.95rem] font-semibold text-ink-900">Internet Valore</p>
                     <p className="text-[0.78rem] text-ink-500 leading-tight">
-                      {language === 'it' ? 'Outsourcing Campagne E-commerce (POAS)' : 'E-commerce Campaign Outsourcing (POAS)'}
+                      {language === 'it' ? 'Outsourcing Campagne Ads E-commerce (POAS)' : 'E-commerce Campaign Outsourcing (POAS)'}
                     </p>
                   </div>
                 </div>

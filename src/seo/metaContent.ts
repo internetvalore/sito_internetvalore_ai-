@@ -1,8 +1,8 @@
 export const metaContent = {
   home: {
     it: {
-      title: 'Outsourcing Campagne E-commerce (POAS) | Internet Valore',
-      description: 'Outsourcing campagne Google Ads, Shopping e Meta per e-commerce >15k€/mese. Riconciliazione ordini reali, POAS netto e zero cannibalizzazione brand.',
+      title: 'Outsourcing Campagne Ads E-commerce (POAS) | Internet Valore',
+      description: 'Outsourcing campagne ads e-commerce: Google Ads, Shopping e Facebook Ads per shop >15k€/mese. Ordini reali riconciliati, POAS netto, zero cannibalizzazione.',
       path: '/'
     },
     en: {
@@ -65,12 +65,12 @@ export const metaContent = {
   },
   lpOutsourcingEcommerce: {
     it: {
-      title: 'Outsourcing Campagne E-commerce & POAS | Internet Valore',
-      description: 'Orchestriamo in outsourcing le campagne del tuo e-commerce (Google Ads, Meta, Shopping) con tracciamento ordini reali e ottimizzazione sul profitto netto.',
+      title: 'Outsourcing Campagne Ads E-commerce & POAS | Internet Valore',
+      description: 'Gestiamo in outsourcing le campagne ads del tuo e-commerce (Google Ads, Shopping, Facebook Ads): ordini reali tracciati e ottimizzazione sul profitto netto.',
       path: '/lp/outsourcing-campagne-ecommerce',
       priceRange: '€1000 - €5000',
-      serviceType: 'Outsourcing Campagne Ecommerce',
-      serviceDescription: 'Gestione e orchestrazione in outsourcing delle campagne per ecommerce con metodo trasparente e verificabile.'
+      serviceType: 'Outsourcing Campagne Ads Ecommerce',
+      serviceDescription: 'Gestione e orchestrazione in outsourcing delle campagne ads per ecommerce (Google Ads e Facebook Ads) con metodo trasparente e verificabile.'
     },
     en: {
       title: 'Ecommerce Ad Campaigns Outsourcing & POAS | Internet Valore',
@@ -83,12 +83,12 @@ export const metaContent = {
   },
   ecommerce: {
     it: {
-      title: 'E-commerce Marketing & POAS | Vendite e Dati Reali | Internet Valore',
-      description: 'Ottimizza il tuo e-commerce con dati reali: riconciliazione ordini Shopify vs GA4, ottimizzazione Google e Meta Ads sul profitto netto (POAS). Consulenza gratuita.',
+      title: 'Campagne Ads E-commerce sul dato vero | Internet Valore',
+      description: 'Campagne ads e-commerce su Google Ads e Facebook Ads ottimizzate sul profitto reale (POAS). Scopri quanti ordini il tuo tracciamento non vede. Analisi gratuita.',
       path: '/services/ecommerce',
       priceRange: '€1500 - €7000',
-      serviceType: 'E-commerce Marketing',
-      serviceDescription: 'Promozione e-commerce basata sul dato reale: tracciamento ordini, ottimizzazione Google Ads, Meta Ads e analisi profitto (POAS).'
+      serviceType: 'Campagne Ads E-commerce',
+      serviceDescription: 'Gestione campagne ads e-commerce (Google Ads, Shopping, Performance Max e Facebook Ads) basata sul dato reale: tracciamento ordini riconciliato e ottimizzazione sul profitto vero (POAS).'
     },
     en: {
       title: 'E-commerce Marketing & POAS | Real Sales & Data | Internet Valore',
