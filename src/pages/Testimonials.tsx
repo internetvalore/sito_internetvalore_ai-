@@ -131,7 +131,7 @@ export default function Testimonials() {
         ? 'Le recensioni di Internet Valore sono verificate su Google Business Profile?'
         : 'Are Internet Valore customer reviews verified on Google Business Profile?',
       answer: language === 'it'
-        ? 'Sì, tutte le recensioni mostrate in questa pagina sono authentic e pubblicate dai nostri clienti direttamente sulla nostra scheda ufficiale Google Business Profile.'
+        ? 'Sì, tutte le recensioni mostrate in questa pagina sono autentiche e pubblicate dai nostri clienti direttamente sulla nostra scheda ufficiale Google Business Profile.'
         : 'Yes, all reviews displayed on this page are authentic and published by our clients directly on our official Google Business Profile.'
     },
     {
@@ -234,7 +234,9 @@ export default function Testimonials() {
                 <h2 className="text-lg font-semibold text-ink-900">{content.ratingBadge}</h2>
                 <p className="text-[0.9rem] text-ink-600 flex items-center gap-1 mt-0.5">
                   <CheckCircle className="h-4 w-4 text-accent-600" />
-                  Recensioni 100% autentiche da account trasparenti Google Business Profile
+                  {language === 'it'
+                    ? 'Recensioni 100% autentiche da account trasparenti Google Business Profile'
+                    : '100% authentic reviews from transparent Google Business Profile accounts (shown in the original Italian)'}
                 </p>
               </div>
             </div>
@@ -336,7 +338,7 @@ export default function Testimonials() {
                         </div>
                       </div>
                       <div className="mt-4 pt-3 hairline flex justify-between items-center text-xs text-ink-500">
-                        <span>Recensione Google Verificata</span>
+                        <span>{language === 'it' ? 'Recensione Google Verificata' : 'Verified Google Review'}</span>
                         <ExternalLink className="h-3.5 w-3.5 text-accent-600" />
                       </div>
                     </motion.div>

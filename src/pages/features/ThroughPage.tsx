@@ -89,10 +89,10 @@ export default function ThroughPage() {
 
             <div className="mt-8 flex flex-wrap gap-3 items-center">
               <Link
-                to={`/${language}/casi-e-audit?tema=${theme.id}`}
+                to={`/${language}/analisi-gratuita?tema=${theme.id}`}
                 className="btn btn-primary"
               >
-                {isIt ? 'Richiedi Audit a Raggi X su Questo Tema' : 'Request X-Ray Audit on This Topic'}
+                {isIt ? 'Richiedi l\'analisi gratuita su questo tema' : 'Request the free analysis on this topic'}
               </Link>
               <span className="text-xs text-ink-600">
                 {isIt ? 'Protetto da NDA · Riservato a spend >15k€/mese' : 'Governed by NDA · Spend >€15k/mo'}
@@ -188,10 +188,10 @@ export default function ThroughPage() {
                     {isIt ? 'Approfondisci la capacità' : 'Read full capability'} →
                   </Link>
                   <Link
-                    to={`/${language}/casi-e-audit?tema=${theme.id}&cap=${spoke.slug}`}
+                    to={`/${language}/analisi-gratuita?tema=${theme.id}&cap=${spoke.slug}`}
                     className="text-xs font-medium text-ink-600 hover:text-ink-900 transition-colors"
                   >
-                    {isIt ? 'Audit su questa USP' : 'Audit this USP'}
+                    {isIt ? 'Analisi gratuita su questo punto' : 'Free analysis on this point'}
                   </Link>
                 </div>
               </div>
@@ -291,10 +291,10 @@ export default function ThroughPage() {
             </p>
             <div className="mt-8">
               <Link
-                to={`/${language}/casi-e-audit?tema=${theme.id}`}
+                to={`/${language}/analisi-gratuita?tema=${theme.id}`}
                 className="btn btn-primary"
               >
-                {isIt ? 'Richiedi l\'Audit Riservato (Da 15k€/mese)' : 'Request Private Audit (From €15k/mo)'}
+                {isIt ? 'Richiedi l\'analisi gratuita del tuo e-commerce' : 'Request your free e-commerce analysis'}
               </Link>
             </div>
           </div>

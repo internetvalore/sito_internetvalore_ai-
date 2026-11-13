@@ -61,6 +61,10 @@ export default {
       '8xl': '1280px',
       prose: '68ch',
       screen: '100vw',
+      // Chiavi standard di Tailwind usate nel codice (md:max-w-none, sm:max-w-none, max-w-full):
+      // senza di esse quelle classi non venivano generate.
+      none: 'none',
+      full: '100%',
     },
     borderRadius: {
       none: '0',

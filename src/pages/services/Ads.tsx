@@ -57,7 +57,7 @@ export default function Ads() {
     cta: {
       title: 'Pronto a eliminare gli sprechi pubblicitari?',
       description: 'Metti alla prova le tue campagne attuali con un audit Raggi X guidato dai dati.',
-      button: 'Prenota un Audit gratuito'
+      button: 'Richiedi l\'analisi gratuita del tuo e-commerce'
     }
   } : {
     title: 'Google & Meta Ads Management',
@@ -105,7 +105,7 @@ export default function Ads() {
     cta: {
       title: 'Ready to cut advertising waste?',
       description: 'Test your current campaigns with our data-driven 5-phase X-Ray audit.',
-      button: 'Book a Free Audit'
+      button: 'Request your free e-commerce analysis'
     }
   };
 
@@ -117,7 +117,6 @@ export default function Ads() {
         path="/services/ads"
         serviceType={meta.serviceType}
         serviceDescription={meta.serviceDescription}
-        priceRange={meta.priceRange}
         breadcrumbs={[
           { name: 'Home', path: '/' },
           { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },
@@ -218,13 +217,21 @@ export default function Ads() {
                   <p className="mt-4 lede measure mx-auto">
                     {content.cta.description}
                   </p>
-                  <Link
-                    to={`/${language}/contact`}
-                    className="mt-8 btn btn-primary"
-                  >
-                    {content.cta.button}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  <div className="mt-8 flex flex-wrap justify-center gap-3">
+                    <Link
+                      to={`/${language}/analisi-gratuita`}
+                      className="btn btn-primary"
+                    >
+                      {content.cta.button}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                    <Link
+                      to={`/${language}/lp/lead-generation`}
+                      className="btn btn-ghost"
+                    >
+                      {language === 'it' ? 'Sei una PMI? Analisi gratuita del tuo account' : 'An SME? Free analysis of your account'}
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -264,7 +271,7 @@ export default function Ads() {
                   <Link to={`/${language}/services/ecommerce`} className="text-accent-700 font-medium hover:text-accent-800">
                     e-commerce ad campaigns
                   </Link>{' '}
-                  on Google Ads and Facebook Ads, optimised on real profit (POAS).
+                  on Google Ads and Facebook Ads, optimized on real profit (POAS).
                 </>
               )}
             </p>

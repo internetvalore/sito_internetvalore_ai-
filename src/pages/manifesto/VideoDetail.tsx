@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import MetaTags from '../../components/MetaTags';
-import { videoList } from './videoData';
+import { videoList, localizedVideo } from './videoData';
 import { 
   ArrowLeft, ArrowRight, Copy, Check, HelpCircle, 
   AlertTriangle, ShieldCheck, TrendingDown, ArrowUpRight, Play
@@ -46,14 +46,23 @@ export default function VideoDetail() {
   const prevVideo = currentIndex > 0 ? videoList[currentIndex - 1] : null;
   const nextVideo = currentIndex < videoList.length - 1 ? videoList[currentIndex + 1] : null;
 
+  // Displayed fields in the current language (falls back to Italian)
+  const loc = localizedVideo(video, language);
+  const prevLoc = prevVideo ? localizedVideo(prevVideo, language) : null;
+  const nextLoc = nextVideo ? localizedVideo(nextVideo, language) : null;
+
   const handleCopy = () => {
-    navigator.clipboard.writeText(video.question);
+    navigator.clipboard.writeText(loc.question);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const customTitle = `${video.title.split(' — ')[1]} | Metodo Internet Valore`;
-  const customDescription = `${isIt ? 'Analisi del problema' : 'Problem analysis'}: ${video.pain} - Scopri come la nostra suite AI protegge le tue performance.`;
+  const customTitle = isIt
+    ? `${loc.title.split(' — ')[1]} | Metodo Internet Valore`
+    : `${loc.title.split(' — ')[1]} | Internet Valore Method`;
+  const customDescription = isIt
+    ? `Analisi del problema: ${loc.pain} - Scopri come la nostra suite AI protegge le tue performance.`
+    : `Problem analysis: ${loc.pain} - Discover how our AI suite protects your performance.`;
 
   return (
     <div className="section-quiet min-h-screen font-sans pt-24 pb-16">
@@ -66,15 +75,15 @@ export default function VideoDetail() {
         breadcrumbs={[
           { name: 'Home', path: '/' },
           { name: isIt ? 'Manifesto' : 'Manifesto', path: '/manifesto' },
-          { name: video.title.split(' — ')[0], path: `/video/${video.id}` }
+          { name: loc.title.split(' — ')[0], path: `/video/${video.id}` }
         ]}
         video={{
-          name: video.title,
-          description: `${video.pain} ${video.relief}`,
+          name: loc.title,
+          description: `${loc.pain} ${loc.relief}`,
           thumbnailUrl: `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`,
           uploadDate: '2026-07-09T08:00:00+02:00',
           embedUrl: `https://www.youtube.com/embed/${video.youtubeId}`,
-          transcript: video.script
+          transcript: loc.script
         }}
       />
 
@@ -90,7 +99,7 @@ export default function VideoDetail() {
             {isIt ? 'Torna all’Indice del Manifesto' : 'Back to Manifesto Index'}
           </Link>
           <span className="chip self-start sm:self-auto">
-            {video.theme}
+            {loc.theme}
           </span>
         </div>
 
@@ -100,7 +109,7 @@ export default function VideoDetail() {
             {isIt ? `Capacità della Suite #${video.id.toUpperCase()}` : `Suite Capability #${video.id.toUpperCase()}`}
           </span>
           <h1 className="title-xl">
-            {video.title}
+            {loc.title}
           </h1>
         </div>
 
@@ -116,7 +125,7 @@ export default function VideoDetail() {
                 <iframe
                   className="w-full h-full"
                   src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                  title={video.title}
+                  title={loc.title}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -146,7 +155,7 @@ export default function VideoDetail() {
               </div>
 
               <blockquote className="text-base italic leading-relaxed text-ink-900 mb-6 border-l border-accent-600 pl-3">
-                "{video.question}"
+                "{loc.question}"
               </blockquote>
 
               <div className="hairline flex items-center justify-between">
@@ -183,10 +192,10 @@ export default function VideoDetail() {
                   : 'Our engineering team can connect in read-only mode and run a free dry-run on your account to isolate tracking gaps.'}
               </p>
               <Link 
-                to={`/${language}/contact`} 
+                to={`/${language}/analisi-gratuita`} 
                 className="btn btn-primary w-full"
               >
-                <span>{isIt ? 'Richiedi un Audit Gratuito' : 'Request Free Audit'}</span>
+                <span>{isIt ? 'Richiedi l\'analisi gratuita' : 'Request the free analysis'}</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
             </div>
@@ -205,7 +214,7 @@ export default function VideoDetail() {
                 </h3>
               </div>
               <p className="text-ink-900 leading-relaxed font-medium text-[0.95rem]">
-                {video.pain}
+                {loc.pain}
               </p>
             </div>
 
@@ -218,7 +227,7 @@ export default function VideoDetail() {
                 </h3>
               </div>
               <p className="text-ink-600 leading-relaxed text-sm">
-                {video.agitate}
+                {loc.agitate}
               </p>
             </div>
 
@@ -231,7 +240,7 @@ export default function VideoDetail() {
                 </h3>
               </div>
               <p className="text-ink-600 leading-relaxed text-sm">
-                {video.relief}
+                {loc.relief}
               </p>
             </div>
 
@@ -249,7 +258,7 @@ export default function VideoDetail() {
               <ArrowLeft className="w-4 h-4 text-ink-500 shrink-0" />
               <div className="min-w-0">
                 <span className="text-xs text-ink-500 font-medium uppercase block">{isIt ? 'PRECEDENTE' : 'PREVIOUS'}</span>
-                <span className="text-sm font-medium text-ink-900 truncate block">{prevVideo.title.split(' — ')[1]}</span>
+                <span className="text-sm font-medium text-ink-900 truncate block">{(prevLoc ?? prevVideo).title.split(' — ')[1]}</span>
               </div>
             </Link>
           ) : (
@@ -270,7 +279,7 @@ export default function VideoDetail() {
             >
               <div className="min-w-0">
                 <span className="text-xs text-ink-500 font-medium uppercase block">{isIt ? 'SUCCESSIVO' : 'NEXT'}</span>
-                <span className="text-sm font-medium text-ink-900 truncate block">{nextVideo.title.split(' — ')[1]}</span>
+                <span className="text-sm font-medium text-ink-900 truncate block">{(nextLoc ?? nextVideo).title.split(' — ')[1]}</span>
               </div>
               <ArrowRight className="w-4 h-4 text-ink-500 shrink-0" />
             </Link>

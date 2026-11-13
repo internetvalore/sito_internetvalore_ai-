@@ -1,1 +1,8 @@
+# Vecchi indirizzi della pagina del form e-commerce -> nuova pagina dell'analisi gratuita
+/it/casi-e-audit        /it/analisi-gratuita   301!
+/en/casi-e-audit        /en/analisi-gratuita   301!
+/it/dossier-riservato   /it/analisi-gratuita   301!
+/en/dossier-riservato   /en/analisi-gratuita   301!
+
+# SPA: tutto il resto viene servito da index.html
 /* /index.html 200

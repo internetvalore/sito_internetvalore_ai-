@@ -32,7 +32,6 @@ export const metaContent = {
       title: 'Lead Generation B2B | Acquisisci Contatti Qualificati | Internet Valore',
       description: 'Strategie avanzate di lead generation per PMI: filtraggio spam e bot dal CRM, automazione e contatti verificati per le vendite. Risultati misurabili.',
       path: '/services/lead-generation',
-      priceRange: '€1000 - €5000',
       serviceType: 'Lead Generation',
       serviceDescription: 'Servizi professionali di lead generation con automazione completa e integrazione WhatsApp Business.'
     },
@@ -40,7 +39,6 @@ export const metaContent = {
       title: 'B2B Lead Generation | Acquire Qualified Leads | Internet Valore',
       description: 'Advanced lead generation strategies for SMBs: CRM spam and bot filtering, automated workflows and verified sales leads. Measurable results.',
       path: '/services/lead-generation',
-      priceRange: '€1000 - €5000',
       serviceType: 'Lead Generation',
       serviceDescription: 'Professional lead generation services with complete automation and WhatsApp Business integration.'
     }
@@ -50,7 +48,6 @@ export const metaContent = {
       title: 'Agenzia Lead Generation B2B | Analisi Gratuita | Internet Valore',
       description: 'Campagne lead generation B2B che portano contatti veri per la tua PMI. Ricevi l\'analisi gratuita del tuo account Google Ads in 3 giorni.',
       path: '/lp/lead-generation',
-      priceRange: '€800 - €5000',
       serviceType: 'B2B Lead Generation',
       serviceDescription: 'Servizi di lead generation B2B per PMI con tracciamento della spesa e analisi account prima di firmare.'
     },
@@ -58,7 +55,6 @@ export const metaContent = {
       title: 'B2B Lead Generation Agency | Free Account Audit | Internet Valore',
       description: 'B2B lead generation campaigns delivering real contacts for your SMB. Receive a free analysis of your Google Ads account in 3 business days.',
       path: '/lp/lead-generation',
-      priceRange: '€800 - €5000',
       serviceType: 'B2B Lead Generation',
       serviceDescription: 'B2B lead generation services for SMBs with transparent ad spend tracking and free account analysis.'
     }
@@ -68,7 +64,6 @@ export const metaContent = {
       title: 'Outsourcing Campagne Ads E-commerce & POAS | Internet Valore',
       description: 'Gestiamo in outsourcing le campagne ads del tuo e-commerce (Google Ads, Shopping, Facebook Ads): ordini reali tracciati e ottimizzazione sul profitto netto.',
       path: '/lp/outsourcing-campagne-ecommerce',
-      priceRange: '€1000 - €5000',
       serviceType: 'Outsourcing Campagne Ads Ecommerce',
       serviceDescription: 'Gestione e orchestrazione in outsourcing delle campagne ads per ecommerce (Google Ads e Facebook Ads) con metodo trasparente e verificabile.'
     },
@@ -76,7 +71,6 @@ export const metaContent = {
       title: 'Ecommerce Ad Campaigns Outsourcing & POAS | Internet Valore',
       description: 'We orchestrate your ecommerce advertising campaigns in outsourcing (Google Ads, Meta, Shopping) with verified order tracking and true profit optimization.',
       path: '/lp/outsourcing-campagne-ecommerce',
-      priceRange: '€1000 - €5000',
       serviceType: 'Ecommerce Campaigns Outsourcing',
       serviceDescription: 'Transparent and verifiable ecommerce ads management and orchestration.'
     }
@@ -86,17 +80,15 @@ export const metaContent = {
       title: 'Campagne Ads E-commerce sul dato vero | Internet Valore',
       description: 'Campagne ads e-commerce su Google Ads e Facebook Ads ottimizzate sul profitto reale (POAS). Scopri quanti ordini il tuo tracciamento non vede. Analisi gratuita.',
       path: '/services/ecommerce',
-      priceRange: '€1500 - €7000',
       serviceType: 'Campagne Ads E-commerce',
       serviceDescription: 'Gestione campagne ads e-commerce (Google Ads, Shopping, Performance Max e Facebook Ads) basata sul dato reale: tracciamento ordini riconciliato e ottimizzazione sul profitto vero (POAS).'
     },
     en: {
       title: 'E-commerce Marketing & POAS | Real Sales & Data | Internet Valore',
-      description: 'Optimise your e-commerce with real data: reconcile Shopify orders against GA4, optimise Google & Meta Ads on net profit (POAS). Free consultation.',
+      description: 'Optimize your e-commerce with real data: reconcile Shopify orders against GA4, optimize Google & Meta Ads on net profit (POAS). Free consultation.',
       path: '/services/ecommerce',
-      priceRange: '€1500 - €7000',
       serviceType: 'E-commerce Marketing',
-      serviceDescription: 'E-commerce promotion based on real data: order tracking, Google Ads optimisation, Meta Ads and profit analysis (POAS).'
+      serviceDescription: 'E-commerce promotion based on real data: order tracking, Google Ads optimization, Meta Ads and profit analysis (POAS).'
     }
   },
   ads: {
@@ -104,7 +96,6 @@ export const metaContent = {
       title: 'Gestione Google Ads & Meta Ads | Alto Rendimento | Internet Valore',
       description: 'Gestione professionale di campagne pubblicitarie su Google e Meta. Modifiche in staging protetto, controllo cannibalizzazione brand e ROI incrementale.',
       path: '/services/ads',
-      priceRange: '€800 - €4000',
       serviceType: 'Ads Management',
       serviceDescription: 'Gestione professionale di campagne pubblicitarie su Google Ads e Facebook Ads.'
     },
@@ -112,7 +103,6 @@ export const metaContent = {
       title: 'Google & Meta Ads Management | High-Yield Campaigns | Internet Valore',
       description: 'Professional management of advertising campaigns on Google and Meta. Safe staging deployment, brand cannibalization protection, and incremental ROI.',
       path: '/services/ads',
-      priceRange: '€800 - €4000',
       serviceType: 'Ads Management',
       serviceDescription: 'Professional management of advertising campaigns on Google Ads and Facebook Ads.'
     }
@@ -122,7 +112,6 @@ export const metaContent = {
       title: 'Analytics & Reporting | Decomposizione LMDI del Dato | Internet Valore',
       description: 'Analisi dati professionale, audit tracciamento e modelli econometrici MMM. Dashboard personalizzate e scomposizione algebrica delle variazioni di performance.',
       path: '/services/analytics',
-      priceRange: '€500 - €3000',
       serviceType: 'Analytics & Reporting',
       serviceDescription: 'Servizi professionali di analisi dati e reporting per ottimizzazione marketing.'
     },
@@ -130,7 +119,6 @@ export const metaContent = {
       title: 'Analytics & Reporting | LMDI Data Decomposition | Internet Valore',
       description: 'Professional data analysis, tracking audit and MMM econometric models. Custom dashboards and algebraic decomposition of performance shifts.',
       path: '/services/analytics',
-      priceRange: '€500 - €3000',
       serviceType: 'Analytics & Reporting',
       serviceDescription: 'Professional data analysis and reporting services for marketing optimization.'
     }
@@ -140,7 +128,6 @@ export const metaContent = {
       title: 'RispondiSubito | Centralino Intelligente H24 con AI | Internet Valore',
       description: 'Centralino intelligente H24 per rispondere a ogni chiamata, qualificare i contatti, smistare le richieste e riconciliare gli eventi con Google Ads.',
       path: '/services/rispondi-subito',
-      priceRange: '€300 - €1500',
       serviceType: 'Virtual Reception',
       serviceDescription: 'Servizio di centralino intelligente con risposta automatica H24.'
     },
@@ -148,7 +135,6 @@ export const metaContent = {
       title: 'RispondiSubito | 24/7 AI Smart Call Center | Internet Valore',
       description: 'Smart call center responding 24/7 to capture leads, qualify inquiries, route calls, and reconcile phone conversions with Google Ads bidding.',
       path: '/services/rispondi-subito',
-      priceRange: '€300 - €1500',
       serviceType: 'Virtual Reception',
       serviceDescription: '24/7 smart call center service with automatic response.'
     }
@@ -158,7 +144,6 @@ export const metaContent = {
       title: 'Landing Page Professionali in 5 Giorni | Internet Valore',
       description: 'Landing page ad alta conversione costruite su intenti reali emersi dalla Deep Search. Pronta in 5 giorni lavorativi con hosting e copy psicologico inclusi.',
       path: '/landing-page-professionali',
-      priceRange: '€500 - €2000',
       serviceType: 'Landing Page Design',
       serviceDescription: 'Creazione di landing page professionali ottimizzate per le conversioni.'
     },
@@ -166,7 +151,6 @@ export const metaContent = {
       title: 'Professional Landing Pages in 5 Days | Internet Valore',
       description: 'High-converting landing pages built on market search intent from Deep Search. Ready in 5 business days with hosting and psychological copywriting included.',
       path: '/landing-page-professionali',
-      priceRange: '€500 - €2000',
       serviceType: 'Landing Page Design',
       serviceDescription: 'Creation of professional landing pages optimized for conversions.'
     }
@@ -176,7 +160,6 @@ export const metaContent = {
       title: 'Landing Page Basata su Deep Search in 5 Giorni | Internet Valore',
       description: 'Aumenta le conversioni con una landing page professionale creata su misura per il tuo mercato in 5 giorni lavorativi. Hosting e copy inclusi.',
       path: '/landing',
-      priceRange: '€500 - €2000',
       serviceType: 'Landing Page Creation',
       serviceDescription: 'Sviluppo rapido di landing page commerciali ottimizzate per le campagne pubblicitarie.'
     },
@@ -184,7 +167,6 @@ export const metaContent = {
       title: 'Deep Search Powered Landing Pages in 5 Days | Internet Valore',
       description: 'Boost conversions with custom landing pages tailored to your market demand in 5 business days. Hosting and copywriting included.',
       path: '/landing',
-      priceRange: '€500 - €2000',
       serviceType: 'Landing Page Creation',
       serviceDescription: 'Rapid commercial landing page development optimized for advertising campaigns.'
     }
@@ -194,7 +176,6 @@ export const metaContent = {
       title: 'Campagne Google Ads & IA per PMI | Internet Valore',
       description: 'Gestione campagne pubblicitarie Google Ads e Meta Ads guidata da Deep Search e AI. Modello trasparente Win-Win per massimizzare il profitto netto.',
       path: '/google-ads',
-      priceRange: '€800 - €3000',
       serviceType: 'Google Ads Management',
       serviceDescription: 'Gestione strategica e operativa di campagne pubblicitarie Google Ads potenziata da intelligenza artificiale.'
     },
@@ -202,7 +183,6 @@ export const metaContent = {
       title: 'Google Ads & AI Campaigns for SMBs | Internet Valore',
       description: 'Google Ads and Meta Ads campaign management powered by Deep Search and AI. Transparent Win-Win model to maximize net profitability.',
       path: '/google-ads',
-      priceRange: '€800 - €3000',
       serviceType: 'Google Ads Management',
       serviceDescription: 'Strategic and operational Google Ads campaign management powered by artificial intelligence.'
     }
@@ -212,7 +192,6 @@ export const metaContent = {
       title: 'Siti Web Istantanei per Imprese in 7 Giorni | Internet Valore',
       description: 'Il tuo sito web professionale e responsive online in 7 giorni. Design su misura, hosting veloce, SEO base e assistenza tecnica continua inclusa per 12 mesi.',
       path: '/instant-websites',
-      priceRange: '€1000 - €3000',
       serviceType: 'Website Development',
       serviceDescription: 'Creazione rapida di siti web professionali con supporto continuo.'
     },
@@ -220,7 +199,6 @@ export const metaContent = {
       title: 'Instant Business Websites in 7 Days | Internet Valore',
       description: 'Your professional and responsive business website online in 7 business days. Custom design, fast hosting, core SEO, and 12-month technical support included.',
       path: '/instant-websites',
-      priceRange: '€1000 - €3000',
       serviceType: 'Website Development',
       serviceDescription: 'Rapid creation of professional websites with ongoing support.'
     }
@@ -230,7 +208,6 @@ export const metaContent = {
       title: 'Specializzazioni & Competenze Marketing Digitale | Internet Valore',
       description: 'Scopri le competenze verticali di Internet Valore: Lead Generation, E-commerce POAS, Google Ads, Meta Ads, SEO avanzata e Web Analytics.',
       path: '/specializations',
-      priceRange: 'Varies',
       serviceType: 'Digital Marketing Specialization',
       serviceDescription: 'Servizi specializzati di marketing digitale e tecnologia pubblicitaria.'
     },
@@ -238,7 +215,6 @@ export const metaContent = {
       title: 'Digital Marketing Specializations & Expertise | Internet Valore',
       description: 'Explore Internet Valore specialized capabilities: Lead Generation, E-commerce POAS, Google Ads, Meta Ads, Advanced SEO, and Web Analytics.',
       path: '/specializations',
-      priceRange: 'Varies',
       serviceType: 'Digital Marketing Specialization',
       serviceDescription: 'Specialized digital marketing and advertising technology services.'
     }
@@ -417,10 +393,10 @@ export const metaContent = {
     },
     en: {
       title: 'Solutions for Multi-Market E-commerce Operators | Internet Valore',
-      description: 'Manage multi-currency sales using historical BCE rates, allocate international budgets on true demand, and expand via a three-stage gateway.',
+      description: 'Manage multi-currency sales using historical ECB rates, allocate international budgets on true demand, and expand via a three-stage gateway.',
       path: '/solutions/operatore-ecommerce',
       serviceType: 'International E-commerce & Multi-currency',
-      serviceDescription: 'Multi-market e-commerce management: multi-currency reconciliation with BCE rates, demand-based international budget allocation, and three-stage market expansion gateway.'
+      serviceDescription: 'Multi-market e-commerce management: multi-currency reconciliation with ECB rates, demand-based international budget allocation, and three-stage market expansion gateway.'
     }
   },
   advertiserSenzaTracking: {

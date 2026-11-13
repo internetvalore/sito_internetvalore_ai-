@@ -57,7 +57,7 @@ export default function Analytics() {
     cta: {
       title: 'Vuoi capire perché i tuoi KPI variano?',
       description: 'Prenota un audit analitico e scopri la percentuale reale di ordini che il tuo tracciamento non vede.',
-      button: 'Esplora masterAnalyzer'
+      button: 'Richiedi l\'analisi gratuita'
     }
   } : {
     title: 'Data Analytics & Reporting',
@@ -105,7 +105,7 @@ export default function Analytics() {
     cta: {
       title: 'Want to unlock what drives your KPI shifts?',
       description: 'Book an analytics audit and learn the real order coverage percentage of your store.',
-      button: 'Explore masterAnalyzer'
+      button: 'Request the free analysis'
     }
   };
 
@@ -117,7 +117,6 @@ export default function Analytics() {
         path="/services/analytics"
         serviceType={meta.serviceType}
         serviceDescription={meta.serviceDescription}
-        priceRange={meta.priceRange}
         breadcrumbs={[
           { name: 'Home', path: '/' },
           { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },
@@ -219,7 +218,7 @@ export default function Analytics() {
                     {content.cta.description}
                   </p>
                   <Link
-                    to={`/${language}/contact`}
+                    to={`/${language}/analisi-gratuita`}
                     className="mt-8 btn btn-primary"
                   >
                     {content.cta.button}

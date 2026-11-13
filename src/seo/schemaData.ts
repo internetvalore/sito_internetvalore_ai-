@@ -28,8 +28,8 @@ export const BUSINESS_INFO = {
   image: 'https://internetvalore.it/og-image.jpg',
   telephone: '+39-800-940-213',
   email: 'info@internetvalore.it',
-  vatId: 'IT09055410967',
-  taxID: '09055410967',
+  vatId: 'IT06767350967',
+  taxID: '06767350967',
   priceRange: '€€€',
   address: {
     streetAddress: 'Via Giovanni Battista Pergolesi 29',
@@ -204,56 +204,49 @@ export const CORE_SERVICES_IT: SchemaServiceItem[] = [
     name: "Lead Generation B2B Riconciliata",
     serviceType: "Lead Generation B2B",
     description: "Servizi di lead generation per acquisire contatti qualificati B2B e PMI con filtraggio preventivo bot e spam dal CRM.",
-    url: "https://internetvalore.it/it/services/lead-generation",
-    priceRange: "€1000 - €5000"
+    url: "https://internetvalore.it/it/services/lead-generation"
   },
   {
     id: "https://internetvalore.it/#service-ecommerce",
     name: "Campagne Ads E-commerce & POAS",
     serviceType: "Campagne Ads E-commerce",
     description: "Gestione campagne ads e-commerce su Google Ads e Facebook Ads orientata al profitto netto reale (POAS) con riconciliazione ordini Shopify vs GA4.",
-    url: "https://internetvalore.it/it/services/ecommerce",
-    priceRange: "€1500 - €7000"
+    url: "https://internetvalore.it/it/services/ecommerce"
   },
   {
     id: "https://internetvalore.it/#service-ads",
     name: "Gestione Google Ads & Meta Ads",
     serviceType: "Ads Management",
     description: "Gestione professionale campagne Google Ads e Meta Ads con modifiche protette in staging e blocco cannibalizzazione brand.",
-    url: "https://internetvalore.it/it/services/ads",
-    priceRange: "€800 - €4000"
+    url: "https://internetvalore.it/it/services/ads"
   },
   {
     id: "https://internetvalore.it/#service-analytics",
     name: "Analytics & Decomposizione LMDI",
     serviceType: "Analytics & Reporting",
     description: "Analisi dati avanzata, audit tracciamento e scomposizione algebrica LMDI delle variazioni di performance marketing.",
-    url: "https://internetvalore.it/it/services/analytics",
-    priceRange: "€500 - €3000"
+    url: "https://internetvalore.it/it/services/analytics"
   },
   {
     id: "https://internetvalore.it/#service-rispondi-subito",
     name: "RispondiSubito Centralino AI H24",
     serviceType: "Virtual Reception & AI Assistant",
     description: "Centralino intelligente H24 per qualificare i contatti telefonici e riconciliare le conversioni con gli algoritmi pubblicitari.",
-    url: "https://internetvalore.it/it/services/rispondi-subito",
-    priceRange: "€300 - €1500"
+    url: "https://internetvalore.it/it/services/rispondi-subito"
   },
   {
     id: "https://internetvalore.it/#service-landing-page",
     name: "Landing Page Professionali in 5 Giorni",
     serviceType: "Landing Page Design",
     description: "Creazione rapida di landing page ad alta conversione basate su Deep Search e copy psicologico in 5 giorni lavorativi.",
-    url: "https://internetvalore.it/it/landing-page-professionali",
-    priceRange: "€500 - €2000"
+    url: "https://internetvalore.it/it/landing-page-professionali"
   },
   {
     id: "https://internetvalore.it/#service-instant-websites",
     name: "Siti Web Istantanei per Imprese in 7 Giorni",
     serviceType: "Website Development",
     description: "Siti web aziendali completi, responsive e veloci con SEO di base e assistenza tecnica continua inclusa.",
-    url: "https://internetvalore.it/it/instant-websites",
-    priceRange: "€1000 - €3000"
+    url: "https://internetvalore.it/it/instant-websites"
   }
 ];
 
@@ -263,56 +256,49 @@ export const CORE_SERVICES_EN: SchemaServiceItem[] = [
     name: "CRM-Reconciled B2B Lead Generation",
     serviceType: "B2B Lead Generation",
     description: "B2B lead generation services for SMBs with CRM spam and bot filtering before feeding smart bidding algorithms.",
-    url: "https://internetvalore.it/en/services/lead-generation",
-    priceRange: "€1000 - €5000"
+    url: "https://internetvalore.it/en/services/lead-generation"
   },
   {
     id: "https://internetvalore.it/#service-ecommerce-en",
     name: "E-commerce Marketing & POAS Optimization",
     serviceType: "E-commerce Marketing",
     description: "E-commerce ad campaigns optimized for real net profit (POAS) with verified Shopify vs GA4 order reconciliation.",
-    url: "https://internetvalore.it/en/services/ecommerce",
-    priceRange: "€1500 - €7000"
+    url: "https://internetvalore.it/en/services/ecommerce"
   },
   {
     id: "https://internetvalore.it/#service-ads-en",
     name: "Google Ads & Meta Ads Management",
     serviceType: "Ads Management",
     description: "Professional advertising campaign management with staged dry-runs and brand cannibalization protection.",
-    url: "https://internetvalore.it/en/services/ads",
-    priceRange: "€800 - €4000"
+    url: "https://internetvalore.it/en/services/ads"
   },
   {
     id: "https://internetvalore.it/#service-analytics-en",
     name: "Web Analytics & LMDI Decomposition",
     serviceType: "Analytics & Reporting",
     description: "Advanced analytics, tracking audit and algebraic LMDI decomposition of marketing performance shifts.",
-    url: "https://internetvalore.it/en/services/analytics",
-    priceRange: "€500 - €3000"
+    url: "https://internetvalore.it/en/services/analytics"
   },
   {
     id: "https://internetvalore.it/#service-rispondi-subito-en",
     name: "RispondiSubito 24/7 AI Smart Call Center",
     serviceType: "Virtual Reception & AI Assistant",
     description: "24/7 smart phone switchboard qualifying leads and reconciling phone call conversions with Google Ads bidding.",
-    url: "https://internetvalore.it/en/services/rispondi-subito",
-    priceRange: "€300 - €1500"
+    url: "https://internetvalore.it/en/services/rispondi-subito"
   },
   {
     id: "https://internetvalore.it/#service-landing-page-en",
     name: "High-Converting Landing Pages in 5 Days",
     serviceType: "Landing Page Design",
     description: "Rapid creation of high-converting landing pages tailored to search demand with psychological copywriting.",
-    url: "https://internetvalore.it/en/landing-page-professionali",
-    priceRange: "€500 - €2000"
+    url: "https://internetvalore.it/en/landing-page-professionali"
   },
   {
     id: "https://internetvalore.it/#service-instant-websites-en",
     name: "Instant Business Websites in 7 Days",
     serviceType: "Website Development",
     description: "Turnkey business websites online in 7 business days with fast hosting, SEO and ongoing technical support.",
-    url: "https://internetvalore.it/en/instant-websites",
-    priceRange: "€1000 - €3000"
+    url: "https://internetvalore.it/en/instant-websites"
   }
 ];
 
@@ -331,7 +317,7 @@ export const HOMEPAGE_FAQS: SchemaFAQItem[] = [
   },
   {
     question: "Cos'è la tecnologia proprietaria masterAnalyzer?",
-    answer: "masterAnalyzer è la nostra suite software proprietaria (oltre 1.000.000 di righe totali censite, 775.752 righe Python, 482 tool LLM e 293 playbook operativi). Riconcilia in tempo reale gli ordini e-commerce (Shopify/WooCommerce vs GA4) ed i lead del CRM, blocca la cannibalizzazione delle ricerche brand ed esegue analisi algebriche della variazione dei dati."
+    answer: "masterAnalyzer è la nostra suite software proprietaria. Riconcilia in tempo reale gli ordini e-commerce (Shopify/WooCommerce vs GA4) ed i lead del CRM, blocca la cannibalizzazione delle ricerche brand ed esegue analisi algebriche della variazione dei dati."
   },
   {
     question: "Come funziona la consulenza gratuita iniziale?",
@@ -362,7 +348,7 @@ export const HOMEPAGE_FAQS_EN: SchemaFAQItem[] = [
   },
   {
     question: "What is the proprietary masterAnalyzer technology?",
-    answer: "masterAnalyzer is our proprietary software suite (over 1,000,000 total census lines, 775,752 Python lines, 482 LLM tools, and 293 operational playbooks). It reconciles e-commerce orders (Shopify/WooCommerce vs GA4) and CRM leads in real time, blocks brand search cannibalization, and performs algebraic performance variance analysis."
+    answer: "masterAnalyzer is our proprietary software suite. It reconciles e-commerce orders (Shopify/WooCommerce vs GA4) and CRM leads in real time, blocks brand search cannibalization, and performs algebraic performance variance analysis."
   },
   {
     question: "How does the initial free consultation work?",

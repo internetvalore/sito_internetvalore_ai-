@@ -81,7 +81,7 @@ function getContent(language: string) {
         : 'E-commerce Promotion on Real Data | Internet Valore',
       description: it
         ? 'Campagne ads e-commerce su Google Ads e Facebook Ads ottimizzate sul profitto reale (POAS). Scopri quanti ordini il tuo tracciamento non vede. Analisi gratuita.'
-        : 'Find out how many orders your tracking doesn\'t see and where you leave margin. We optimise Google Ads and Meta on real profit (POAS), with every move approved by you.',
+        : 'Find out how many orders your tracking doesn\'t see and where you leave margin. We optimize Google Ads and Meta on real profit (POAS), with every move approved by you.',
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     },
 
@@ -179,7 +179,7 @@ function getContent(language: string) {
         : 'E-commerce ad campaigns: Google Ads and Facebook Ads, managed on real profit.',
       sub: it
         ? 'Gestiamo in outsourcing le campagne ads del tuo e-commerce sui canali su cui lavoriamo ogni giorno — Google Ads e Facebook Ads (Meta) — con una regola sola: si ottimizza sul margine che ti resta (POAS), non sul fatturato che le piattaforme dichiarano.'
-        : 'We manage your e-commerce ad campaigns in outsourcing on the channels we work on every day — Google Ads and Facebook Ads (Meta) — with a single rule: we optimise on the margin you keep (POAS), not on the revenue the platforms report.',
+        : 'We manage your e-commerce ad campaigns in outsourcing on the channels we work on every day — Google Ads and Facebook Ads (Meta) — with a single rule: we optimize on the margin you keep (POAS), not on the revenue the platforms report.',
       cards: it ? [
         {
           icon: ShoppingBag,
@@ -205,7 +205,7 @@ function getContent(language: string) {
         {
           icon: ShoppingBag,
           title: 'Google Shopping & Merchant Center',
-          body: 'We read the catalogue product by product: which items absorb budget without leaving margin, which best sellers stay invisible, and where price — not budget — is holding sales back.',
+          body: 'We read the catalog product by product: which items absorb budget without leaving margin, which best sellers stay invisible, and where price — not budget — is holding sales back.',
         },
         {
           icon: Target,
@@ -291,7 +291,7 @@ function getContent(language: string) {
       ] : [
         {
           q: 'Which channels do you run e-commerce ad campaigns on?',
-          a: 'Mainly Google Ads (Search, Shopping with Merchant Center and Performance Max) and Facebook Ads, i.e. Meta campaigns on Facebook and Instagram. Measurement is the same across all channels: real cart orders reconciled with GA4 and optimisation on profit (POAS).',
+          a: 'Mainly Google Ads (Search, Shopping with Merchant Center and Performance Max) and Facebook Ads, i.e. Meta campaigns on Facebook and Instagram. Measurement is the same across all channels: real cart orders reconciled with GA4 and optimization on profit (POAS).',
         },
         {
           q: 'Does it work with Shopify / WooCommerce / my backend?',
@@ -299,11 +299,11 @@ function getContent(language: string) {
         },
         {
           q: 'Do you need access to my Google Ads, Meta and Analytics accounts?',
-          a: 'Yes. For the diagnosis we work in read-only mode: we see the data, we change nothing. Every write access — to apply optimisations — is separate, requires your explicit authorisation and always stays under your control.',
+          a: 'Yes. For the diagnosis we work in read-only mode: we see the data, we change nothing. Every write access — to apply optimizations — is separate, requires your explicit authorization and always stays under your control.',
         },
         {
           q: 'How long before I see the first results?',
-          a: 'The initial diagnosis is ready within a few days of onboarding. The first measurable optimisations come in the following weeks: Google and Meta record conversions with a delay after the click, so numbers read well after 4-8 weeks.',
+          a: 'The initial diagnosis is ready within a few days of onboarding. The first measurable optimizations come in the following weeks: Google and Meta record conversions with a delay after the click, so numbers read well after 4-8 weeks.',
         },
         {
           q: 'Do you apply campaign changes without asking me?',
@@ -324,14 +324,14 @@ function getContent(language: string) {
       body: it
         ? 'Per leggere davvero un e-commerce non basta un foglio di calcolo. Abbiamo costruito una piattaforma proprietaria che incrocia tutte le tue fonti — Google Analytics 4, Search Console, Google Ads, Meta, Merchant Center e il carrello e-commerce — e trasforma milioni di righe di dati in decisioni. Quello che un team impiegherebbe giorni a controllare a mano, qui gira in secondi. È l\'equivalente di oltre 34,9 anni-uomo di lavoro specializzato (con una batteria di 16.364 test automatici e 482 tool LLM): quello che serve per ricostruire da zero ciò che oggi lavora per il tuo e-commerce. Un foglio di calcolo o un tool generico non hanno questo dietro.'
         : 'Reading an e-commerce properly takes more than a spreadsheet. We built a proprietary platform that cross-references all your sources — Google Analytics 4, Search Console, Google Ads, Meta, Merchant Center and your store cart — and turns millions of rows of data into decisions. What a team would spend days checking manually, here runs in seconds. That\'s the equivalent of over 34.9 person-years of development (backed by 16,364 automated tests and 482 LLM tools): what it would take to rebuild from scratch what works for your e-commerce today. A spreadsheet or a generic tool doesn\'t have this behind it.',
-      tricolon: it ? 'Analizziamo. Scopriamo. Potenziamo.' : 'Analyse. Discover. Amplify.',
+      tricolon: it ? 'Analizziamo. Scopriamo. Potenziamo.' : 'Analyze. Discover. Amplify.',
       tiles: [
-        { value: '1.004.600+', label: it ? 'righe totali censite (775k+ Python)' : 'total verified lines (775k+ Python)' },
-        { value: '34,9',      label: it ? 'anni-uomo equivalenti modellati (126× compressione)' : 'modeled person-years (126× compression factor)' },
+        { value: it ? '1.004.600+' : '1,004,600+', label: it ? 'righe totali censite (775k+ Python)' : 'total verified lines (775k+ Python)' },
+        { value: it ? '34,9' : '34.9',      label: it ? 'anni-uomo equivalenti modellati (126× compressione)' : 'modeled person-years (126× compression factor)' },
         { value: '482',       label: it ? 'tool LLM su 18 famiglie specializzate' : 'LLM tools across 18 specialized families' },
         { value: '293',       label: it ? 'playbook operativi (1.533 anelli di catena)' : 'operational playbooks (1,533 chain links)' },
-        { value: '16.364',    label: it ? 'funzioni di test automatiche (188 tabelle SQL)' : 'automated test functions (188 SQL tables)' },
-        { value: 'milioni',   label: it ? 'di righe di dati per cliente, analizzate in secondi' : 'of data rows per client, analysed in seconds' },
+        { value: it ? '16.364' : '16,364',    label: it ? 'funzioni di test automatiche (188 tabelle SQL)' : 'automated test functions (188 SQL tables)' },
+        { value: it ? 'milioni' : 'Millions',   label: it ? 'di righe di dati per cliente, analizzate in secondi' : 'of data rows per client, analyzed in seconds' },
       ],
     },
 
@@ -339,7 +339,7 @@ function getContent(language: string) {
       h2: it ? 'Scopri quanto stai davvero vendendo. Gratis.' : 'Find out how much you\'re really selling. Free.',
       body: it
         ? 'Prenota una consulenza gratuita: analizziamo il tuo e-commerce e in pochi giorni ti diciamo quanti ordini il tuo tracciamento non vede e dove stai lasciando margine sul tavolo. Poi decidi tu.'
-        : 'Book a free consultation: we analyse your e-commerce and within days tell you how many orders your tracking doesn\'t see and where you\'re leaving margin on the table. Then you decide.',
+        : 'Book a free consultation: we analyze your e-commerce and within days tell you how many orders your tracking doesn\'t see and where you\'re leaving margin on the table. Then you decide.',
       btnPrimary: it ? 'Prenota l\'analisi gratuita' : 'Book the free analysis',
       btnPhone: it ? 'Numero Verde 800 940 213 (7x24 risponde Leonardo AI per farti richiamare da un consulente umano)' : 'Toll-Free 800 940 213 (24/7 answered by Leonardo AI to get a human consultant callback)',
       btnWa: it ? 'Messaggia l\'agenzia' : 'Message the agency',
@@ -368,7 +368,6 @@ export default function Ecommerce() {
         serviceDescription={language === 'it'
           ? 'Gestione campagne ads e-commerce (Google Ads, Shopping, Performance Max e Facebook Ads) basata sul dato reale: tracciamento ordini riconciliato e ottimizzazione sul profitto vero (POAS), con ogni modifica approvata dal cliente.'
           : 'E-commerce promotion based on real data: reconciled order tracking, Google Ads and Meta optimization on true profit (POAS), with every change client-approved.'}
-        priceRange="€1500 - €7000"
         breadcrumbs={[
           { name: 'Home', path: '/' },
           { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },

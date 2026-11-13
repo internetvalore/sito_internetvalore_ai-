@@ -127,7 +127,6 @@ export default function RispondiSubito() {
         path="/services/rispondi-subito"
         serviceType={meta.serviceType}
         serviceDescription={meta.serviceDescription}
-        priceRange={meta.priceRange}
         breadcrumbs={[
           { name: 'Home', path: '/' },
           { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },

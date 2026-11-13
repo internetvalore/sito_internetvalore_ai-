@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Search, PenTool, Rocket, BarChart } from 'lucide-react';
@@ -7,39 +6,36 @@ const EASE = [0.22, 1, 0.36, 1];
 
 export default function Process() {
   const { language } = useLanguage();
+  const isIt = language === 'it';
 
   const steps = [
     {
       icon: Search,
-      title: language === 'it' ? 'Discovery & Audit' : 'Discovery & Audit',
-      description: language === 'it' 
-        ? 'Rileviamo gli intenti reali e stabiliamo la baseline storica t0 con il Dossier di Presa in Carico.'
-        : 'We map search intent and competitor claims, setting a versioned t0 benchmark.',
-      color: 'from-blue-500 to-blue-600'
+      title: isIt ? 'Prima misuriamo' : 'First we measure',
+      description: isIt
+        ? 'Fotografiamo la situazione di partenza: campagne, tracciamento e margini. Ogni risultato futuro si confronta con questo dato, non con una sensazione.'
+        : 'We take a snapshot of the starting point: campaigns, tracking and margins. Every future result is compared against this figure, not against a feeling.'
     },
     {
       icon: PenTool,
-      title: language === 'it' ? 'Strategia Persuasiva' : 'Persuasion Blueprint',
-      description: language === 'it'
-        ? 'Ancoriamo i concept creativi alle ferite emotive del target ed ai bisogni Maslow nel Creative Studio.'
-        : 'We build visual and copy concepts anchored to Maslow needs and target wounds.',
-      color: 'from-green-500 to-green-600'
+      title: isIt ? 'Poi costruiamo gli annunci' : 'Then we build the ads',
+      description: isIt
+        ? 'Analizziamo cosa cercano davvero i tuoi clienti e cosa promettono i concorrenti. Poi scriviamo testi e immagini sui bisogni reali di chi compra.'
+        : 'We analyze what your customers really search for and what competitors promise. Then we write copy and visuals around the real needs of the people who buy.'
     },
     {
       icon: Rocket,
-      title: language === 'it' ? 'Staging in PAUSA' : 'Staging & Dry-run',
-      description: language === 'it'
-        ? 'Creiamo le nuove campagne sempre in stato PAUSA, verificandole in dry-run prima di renderle attive.'
-        : 'Campaigns are created strictly as PAUSED. Changes are validated in dry-run before going live.',
-      color: 'from-purple-500 to-purple-600'
+      title: isIt ? 'Niente parte senza di te' : 'Nothing starts without you',
+      description: isIt
+        ? 'Ogni nuova campagna nasce in pausa e viene verificata in prova. La vedi, la approvi, e solo allora va online.'
+        : 'Every new campaign is created paused and verified in a test run. You see it, you approve it, and only then does it go live.'
     },
     {
       icon: BarChart,
-      title: language === 'it' ? 'Riconciliazione & POAS' : 'CRM & POAS Control',
-      description: language === 'it'
-        ? 'Riconciliamo i lead ed ordini reali CRM contro lo spam, ottimizzando sul profitto netto (POAS).'
-        : 'We reconcile CRM leads and Shopify sales, optimizing campaigns exclusively on real profit.',
-      color: 'from-red-500 to-red-600'
+      title: isIt ? 'Ottimizziamo sul profitto' : 'We optimize on profit',
+      description: isIt
+        ? 'Confrontiamo ordini e contatti reali con quelli dichiarati dalle piattaforme, togliamo lo spam e ottimizziamo sul profitto netto (POAS), non sul fatturato.'
+        : 'We compare real orders and leads with those reported by the platforms, remove spam and optimize on net profit (POAS), not on revenue.'
     }
   ];
 
@@ -54,7 +50,7 @@ export default function Process() {
             transition={{ duration: 0.55, ease: EASE }}
             className="title-xl"
           >
-            {language === 'it' ? 'Come Lavoriamo' : 'How We Work'}
+            {isIt ? 'Come lavoriamo' : 'How we work'}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -63,9 +59,9 @@ export default function Process() {
             transition={{ duration: 0.55, ease: EASE, delay: 0.08 }}
             className="lede measure mt-4 mx-auto"
           >
-            {language === 'it' 
-              ? 'Il nostro processo in quattro step per il tuo successo'
-              : 'Our four-step process for your success'}
+            {isIt
+              ? 'Quattro passaggi, sempre nello stesso ordine: prima la misura, poi le decisioni.'
+              : 'Four steps, always in the same order: measurement first, decisions after.'}
           </motion.p>
         </div>
 

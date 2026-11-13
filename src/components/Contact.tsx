@@ -1,23 +1,25 @@
 import React from 'react';
 import { Phone, Calendar, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Contact() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   const title = language === 'it' 
     ? "Parliamo del Tuo Progetto"
     : "Let's Talk About Your Project";
 
   const description = language === 'it'
-    ? "Siamo qui per trasformare la tua visione in realtà. Contattaci per una consulenza gratuita e scopri come possiamo aiutarti a raggiungere i tuoi obiettivi digitali."
-    : "We're here to transform your vision into reality. Contact us for a free consultation and discover how we can help you achieve your digital goals.";
+    ? "Preferisci parlarne a voce? Chiamaci o prenota una call: capiamo insieme da dove conviene partire."
+    : "Prefer to talk it through? Call us or book a call: we work out together where it makes sense to start.";
 
   const digitalConcierge = language === 'it' 
     ? "Risponde 7x24 Leonardo, il nostro assistente AI digitale, che raccoglie tutte le informazioni per farti richiamare da un nostro consulente umano." 
     : "Answered 24/7 by Leonardo, our digital AI assistant, who collects all details for a prompt callback from a human consultant.";
-  const bookMeeting = language === 'it' ? "Prenota una Consulenza Gratuita" : "Book a Free Consultation";
+  const bookMeeting = language === 'it' ? "Prenota una call in calendario" : "Book a call in the calendar";
+  const writeToUs = language === 'it' ? "Oppure scrivici dalla pagina Contatti →" : "Or write to us from the Contact page →";
   const legalAddress = language === 'it' ? "Sede Legale" : "Legal Address";
   const operationalAddress = language === 'it' ? "Sede Operativa" : "Operational Address";
 
@@ -38,6 +40,9 @@ export default function Contact() {
               <p className="lede measure">
                 {description}
               </p>
+              <Link to={`/${language}/contact`} className="inline-block mt-3 text-[0.95rem] font-medium text-accent-700 hover:text-accent-800">
+                {writeToUs}
+              </Link>
             </div>
             <motion.div 
               className="card card-hover mt-9"

@@ -57,7 +57,7 @@ export default function LeadGeneration() {
     cta: {
       title: 'Pronto a saturare il tuo mercato?',
       description: 'Prenota una sessione strategica di Deep Search e scopri le tue opportunità nascoste.',
-      button: 'Attiva Ora'
+      button: 'Richiedi l\'analisi gratuita del tuo account'
     }
   } : {
     title: 'Lead Generation',
@@ -105,7 +105,7 @@ export default function LeadGeneration() {
     cta: {
       title: 'Ready to generate more leads?',
       description: 'Contact us for a free consultation',
-      button: 'Start Now'
+      button: 'Request your free account analysis'
     }
   };
 
@@ -117,7 +117,6 @@ export default function LeadGeneration() {
         path="/services/lead-generation"
         serviceType={meta.serviceType}
         serviceDescription={meta.serviceDescription}
-        priceRange={meta.priceRange}
         breadcrumbs={[
           { name: 'Home', path: '/' },
           { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },
@@ -254,7 +253,7 @@ export default function LeadGeneration() {
                     {content.cta.description}
                   </p>
                   <Link
-                    to={`/${language}/contact`}
+                    to={`/${language}/lp/lead-generation`}
                     className="mt-8 btn btn-primary"
                   >
                     {content.cta.button}

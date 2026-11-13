@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import MetaTags from '../components/MetaTags';
+import CapabilitiesSlider from '../components/CapabilitiesSlider';
 import { metaContent } from '../seo/metaContent';
 import {
   Cpu, Users, Shield, Terminal, CheckCircle, AlertTriangle, ArrowRight,
@@ -127,7 +128,7 @@ export default function AIPlatform() {
       ],
       guardrails: isIt
         ? ['Se il tracciamento è rotto (tracking-break), la finestra temporale viene marcata "non giudicabile".', 'Ogni verdetto indica la significatività statistica: se è rumore, si dichiara "troppo presto per decidere".']
-        : ['If tracking is broken, the affected date range is locked as "non-judgmental".', 'Every analysis shows statistical confidence: if it is noise, the official response is "too early to judge".']
+        : ['If tracking is broken, the affected date range is flagged as "not assessable".', 'Every analysis shows statistical confidence: if it is noise, the official response is "too early to judge".']
     },
     {
       id: 3,
@@ -333,7 +334,7 @@ export default function AIPlatform() {
       icon: Globe,
       tools: isIt
         ? ['Layer FX (tassi BCE giornalieri)', 'Selettore Mercato (Scoped vs Aggregato)', 'Geo Holdout Test (Difference-in-Differences)', 'Riallocazione Budget Geo-Aware']
-        : ['FX Layer (BCE daily exchange rates)', 'Market Selector (Scoped vs Aggregate)', 'Geo Holdout Test (Difference-in-Differences)', 'Geo-Aware Budget Reallocation'],
+        : ['FX Layer (ECB daily exchange rates)', 'Market Selector (Scoped vs Aggregate)', 'Geo Holdout Test (Difference-in-Differences)', 'Geo-Aware Budget Reallocation'],
       paths: isIt ? [
         {
           name: 'Lettura corretta multi-valuta (Contratto dei 3 stati)',
@@ -355,7 +356,7 @@ export default function AIPlatform() {
         {
           name: 'Multi-Currency Analysis (The 3-State Contract)',
           steps: [
-            'Set the Market Selector to "Aggregate EUR" for a converted overview using historical BCE exchange rates.',
+            'Set the Market Selector to "Aggregate EUR" for a converted overview using historical ECB exchange rates.',
             'Scope into a single country (e.g., UK) to inspect campaigns in native currency (GBP), removing FX noise.',
             'If a currency rate is missing, the system halts (fail-closed) instead of printing skewed estimates.'
           ]
@@ -528,7 +529,7 @@ export default function AIPlatform() {
           name: 'masterAnalyzer AI Suite',
           description: isIt 
             ? 'Suite tecnologica proprietaria di oltre 1.000.000 di righe censite (775.752 righe Python, 482 tool LLM e 293 playbook) per la riconciliazione dati, audit tracciamento e gestione avanzata di campagne Google Ads ed E-commerce.'
-            : 'Proprietary technology suite with over 1,000,000 total census lines (775,752 Python lines, 482 LLM tools, 293 playbooks) for multi-source data reconciliation, tracking audits, and advanced Google Ads & E-commerce campaign management.',
+            : 'Proprietary technology suite with over 1,000,000 verified lines (775,752 Python lines, 482 LLM tools, 293 playbooks) for multi-source data reconciliation, tracking audits, and advanced Google Ads & E-commerce campaign management.',
           applicationCategory: 'BusinessApplication',
           operatingSystem: 'Web / Cloud'
         }}
@@ -546,7 +547,7 @@ export default function AIPlatform() {
             className="chip mb-6"
           >
             <Sparkles className="w-4 h-4 text-accent-600" />
-            {isIt ? 'LA NOSTRA TECNOLOGIA DI GESTIONE' : 'OUR GESTION TECHNOLOGY'}
+            {isIt ? 'LA NOSTRA TECNOLOGIA DI GESTIONE' : 'OUR MANAGEMENT TECHNOLOGY'}
           </motion.div>
           
           <motion.h1
@@ -698,6 +699,9 @@ export default function AIPlatform() {
             </div>
           </div>
         </section>
+
+        {/* ─── ELENCO COMPLETO DEGLI STRUMENTI (in home ne compaiono solo 8) ── */}
+        <CapabilitiesSlider variant="full" />
 
         {/* ─── CHALLENGE THE PROVIDER SECTION (Sfida il fornitore) ─────────── */}
         <section className="shell section border-t border-white/10 relative z-10">

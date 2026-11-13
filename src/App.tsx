@@ -7,8 +7,8 @@ import { VERIFIED_REVIEWS, HOMEPAGE_FAQS, HOMEPAGE_FAQS_EN } from './seo/schemaD
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
+import PmiEntry from './components/PmiEntry';
 import Services from './components/Services';
-import Methodology from './components/Methodology';
 import Stats from './components/Stats';
 import Process from './components/Process';
 import FeaturedVideo from './components/FeaturedVideo';
@@ -40,6 +40,7 @@ const LeadGenerationLP = lazy(() => import('./pages/lp/LeadGenerationLP'));
 const OutsourcingEcommerceLP = lazy(() => import('./pages/lp/OutsourcingEcommerceLP'));
 const OutsourcingEcommerceGrazie = lazy(() => import('./pages/lp/OutsourcingEcommerceGrazie'));
 const AIPlatform = lazy(() => import('./pages/AIPlatform'));
+const ThankYou = lazy(() => import('./pages/ThankYou'));
 
 // Solutions Pages lazy-loaded
 const SolutionsHub = lazy(() => import('./pages/solutions/SolutionsHub'));
@@ -63,14 +64,17 @@ const ThroughPage = lazy(() => import('./pages/features/ThroughPage'));
 const LandingUspPage = lazy(() => import('./pages/features/LandingUspPage'));
 
 // Loading Fallback Component
-const PageLoader = () => (
-  <div className="min-h-[50vh] flex items-center justify-center p-8">
-    <div className="flex flex-col items-center gap-3">
-      <div className="w-6 h-6 border-2 border-ink-300 border-t-transparent rounded-full animate-spin"></div>
-      <span className="text-xs font-medium text-ink-500">Caricamento...</span>
+const PageLoader = () => {
+  const { language } = useLanguage();
+  return (
+    <div className="min-h-[50vh] flex items-center justify-center p-8">
+      <div className="flex flex-col items-center gap-3">
+        <div className="w-6 h-6 border-2 border-ink-300 border-t-transparent rounded-full animate-spin"></div>
+        <span className="text-xs font-medium text-ink-500">{language === 'it' ? 'Caricamento...' : 'Loading...'}</span>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 
 function ScrollHandler() {
@@ -273,14 +277,14 @@ function App() {
               <Route path="/:lang" element={
                 <>
                   <Hero />
+                  <PmiEntry />
                   <FeaturedVideo />
-                  <Methodology />
+                  <Process />
                   <Suspense fallback={<div className="py-12 flex justify-center"><div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div></div>}>
                     <CapabilitiesSlider />
                   </Suspense>
                   <Stats tone="dark" />
                   <Services />
-                  <Process />
                   <Suspense fallback={<div className="py-12 flex justify-center"><div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div></div>}>
                     <QualifiedDossierSection />
                     <TestimonialsSlider />
@@ -303,9 +307,13 @@ function App() {
               <Route path="/:lang/lp/outsourcing-campagne-ecommerce" element={<OutsourcingEcommerceLP />} />
               <Route path="/:lang/lp/outsourcing-campagne-ecommerce/grazie" element={<OutsourcingEcommerceGrazie />} />
 
-              {/* Qualified Case & Audit Route */}
-              <Route path="/:lang/casi-e-audit" element={<QualifiedDossierSection />} />
-              <Route path="/:lang/dossier-riservato" element={<QualifiedDossierSection />} />
+              {/* Analisi gratuita e-commerce (i vecchi indirizzi reindirizzano qui) */}
+              <Route path="/:lang/analisi-gratuita" element={<QualifiedDossierSection />} />
+              <Route path="/:lang/casi-e-audit" element={<Navigate to={`/${language}/analisi-gratuita${location.search}`} replace />} />
+              <Route path="/:lang/dossier-riservato" element={<Navigate to={`/${language}/analisi-gratuita${location.search}`} replace />} />
+
+              {/* Pagina di ringraziamento unica per i form: /grazie/analisi-ecommerce | analisi-pmi | contatti */}
+              <Route path="/:lang/grazie/:kind" element={<ThankYou />} />
 
               {/* Other routes */}
               <Route path="/:lang/instant-websites" element={<InstantWebsites />} />

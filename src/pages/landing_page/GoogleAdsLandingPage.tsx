@@ -36,8 +36,7 @@ const GoogleAdsLandingPage = () => {
         items: [
           'Analisi approfondita del tuo business e dei tuoi obiettivi.',
           'Definizione della strategia di campagna più efficace per il tuo target.',
-          'Configurazione tecnica avanzata su Google Ads e/o Facebook Ads.',
-          'Costo di setup una tantum: 300€ + IVA a canale.'
+          'Configurazione tecnica avanzata su Google Ads e/o Facebook Ads.'
         ]
       },
       {
@@ -46,8 +45,7 @@ const GoogleAdsLandingPage = () => {
           'Monitoraggio costante delle performance delle campagne.',
           'Ottimizzazione continua per migliorare i risultati (test A/B, aggiustamento delle offerte, targeting, ecc.).',
           'Creazione e gestione di annunci efficaci e pertinenti.',
-          'Reportistica chiara e trasparente sull\'andamento delle campagne.',
-          'Costo mensile: 30% della spesa pubblicitaria mensile (con una fee minima di 300€ + IVA).'
+          'Reportistica chiara e trasparente sull\'andamento delle campagne.'
         ]
       },
       {
@@ -80,7 +78,7 @@ const GoogleAdsLandingPage = () => {
       'Nessuna gestione di fatture complesse.',
       'Massima focalizzazione sui risultati.'
     ],
-    proposalBest: 'E la parte migliore? Anche con questa opzione, la gestione mensile è sempre legata al 30% della spesa pubblicitaria, con la stessa fee minima di 300€ + IVA. Questo significa che il nostro guadagno dipende direttamente dai risultati che otteniamo per te.',
+    proposalBest: 'E la parte migliore? Anche con questa opzione, il nostro compenso resta legato alla spesa pubblicitaria: il nostro guadagno dipende direttamente dai risultati che otteniamo per te.',
     proposalRenewal: 'Ogni mese, il tuo rinnovo è a rischio. Se non sei soddisfatto dei risultati, sei libero di interrompere la collaborazione con un preavviso di un mese. Questo ci spinge costantemente a dare il massimo per la tua crescita.',
     whyUsTitle: 'Perché Scegliere Noi?',
     whyUsSubtitle: 'La Tua Crescita Online È la Nostra Priorità.',
@@ -105,8 +103,8 @@ const GoogleAdsLandingPage = () => {
     faqTitle: 'Hai Ancora Dubbi? Ecco le Risposte alle Domande Più Frequenti:',
     faqs: [
       {
-        question: 'Qual è il costo totale iniziale?',
-        answer: 'Il costo iniziale è di 300€ + IVA per canale (Google Ads o Facebook Ads) come setup una tantum, più il primo trimestre di gestione (minimo 900€ + IVA). Scegliendo l\'opzione "Win-Win", il costo di setup è azzerato.'
+        question: 'Quanto costa?',
+        answer: 'Il compenso dipende dai canali e dal budget pubblicitario: te lo presentiamo in modo chiaro nella prima consulenza, sempre separato dal budget che paghi alle piattaforme. Scegliendo l\'opzione "Win-Win", il costo di setup è azzerato.'
       },
       {
         question: 'Come vengono monitorati i risultati?',
@@ -159,8 +157,7 @@ const GoogleAdsLandingPage = () => {
         items: [
           'In-depth analysis of your business and your goals.',
           'Definition of the most effective campaign strategy for your target.',
-          'Advanced technical configuration on Google Ads and/or Facebook Ads.',
-          'One-time setup cost: €300 + VAT per channel.'
+          'Advanced technical configuration on Google Ads and/or Facebook Ads.'
         ]
       },
       {
@@ -169,15 +166,14 @@ const GoogleAdsLandingPage = () => {
           'Constant monitoring of campaign performance.',
           'Continuous optimization to improve results (A/B testing, bid adjustment, targeting, etc.).',
           'Creation and management of effective and relevant ads.',
-          'Clear and transparent reporting on campaign performance.',
-          'Monthly cost: 30% of monthly advertising spend (with a minimum fee of €300 + VAT).'
+          'Clear and transparent reporting on campaign performance.'
         ]
       },
       {
         title: 'Minimum Duration and Flexibility',
         items: [
           'Initial minimum duration of 3 months (advance payment). This allows us to set up and optimize campaigns to achieve significant results.',
-          'Subsequently, the contract can be cancelled month by month with one month\'s notice.'
+          'Subsequently, the contract can be canceled month by month with one month\'s notice.'
         ]
       },
       {
@@ -203,7 +199,7 @@ const GoogleAdsLandingPage = () => {
       'No management of complex invoices.',
       'Maximum focus on results.'
     ],
-    proposalBest: 'And the best part? Even with this option, monthly management is still tied to 30% of advertising spend, with the same minimum fee of €300 + VAT. This means that our earnings depend directly on the results we get for you.',
+    proposalBest: 'And the best part? Even with this option, our fee remains tied to advertising spend: our earnings depend directly on the results we get for you.',
     proposalRenewal: 'Every month, your renewal is at risk. If you are not satisfied with the results, you are free to terminate the collaboration with one month\'s notice. This constantly pushes us to give our best for your growth.',
     whyUsTitle: 'Why Choose Us?',
     whyUsSubtitle: 'Your Online Growth Is Our Priority.',
@@ -219,8 +215,8 @@ const GoogleAdsLandingPage = () => {
     faqTitle: 'Still Have Doubts? Here Are the Answers to the Most Frequently Asked Questions:',
     faqs: [
       {
-        question: 'What is the total initial cost?',
-        answer: 'The initial cost is €300 + VAT per channel (Google Ads or Facebook Ads) as a one-time setup, plus the first quarter of management (minimum €900 + VAT). By choosing the "Win-Win" option, the setup cost is zeroed.'
+        question: 'How much does it cost?',
+        answer: 'The fee depends on the channels and your advertising budget: we present it clearly in the first consultation, always separate from the budget you pay to the platforms. By choosing the "Win-Win" option, the setup cost is zeroed.'
       },
       {
         question: 'How are results monitored?',
@@ -273,7 +269,6 @@ const GoogleAdsLandingPage = () => {
         path="/google-ads"
         serviceType={meta.serviceType}
         serviceDescription={meta.serviceDescription}
-        priceRange={meta.priceRange}
         breadcrumbs={[
           { name: 'Home', path: '/' },
           { name: language === 'it' ? 'Google Ads & AI' : 'Google Ads & AI', path: '/google-ads' }
@@ -355,7 +350,7 @@ const GoogleAdsLandingPage = () => {
             >
               <img
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
-                alt="Team di Esperti Marketing Digitale e Gestione Campagne Google Ads - Internet Valore"
+                alt={language === 'it' ? 'Team di Esperti Marketing Digitale e Gestione Campagne Google Ads - Internet Valore' : 'Team of Digital Marketing and Google Ads Campaign Management Experts - Internet Valore'}
                 className="media w-full h-auto object-cover"
               />
             </motion.div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Users, Target, TrendingUp, Award } from 'lucide-react';
+import { Users, Target, Award } from 'lucide-react';
 
 const EASE = [0.22, 1, 0.36, 1];
 
@@ -26,12 +26,6 @@ export default function Stats({ tone = 'quiet' }: StatsProps) {
     },
     {
       id: 3,
-      name: language === 'it' ? 'Righe di Codice (482 Tool LLM)' : 'Lines of Code (482 LLM Tools)',
-      value: '1M+',
-      icon: TrendingUp,
-    },
-    {
-      id: 4,
       name: language === 'it' ? 'Anni di Esperienza' : 'Years of Experience',
       value: '15+',
       icon: Award,
@@ -41,7 +35,7 @@ export default function Stats({ tone = 'quiet' }: StatsProps) {
   return (
     <div className={`section ${dark ? 'section-dark' : 'section-quiet'}`}>
       <div className="shell">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.id}

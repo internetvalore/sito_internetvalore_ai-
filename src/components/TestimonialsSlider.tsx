@@ -94,7 +94,7 @@ export default function TestimonialsSlider() {
     <div className="section">
       <div className="shell">
         <div className="text-center mb-12 rise">
-          <h2 className="eyebrow">Testimonials</h2>
+          <h2 className="eyebrow">{language === 'it' ? 'Recensioni' : 'Testimonials'}</h2>
           <p className="title-xl mt-2">
             {language === 'it' ? 'Cosa dicono i nostri clienti' : 'What our clients are saying'}
           </p>
@@ -113,7 +113,7 @@ export default function TestimonialsSlider() {
             className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white transition-colors duration-220 ${
               currentIndex === 0 ? 'opacity-40 cursor-not-allowed' : 'hover:bg-paper'
             }`}
-            aria-label="Previous testimonial"
+            aria-label={language === 'it' ? 'Recensione precedente' : 'Previous testimonial'}
           >
             <ChevronLeft className="h-4 w-4 text-ink-600" />
           </button>
@@ -181,7 +181,7 @@ export default function TestimonialsSlider() {
             className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white transition-colors duration-220 ${
               currentIndex >= maxIndex ? 'opacity-40 cursor-not-allowed' : 'hover:bg-paper'
             }`}
-            aria-label="Next testimonial"
+            aria-label={language === 'it' ? 'Recensione successiva' : 'Next testimonial'}
           >
             <ChevronRight className="h-4 w-4 text-ink-600" />
           </button>

@@ -43,7 +43,7 @@ export default function About() {
   ] : [
     {
       title: '15+ Years of Code & Management',
-      description: 'Solid experience backed by over 1,000,000 total census lines and 775k+ Python lines to power e-commerce and lead gen campaigns.'
+      description: 'Solid experience backed by over 1,000,000 verified lines and 775k+ Python lines to power e-commerce and lead gen campaigns.'
     },
     {
       title: 'No Data → No Verdicts',
@@ -175,7 +175,7 @@ export default function About() {
                     <Star key={i} className="h-5 w-5 text-ink-400 fill-current" />
                   ))}
                 </div>
-                <span className="text-base font-semibold text-ink-900">Google Verified Reviews</span>
+                <span className="text-base font-semibold text-ink-900">{language === 'it' ? 'Recensioni verificate su Google' : 'Google Verified Reviews'}</span>
               </div>
               <div className="card card-quiet">
                 <div className="flex items-center justify-center mb-4 gap-2">
@@ -215,7 +215,7 @@ export default function About() {
                       <img
                         className="h-32 w-32 rounded-full object-cover"
                         src="https://leprimescelte.com/wp-content/uploads/2025/02/AFimmagine.jpg"
-                        alt="Andrea Falzin - Founder e CEO di Internet Valore"
+                        alt={language === 'it' ? 'Andrea Falzin - Founder e CEO di Internet Valore' : 'Andrea Falzin - Founder and CEO of Internet Valore'}
                       />
                     </motion.div>
                   </div>

@@ -17,7 +17,7 @@ export default function LanguageSelector() {
         type="button"
         onClick={() => setLanguage('it')}
         className={buttonClass(language === 'it')}
-        aria-label="Italiano - Seleziona lingua italiano"
+        aria-label={language === 'it' ? 'Italiano - Seleziona lingua italiano' : 'Italiano - Select Italian language'}
         aria-pressed={language === 'it'}
       >
         <img
@@ -25,7 +25,7 @@ export default function LanguageSelector() {
           srcSet="https://flagcdn.com/w80/it.png 2x"
           width="28"
           height="28"
-          alt="Bandiera Italiana - Seleziona lingua Italiano"
+          alt={language === 'it' ? 'Bandiera Italiana - Seleziona lingua Italiano' : 'Italian flag - Select Italian'}
           className="object-cover rounded-full"
         />
       </button>

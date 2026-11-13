@@ -50,7 +50,7 @@ const LandingPage = () => {
       }
     ],
     startNow: 'Inizia Ora',
-    discoverPrices: 'Scopri i Prezzi',
+    discoverPrices: 'Scopri le Formule',
     allInclusiveTitle: 'Tutto Incluso, Senza Sorprese',
     allInclusiveDescription: 'Un servizio completo che include tutto ciò di cui hai bisogno',
     allInclusiveItems: [
@@ -118,11 +118,10 @@ const LandingPage = () => {
     pricingOptions: [
       {
         title: 'TRY ADS',
-        price: '€1000 + IVA',
         features: [
           'Creazione della pagina',
           'Impostazione campagne pubblicitarie',
-          '€700 in spazi pubblicitari (Google Ads e FB Ads)',
+          'Spazi pubblicitari inclusi (Google Ads e FB Ads)',
           'Pagina live per 2 mesi',
           'Mostra i risultati'
         ],
@@ -130,7 +129,6 @@ const LandingPage = () => {
       },
       {
         title: 'TRE MESI',
-        price: '€400 + IVA',
         features: [
           'Creazione e mantenimento della pagina',
           'Periodo di 3 mesi'
@@ -139,7 +137,6 @@ const LandingPage = () => {
       },
       {
         title: 'UN ANNO',
-        price: '€1000 + IVA',
         features: [
           'Creazione e mantenimento della pagina',
           'Pagina attiva per un anno'
@@ -149,9 +146,7 @@ const LandingPage = () => {
     ],
     rechargeTitle: 'Ricarica Pubblicitaria',
     rechargeItems: [
-      'Disponibile in multipli di 500 € + IVA',
-      '70% destinati agli spazi pubblicitari',
-      '30% alla gestione',
+      'Ricariche del budget pubblicitario quando vuoi',
       'Nessuna fee di impostazione',
       'Nessun minimo mensile',
       'Il ritmo è deciso dal cliente'
@@ -194,7 +189,7 @@ const LandingPage = () => {
       }
     ],
     startNow: 'Start Now',
-    discoverPrices: 'Discover Prices',
+    discoverPrices: 'Discover the Plans',
     allInclusiveTitle: 'All Inclusive, No Surprises',
     allInclusiveDescription: 'A complete service that includes everything you need',
     allInclusiveItems: [
@@ -262,11 +257,10 @@ const LandingPage = () => {
     pricingOptions: [
       {
         title: 'TRY ADS',
-        price: '€1000 + VAT',
         features: [
           'Page creation',
           'Advertising campaign setup',
-          '€700 in advertising space (Google Ads and FB Ads)',
+          'Advertising space included (Google Ads and FB Ads)',
           'Page live for 2 months',
           'Show results'
         ],
@@ -274,7 +268,6 @@ const LandingPage = () => {
       },
       {
         title: 'THREE MONTHS',
-        price: '€400 + VAT',
         features: [
           'Page creation and maintenance',
           '3 month period'
@@ -283,7 +276,6 @@ const LandingPage = () => {
       },
       {
         title: 'ONE YEAR',
-        price: '€1000 + VAT',
         features: [
           'Page creation and maintenance',
           'Page active for one year'
@@ -293,9 +285,7 @@ const LandingPage = () => {
     ],
     rechargeTitle: 'Advertising Recharge',
     rechargeItems: [
-      'Available in multiples of €500 + VAT',
-      '70% allocated to advertising space',
-      '30% for management',
+      'Top up your advertising budget whenever you want',
       'No setup fee',
       'No monthly minimum',
       'The pace is decided by the customer'
@@ -318,7 +308,6 @@ const LandingPage = () => {
         path="/landing"
         serviceType={meta.serviceType}
         serviceDescription={meta.serviceDescription}
-        priceRange={meta.priceRange}
         breadcrumbs={[
           { name: 'Home', path: '/' },
           { name: language === 'it' ? 'Landing Page' : 'Landing Page', path: '/landing' }
@@ -410,7 +399,7 @@ const LandingPage = () => {
             <p className="text-[1.05rem] font-semibold text-accent-600">{content.noTechnicalSkillsRequired}</p>
           </div>
           <div className="mt-12 flex justify-center">
-            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gestione Semplificata e Trasparente delle Campagne Pubblicitarie - Internet Valore" className="media max-w-full h-auto" style={{ maxHeight: '400px' }} />
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt={language === 'it' ? 'Gestione Semplificata e Trasparente delle Campagne Pubblicitarie - Internet Valore' : 'Simple and Transparent Advertising Campaign Management - Internet Valore'} className="media max-w-full h-auto" style={{ maxHeight: '400px' }} />
           </div>
         </div>
       </section>
@@ -455,8 +444,7 @@ const LandingPage = () => {
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
             {content.pricingOptions.map((option, index) => (
               <div key={index} className={`card card-hover ${index === 1 ? 'border-line-strong' : ''}`}>
-                <h3 className="text-[1.15rem] font-semibold mb-3">{option.title}</h3>
-                <p className="text-[1.5rem] font-semibold text-accent-600 mb-6">{option.price}</p>
+                <h3 className="text-[1.15rem] font-semibold mb-6">{option.title}</h3>
                 <ul className="space-y-3 mb-6 text-left">
                   {option.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">

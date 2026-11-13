@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, MessageCircle, Calendar, CheckCircle, Star, ShieldCheck, ArrowDown, X, Lock, ExternalLink } from 'lucide-react';
 import MetaTags from '../../components/MetaTags';
 import { metaContent } from '../../seo/metaContent';
-
-// UUID v4 Generator
-const generateUUIDv4 = () => {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-    const r = Math.random() * 16 | 0;
-    const v = c === 'x' ? r : (r & 0x3 | 0x8);
-    return v.toString(16);
-  });
-};
+import { queueConversion } from '../../utils/conversion';
+import { submitNetlifyForm } from '../../utils/netlifyForm';
 
 const reviews = [
   {
@@ -57,8 +51,7 @@ export default function LeadGenerationLP() {
     privacyAccepted: false
   });
 
-  const [requestType, setRequestType] = useState<'call' | 'audit'>('call');
-  const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
@@ -72,64 +65,42 @@ export default function LeadGenerationLP() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const encodeForm = (data: Record<string, string>) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
-  };
+  // Offerta unica: analisi gratuita dell'account pubblicitario.
+  const REQUEST_TYPE = 'audit';
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.privacyAccepted || isSubmitting) return;
 
     setIsSubmitting(true);
     setErrorMessage(null);
 
-    const payload = {
-      'form-name': 'lead-generation-form',
-      name: formData.name,
-      company: formData.company,
-      email: formData.email,
-      phone: formData.phone,
-      alreadyInvesting: formData.alreadyInvesting,
-      request_type: requestType
-    };
-
-    // 1. Submit to Netlify Forms via POST fetch with res.ok validation
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encodeForm(payload)
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Netlify Form submit failed with status: ${res.status}`);
-        }
-
-        // 2. Push non-PII data to GTM dataLayer ONLY on successful form submission
-        (window as any).dataLayer = (window as any).dataLayer || [];
-        (window as any).dataLayer.push({
-          event: 'lead_submit',
-          event_id: generateUUIDv4(),
-          lang: language,
-          page_path: window.location.pathname,
-          request_type: requestType,
-          already_investing: formData.alreadyInvesting
-        });
-
-        setSubmitted(true);
-      })
-      .catch((error) => {
-        console.error('Netlify form submit error:', error);
-        setErrorMessage(
-          isIt
-            ? 'Si è verificato un errore durante l’invio al server. Riprova tra poco o chiamaci direttamente al numero verde 800 940 213.'
-            : 'An error occurred during submission. Please try again or call us at 800 940 213.'
-        );
-      })
-      .finally(() => {
-        setIsSubmitting(false);
+    try {
+      await submitNetlifyForm('lead-generation-form', {
+        name: formData.name.trim(),
+        company: formData.company.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        alreadyInvesting: formData.alreadyInvesting,
+        request_type: REQUEST_TYPE
       });
+
+      // Nessun dato personale nell'evento. Parte dalla pagina di ringraziamento, una sola volta.
+      queueConversion('analisi-pmi', 'lead_submit', {
+        request_type: REQUEST_TYPE,
+        already_investing: formData.alreadyInvesting
+      });
+
+      navigate(`/${language}/grazie/analisi-pmi`);
+    } catch (error) {
+      console.error('Netlify form submit error:', error);
+      setErrorMessage(
+        isIt
+          ? 'Si è verificato un errore durante l’invio al server. Riprova tra poco o chiamaci direttamente al numero verde 800 940 213.'
+          : 'An error occurred during submission. Please try again or call us at 800 940 213.'
+      );
+      setIsSubmitting(false);
+    }
   };
 
   const isIt = language === 'it';
@@ -138,8 +109,8 @@ export default function LeadGenerationLP() {
     {
       q: isIt ? 'Quanto costa?' : 'How much does it cost?',
       a: isIt
-        ? 'Il nostro compenso parte da €800/mese, separato dal budget pubblicitario che resta tuo e sul tuo account. Te lo diciamo nella prima call, senza giri.'
-        : 'Our management fee starts at €800/month, completely separate from your ad budget which stays directly in your account. We tell you clearly in the first call.'
+        ? 'Il nostro compenso è separato dal budget pubblicitario, che resta tuo e sul tuo account. Te lo diciamo chiaramente nella prima call, senza giri.'
+        : 'Our management fee is completely separate from your ad budget, which stays directly in your account. We tell you clearly in the first call.'
     },
     {
       q: isIt ? 'Servono contratti lunghi?' : 'Are long-term contracts required?',
@@ -190,7 +161,7 @@ export default function LeadGenerationLP() {
           </div>
           <div className="flex items-center gap-4 text-xs sm:text-sm font-medium text-ink-600">
             <span className="hidden sm:inline-block text-ink-600">
-              ✓ Google Partner Ufficiale (ID 6948869441)
+              {isIt ? '✓ Google Partner Ufficiale (ID 6948869441)' : '✓ Official Google Partner (ID 6948869441)'}
             </span>
             <a
               href="tel:800940213"
@@ -234,33 +205,29 @@ export default function LeadGenerationLP() {
               {/* Primary & Secondary CTAs */}
               <div className="pt-2 space-y-3">
                 <button
-                  onClick={() => {
-                    setRequestType('call');
-                    scrollToSection('action-form');
-                  }}
+                  onClick={() => scrollToSection('action-form')}
                   className="btn btn-primary w-full sm:w-auto"
                 >
-                  {isIt ? 'Prenota una call da 30 minuti' : 'Book a 30-minute Call'}
+                  {isIt ? 'Richiedi l’analisi gratuita del tuo account' : 'Request your free account analysis'}
                 </button>
 
                 <div>
                   <button
-                    onClick={() => {
-                      setRequestType('audit');
-                      scrollToSection('audit-section');
-                    }}
+                    onClick={() => scrollToSection('audit-section')}
                     className="btn btn-sm btn-ghost mt-2"
                   >
                     {isIt
-                      ? 'Oppure chiedi prima l’analisi gratuita del tuo account →'
-                      : 'Or request a free account audit first →'}
+                      ? 'Cosa contiene l’analisi →'
+                      : 'What the analysis contains →'}
                   </button>
                 </div>
               </div>
 
               {/* Trust Badge Line */}
               <p className="text-xs text-ink-600 pt-2">
-                Google Partner · Oltre 15 anni sul digitale · Centinaia di aziende seguite
+                {isIt
+                  ? 'Google Partner · Oltre 15 anni sul digitale · Centinaia di aziende seguite'
+                  : 'Google Partner · Over 15 years in digital · Hundreds of companies served'}
               </p>
             </div>
 
@@ -376,10 +343,7 @@ export default function LeadGenerationLP() {
               </p>
 
               <button
-                onClick={() => {
-                  setRequestType('audit');
-                  scrollToSection('action-form');
-                }}
+                onClick={() => scrollToSection('action-form')}
                 className="btn btn-primary w-full sm:w-auto"
               >
                 {isIt ? 'Richiedi l’analisi del mio account' : 'Request Free Account Audit'}
@@ -416,7 +380,7 @@ export default function LeadGenerationLP() {
                 <p className="text-sm text-ink-600 leading-relaxed">
                   {isIt
                     ? 'Su quali ricerche reali vale la pena esserci, con quali annunci e landing page. Ed escludiamo tutto il resto.'
-                    : 'We pinpoint exact high-intent queries worth targetting, with custom ads & landing pages.'}
+                    : 'We pinpoint exact high-intent queries worth targeting, with custom ads & landing pages.'}
                 </p>
               </div>
 
@@ -444,7 +408,7 @@ export default function LeadGenerationLP() {
                   <Star key={i} className="h-5 w-5 fill-current" />
                 ))}
                 <span className="text-sm font-semibold text-ink-900 ml-2">
-                  5.0 / 5.0 su Google Business Profile
+                  {isIt ? '5.0 / 5.0 su Google Business Profile' : '5.0 / 5.0 on Google Business Profile'}
                 </span>
               </div>
               <h2 className="title-xl">
@@ -480,7 +444,9 @@ export default function LeadGenerationLP() {
                   {isIt ? 'Google Partner Certificato Ufficiale' : 'Official Certified Google Partner'}
                 </p>
                 <p className="text-xs text-ink-600">
-                  ID Partner: 6948869441 · Oltre 15 anni di attività a Milano e Monza
+                  {isIt
+                    ? 'ID Partner: 6948869441 · Oltre 15 anni di attività a Milano e Monza'
+                    : 'Partner ID: 6948869441 · Over 15 years in business in Milan and Monza'}
                 </p>
               </div>
               <a
@@ -531,30 +497,15 @@ export default function LeadGenerationLP() {
 
             <div className="text-center space-y-3">
               <h2 className="title-xl hero-title">
-                {requestType === 'audit'
-                  ? (isIt ? 'Richiedi l’Analisi Gratuita del tuo Account' : 'Request Free Account Audit')
-                  : (isIt ? 'Parliamone 30 minuti' : 'Let’s talk for 30 minutes')}
+                {isIt ? 'Richiedi l’analisi gratuita del tuo account' : 'Request your free account analysis'}
               </h2>
               <p className="lede measure mx-auto">
                 {isIt
-                  ? 'Ci racconti dove sei, guardiamo insieme i numeri, ti diciamo cosa faremmo. Se non siamo la scelta giusta per te, te lo diciamo in quella call.'
-                  : 'Tell us where you are, we look at numbers together, and tell you what we would do. If we are not the right fit, we tell you immediately.'}
+                  ? 'Analizziamo il tuo account Google Ads e in 3 giorni lavorativi ti diciamo dove si spreca budget e cosa cambieremmo per primo. Se non siamo la scelta giusta per te, te lo diciamo subito.'
+                  : 'We analyze your Google Ads account and within 3 business days tell you where budget is wasted and what we would change first. If we are not the right fit, we tell you straight away.'}
               </p>
             </div>
 
-            {submitted ? (
-              <div className="card card-quiet text-center space-y-4">
-                <CheckCircle className="h-6 w-6 text-accent-600 mx-auto" />
-                <h3 className="title-lg">
-                  {isIt ? 'Richiesta ricevuta con successo!' : 'Request Successfully Received!'}
-                </h3>
-                <p className="text-sm text-ink-600">
-                  {isIt
-                    ? 'Ti ricontattiamo entro un giorno lavorativo per fissare la call o inviarti l’analisi dell’account.'
-                    : 'We will contact you within 1 business day to schedule the call or send your audit report.'}
-                </p>
-              </div>
-            ) : (
               <form
                 name="lead-generation-form"
                 method="POST"
@@ -574,28 +525,10 @@ export default function LeadGenerationLP() {
                     {errorMessage}
                   </div>
                 )}
-                {/* Form type selector */}
-                <div className="flex rounded-xl bg-paper p-1 font-medium text-xs sm:text-sm">
-                  <button
-                    type="button"
-                    onClick={() => setRequestType('call')}
-                    className={`flex-1 py-2.5 rounded-lg transition-colors ${requestType === 'call' ? 'bg-white text-accent-700' : 'text-ink-600'}`}
-                  >
-                    {isIt ? '1. Prenota Call (30 min)' : '1. Book Call (30 min)'}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setRequestType('audit')}
-                    className={`flex-1 py-2.5 rounded-lg transition-colors ${requestType === 'audit' ? 'bg-white text-accent-700' : 'text-ink-600'}`}
-                  >
-                    {isIt ? '2. Solo Analisi Account' : '2. Account Audit Only'}
-                  </button>
-                </div>
-
                 <p className="text-xs text-ink-600 text-center">
                   {isIt
-                    ? 'Ti ricontattiamo entro un giorno lavorativo per fissarla nell’orario che ti è comodo.'
-                    : 'We will contact you within 1 business day to schedule at your convenience.'}
+                    ? 'Ti ricontattiamo entro un giorno lavorativo per l’accesso in sola lettura al tuo account.'
+                    : 'We will contact you within 1 business day to arrange read-only access to your account.'}
                 </p>
 
                 {/* Field 1: Nome e cognome */}
@@ -609,7 +542,7 @@ export default function LeadGenerationLP() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-line bg-white focus:outline-none focus:ring-1 focus:ring-accent-600"
-                    placeholder="Mario Rossi"
+                    placeholder={isIt ? 'Mario Rossi' : 'John Smith'}
                   />
                 </div>
 
@@ -624,7 +557,7 @@ export default function LeadGenerationLP() {
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-line bg-white focus:outline-none focus:ring-1 focus:ring-accent-600"
-                    placeholder="Nome Azienda Srl"
+                    placeholder={isIt ? 'Nome Azienda Srl' : 'Company Name Ltd'}
                   />
                 </div>
 
@@ -639,7 +572,7 @@ export default function LeadGenerationLP() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-line bg-white focus:outline-none focus:ring-1 focus:ring-accent-600"
-                    placeholder="mario@azienda.it"
+                    placeholder={isIt ? 'mario@azienda.it' : 'john@company.com'}
                   />
                 </div>
 
@@ -713,19 +646,18 @@ export default function LeadGenerationLP() {
                 {/* Submit button - NEVER 'Invia' */}
                 <button
                   type="submit"
-                  disabled={!formData.privacyAccepted}
+                  disabled={!formData.privacyAccepted || isSubmitting}
                   className={`btn btn-primary w-full ${
-                    formData.privacyAccepted
+                    formData.privacyAccepted && !isSubmitting
                       ? 'cursor-pointer'
                       : 'cursor-not-allowed opacity-60'
                   }`}
                 >
-                  {requestType === 'audit'
-                    ? (isIt ? 'Richiedi l’analisi del mio account' : 'Request Account Audit')
-                    : (isIt ? 'Prenota la call' : 'Book the Call')}
+                  {isSubmitting
+                    ? (isIt ? 'Invio in corso...' : 'Submitting...')
+                    : (isIt ? 'Richiedi l’analisi del mio account' : 'Request my account analysis')}
                 </button>
               </form>
-            )}
 
             {/* Alternative contact channels */}
             <div className="hairline grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
@@ -734,7 +666,7 @@ export default function LeadGenerationLP() {
                 className="p-3 rounded-xl bg-paper border border-line font-medium text-xs text-ink-600 flex items-center justify-center gap-2 transition-colors"
               >
                 <Phone className="h-4 w-4 text-ink-500" />
-                <span>Numero Verde: 800 940 213</span>
+                <span>{isIt ? 'Numero Verde: 800 940 213' : 'Toll-free: 800 940 213'}</span>
               </a>
 
               <a
@@ -748,13 +680,13 @@ export default function LeadGenerationLP() {
               </a>
 
               <a
-                href="https://calendar.app.google"
+                href="https://calendar.app.google/hrTJoM1BDccQw75NA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-xl bg-paper border border-line font-medium text-xs text-ink-600 flex items-center justify-center gap-2 transition-colors"
               >
                 <Calendar className="h-4 w-4 text-ink-500" />
-                <span>Scegli tu lo slot in agenda</span>
+                <span>{isIt ? 'Scegli tu lo slot in agenda' : 'Pick a time slot in our calendar'}</span>
               </a>
             </div>
 
@@ -768,12 +700,12 @@ export default function LeadGenerationLP() {
         <div className="shell flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <div>
             <p className="font-semibold text-ink-900">Internet Valore S.r.l.</p>
-            <p className="mt-0.5">P.IVA / C.F. 09055410967 · Via G.B. Pergolesi 29, 20124 Milano (MI)</p>
+            <p className="mt-0.5">{isIt ? 'P.IVA / C.F.' : 'VAT No. / Tax Code'} 06767350967 · Via G.B. Pergolesi 29, 20124 Milano (MI)</p>
           </div>
 
           <div className="flex gap-4 font-medium">
             <button onClick={() => setShowPrivacyModal(true)} className="hover:text-ink-900 underline">
-              Informativa Privacy
+              {isIt ? 'Informativa Privacy' : 'Privacy Policy'}
             </button>
             <span>·</span>
             <span className="text-ink-500">Cookie Preference (Iubenda)</span>
@@ -799,13 +731,17 @@ export default function LeadGenerationLP() {
                 <X className="h-5 w-5" />
               </button>
 
-              <h3 className="title-lg mb-4">Informativa Privacy — Internet Valore S.r.l.</h3>
+              <h3 className="title-lg mb-4">{isIt ? 'Informativa Privacy — Internet Valore S.r.l.' : 'Privacy Notice — Internet Valore S.r.l.'}</h3>
               <div className="text-xs text-ink-600 space-y-3 leading-relaxed">
                 <p>
-                  Ai sensi dell’art. 13 del Regolamento UE 2016/679 (GDPR), informiamo che i dati personali forniti tramite questo modulo (nome, cognome, azienda, email, telefono) saranno trattati da Internet Valore S.r.l. (Titolare del Trattamento) esclusivamente per ricontattarla in merito alla richiesta di prenotazione call o analisi gratuita dell’account.
+                  {isIt
+                    ? 'Ai sensi dell’art. 13 del Regolamento UE 2016/679 (GDPR), informiamo che i dati personali forniti tramite questo modulo (nome, cognome, azienda, email, telefono) saranno trattati da Internet Valore S.r.l. (Titolare del Trattamento) esclusivamente per ricontattarla in merito alla richiesta di prenotazione call o analisi gratuita dell’account.'
+                    : 'Pursuant to Article 13 of EU Regulation 2016/679 (GDPR), we inform you that the personal data provided through this form (first name, last name, company, email, phone) will be processed by Internet Valore S.r.l. (Data Controller) solely to contact you about your request to book a call or receive a free account analysis.'}
                 </p>
                 <p>
-                  I dati non saranno ceduti a terzi né utilizzati per invii promozionali non richiesti. È possibile esercitare i diritti di accesso, rettifica o cancellazione inviando una comunicazione a privacy@internetvalore.it.
+                  {isIt
+                    ? 'I dati non saranno ceduti a terzi né utilizzati per invii promozionali non richiesti. È possibile esercitare i diritti di accesso, rettifica o cancellazione inviando una comunicazione a privacy@internetvalore.it.'
+                    : 'Your data will not be shared with third parties or used for unsolicited promotional messages. You can exercise your rights of access, rectification or erasure by writing to privacy@internetvalore.it.'}
                 </p>
               </div>
 
@@ -814,7 +750,7 @@ export default function LeadGenerationLP() {
                   onClick={() => setShowPrivacyModal(false)}
                   className="btn btn-sm btn-primary"
                 >
-                  Chiudi
+                  {isIt ? 'Chiudi' : 'Close'}
                 </button>
               </div>
             </motion.div>

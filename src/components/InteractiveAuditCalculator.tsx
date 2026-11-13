@@ -206,10 +206,10 @@ export default function InteractiveAuditCalculator() {
 
                 <div className="mt-6 pt-4 border-t border-line">
                   <Link
-                    to={`/${language}/casi-e-audit?tema=dati-affidabili&cap=ordini-non-tracciati-analytics`}
+                    to={`/${language}/analisi-gratuita?tema=dati-affidabili&cap=ordini-non-tracciati-analytics`}
                     className="btn btn-primary btn-sm w-full"
                   >
-                    <span>{isIt ? 'Richiedi l\'Audit di Riconciliazione (NDA)' : 'Request Reconciliation Audit (NDA)'}</span>
+                    <span>{isIt ? 'Richiedi l\'analisi gratuita della riconciliazione' : 'Request the free reconciliation analysis'}</span>
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
@@ -293,7 +293,7 @@ export default function InteractiveAuditCalculator() {
                     <span className="text-[0.8rem] font-normal text-ink-600"> / {isIt ? 'mese' : 'mo'}</span>
                   </div>
                   <div className="text-[0.85rem] text-ink-600">
-                    pari a <strong>{(wastedBudget * 12).toLocaleString()} €</strong> {isIt ? 'all\'anno di liquidità recuperabile' : '/ year in recoverable cash'}
+                    {isIt ? 'pari a' : 'equal to'} <strong>{(wastedBudget * 12).toLocaleString()} €</strong> {isIt ? 'all\'anno di liquidità recuperabile' : '/ year in recoverable cash'}
                   </div>
 
                   <p className="mt-4 pt-4 border-t border-line text-[0.8rem] text-ink-600 leading-relaxed">
@@ -305,10 +305,10 @@ export default function InteractiveAuditCalculator() {
 
                 <div className="mt-6 pt-4 border-t border-line">
                   <Link
-                    to={`/${language}/casi-e-audit?tema=profitto-reale&cap=campagne-brand-cannibalizzazione`}
+                    to={`/${language}/analisi-gratuita?tema=profitto-reale&cap=campagne-brand-cannibalizzazione`}
                     className="btn btn-primary btn-sm w-full"
                   >
-                    <span>{isIt ? 'Richiedi l\'Audit Anti-Cannibalizzazione' : 'Request Anti-Cannibalization Audit'}</span>
+                    <span>{isIt ? 'Richiedi l\'analisi gratuita sul traffico brand' : 'Request the free brand-traffic analysis'}</span>
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
@@ -406,10 +406,10 @@ export default function InteractiveAuditCalculator() {
 
                 <div className="mt-6 pt-4 border-t border-line">
                   <Link
-                    to={`/${language}/casi-e-audit?tema=profitto-reale&cap=poas-profitto-sulla-spesa`}
+                    to={`/${language}/analisi-gratuita?tema=profitto-reale&cap=poas-profitto-sulla-spesa`}
                     className="btn btn-primary btn-sm w-full"
                   >
-                    <span>{isIt ? 'Richiedi l\'Audit sul Margine Reale POAS' : 'Request Real POAS Margin Audit'}</span>
+                    <span>{isIt ? 'Richiedi l\'analisi gratuita sul margine reale' : 'Request the free real-margin analysis'}</span>
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>

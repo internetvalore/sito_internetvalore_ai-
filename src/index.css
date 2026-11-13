@@ -297,6 +297,7 @@
     color: var(--iv-ink-2);
     font-size: 0.9375rem;
     font-weight: 500;
+    white-space: nowrap;
     text-decoration: none;
     transition: color 220ms var(--iv-ease);
   }

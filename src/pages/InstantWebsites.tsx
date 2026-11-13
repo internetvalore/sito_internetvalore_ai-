@@ -81,8 +81,8 @@ export default function InstantWebsites() {
       icon: Zap,
       title: language === 'it' ? 'Pacchetto Modifiche Annuali' : 'Annual Changes Package',
       description: language === 'it'
-        ? 'Pacchetto modifiche annuali incluso nel prezzo iniziale.'
-        : 'Annual changes package included in the initial price.'
+        ? 'Pacchetto di modifiche annuali incluso.'
+        : 'Annual changes package included.'
     }
   ];
 
@@ -94,7 +94,6 @@ export default function InstantWebsites() {
         path="/instant-websites"
         serviceType={meta.serviceType}
         serviceDescription={meta.serviceDescription}
-        priceRange={meta.priceRange}
         breadcrumbs={[
           { name: 'Home', path: '/' },
           { name: language === 'it' ? 'Servizi' : 'Services', path: '/services' },

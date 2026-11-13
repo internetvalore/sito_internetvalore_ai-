@@ -106,10 +106,10 @@ export default function LandingUspPage() {
             {/* Direct Qualified CTA */}
             <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-3">
               <Link
-                to={`/${language}/casi-e-audit?tema=${theme.id}&cap=${spoke.slug}`}
+                to={`/${language}/analisi-gratuita?tema=${theme.id}&cap=${spoke.slug}`}
                 className="btn btn-primary"
               >
-                <span>{isIt ? 'Richiedi l\'Audit a Raggi X su Questo Problema' : 'Request X-Ray Audit on This Problem'}</span>
+                <span>{isIt ? 'Richiedi l\'analisi gratuita su questo problema' : 'Request the free analysis on this problem'}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <div className="text-xs text-ink-600 space-y-0.5">
@@ -378,10 +378,10 @@ export default function LandingUspPage() {
             </p>
             <div className="mt-8">
               <Link
-                to={`/${language}/casi-e-audit?tema=${theme.id}&cap=${spoke.slug}`}
+                to={`/${language}/analisi-gratuita?tema=${theme.id}&cap=${spoke.slug}`}
                 className="btn btn-primary inline-block"
               >
-                {isIt ? 'Richiedi l\'Audit a Raggi X (Da 15k€/mese)' : 'Request Private Audit (From €15k/mo)'}
+                {isIt ? 'Richiedi l\'analisi gratuita del tuo e-commerce' : 'Request your free e-commerce analysis'}
               </Link>
               <div className="text-xs text-ink-600 mt-3">
                 {isIt ? 'Patto di Riservatezza Reciproco (NDA) · Nessuna modifica alle campagne attive' : 'Mutual NDA Protection · Zero edits to active campaigns'}

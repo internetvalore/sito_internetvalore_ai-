@@ -84,7 +84,7 @@ export default function HeroSection({ title, subtitle, description, imageSrc = "
           <img
             className="absolute inset-0 w-full h-full object-cover"
             src={imageSrc}
-            alt={`${title} - Internet Valore Marketing Digitale`}
+            alt={language === 'it' ? `${title} - Internet Valore Marketing Digitale` : `${title} - Internet Valore Digital Marketing`}
           />
         </motion.div>
       </div>

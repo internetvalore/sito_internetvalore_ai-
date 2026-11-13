@@ -13,31 +13,21 @@ import {
   Phone
 } from 'lucide-react';
 import MetaTags from '../../components/MetaTags';
-
-// UUID v4 Generator for tracking
-const generateUUIDv4 = () => {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-    const r = (Math.random() * 16) | 0;
-    const v = c === 'x' ? r : (r & 0x3) | 0x8;
-    return v.toString(16);
-  });
-};
+import { fireQueuedConversion } from '../../utils/conversion';
 
 export default function OutsourcingEcommerceGrazie() {
   const { language } = useLanguage();
   const isIt = language === 'it';
 
-  // GA4 Key Event: lp_outsourcing_lead push on page mount
+  // Evento chiave GA4 "lp_outsourcing_lead": parte una sola volta e solo se il form della landing
+  // è stato davvero inviato (la landing lo mette in coda dopo l'invio riuscito).
   useEffect(() => {
-    (window as any).dataLayer = (window as any).dataLayer || [];
-    (window as any).dataLayer.push({
-      event: 'lp_outsourcing_lead',
-      event_id: generateUUIDv4(),
+    fireQueuedConversion('lp-outsourcing', {
       lang: language,
-      page_path: window.location.pathname,
-      artifact_id: 'lp-outsourcing-ecommerce-2026-08'
+      page_path: window.location.pathname
     });
-  }, [language]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handlePrint = () => {
     window.print();
@@ -70,7 +60,7 @@ export default function OutsourcingEcommerceGrazie() {
             href={`/${language}`}
             className="navlink flex items-center gap-1"
           >
-            Torna alla Home <ArrowRight className="w-3.5 h-3.5" />
+            {isIt ? 'Torna alla Home' : 'Back to Home'} <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>
       </header>
@@ -85,15 +75,17 @@ export default function OutsourcingEcommerceGrazie() {
           </div>
 
           <span className="eyebrow inline-block mb-4">
-            Richiesta Registrata con Successo
+            {isIt ? 'Richiesta Registrata con Successo' : 'Request Successfully Received'}
           </span>
 
           <h1 className="title-xl mb-6">
-            Cosa succede adesso
+            {isIt ? 'Cosa succede adesso' : 'What happens now'}
           </h1>
 
           <p className="lede measure mx-auto mb-8">
-            Abbiamo ricevuto i dati del tuo ecommerce. Nessun venditore insistente: ecco come procediamo esattamente, passo dopo passo.
+            {isIt
+              ? 'Abbiamo ricevuto i dati del tuo ecommerce. Nessun venditore insistente: ecco come procediamo esattamente, passo dopo passo.'
+              : 'We’ve received your e-commerce details. No pushy salespeople: here is exactly how we proceed, step by step.'}
           </p>
 
           {/* Three steps recap */}
@@ -106,11 +98,17 @@ export default function OutsourcingEcommerceGrazie() {
               <div>
                 <h3 className="text-base font-semibold mb-1 flex items-center gap-2">
                   <Clock className="w-4 h-4 text-accent-600" />
-                  Risposta entro 1 giorno lavorativo
+                  {isIt ? 'Risposta entro 1 giorno lavorativo' : 'A reply within 1 business day'}
                 </h3>
-                <p className="text-sm text-ink-600 leading-relaxed">
-                  Ti invieremo un'email con <strong>due proposte di orario</strong> per fissare la nostra call di approfondimento di 30 minuti.
-                </p>
+                {isIt ? (
+                  <p className="text-sm text-ink-600 leading-relaxed">
+                    Ti invieremo un'email con <strong>due proposte di orario</strong> per fissare la nostra call di approfondimento di 30 minuti.
+                  </p>
+                ) : (
+                  <p className="text-sm text-ink-600 leading-relaxed">
+                    We’ll send you an email with <strong>two proposed time slots</strong> to book our 30-minute in-depth call.
+                  </p>
+                )}
               </div>
             </div>
 
@@ -121,11 +119,17 @@ export default function OutsourcingEcommerceGrazie() {
               <div>
                 <h3 className="text-base font-semibold mb-1 flex items-center gap-2">
                   <FileSpreadsheet className="w-4 h-4 text-accent-600" />
-                  In call: Registri e report reali anonimizzati
+                  {isIt ? 'In call: Registri e report reali anonimizzati' : 'On the call: real anonymized logs and reports'}
                 </h3>
-                <p className="text-sm text-ink-600 leading-relaxed">
-                  Guarderemo insieme il tuo caso specifico e ti mostreremo concretamente <strong>come sono strutturati i nostri registri di modifica</strong> e l'analisi sul profitto netto.
-                </p>
+                {isIt ? (
+                  <p className="text-sm text-ink-600 leading-relaxed">
+                    Guarderemo insieme il tuo caso specifico e ti mostreremo concretamente <strong>come sono strutturati i nostri registri di modifica</strong> e l'analisi sul profitto netto.
+                  </p>
+                ) : (
+                  <p className="text-sm text-ink-600 leading-relaxed">
+                    We’ll look at your specific case together and show you, in concrete terms, <strong>how our change logs are structured</strong> and our net profit analysis.
+                  </p>
+                )}
               </div>
             </div>
 
@@ -136,10 +140,12 @@ export default function OutsourcingEcommerceGrazie() {
               <div>
                 <h3 className="text-base font-semibold mb-1 flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-accent-600" />
-                  Controllo giorno zero senza stravolgimenti
+                  {isIt ? 'Controllo giorno zero senza stravolgimenti' : 'Day-zero check, no disruption'}
                 </h3>
                 <p className="text-sm text-ink-600 leading-relaxed">
-                  Se decideremo di lavorare insieme: prima la fotografia completa del conto e 30 giorni di osservazione senza stravolgere ciò che già genera risultati.
+                  {isIt
+                    ? 'Se decideremo di lavorare insieme: prima la fotografia completa del conto e 30 giorni di osservazione senza stravolgere ciò che già genera risultati.'
+                    : 'If we decide to work together: first a complete snapshot of the account, then 30 days of observation without overturning what is already producing results.'}
                 </p>
               </div>
             </div>
@@ -150,25 +156,27 @@ export default function OutsourcingEcommerceGrazie() {
           <div className="hairline pt-7 text-center">
             <h4 className="text-base font-semibold mb-2 flex items-center justify-center gap-2">
               <FileCheck className="w-5 h-5 text-accent-600" />
-              Tieni sottomano le 6 domande del video
+              {isIt ? 'Tieni sottomano le 6 domande del video' : 'Keep the 6 questions from the video at hand'}
             </h4>
             <p className="text-sm text-ink-600 max-w-xl mx-auto mb-4 leading-relaxed">
-              Puoi portarle in call con noi: risponderemo con i nostri registri a ciascuna di esse.
+              {isIt
+                ? 'Puoi portarle in call con noi: risponderemo con i nostri registri a ciascuna di esse.'
+                : 'You can bring them to the call with us: we’ll answer each one with our logs.'}
             </p>
             <a
               href={`/${language}/lp/outsourcing-campagne-ecommerce#sei-domande`}
               className="btn btn-sm"
             >
-              Rivedi le 6 domande
+              {isIt ? 'Rivedi le 6 domande' : 'Review the 6 questions'}
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
 
           {/* Emergency / Direct contact */}
           <div className="hairline pt-7 mt-7 text-xs text-ink-600 flex flex-wrap items-center justify-center gap-6">
-            <span>Hai un'urgenza particolare?</span>
+            <span>{isIt ? "Hai un'urgenza particolare?" : 'Something urgent?'}</span>
             <a href="tel:800940213" className="text-accent-600 hover:underline flex items-center gap-1">
-              <Phone className="w-3.5 h-3.5" /> Numero Verde: 800 940 213
+              <Phone className="w-3.5 h-3.5" /> {isIt ? 'Numero Verde: 800 940 213' : 'Toll-free: 800 940 213'}
             </a>
             <a href="mailto:info@internetvalore.it" className="text-accent-600 hover:underline">
               info@internetvalore.it
@@ -181,7 +189,7 @@ export default function OutsourcingEcommerceGrazie() {
       {/* Minimal Footer */}
       <footer className="footer-premium py-6 text-center text-xs text-ink-500 print-hide">
         <div className="shell">
-          <p>© {new Date().getFullYear()} Internet Valore S.r.l. — P.IVA 09055410967</p>
+          <p>© {new Date().getFullYear()} Internet Valore S.r.l. — {isIt ? 'P.IVA 06767350967' : 'VAT No. 06767350967'}</p>
         </div>
       </footer>
     </div>

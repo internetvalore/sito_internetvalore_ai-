@@ -19,22 +19,29 @@ export default function Hero() {
 
   const claimCards = language === 'it'
     ? [
-        { headline: 'Riconciliazione Carrello vs GA4.', cta: 'Ordini reali Shopify & Woo →', to: `/${language}/services/ecommerce` },
-        { headline: '1M+ righe di codice · 482 tool LLM.', cta: 'Esplora masterAnalyzer →', to: `/${language}/la-nostra-tecnologia-ai` },
-        { headline: 'POAS over ROAS. Margine Reale.', cta: 'Stop a ROAS gonfiati →', to: `/${language}/casi-e-audit` },
+        { headline: 'Sai quanto vendi davvero.', cta: 'Ordini reali riconciliati →', to: `/${language}/services/ecommerce` },
+        { headline: 'Non paghi chi ti cercava già.', cta: 'Controllo del traffico brand →', to: `/${language}/services/ads` },
+        { headline: 'Decidi sul profitto, non sul fatturato.', cta: 'La tecnologia che usiamo →', to: `/${language}/la-nostra-tecnologia-ai` },
       ]
     : [
-        { headline: 'Cart vs GA4 Reconciliation.', cta: 'Real Shopify & Woo orders →', to: `/${language}/services/ecommerce` },
-        { headline: '1M+ lines of code · 482 LLM tools.', cta: 'Explore masterAnalyzer →', to: `/${language}/la-nostra-tecnologia-ai` },
-        { headline: 'POAS over ROAS. Real Margin.', cta: 'Stop vanity ROAS →', to: `/${language}/casi-e-audit` },
+        { headline: 'You know what you really sell.', cta: 'Real orders reconciled →', to: `/${language}/services/ecommerce` },
+        { headline: 'You stop paying for people already looking for you.', cta: 'Brand traffic control →', to: `/${language}/services/ads` },
+        { headline: 'You decide on profit, not revenue.', cta: 'The technology we use →', to: `/${language}/la-nostra-tecnologia-ai` },
       ];
 
-  const chipsIT = [
-    { label: 'Lead Generation Riconciliata', to: `/${language}/services/lead-generation` },
-    { label: 'Campagne Ads E-commerce (POAS)', to: `/${language}/services/ecommerce` },
-    { label: 'Controllo Cannibalizzazione Brand', to: `/${language}/services/ads` },
-    { label: '1M+ Righe Codice · 482 Tool LLM', to: `/${language}/la-nostra-tecnologia-ai` },
-  ];
+  const chips = language === 'it'
+    ? [
+        { label: 'Campagne Ads E-commerce (POAS)', to: `/${language}/services/ecommerce` },
+        { label: 'Lead Generation Riconciliata', to: `/${language}/services/lead-generation` },
+        { label: 'Controllo Cannibalizzazione Brand', to: `/${language}/services/ads` },
+        { label: 'Tecnologia proprietaria masterAnalyzer', to: `/${language}/la-nostra-tecnologia-ai` },
+      ]
+    : [
+        { label: 'E-commerce Ad Campaigns (POAS)', to: `/${language}/services/ecommerce` },
+        { label: 'Reconciled Lead Generation', to: `/${language}/services/lead-generation` },
+        { label: 'Brand Cannibalization Control', to: `/${language}/services/ads` },
+        { label: 'Proprietary masterAnalyzer technology', to: `/${language}/la-nostra-tecnologia-ai` },
+      ];
 
   return (
     <section className="hero-premium">
@@ -58,13 +65,13 @@ export default function Hero() {
 
             <motion.p variants={rise} className="lede measure mb-8">
               {language === 'it'
-                ? 'Orchestriamo in outsourcing le campagne ads del tuo e-commerce — Google Ads, Shopping, Performance Max e Facebook Ads (Meta) — con masterAnalyzer: oltre 1.000.000 di righe censite (775k+ Python, 482 tool LLM e 293 playbook operativi) per riconciliare gli ordini del carrello, bloccare la cannibalizzazione del brand e ottimizzare sul profitto reale (POAS) netto.'
-                : 'We orchestrate your Google Ads, Shopping, PMax and Meta campaigns in outsourcing with masterAnalyzer: over 1,000,000 total census lines (775k+ Python, 482 LLM tools and 293 execution playbooks) reconciling cart orders, eliminating brand cannibalization, and optimizing strictly on net profit (POAS).'}
+                ? 'Gestiamo in outsourcing le campagne ads del tuo e-commerce — Google Ads, Shopping, Performance Max e Facebook Ads (Meta) — partendo dagli ordini reali: riconciliamo il carrello con Analytics, smettiamo di pagare per chi ti cercava già per nome e ottimizziamo sul profitto che ti resta (POAS), non sul fatturato dichiarato dalle piattaforme.'
+                : 'We manage your e-commerce ad campaigns in outsourcing — Google Ads, Shopping, Performance Max and Facebook Ads (Meta) — starting from real orders: we reconcile your cart with Analytics, stop paying for people who were already searching for you by name, and optimize on the profit you keep (POAS), not on the revenue the platforms report.'}
             </motion.p>
 
-            <motion.div variants={rise} className="flex flex-wrap gap-3 mb-10">
-              <Link to={`/${language}/casi-e-audit`} className="btn btn-primary">
-                {language === 'it' ? 'Richiedi Audit a Raggi X (Da 15k€/mese)' : 'Request X-Ray Audit (From €15k/mo)'}
+            <motion.div variants={rise} className="flex flex-wrap gap-3 mb-4">
+              <Link to={`/${language}/analisi-gratuita`} className="btn btn-primary">
+                {language === 'it' ? 'Richiedi l’analisi gratuita del tuo e-commerce' : 'Request your free e-commerce analysis'}
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link to={`/${language}/services/ecommerce`} className="btn btn-ghost">
@@ -72,11 +79,28 @@ export default function Hero() {
               </Link>
             </motion.div>
 
+            <motion.p variants={rise} className="text-[0.875rem] text-ink-500 measure mb-3">
+              {language === 'it'
+                ? 'Ti diciamo quanti ordini il tuo tracciamento non vede e dove stai lasciando margine. Gratis, poi decidi tu.'
+                : 'We tell you how many orders your tracking misses and where you are leaving margin. Free, then you decide.'}
+            </motion.p>
+
+            <motion.p variants={rise} className="text-[0.9rem] text-ink-600 mb-10">
+              {language === 'it' ? 'Non vendi online?' : 'Not selling online?'}{' '}
+              <button
+                type="button"
+                onClick={() => document.getElementById('pmi')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-accent-700 font-medium hover:text-accent-800"
+              >
+                {language === 'it' ? 'Lead generation per PMI B2B ↓' : 'Lead generation for B2B SMEs ↓'}
+              </button>
+            </motion.p>
+
             <motion.div variants={rise}>
               <p className="eyebrow eyebrow-quiet mb-4">
                 {language === 'it'
-                  ? 'La tecnologia che riconcilia i tuoi conti'
-                  : 'The technology that reconciles your numbers'}
+                  ? 'Cosa cambia quando parti dal dato vero'
+                  : 'What changes when you start from real data'}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {claimCards.map((card, i) => (
@@ -105,7 +129,7 @@ export default function Hero() {
                     <Link to={`/${language}/la-nostra-tecnologia-ai`} className="text-accent-700 font-medium hover:text-accent-800">
                       tecnologia proprietaria masterAnalyzer
                     </Link>{' '}
-                    (oltre 1.000.000 di righe censite, 775k+ Python e 482 tool AI), forniamo servizi avanzati di{' '}
+                    forniamo servizi avanzati di{' '}
                     <Link to={`/${language}/services/lead-generation`} className="text-accent-700 font-medium hover:text-accent-800">
                       lead generation riconciliata col CRM
                     </Link>{' '}
@@ -131,7 +155,7 @@ export default function Hero() {
                     <Link to={`/${language}/la-nostra-tecnologia-ai`} className="text-accent-700 font-medium hover:text-accent-800">
                       proprietary masterAnalyzer technology
                     </Link>{' '}
-                    (over 1,000,000 total lines, 775k+ Python and 482 AI tools), we deliver{' '}
+                    we deliver{' '}
                     <Link to={`/${language}/services/lead-generation`} className="text-accent-700 font-medium hover:text-accent-800">
                       CRM-reconciled lead generation
                     </Link>{' '}
@@ -150,7 +174,7 @@ export default function Hero() {
                 )}
               </p>
               <div className="flex flex-wrap gap-2">
-                {chipsIT.map((chip, i) => (
+                {chips.map((chip, i) => (
                   <Link key={i} to={chip.to} className="chip">
                     {chip.label}
                   </Link>
@@ -230,7 +254,7 @@ export default function Hero() {
             </div>
 
             <figcaption className="mt-4 card">
-              <p className="eyebrow mb-2">Deep Search</p>
+              <p className="eyebrow mb-2">{language === 'it' ? 'Dichiarato vs reale' : 'Reported vs real'}</p>
               <p className="text-[1.05rem] font-semibold text-ink-900 leading-snug">
                 {language === 'it' ? 'Dati reali, conversioni reali' : 'Real data, real conversions'}
               </p>

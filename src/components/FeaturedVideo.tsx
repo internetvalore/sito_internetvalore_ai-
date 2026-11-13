@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function FeaturedVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const { language } = useLanguage();
+  const isIt = language === 'it';
+  const videoTitle = isIt
+    ? 'Campagne in outsourcing per il tuo ecommerce: come lavoriamo — e le 6 domande per la tua agenzia'
+    : 'Outsourced campaigns for your e-commerce: how we work — and 6 questions for your agency (video in Italian)';
 
   return (
     <section className="section">
@@ -15,7 +21,7 @@ export default function FeaturedVideo() {
           className="text-center mb-8"
         >
           <h2 className="title-xl mb-4 text-ink-900">
-            Campagne in outsourcing per il tuo ecommerce: come lavoriamo — e le 6 domande per la tua agenzia
+            {videoTitle}
           </h2>
         </motion.div>
 
@@ -32,7 +38,7 @@ export default function FeaturedVideo() {
               width="100%"
               height="600"
               src="https://www.youtube-nocookie.com/embed/m7g6HcARV1w?autoplay=1&rel=0"
-              title="Campagne in outsourcing per il tuo ecommerce: come lavoriamo — e le 6 domande per la tua agenzia"
+              title={videoTitle}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
               allowFullScreen
@@ -43,14 +49,14 @@ export default function FeaturedVideo() {
             <div className="relative w-full h-full flex items-center justify-center">
               <img
                 src="https://img.youtube.com/vi/m7g6HcARV1w/maxresdefault.jpg"
-                alt="Campagne in outsourcing per il tuo ecommerce: come lavoriamo — e le 6 domande per la tua agenzia"
+                alt={videoTitle}
                 className="w-full h-full object-cover transition-opacity duration-220 group-hover:opacity-95"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-ink-900/[0.06] pointer-events-none"></div>
               <button
                 type="button"
-                aria-label="Riproduci video"
+                aria-label={isIt ? 'Riproduci video' : 'Play video'}
                 className="btn btn-dark absolute z-10 h-14 w-14 p-0 cursor-pointer"
               >
                 <svg className="h-5 w-5 ml-0.5 fill-current" viewBox="0 0 24 24">

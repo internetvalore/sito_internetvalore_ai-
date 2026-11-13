@@ -42,9 +42,9 @@ export const translations = {
       ]
     },
     services: {
-      title: 'Le Nostre Specializzazioni',
-      subtitle: 'Outsourcing Campagne Ads E-commerce & Performance',
-      description: 'Ogni canale pubblicitario è orchestrato da masterAnalyzer per proteggere il margine reale (POAS), riconciliare il carrello ed eliminare la cannibalizzazione del brand.',
+      title: 'I Nostri Servizi',
+      subtitle: 'Cosa facciamo, e per chi',
+      description: 'Due percorsi: campagne ads per gli e-commerce, gestite sul margine reale, e lead generation per le PMI che cercano nuovi clienti. Google Ads e Facebook Ads in entrambi, sempre misurati sul dato vero.',
       available247: 'Numero Verde 800 940 213 attivo 7x24: risponde Leonardo, il nostro assistente AI digitale, che raccoglie tutte le informazioni per farti richiamare da un nostro consulente umano.',
       sections: {
         leadGeneration: {
@@ -156,7 +156,7 @@ export const translations = {
     hero: {
       title: 'E-commerce Campaign Outsourcing on Real Margin (POAS)',
       highlight: 'Eliminating traditional agency waste by optimizing strictly on real net profit.',
-      description: 'We are not a SaaS and we do not optimize gross revenue based on guesswork. We manage your Google Ads, Shopping, PMax and Meta campaigns using our proprietary masterAnalyzer suite (over 1,000,000 total census lines, 775k+ Python, 482 LLM tools and 293 execution playbooks) to reconcile real cart orders, eliminate brand cannibalization, and optimize on true net profit (POAS).',
+      description: 'We are not a SaaS and we do not optimize gross revenue based on guesswork. We manage your Google Ads, Shopping, PMax and Meta campaigns using our proprietary masterAnalyzer suite (over 1,000,000 verified lines, 775k+ Python, 482 LLM tools and 293 execution playbooks) to reconcile real cart orders, eliminate brand cannibalization, and optimize on true net profit (POAS).',
       cta: {
         primary: 'Request X-Ray Audit (From €15k/mo)',
         secondary: 'How Outsourcing Works'
@@ -181,9 +181,9 @@ export const translations = {
       ]
     },
     services: {
-      title: 'Our Core Capabilities',
-      subtitle: 'Outsourced E-commerce Campaign Management & Performance',
-      description: 'Every advertising channel is orchestrated by masterAnalyzer to protect real margin (POAS), reconcile carts, and eliminate brand cannibalization.',
+      title: 'Our Services',
+      subtitle: 'What we do, and for whom',
+      description: 'Two paths: ad campaigns for e-commerce, managed on real margin, and lead generation for SMEs looking for new customers. Google Ads and Facebook Ads in both, always measured on real data.',
       available247: 'Toll-Free Number 800 940 213 available 24/7: answered by Leonardo, our digital AI assistant, who gathers all your information for a prompt callback from a human consultant.',
       sections: {
         leadGeneration: {
@@ -191,7 +191,7 @@ export const translations = {
           description: 'Acquire qualified leads by cleaning spam before training Smart Bidding. Fewer bots, higher quality contracts.',
           features: [
             'CRM lead reconciliation',
-            'RispondoSubito conversational H24',
+            'RispondoSubito conversational 24/7',
             'Organic-to-RSA bridge (SEO → Ads)',
             'Concepts based on wounds & objections'
           ]
@@ -203,7 +203,7 @@ export const translations = {
             'Optimization on profit (POAS)',
             'Shopify vs GA4 order reconciliation',
             'Creative Studio for product groups',
-            'Daily BCE exchange rates (FX Layer)'
+            'Daily ECB exchange rates (FX Layer)'
           ]
         },
         ads: {

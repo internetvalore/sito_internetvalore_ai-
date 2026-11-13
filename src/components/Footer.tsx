@@ -1,7 +1,10 @@
 import React from 'react';
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Footer() {
+  const { language } = useLanguage();
+  const isIt = language === 'it';
   const socialLinks = [
     {
       name: 'LinkedIn',
@@ -29,18 +32,18 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 rounded-full border border-line bg-white px-4 py-2 transition-colors duration-220 hover:bg-paper"
-            title="Google Partner Certificato"
+            title={isIt ? 'Google Partner Certificato' : 'Certified Google Partner'}
           >
             <img
               src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg"
-              alt="Badge Ufficiale Google Partner Certificato - Internet Valore S.r.l."
+              alt={isIt ? 'Badge Ufficiale Google Partner Certificato - Internet Valore S.r.l.' : 'Official Certified Google Partner badge - Internet Valore S.r.l.'}
               className="h-8 w-auto"
             />
-            <span className="text-[0.8rem] font-semibold text-ink-600">Google Partner Certificato</span>
+            <span className="text-[0.8rem] font-semibold text-ink-600">{isIt ? 'Google Partner Certificato' : 'Certified Google Partner'}</span>
           </a>
 
           <div className="text-[0.875rem] text-ink-500">
-            P.IVA 06767350967
+            {isIt ? 'P.IVA' : 'VAT No.'} 06767350967
           </div>
 
           <div className="flex items-center gap-5">

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import MetaTags from '../../components/MetaTags';
 import { metaContent } from '../../seo/metaContent';
-import { videoList } from './videoData';
+import { videoList, localizedVideo } from './videoData';
 import { 
   Eye, DollarSign, HelpCircle, ShieldCheck, ShoppingBag, 
   Search, Palette, Zap, ArrowRight, PlayCircle
@@ -195,6 +195,8 @@ export default function Manifesto() {
           {themes.map((themeName, themeIdx) => {
             const IconComponent = themeIcons[themeName] || HelpCircle;
             const themeVideos = videoList.filter(v => v.theme === themeName);
+            // Grouping key stays the Italian theme; the displayed name follows the language
+            const localizedThemeName = themeVideos.length > 0 ? localizedVideo(themeVideos[0], language).theme : themeName;
 
             return (
               <motion.div 
@@ -213,12 +215,14 @@ export default function Manifesto() {
                     <span className="eyebrow eyebrow-quiet">
                       {isIt ? `TEMA ${themeIdx + 1}` : `THEME ${themeIdx + 1}`}
                     </span>
-                    <h3 className="text-[1.05rem] font-semibold">{isIt ? themeName : themeName}</h3>
+                    <h3 className="text-[1.05rem] font-semibold">{isIt ? themeName : localizedThemeName}</h3>
                   </div>
                 </div>
 
                 <div className="divide-y divide-line">
-                  {themeVideos.map((video) => (
+                  {themeVideos.map((video) => {
+                    const loc = localizedVideo(video, language);
+                    return (
                     <Link 
                       key={video.id}
                       to={`/${language}/video/${video.id}`}
@@ -228,11 +232,11 @@ export default function Manifesto() {
                         <PlayCircle className="w-5 h-5 text-ink-500 group-hover:text-accent-600 transition-colors" />
                         <div>
                           <h4 className="font-semibold text-ink-900 transition-colors">
-                            {video.title}
+                            {loc.title}
                           </h4>
                           <p className="text-xs text-ink-600 mt-0.5">
-                            <span className="font-semibold">{isIt ? 'Pain SEO: ' : 'SEO Pain: '}</span>
-                            {video.seoPain}
+                            <span className="font-semibold">{isIt ? 'Pain SEO: ' : 'SEO pain: '}</span>
+                            {loc.seoPain}
                           </p>
                         </div>
                       </div>
@@ -241,7 +245,8 @@ export default function Manifesto() {
                         <ArrowRight className="w-4 h-4" />
                       </div>
                     </Link>
-                  ))}
+                    );
+                  })}
                 </div>
               </motion.div>
             );

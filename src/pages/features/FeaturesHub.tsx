@@ -33,7 +33,9 @@ export default function FeaturesHub() {
           : 'Explore masterAnalyzer capabilities: tracking audit, real order reconciliation, POAS margin optimization, and brand cannibalization control.'}
         path="/funzionalita"
         serviceType="Proprietary Marketing Technology"
-        serviceDescription="Suite tecnologica proprietaria per l'orchestrazione avanzata e l'audit matematico di campagne e-commerce."
+        serviceDescription={isIt
+          ? "Suite tecnologica proprietaria per l'orchestrazione avanzata e l'audit matematico di campagne e-commerce."
+          : 'Proprietary technology suite for advanced orchestration and mathematical auditing of e-commerce campaigns.'}
         breadcrumbs={[
           { name: 'Home', path: '/' },
           { name: isIt ? 'Funzionalità' : 'Capabilities', path: '/funzionalita' }
@@ -75,10 +77,10 @@ export default function FeaturesHub() {
           </motion.p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <span className="chip">✓ 1.004.600+ Righe Censite</span>
-            <span className="chip">✓ 482 Tool LLM Specializzati</span>
-            <span className="chip">✓ 293 Playbook Operativi</span>
-            <span className="chip">✓ 16.364 Test di Regressione</span>
+            <span className="chip">{isIt ? '✓ 1.004.600+ Righe Censite' : '✓ 1,004,600+ Verified Lines'}</span>
+            <span className="chip">{isIt ? '✓ 482 Tool LLM Specializzati' : '✓ 482 Specialized LLM Tools'}</span>
+            <span className="chip">{isIt ? '✓ 293 Playbook Operativi' : '✓ 293 Operational Playbooks'}</span>
+            <span className="chip">{isIt ? '✓ 16.364 Test di Regressione' : '✓ 16,364 Regression Tests'}</span>
           </div>
         </header>
 
@@ -100,7 +102,7 @@ export default function FeaturesHub() {
                       Cluster {theme.id}
                     </span>
                     <span className="text-xs text-ink-500">
-                      {theme.spokes.length} {isIt ? 'Capacità Dedicate' : 'Spokes'}
+                      {theme.spokes.length} {isIt ? 'Capacità Dedicate' : 'Dedicated Capabilities'}
                     </span>
                   </div>
 
@@ -141,10 +143,10 @@ export default function FeaturesHub() {
                     {isIt ? 'Esplora il cluster tematico' : 'Explore thematic cluster'} →
                   </Link>
                   <Link
-                    to={`/${language}/casi-e-audit?tema=${theme.id}`}
+                    to={`/${language}/analisi-gratuita?tema=${theme.id}`}
                     className="text-xs font-medium text-ink-600 hover:text-ink-900 transition-colors"
                   >
-                    {isIt ? 'Richiedi audit dedicato' : 'Request dedicated audit'}
+                    {isIt ? 'Richiedi l\'analisi gratuita' : 'Request the free analysis'}
                   </Link>
                 </div>
               </motion.div>
@@ -172,10 +174,10 @@ export default function FeaturesHub() {
             </p>
             <div className="mt-6">
               <Link
-                to={`/${language}/casi-e-audit`}
+                to={`/${language}/analisi-gratuita`}
                 className="btn btn-primary"
               >
-                {isIt ? 'Accedi al Dossier di Audit Qualificato' : 'Access Qualified Audit Dossier'}
+                {isIt ? 'Richiedi l\'analisi gratuita del tuo e-commerce' : 'Request your free e-commerce analysis'}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
