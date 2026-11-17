@@ -40,6 +40,7 @@ const OutsourcingEcommerceLP = lazy(() => import('./pages/lp/OutsourcingEcommerc
 const OutsourcingEcommerceGrazie = lazy(() => import('./pages/lp/OutsourcingEcommerceGrazie'));
 const AIPlatform = lazy(() => import('./pages/AIPlatform'));
 const ThankYou = lazy(() => import('./pages/ThankYou'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Solutions Pages lazy-loaded
 const SolutionsHub = lazy(() => import('./pages/solutions/SolutionsHub'));
@@ -344,8 +345,8 @@ function App() {
               <Route path="/:lang/funzionalita/:themeId" element={<ThroughPage />} />
               <Route path="/:lang/funzionalita/:themeId/:featureSlug" element={<LandingUspPage />} />
 
-              {/* Catch all redirect */}
-              <Route path="*" element={<Navigate to={`/${language}/${location.search}${location.hash}`} replace />} />
+              {/* Indirizzo inesistente: pagina «non trovata» con noindex (prima: reindirizzamento alla home) */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </ErrorBoundary>
