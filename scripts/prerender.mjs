@@ -71,14 +71,15 @@ async function avviaBrowser() {
       headless: chromium.headless ?? true,
     });
   }
+  // CHROME_PATH, se indicato, è l'unico percorso provato: non si ripiega su un altro Chrome.
   const candidati = [
-    process.env.CHROME_PATH,
     'C:/Program Files/Google/Chrome/Application/chrome.exe',
     'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
     '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-  ].filter(Boolean);
-  const eseguibile = candidati.find((p) => existsSync(p));
+  ];
+  const eseguibile = process.env.CHROME_PATH || candidati.find((p) => existsSync(p));
   if (!eseguibile) throw new Error('Chrome non trovato: indica il percorso con CHROME_PATH');
+  if (!existsSync(eseguibile)) throw new Error(`Chrome non trovato in ${eseguibile}`);
   return puppeteer.launch({ executablePath: eseguibile, headless: true, args: ['--no-sandbox'] });
 }
 
