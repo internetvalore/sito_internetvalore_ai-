@@ -234,10 +234,7 @@ export default function Manifesto() {
                           <h4 className="font-semibold text-ink-900 transition-colors">
                             {loc.title}
                           </h4>
-                          <p className="text-xs text-ink-600 mt-0.5">
-                            <span className="font-semibold">{isIt ? 'Pain SEO: ' : 'SEO pain: '}</span>
-                            {loc.seoPain}
-                          </p>
+                          <p className="text-xs text-ink-600 mt-0.5">{loc.seoPain}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2 text-accent-600 font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity">
