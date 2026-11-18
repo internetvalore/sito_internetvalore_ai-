@@ -61,6 +61,12 @@ export interface MetaTagsProps {
   includeLocalBusiness?: boolean;
   video?: VideoSchemaData;
   software?: SoftwareSchemaData;
+  /**
+   * false = non inietta dati strutturati (e toglie quelli lasciati da un'altra pagina).
+   * Serve alla home, che tiene il grafo statico di index.html (WebSite, Organization,
+   * LocalBusiness, Service, FAQPage): iniettarne altri li duplicherebbe.
+   */
+  structuredData?: boolean;
 }
 
 export default function MetaTags({
@@ -79,7 +85,8 @@ export default function MetaTags({
   reviews,
   includeLocalBusiness = false,
   video,
-  software
+  software,
+  structuredData = true
 }: MetaTagsProps) {
   const { language } = useLanguage();
   const domain = 'https://internetvalore.it';
@@ -163,6 +170,15 @@ export default function MetaTags({
       script.text = JSON.stringify(schemaData);
       document.head.appendChild(script);
     };
+
+    // Pagine che non devono aggiungere dati strutturati (home, «non trovata»): si tolgono quelli
+    // rimasti da una pagina precedente e ci si ferma qui. Titolo, descrizione, canonical e hreflang
+    // sono già stati impostati sopra.
+    if (!structuredData) {
+      ['localbusiness-schema', 'service-schema', 'breadcrumb-schema', 'faq-schema', 'video-schema', 'software-schema']
+        .forEach((id) => injectSchema(id, null));
+      return;
+    }
 
     // Shared Provider Object for Service schemas
     const localBusinessProvider = {
@@ -462,7 +478,8 @@ export default function MetaTags({
     reviews,
     includeLocalBusiness,
     video,
-    software
+    software,
+    structuredData
   ]);
 
   return null;

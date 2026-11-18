@@ -3,7 +3,6 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useLanguage } from './contexts/LanguageContext';
 import MetaTags from './components/MetaTags';
 import { metaContent } from './seo/metaContent';
-import { VERIFIED_REVIEWS, HOMEPAGE_FAQS, HOMEPAGE_FAQS_EN } from './seo/schemaData';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -41,6 +40,7 @@ const OutsourcingEcommerceLP = lazy(() => import('./pages/lp/OutsourcingEcommerc
 const OutsourcingEcommerceGrazie = lazy(() => import('./pages/lp/OutsourcingEcommerceGrazie'));
 const AIPlatform = lazy(() => import('./pages/AIPlatform'));
 const ThankYou = lazy(() => import('./pages/ThankYou'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Solutions Pages lazy-loaded
 const SolutionsHub = lazy(() => import('./pages/solutions/SolutionsHub'));
@@ -254,17 +254,15 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      {location.pathname === `/${language}` && (
+      {/* Il sito serve la home come /it/ e /en/ (con la barra): il confronto senza barra non
+          scattava mai e la home restava coi meta statici di index.html, uguali per le due lingue.
+          I dati strutturati della home restano quelli statici di index.html (structuredData=false). */}
+      {(location.pathname === `/${language}` || location.pathname === `/${language}/`) && (
         <MetaTags
           title={meta.title}
           description={meta.description}
           path="/"
-          includeLocalBusiness={true}
-          reviews={VERIFIED_REVIEWS}
-          faq={language === 'it' ? HOMEPAGE_FAQS : HOMEPAGE_FAQS_EN}
-          breadcrumbs={[
-            { name: 'Home', path: '/' }
-          ]}
+          structuredData={false}
         />
       )}
       {!isLandingPage && <Navbar />}
@@ -347,8 +345,8 @@ function App() {
               <Route path="/:lang/funzionalita/:themeId" element={<ThroughPage />} />
               <Route path="/:lang/funzionalita/:themeId/:featureSlug" element={<LandingUspPage />} />
 
-              {/* Catch all redirect */}
-              <Route path="*" element={<Navigate to={`/${language}/${location.search}${location.hash}`} replace />} />
+              {/* Indirizzo inesistente: pagina «non trovata» con noindex (prima: reindirizzamento alla home) */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </ErrorBoundary>

@@ -4,5 +4,11 @@
 /it/dossier-riservato   /it/analisi-gratuita   301!
 /en/dossier-riservato   /en/analisi-gratuita   301!
 
+# Vecchio indirizzo della home, ancora presente nei risultati di Google (6 impressioni fra il 16/10
+# e il 12/11/2026): senza questa regola finirebbe sulla pagina «non trovata»
+/home      /it/   301!
+/it/home   /it/   301!
+/en/home   /en/   301!
+
 # SPA: tutto il resto viene servito da index.html
 /* /index.html 200
