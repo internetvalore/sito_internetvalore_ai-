@@ -172,8 +172,12 @@ export default function Navbar() {
                       />
                     </Popover.Button>
 
+                    {/* unmount={false}: la tendina resta nel DOM anche da chiusa (nascosta), così i suoi
+                        link — fra cui Funzionalità e Specializzazioni, che non hanno altri link nel
+                        sito — esistono come <a href> in ogni pagina e non solo a tendina aperta. */}
                     <Transition
                       as={Fragment}
+                      unmount={false}
                       enter="transition ease-out duration-220"
                       enterFrom="opacity-0 translate-y-1"
                       enterTo="opacity-100 translate-y-0"
@@ -181,7 +185,7 @@ export default function Navbar() {
                       leaveFrom="opacity-100 translate-y-0"
                       leaveTo="opacity-0 translate-y-1"
                     >
-                      <Popover.Panel className="absolute z-50 mt-3 left-1/2 -translate-x-1/2 w-screen max-w-[940px] px-4">
+                      <Popover.Panel unmount={false} className="absolute z-50 mt-3 left-1/2 -translate-x-1/2 w-screen max-w-[940px] px-4">
                         <div className="rounded-2xl border border-line bg-white shadow-lg overflow-hidden">
                           <div className="grid gap-4 p-4 grid-cols-3">
                             {serviceGroups.map((group) => (
